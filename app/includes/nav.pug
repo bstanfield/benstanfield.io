@@ -1,0 +1,42 @@
+   
+.container-wide.mobile-full
+    .hero
+        .grid-bg
+            img#first(src="images/personalsite-assets.png")
+            img#second(src="images/personalsite-assets-2.png")
+
+    #stick-here
+    .nav#stickThis
+        .nav-content    
+            a(href="/").left#name Ben Stanfield
+            .right.nav-links
+                a(href="/") About
+                a(href="/") Portfolio
+                a(href="/") Resume
+                a(href="/") Education
+                a(href="/") Blog
+
+
+script.
+    var s1 = document.querySelector('#s1');
+    let animationDuration = 10;
+    console.log("Test");
+
+    
+    function set(animationDuration) {
+         s1.style.setProperty('--animation-time', animationDuration + 's');
+    }
+
+    set(animationDuration);
+
+    function changeAnimationTime() {
+        animationDuration = Math.random() * 10;
+        let newDuration = animationDuration;
+        set(animationDuration);
+        console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+        return newDuration;
+    }
+    console.log("newDuration: ", newDuration);
+
+    setInterval(changeAnimationTime, newDuration);
+    // console.log((Math.round(newDuration * 1000)));

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>Brunch</title>
+   <link rel="stylesheet" href="/app.css">
+   <script src="/vendor.js"></script>
+   <script src="/app.js"></script>
+   <script>require('initialize');</script>
+  
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,700,700i|IBM+Plex+Serif:400,400i,500,500i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+</head>
+<body></body>
+<!-- loads navigation bar for each page-->  
+<div class="container-wide mobile-full">
+  <div class="hero">
+    <div class="grid-bg"><img id="first" src="images/personalsite-assets.png"><img id="second" src="images/personalsite-assets-2.png"></div>
+  </div>
+  <div id="stick-here"></div>
+  <div class="nav" id="stickThis">
+    <div class="nav-content">   <a class="left" href="/" id="name">Ben Stanfield</a>
+      <div class="right nav-links"><a href="/">About</a><a href="/">Portfolio</a><a href="/">Resume</a><a href="/">Education</a><a href="/">Blog</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  var s1 = document.querySelector('#s1');
+  let animationDuration = 10;
+  console.log("Test");
+  
+  
+  function set(animationDuration) {
+       s1.style.setProperty('--animation-time', animationDuration + 's');
+  }
+  
+  set(animationDuration);
+  
+  function changeAnimationTime() {
+      animationDuration = Math.random() * 10;
+      let newDuration = animationDuration;
+      set(animationDuration);
+      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+      return newDuration;
+  }
+  console.log("newDuration: ", newDuration);
+  
+  setInterval(changeAnimationTime, newDuration);
+  // console.log((Math.round(newDuration * 1000)));
+</script>
+<!-- this is where content will be loaded for subsequent pages-->
+<script>
+  var $ = require('jquery');
+  function sticktothetop() {
+  var window_top = $(window).scrollTop();
+  var top = $('#stick-here').offset().top;
+  if (window_top > top) {
+      $('#stickThis').addClass('stick');
+      $('#stick-here').height($('#stickThis').outerHeight());
+  } else {
+      $('#stickThis').removeClass('stick');
+      $('#stick-here').height(0);
+  }
+  }
+  $(function() {
+      $(window).scroll(sticktothetop);
+      sticktothetop();
+  });
+  
+</script>
+<div class="container">
+  <div class="intro"> 
+    <div class="emoji">👋</div>
+    <h1>Good evening!</h1>
+    <p>
+       As of September 15th, I’m a senior finishing up at the <a target='_blank' href='http://www.google.com' class='orange-link'>Iovine & Young Academy</a> and working on a company called <a target='_blank' href='https://www.skipper.ai' class='orange-link'>Skipper</a>. 
+      On the side I’m building a design firm called Gridflower with my friend Jenny 
+      and as an associate at <a target='_blank' class='orange-link' href='http://www.fresco.vc'>Fresco Capital</a>.
+    </p>
+  </div><br>
+  <h1>Experiences</h1><br>
+  <div class="flex-grid thirds"><a class="thirds-col card" href="google.com">
+      <h2>✨ Spark SC</h2>
+      <p>Best club at USC for past five years.</p>
+      <p class="more">Learn more &rarr;</p></a><a class="thirds-col card" href="google.com">
+      <h2>⛵ Skipper</h2>
+      <p>Best club at USC for past five years.</p>
+      <p class="more">Learn more &rarr;</p></a><a class="thirds-col card" href="google.com">
+      <h2>🔐 Hacking for Defense</h2>
+      <p>Best club at USC for past five years.</p>
+      <p class="more">Learn more &rarr;</p></a></div>
+  <div class="flex-grid thirds"><a class="thirds-col card" href="google.com">
+      <h2>🇮🇹 Laudato Si' Challenge</h2>
+      <p>Best club at USC for past five years.</p>
+      <p class="more">Learn more &rarr;</p></a><a class="thirds-col card" href="google.com">
+      <h2>🌳 Bonsai</h2>
+      <p>Best club at USC for past five years.</p>
+      <p class="more">Learn more &rarr;</p></a><a class="thirds-col card" href="google.com">
+      <h2>🔮 Mystery</h2>
+      <p>
+         ??? ???<br>???</p>
+      <p class="more">Learn more &rarr;</p></a></div><a href="google.com" id="whisper">
+    <p>Psst, here's my résumé!</p></a>
+</div>
+<!-- footer-->
+<div class="container"></div>

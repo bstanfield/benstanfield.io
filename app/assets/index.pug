@@ -1,0 +1,67 @@
+extends layout
+
+block content
+    script.
+        var $ = require('jquery');
+        function sticktothetop() {
+        var window_top = $(window).scrollTop();
+        var top = $('#stick-here').offset().top;
+        if (window_top > top) {
+            $('#stickThis').addClass('stick');
+            $('#stick-here').height($('#stickThis').outerHeight());
+        } else {
+            $('#stickThis').removeClass('stick');
+            $('#stick-here').height(0);
+        }
+        }
+        $(function() {
+            $(window).scroll(sticktothetop);
+            sticktothetop();
+        });
+
+    .container
+        .intro 
+            .emoji 👋
+            h1 Good evening!
+            p 
+                | As of September 15th, I’m a senior finishing up at the <a target='_blank' href='http://www.google.com' class='orange-link'>Iovine & Young Academy</a> and working on a company called <a target='_blank' href='https://www.skipper.ai' class='orange-link'>Skipper</a>. 
+                | On the side I’m building a design firm called Gridflower with my friend Jenny 
+                | and as an associate at <a target='_blank' class='orange-link' href='http://www.fresco.vc'>Fresco Capital</a>.
+
+        br
+        h1 Experiences
+        br
+            
+        .flex-grid.thirds
+            a(href='google.com').thirds-col.card
+                h2 ✨ Spark SC
+                p Best club at USC for past five years.
+                p.more Learn more &rarr;
+            a(href='google.com').thirds-col.card
+                h2 ⛵ Skipper
+                p Best club at USC for past five years.
+                p.more Learn more &rarr;
+            a(href='google.com').thirds-col.card
+                h2 🔐 Hacking for Defense
+                p Best club at USC for past five years.
+                p.more Learn more &rarr;
+
+        .flex-grid.thirds
+            a(href='google.com').thirds-col.card
+                h2 🇮🇹 Laudato Si' Challenge
+                p Best club at USC for past five years.
+                p.more Learn more &rarr;
+            a(href='google.com').thirds-col.card
+                h2 🌳 Bonsai
+                p Best club at USC for past five years.
+                p.more Learn more &rarr;
+            a(href='google.com').thirds-col.card
+                h2 🔮 Mystery
+                p 
+                    | ??? ???
+                    br
+                    | ???
+                p.more Learn more &rarr;
+        
+        a(href='google.com')#whisper
+            p Psst, here's my résumé!

@@ -1,0 +1,20 @@
+//- INCLUDES > MIXINS
+
+mixin article(url, p, t, a, i)
+    .card.article.card-spacer
+        .jank-tape
+            img(src='images/home-bluetape.png')
+        a(href=url target="_blank")
+            .card-content
+                h4.publisher #{p}
+                h1.title #{t}
+                h4.author by #{a} 
+                h4.info #{i} 
+
+mixin project(color, title, description, img)
+    .project-card.top(style="background-color:" + color + ";")
+        .project-content
+            h1 #{title}
+            p #{description}
+            button View more
+            img(src="images/" + img)
