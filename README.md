@@ -1,10 +1,11 @@
-# Brunch + Babel/ES6
+# benstanfield.io
 
-This is a modern JS skeleton for [Brunch](http://brunch.io).
+This site is built with Brunch.js, Pug, SCSS, and JQuery. Follow these
+steps to get it running on your own computer:
 
 ## Installation
 
-Clone this repo manually or use `brunch new dir -s es6`
+Clone this repo
 
 ## Getting started
 
