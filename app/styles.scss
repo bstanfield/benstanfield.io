@@ -132,6 +132,12 @@ p {
     width: 250px;
   }
 
+  .long {
+    height: fit-content !important;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
 #name {
   font-weight: 600;
 }
@@ -156,6 +162,35 @@ p {
     .more {
       color: $orange;
     }
+  }
+
+  .static:hover {
+    margin-top: 0px;
+  }
+
+  .card > p {
+    opacity: .5;
+  }
+
+  .card > .pulsetxt > p {
+    opacity: .5;
+  }
+
+  .more {
+    padding-top: 8px;
+    opacity: 1 !important;
+  }
+
+// - PULSE
+.pulseimg {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+  .pulseimg > img {
+    width: 100%;
+    border-radius: 3px;
   }
 
 // - PRIMARY CONTENT
@@ -205,6 +240,19 @@ button {
 
     .thirds-col {
       width: 27%;
+    }
+
+      #col-bg {
+        background-image: url('images/personalsite-assets-6.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 3px;
+        width: 30%;
+        border: 2px solid $grey;
+      }
+
+    .two-thirds-col {
+      width: 62%;
     }
   
 

@@ -50,6 +50,7 @@
 <!-- this is where content will be loaded for subsequent pages-->
 <script>
   var $ = require('jquery');
+  var move = require('move-js');
   function sticktothetop() {
   var window_top = $(window).scrollTop();
   var top = $('#stick-here').offset().top;
@@ -65,6 +66,14 @@
       $(window).scroll(sticktothetop);
       sticktothetop();
   });
+  
+  function readyFn( jQuery ) {
+      move('.emoji')
+          .rotate(140)
+          .end();
+  }
+  
+  $( document ).ready( readyFn );
   
 </script>
 <div class="container">
@@ -98,8 +107,24 @@
       <h2>🔮 Mystery</h2>
       <p>
          ??? ???<br>???</p>
-      <p class="more">Learn more &rarr;</p></a></div><a href="google.com" id="whisper">
-    <p>Psst, here's my résumé!</p></a>
+      <p class="more">Learn more &rarr;</p></a></div><a target="_blank" href="images/resume-2018-9-16.pdf" id="whisper">
+    <p>Psst, here's my résumé!</p></a><br>
+  <h1>💓 Pulse</h1>
+  <p>What I’ve been up to recently... check back in every month for a new Pulse update!</p><br>
 </div>
+<div class="grid-bg long">
+  <div class="container"><a target="_blank" href="http://www.skipper.ai">
+      <div class="flex-grid">
+        <div class="thirds-col" id="col-bg"></div>
+        <div class="two-thirds-col card static">
+          <div class="pulsetxt">
+            <h2>💓 Skipper Software at HR Technology Conference '18</h2>
+            <p>
+               We attended a conference. Here's a bunch of text explaining kinda what we did. Interested in learning more? Well I've got a link for that!</p>
+            <p class="more">Learn more &rarr;</p>
+          </div>
+        </div>
+      </div></a></div>
+</div><br><br><br>
 <!-- footer-->
 <div class="container"></div>
