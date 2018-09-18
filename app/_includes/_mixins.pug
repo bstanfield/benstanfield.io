@@ -18,3 +18,7 @@ mixin project(color, title, description, img)
             p #{description}
             button View more
             img(src="images/" + img)
+
+mixin link(href, name, tooltip)
+    a(target='_blank' class='orange-link' href=href title=tooltip)= name
+    

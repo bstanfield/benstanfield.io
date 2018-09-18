@@ -4,6 +4,7 @@ $ss: 'IBM Plex Sans', sans-serif;
 $grey: #333333;
 $orange: #F26C29;
 $header: 'IBM Plex Sans', sans-serif;
+$serif: 'IBM Plex Serif', serif;
 
 $buffer-top: 30px;
 $buffer-bottom: 30px;
@@ -19,6 +20,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+  ::selection {
+    background-color: rgba(242, 108, 41, 0.150) !important;
+  }
+
 h1 {
   font-size: 40px;
   font-family: $header;
@@ -26,6 +31,11 @@ h1 {
   margin: 0;
   margin-bottom: 10px;
 }
+
+  #one {
+    opacity: .1;
+    transition: 1s ease all;
+  }
 
 h2 {
   font-size: 22px;
@@ -57,18 +67,20 @@ a {
 
 p {
   font-size: 22px;
-  line-height: 35px;
+  line-height: 38px;
   margin: 0 !important;
   transition: 0.3s ease all;
 }
 
 .emoji {
+  opacity: .1;
   font-size: 60px;
+  transition: 1s ease all;
 }
 
 // - NAVIGATION
 .container-wide {
-  width: 90%;
+  width: 100%;
   margin: auto;
   max-width: 1000px;
 }
@@ -77,8 +89,6 @@ p {
   height: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 5px solid $grey;
-  border-bottom: 2px solid $grey;
   overflow:auto; 
 }
 
@@ -86,13 +96,17 @@ p {
   --animation-time: 2s; 
 }
 
+#stickThis {
+  // border-bottom: 2px solid $grey;
+  width: 100%;
+  margin: auto;
+}
+
 #stickThis.stick {
   position: fixed;
   top: 0;
   z-index: 9999;
   width: 100%;
-  max-width: 1000px;
-  margin: auto;
   background-color: white;
   height: auto;
 }
@@ -110,27 +124,45 @@ p {
 }
 
 .nav-content {
-  padding: 0 10px 0 10px;
-  max-width: 950px;
+  max-width: 1000px;
+  height: 48px;
+  border-bottom: 3px solid $grey;
   margin: auto;
+}
+
+  .nav-text {
+    padding: 0px 20px 0px 20px;
+  }
+
+#hide {
+  display: none;
 }
 
 // - HERO
 .grid-bg > img {
   position: absolute;
 }
+
+.grid-bg > h1 {
+  width: fit-content;
+  position: absolute;
+  font-size: 90px;
+  font-style: italic;
+  font-family: $serif;
+  top: 65px;
+  right: 120px;
+  opacity: .1;
+  transition: 1s ease-in-out all;
+}
+
 .grid-bg > #first {
   left: 0;
   bottom: 0;
   width: 260px;
   margin-left: 40px;
+  opacity: 1;
+  transition: 1s ease-in-out all;
 }
-
-  .grid-bg > #second {
-    top: 90px;
-    right: 199px;
-    width: 250px;
-  }
 
   .long {
     height: fit-content !important;
@@ -145,6 +177,7 @@ p {
 // - INTRO
 .intro {
   margin: $buffer;
+  transition: 0.5s ease all;
 }
 
 // - PROJECT CARD
@@ -181,6 +214,57 @@ p {
     opacity: 1 !important;
   }
 
+.pulse {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.grow {
+  opacity: 0.2 !important;
+  transition: 0.3s ease-in-out;
+}
+
+.news-card {
+  background-image: url('https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg');
+  background-size: cover;
+  background-position: center;  
+  position: relative;
+  color: white;
+  height: 250px;
+}
+
+  #spark-news {
+    background-image: url('https://cdn-images-1.medium.com/max/1200/1*m2NXtbpuEhumpWG72RDYpQ.jpeg');
+  }
+
+  #tc-news {
+    background-image: url('https://techcrunch.com/wp-content/uploads/2018/06/HSB_9596-1024x580.jpg?w=1390&crop=1');
+  }
+
+  .news-card > img {
+    width: 60px;
+    position: absolute;
+    z-index: 100;
+    top: -1.5px;
+    left: -1.5px;
+  }
+
+  .news-card > .title-txt {
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    padding: 10px;
+  }
+
+  .title {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.40);
+    position: absolute;
+  }
+
 // - PULSE
 .pulseimg {
   width: 100%;
@@ -195,12 +279,14 @@ p {
 
 // - PRIMARY CONTENT
 .grid-bg {
+  overflow: hidden;
   position: relative;
   width: 100%;
   background-color: grey;
   height: 250px;
   background-color: #fbfafb;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23272727' fill-opacity='0.18'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-bottom: 3px solid rgb(170, 170, 170);
 }
 
 .container {
@@ -255,7 +341,6 @@ button {
       width: 62%;
     }
   
-
 // MISC
 .left {
   float: left;
@@ -269,5 +354,147 @@ button {
   font-style: italic;
   color: #dddddd;
 }
+
+// CONTACT FORM
+input, select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid $grey;
+  border-bottom: 2px solid $grey; /* Gray border */
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  box-sizing: border-box;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: $orange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+textarea {
+  z-index: 1;
+}
+
+.label-input-group {
+  position: relative;
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: white;
+  font-size: 12px;
+  background-color: rgb(126, 126, 126);
+  padding: 5px 10px;
+  border: 1px solid $grey;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: absolute;
+  top: 9px;
+  opacity: 1;
+  z-index: 20;
+}
+
+input:focus, textarea:focus {
+  outline: none !important;
+}
+
+// FOOTER
+footer {
+  text-align: center;
+  overflow: hidden;
+}
+
+img#footerla {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: -28px;
+}
+
+// TOOLTIPS
+.tippy-tooltip.ben-theme {
+  /* Your styling here. Example: */
+  background-color: white !important;
+  border: 2px solid $grey;
+  color: $grey;
+  max-width: 200px;
+  padding: 10px;
+}
+
+.tippy-tooltip.ben-theme .tippy-backdrop {
+  /* Your styling here. Example: */
+  background-color: white;
+}
+
+// MEDIA QUERIES
+
+@media screen and (max-width: 950px) {
+  .grid-bg > h1 {
+    font-size: 70px;
+    top: 80px;
+    right: 80px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .grid-bg > h1 {
+    font-size: 60px;
+    right: 30px;
+  }
+}
+@media screen and (max-width: 835px) {
+  .flex-grid {
+    display: block;
+  }
+
+  .thirds-col {
+    width: 88%;
+    margin-bottom: 30px;
+    border-bottom: 5px solid $grey;
+  }
+
+  .two-thirds-col {
+    width: 88%;
+  }
+
+  #first {
+    z-index: 2;
+    left: -30px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .grid-bg {
+    width: 100%;
+  }
+
+  .grid-bg > h1 {
+    right: 70px;
+    top: 40px;
+  }
+
+  #col-bg {
+    display: none;
+  }
+
+  #show {
+    display: none;
+  }
+
+  #hide {
+    display: block;
+  }
+}
+
 
 
