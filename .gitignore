@@ -1,6 +1,10 @@
 # General Mac ignores
 .DS_Store
 
+# Brunch specific
+# Don't check in the "compiled" files
+public/
+
 
 # Logs
 logs
