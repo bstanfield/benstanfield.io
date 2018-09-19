@@ -188,12 +188,18 @@ p {
   border-bottom: 10px solid #333333;
   border-radius: 4px;
   padding: 0px 20px 20px 20px;
-  transition: 0.3s ease all;
+  transition: 0.3s ease-in-out all;
 }
+
 
   .card:hover {
     .more {
       color: $orange;
+    }
+
+    .more span {
+      color: $grey;
+      padding-left: 5px;
     }
   }
 
@@ -214,7 +220,12 @@ p {
   .more {
     padding-top: 8px;
     opacity: 1 !important;
+    transition: .5s ease-in-out all;
   }
+
+    .more span {
+      transition: .3s ease-in-out all !important;
+    }
 
 .pulse {
   opacity: 1;
@@ -330,6 +341,7 @@ button {
 
     .thirds-col {
       width: 27%;
+      display: block;
     }
 
       #col-bg {

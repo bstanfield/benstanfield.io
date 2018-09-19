@@ -2,10 +2,11 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width">
-   <title>Brunch</title>
+   <title>Ben Stanfield</title>
    <link rel="stylesheet" href="/app.css">
    <script src="/vendor.js"></script>
    <script src="/app.js"></script>
+   <script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
    <script>require('initialize');</script>
   
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,700,700i|IBM+Plex+Serif:400,400i,500,500i,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -52,83 +53,7 @@
   setInterval(changeAnimationTime, newDuration);
   // console.log((Math.round(newDuration * 1000)));
 </script>
-<!-- this is where content will be loaded for subsequent pages--><script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
-<script>
-  var $ = require('jquery');
-  
-  function sticktothetop() {
-  var window_top = $(window).scrollTop();
-  var top = $('#stick-here').offset().top;
-  if (window_top > top) {
-      $('#stickThis').addClass('stick');
-      $('#stick-here').height($('#stickThis').outerHeight());
-  } else {
-      $('#stickThis').removeClass('stick');
-      $('#stick-here').height(0);
-  }
-  }
-  
-  $(function() {
-      $(window).scroll(sticktothetop);
-      sticktothetop();
-  });
-  
-  $(document).ready(function() {
-      const d = new Date();
-      let min = d.getMinutes();
-      let time = d.getHours();
-  
-      if (time > 12 && time < 16) {
-          $('.emoji').append('🌇');
-          $('#one').prepend('Good afternoon! ');
-      } else if (time < 10 && time > 5) {
-          $('.emoji').append('☕️');
-          $('#one').prepend("G'morning! Coffee?");
-      } else if (time > 16 && time < 20) {
-          $('.emoji').append('🌃');
-          $('#one').prepend('Good evening!');
-      } else if (time > 20) {
-          $('.emoji').append('😴');
-          $('#one').prepend('ZzZzz');
-      } else if (time >= 10 && time <= 12) {
-          $('.emoji').append('🍲');
-          $('#one').prepend('Reheating leftovers...');
-      } else if (time == 16) {
-          $('.emoji').append('🚴');
-          $('#one').prepend('Biking home from class...');
-      } else {
-          $('.emoji').append('👋');
-          $('#one').prepend('Welcome!');
-      }
-  });
-  
-  $(document).ready(function() {
-      setInterval(function(){ 
-      // toggle the class every five second
-          $('.pulse').toggleClass('grow');  
-          setTimeout(function(){
-              // toggle back after 1 second
-              $('.pulse').toggleClass('grow');  
-          },1200);
-  
-      },2400);  
-      
-      setTimeout(
-      function() 
-      {
-          $('#show').css('opacity', '1');
-          $('#hide').css('opacity', '1');
-      }, 1000); 
-  
-      setTimeout(
-      function() 
-      {
-          $('.emoji').css('opacity', '1');
-          $('#one').css('opacity', '1');
-      }, 1500);                    
-  });
-  
-</script>
+<!-- this is where content will be loaded for subsequent pages-->
 <div class="container">
   <div class="intro"> 
     <div class="emoji"></div>
@@ -139,40 +64,27 @@
     </p>
   </div><br>
   <h1>Experiences</h1><br>
-  <div class="flex-grid thirds">
-    <div class="thirds-col card">
+  <div class="flex-grid thirds"><a class="thirds-col card" href="https://www.skipper.ai">
       <h2><span class='emo'>✌️</span> Spark SC</h2>
-      <p>Entrepreneurship and technology club at USC.</p>
-      <p class="more">Learn more &rarr;</p>
-    </div>
-    <div class="thirds-col card">
-      <h2>⛵ Skipper</h2>
-      <p>HR Tech startup helping SMBs use their workforce data to make work better.</p>
-      <p class="more">Learn more &rarr;</p>
-    </div>
-    <div class="thirds-col card">
-      <h2>🔐 Hacking for Defense</h2>
+      <p>Technology and entrepreneurship club at USC.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="https://www.skipper.ai">
+      <h2><span class='emo'>⛵</span> Skipper</h2>
+      <p>Tech startup helping SMBs use their workforce data to make work better.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="https://www.skipper.ai">
+      <h2><span class='emo'>🔐</span> Hacking for Defense</h2>
       <p>Project with U.S. State Department to counter terrorism online.</p>
-      <p class="more">Learn more &rarr;</p>
-    </div>
+      <p class="more">Learn more <span>&rarr;</span></p></a>
   </div>
-  <div class="flex-grid thirds">
-    <div class="thirds-col card">
-      <h2>🇮🇹 Laudato Si' Challenge</h2>
+  <div class="flex-grid thirds"><a class="thirds-col card" href="https://www.skipper.ai">
+      <h2><span class='emo'>🇮🇹</span> Laudato Si Challenge</h2>
       <p>Green tech accelerator inspired by Pope Francis, hosted in Rome.</p>
-      <p class="more">Learn more &rarr;</p>
-    </div>
-    <div class="thirds-col card">
-      <h2>🌳 Bonsai</h2>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="https://www.skipper.ai">
+      <h2><span class='emo'>🌳</span> Bonsai</h2>
       <p>AI startup building a deep reinforcement learning platform for enterprise.</p>
-      <p class="more">Learn more &rarr;</p>
-    </div>
-    <div class="thirds-col card">
-      <h2>🔮 Mystery</h2>
-      <p>
-         ??? ???<br>???</p>
-      <p class="more">Learn more &rarr;</p>
-    </div>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="https://www.skipper.ai">
+      <h2><span class='emo'>🔮</span> Mystery</h2>
+      <p>???</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a>
   </div><br><br>
   <h1><span class="pulse">💓</span> Pulse</h1>
   <p>What I’ve been up to recently... check back in every once in a while for a new Pulse update!</p><br>
@@ -186,7 +98,7 @@
             <h2>💓 Skipper Software at HR Technology Conference '18</h2>
             <p>
                We attended a conference. Here's a bunch of text explaining kinda what we did. Interested in learning more? Well I've got a link for that!</p>
-            <p class="more">Learn more &rarr;</p>
+            <p class="more">Learn more <span>&rarr;</span></p>
           </div>
         </div>
       </div></a></div>
@@ -217,17 +129,15 @@
     <input type="submit" value="Submit">
   </form>
 </div>
-<script>
-  tippy('.orange-link', {
-      theme: 'ben',
-      followCursor: true
-  });
-  
-</script><br><br>
+<!-- footer--><br><br>
 <footer>
   <div class="grid-bg long">
     <div class="container"><img id="footerla" src="images/personalsite-footer.png"></div>
   </div>
 </footer>
-<!-- footer-->
-<div class="container"></div>
+<script>
+  tippy('.orange-link', {
+      theme: 'ben',
+      followCursor: true
+  });
+</script>
