@@ -537,10 +537,11 @@ p {
   font-size: 90px;
   font-style: italic;
   font-family: "IBM Plex Serif", serif;
+  color: #494949 !important;
   top: 65px;
   right: 120px;
   opacity: .1;
-  transition: 1s ease-in-out all; }
+  transition: 1s ease-in-out opacity; }
 
 .grid-bg > #first {
   left: 0;
@@ -570,10 +571,8 @@ p {
   padding: 0px 20px 20px 20px;
   transition: 0.3s ease all; }
 
-.card:hover {
-  margin-top: -5px; }
-  .card:hover .more {
-    color: #F26C29; }
+.card:hover .more {
+  color: #F26C29; }
 
 .static:hover {
   margin-top: 0px; }
@@ -651,7 +650,7 @@ p {
   background-color: #fbfafb;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23272727' fill-opacity='0.18'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   border-bottom: 3px solid #aaaaaa;
-  box-shadow: inset 100px 0px 100px -20px white, inset -100px 0px 100px -20px white; }
+  box-shadow: inset 100px 0px 100px -40px white, inset -100px 0px 100px -40px white; }
 
 .container {
   max-width: 950px;
@@ -723,16 +722,19 @@ input, select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background-color: #F26C29;
+  background-color: #333333;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
-  width: fit-content; }
+  width: fit-content;
+  margin-top: 5px; }
 
 textarea {
-  z-index: 1; }
+  z-index: 1;
+  max-height: 600px;
+  min-height: 150px; }
 
 .label-input-group {
   position: relative; }
@@ -758,7 +760,8 @@ input:focus, textarea:focus {
 
 footer {
   text-align: center;
-  overflow: hidden; }
+  overflow: hidden;
+  border-bottom: 60px solid #333333; }
 
 img#footerla {
   width: 100%;
@@ -770,7 +773,7 @@ img#footerla {
   background-color: white !important;
   border: 2px solid #333333;
   color: #333333;
-  max-width: 200px;
+  max-width: 180px;
   padding: 10px; }
 
 .tippy-tooltip.ben-theme .tippy-backdrop {
