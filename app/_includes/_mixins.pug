@@ -21,4 +21,35 @@ mixin project(color, title, description, img)
 
 mixin link(href, name, tooltip)
     a(target='_blank' class='orange-link' href=href title=tooltip)= name
+
+mixin more()
+    p.more Learn more <span>&rarr;</span>
+
+mixin 3card(url, emoji, title, description)
+    a(href=url).thirds-col.card
+        h2 <span class='emo'>#{emoji}</span> #{title}
+        p #{description}
+        +more()
+
+mixin contact()
+    h1 Contact
+    p
+        | If you'd like to work with me or learn more, please send me an email through the form below or find me on 
+        +link('https://www.linkedin.com/in/meetben', 'LinkedIn', '"Join my professional network 🤓"')
+        | . Thanks for stopping by!
+
+    br
+    form(action='https://formspree.io/bstanfie@usc.edu' method='post' enctype='text/plain')
+        .label-input-group
+            label(for='fname') NAME
+            input(type='text' id='fname' name='firstname' placeholder='Adam Grant')
+        .label-input-group
+            label(for='lname') EMAIL *
+            input(type='email' id='email' name='email' placeholder='adamgrant@email.com' required)
+
+        .label-input-group
+            label(for='subject') MESSAGE *
+            <textarea id="subject" name="subject" placeholder="Hey Ben! Adam here. Just checked out your website and I have some... feedback." style="height:200px" required></textarea>
+
+        input(type='submit' value='Submit')
     

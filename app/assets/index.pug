@@ -1,82 +1,6 @@
 extends layout
 
 block content
-    <script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
-    script.
-        var $ = require('jquery');
-
-        function sticktothetop() {
-        var window_top = $(window).scrollTop();
-        var top = $('#stick-here').offset().top;
-        if (window_top > top) {
-            $('#stickThis').addClass('stick');
-            $('#stick-here').height($('#stickThis').outerHeight());
-        } else {
-            $('#stickThis').removeClass('stick');
-            $('#stick-here').height(0);
-        }
-        }
-
-        $(function() {
-            $(window).scroll(sticktothetop);
-            sticktothetop();
-        });
-
-        $(document).ready(function() {
-            const d = new Date();
-            let min = d.getMinutes();
-            let time = d.getHours();
-
-            if (time > 12 && time < 16) {
-                $('.emoji').append('🌇');
-                $('#one').prepend('Good afternoon! ');
-            } else if (time < 10 && time > 5) {
-                $('.emoji').append('☕️');
-                $('#one').prepend("G'morning! Coffee?");
-            } else if (time > 16 && time < 20) {
-                $('.emoji').append('🌃');
-                $('#one').prepend('Good evening!');
-            } else if (time > 20) {
-                $('.emoji').append('😴');
-                $('#one').prepend('ZzZzz');
-            } else if (time >= 10 && time <= 12) {
-                $('.emoji').append('🍲');
-                $('#one').prepend('Reheating leftovers...');
-            } else if (time == 16) {
-                $('.emoji').append('🚴');
-                $('#one').prepend('Biking home from class...');
-            } else {
-                $('.emoji').append('👋');
-                $('#one').prepend('Welcome!');
-            }
-        });
-
-        $(document).ready(function() {
-            setInterval(function(){ 
-            // toggle the class every five second
-                $('.pulse').toggleClass('grow');  
-                setTimeout(function(){
-                    // toggle back after 1 second
-                    $('.pulse').toggleClass('grow');  
-                },1200);
-
-            },2400);  
-            
-            setTimeout(
-            function() 
-            {
-                $('#show').css('opacity', '1');
-                $('#hide').css('opacity', '1');
-            }, 1000); 
-
-            setTimeout(
-            function() 
-            {
-                $('.emoji').css('opacity', '1');
-                $('#one').css('opacity', '1');
-            }, 1500);                    
-        });
-
     .container
         .intro 
             .emoji
@@ -85,47 +9,25 @@ block content
                 | Hi! I’m Ben, a senior finishing up at the 
                 +link('www.google.com', 'Iovine & Young Academy', "Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen' 🎧") 
                 |   and working on a company called 
-                +link('www.google.com', 'Skipper', 'Report software for HR. Not to be confused with Skippy 🥜')  
+                +link('www.google.com', 'Skipper', 'Reporting software for HR... check out our website! 🌟')  
                 | . On the side I’m building a design firm, Gridflower, with my friend Jenny 
                 | and as an associate at 
                 +link('www.google.com', 'Fresco Capital', 'Seed 🌱 and early-stage VC for Future of Work and EdTech.')
                 |.
                 
-
         br
         h1 Experiences
         br
             
         .flex-grid.thirds
-            .thirds-col.card
-                h2 <span class='emo'>✌️</span> Spark SC
-                p Entrepreneurship and technology club at USC.
-                p.more Learn more &rarr;
-            .thirds-col.card
-                h2 ⛵ Skipper
-                p HR Tech startup helping SMBs use their workforce data to make work better.
-                p.more Learn more &rarr;
-            .thirds-col.card
-                h2 🔐 Hacking for Defense
-                p Project with U.S. State Department to counter terrorism online.
-                p.more Learn more &rarr;
+            +3card('https://www.skipper.ai', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
+            +3card('https://www.skipper.ai', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
+            +3card('https://www.skipper.ai', '🔐', 'Hacking for Defense', 'Project with U.S. State Department to counter terrorism online.' )
 
         .flex-grid.thirds
-            .thirds-col.card
-                h2 🇮🇹 Laudato Si' Challenge
-                p Green tech accelerator inspired by Pope Francis, hosted in Rome.
-                p.more Learn more &rarr;
-            .thirds-col.card
-                h2 🌳 Bonsai
-                p AI startup building a deep reinforcement learning platform for enterprise.
-                p.more Learn more &rarr;
-            .thirds-col.card
-                h2 🔮 Mystery
-                p 
-                    | ??? ???
-                    br
-                    | ???
-                p.more Learn more &rarr;
+            +3card('https://www.skipper.ai', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
+            +3card('https://www.skipper.ai', '🌳', 'Bonsai', 'AI startup building a deep reinforcement learning platform for enterprise.' )
+            +3card('https://www.skipper.ai', '🔮', 'Mystery', '???' )
 
         br 
         br
@@ -144,7 +46,7 @@ block content
                             h2 💓 Skipper Software at HR Technology Conference '18
                             p 
                                 | We attended a conference. Here's a bunch of text explaining kinda what we did. Interested in learning more? Well I've got a link for that!
-                            p.more Learn more &rarr;
+                            +more()
         
     br
     br
@@ -158,7 +60,7 @@ block content
             |  to associate at Fresco Capital, and in leadership positions as president of 
             +link('http://www.sparksc.org', 'Spark SC', 'Entrepreneurship and technology club at USC... also my best friends 😉') 
             |   and co-founder of 
-            +link('https://www.skipper.ai', 'Skipper', 'Report software for HR. Not to be confused with Skippy 🥜') 
+            +link('https://www.skipper.ai', 'Skipper', 'Reporting software for HR... check out our website! 🌟') 
             | . Recently I've been captivated by the future of work and the future of capitalism. This resulted in starting Skipper, and also co-founding 
             +link('https://www.laudatosichallenge.org/', "Laudato Si' Challenge", 'Lots of wine and pasta... and startups. 🇮🇹')
             |, a startup incubator in Rome focused on sustainability.
@@ -171,36 +73,4 @@ block content
     br
 
     .container
-        h1 Contact
-        p
-            | If you'd like to work with me or learn more, please send me an email through the form below or find me on 
-            +link('https://www.linkedin.com/in/meetben', 'LinkedIn', 'Join my professional network LOL')
-            | . Thanks for stopping by!
-
-        br
-        form(action='https://formspree.io/bstanfie@usc.edu' method='post' enctype='text/plain')
-            .label-input-group
-                label(for='fname') NAME
-                input(type='text' id='fname' name='firstname' placeholder='Adam Grant')
-            .label-input-group
-                label(for='lname') EMAIL *
-                input(type='email' id='email' name='email' placeholder='adamgrant@email.com' required)
-
-            .label-input-group
-                label(for='subject') MESSAGE *
-                <textarea id="subject" name="subject" placeholder="Hi Ben! Want to go on an adventure together?" style="height:200px" required></textarea>
-
-            input(type='submit' value='Submit')
-
-    script.  
-        tippy('.orange-link', {
-            theme: 'ben',
-            followCursor: true
-        });
-
-    br
-    br
-    footer
-        .grid-bg.long
-            .container
-                img#footerla(src='images/personalsite-footer.png')
+        +contact()
