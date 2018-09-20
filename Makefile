@@ -8,8 +8,8 @@ clean:
 nuke: clean
 	rm -rf node_modules
 
-deploy: public/index.html
-	rm public/images/resume-update.pdf
+deploy: 
+	brunch build
 	now -p public
 
 node_modules: package.json

@@ -69,26 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
       {
           $('#show').css('opacity', '1');
           $('#hide').css('opacity', '1');
-      }, 1000); 
+      }, 0); 
 
-      setTimeout(
-          function() {
-            $('video').css('opacity', '1');
-          }, 1000
-      );
+    
+        $('video').css('opacity', '1');
 
-      setInterval(function() {
-          setInterval(function(){
-              $('video').css('display', 'none');
-              $('videoimg').css('display', 'block');
-          }, 30000);
-      });
+        setTimeout( function(){
+            $('video').css('display', 'none');
+        }, 9500);
+
+        
 
       setTimeout(
       function() 
       {
           $('.emoji').css('opacity', '1');
           $('#one').css('opacity', '1');
-      }, 1500);                    
+      }, 0);                    
     });
 });
