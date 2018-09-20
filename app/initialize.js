@@ -54,7 +54,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // FADE INS
     $(document).ready(function() {
-      setInterval(function(){ 
+    $('video').css('opacity', '1');
+
+    var timeout1 = setTimeout( function(){
+        $('video').css('opacity', '0');
+    }, 9500);
+
+    var timeout2 = setTimeout( function(){
+        $('video').attr('src', '../images/benmoji-sleeping.mp4');
+    }, 11000);
+
+    var timeout3 = setTimeout( function() {
+        $('video').css('opacity', '1');
+    }, 11500);
+
+    $('video').click(function(){
+        this.paused ? this.play() : this.pause();
+        if(this.paused == true) {
+            clearTimeout(timeout1);
+            clearTimeout(timeout2);
+            clearTimeout(timeout3);
+        } else {
+            setTimeout(timeout1);
+            setTimeout(timeout2);
+            setTimeout(timeout3);
+        }
+
+
+    });
+
+    setInterval(function(){ 
       // toggle the class every five second
           $('.pulse').toggleClass('grow');  
           setTimeout(function(){
@@ -71,20 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
           $('#hide').css('opacity', '1');
       }, 0); 
 
-    
-        $('video').css('opacity', '1');
-
-        setTimeout( function(){
-            $('video').css('display', 'none');
-        }, 9500);
-
-        
-
       setTimeout(
       function() 
       {
           $('.emoji').css('opacity', '1');
           $('#one').css('opacity', '1');
-      }, 0);                    
+      }, 0);
     });
 });
