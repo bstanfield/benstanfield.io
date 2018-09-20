@@ -1,3 +1,4 @@
+CLIPBOARD = $(shell pbpaste)
 .PHONY: all clean 
 
 # Bootstrap on a clean box: make
@@ -21,8 +22,10 @@ deploy:
 	brunch build
 	now -p public
 
-# when ready to push up for production:make production
-production: public/index.html
-	rm public/images/resume-update.pdf
-	now -p public
+foo:
+		@echo ${CLIPBOARD}
 
+# when ready to push up for production:make production
+production:
+	brunch build
+	now -p public
