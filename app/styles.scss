@@ -74,8 +74,8 @@ p {
 
 .emoji {
   opacity: .1;
-  font-size: 60px;
   transition: 1s ease all;
+  padding-right: 10px;
 }
 
 // - NAVIGATION
@@ -139,12 +139,23 @@ p {
 }
 
 // - HERO
-.grid-bg > video {
-  width: 300px !important;
+video {
+  opacity: .1;
+  width: 300px;
   position: absolute;
-  left: 10px !important;
-  bottom: 10px !important;
+  left: 10px;
+  bottom: 10px;
+  transition: 1s ease-in-out all;
 }
+
+  #videoimg {
+    display: none;
+    width: 300px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    transition: 1s ease-in-out all;
+  }
 
 .grid-bg > h1 {
   width: fit-content;
@@ -156,15 +167,6 @@ p {
   right: 170px;
   opacity: .1;
   transition: 1s ease-in-out opacity;
-}
-
-.grid-bg > #first {
-  left: 0;
-  bottom: 0;
-  width: 260px;
-  margin-left: 40px;
-  opacity: 1;
-  transition: 1s ease-in-out all;
 }
 
   .long {

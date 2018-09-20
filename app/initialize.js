@@ -11,26 +11,26 @@ document.addEventListener('DOMContentLoaded', () => {
       let time = d.getHours();
 
       if (time > 12 && time < 16) {
-          $('.emoji').append('🌇');
-          $('#one').prepend('Good afternoon! ');
+          $('.emoji').prepend('🌇');
+          $('#one').append(' Good afternoon! ');
       } else if (time < 10 && time > 5) {
-          $('.emoji').append('☕️');
-          $('#one').prepend("G'morning! Coffee?");
+          $('.emoji').prepend('☕️');
+          $('#one').append(" G'morning! Coffee?");
       } else if (time > 16 && time < 20) {
-          $('.emoji').append('🌃');
-          $('#one').prepend('Good evening!');
+          $('.emoji').prepend('🌃');
+          $('#one').append(' Good evening!');
       } else if (time > 20) {
-          $('.emoji').append('😴');
-          $('#one').prepend('ZzZzz');
+          $('.emoji').prepend('😴');
+          $('#one').append(' ZzZzz');
       } else if (time >= 10 && time <= 12) {
-          $('.emoji').append('🍲');
-          $('#one').prepend('Reheating leftovers...');
+          $('.emoji').prepend('🍲');
+          $('#one').append(' Reheating leftovers...');
       } else if (time == 16) {
-          $('.emoji').append('🚴');
-          $('#one').prepend('Biking home from class...');
+          $('.emoji').prepend('🚴');
+          $('#one').append(' Biking home from class...');
       } else {
-          $('.emoji').append('👋');
-          $('#one').prepend('Welcome!');
+          $('.emoji').prepend('👋');
+          $('#one').append(' Welcome!');
       }
   });
 
@@ -70,6 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
           $('#show').css('opacity', '1');
           $('#hide').css('opacity', '1');
       }, 1000); 
+
+      setTimeout(
+          function() {
+            $('video').css('opacity', '1');
+          }, 1000
+      );
+
+      setInterval(function() {
+          setInterval(function(){
+              $('video').css('display', 'none');
+              $('videoimg').css('display', 'block');
+          }, 30000);
+      });
 
       setTimeout(
       function() 
