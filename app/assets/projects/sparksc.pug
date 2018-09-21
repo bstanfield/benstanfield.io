@@ -1,0 +1,41 @@
+extends layout-projects
+block head
+    - var projectName = "Spark SC";
+    - var navImg = 'background-image: url(http://sparksc.org/images/home/photo1.jpg)';
+    title Ben // #{projectName}
+
+block content
+    .container.project
+        .intro 
+            h1 #{projectName} ✌️
+            h6 
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+
+            button.orange-btn View the #{projectName} website
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+
+            h2.quote "Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero."
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+
+            a(target='_blank' href='http://' + 'medium.com/sparksc/state-of-spark-spring-2017-ddeeab535d33').card.project-card
+                img(src='../images/medium-logo.png')
+                h2 State of Spark: Spring 2017
+                p
+                    | Spark SC is the student-run entrepreneurial hub at the University of Southern California. So, what have we been up to this semester?
+                
+                p.more Read on Medium <span>&rarr;</span>
+                .project-img(style='background-image: url(https://cdn-images-1.medium.com/max/1200/1*m2NXtbpuEhumpWG72RDYpQ.jpeg);')
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+
+        .flex-grid.thirds
+            +3card('tech.la', '✌️', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.' )
+            +3card('breaktomake.com', '⛵', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.' )
+            +3card('projectlaunch.io/', '🔐', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.' )
+        
+            

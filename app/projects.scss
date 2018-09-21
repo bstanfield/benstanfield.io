@@ -1,0 +1,108 @@
+@import 'styles.scss';
+
+// Kinda hacky but this is for paragraphs of text on project pages
+h6 {
+    color: $grey;
+    font-family: Georgia;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.update-line {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 10px;
+    opacity: .3;
+}
+
+.bg-orange {
+    height: 250px;
+    background-color: $orange;
+    background-size: cover;
+    background-position: center;
+}
+
+.orange-btn {
+    margin: 30px 0px;
+    background-color: $orange;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.quote {
+    border-radius: 4px;
+    float: left;
+    margin-top: 15px;
+    margin-right: 20px;
+    background-color: rgb(245, 245, 245);
+    width: fit-content;
+    max-width: 350px;
+    padding: 0px 20px 25px 25px;
+}
+
+    .quote > h2 {
+        font-size: 25px;
+        font-style: italic;
+        color: #333333;
+        line-height: 35px;
+    }
+
+    .quote > p {
+        font-size: 18px;
+        font-weight: 600;
+        color: grey;
+    }
+
+.rootProject {
+    opacity: .5;
+}
+
+.project .intro h1 {
+    font-weight: 600;
+}
+
+.project-card {
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+    .project-card > p {
+        width: 60%;
+        opacity: .5;
+    }
+
+    .project-card > h2 {
+        width: 60%;
+    }
+
+    .project-img {
+        width: 250px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project-card > img {
+        width: 100px;
+        margin-top: 20px;
+        margin-bottom: -20px;
+    }
+
+@media screen and (max-width: 720px) {
+    .project-img {
+        display: none;
+    }
+
+    .project-card > p {
+        width: 100%;
+    }
+}

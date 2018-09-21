@@ -1,0 +1,42 @@
+extends layout-projects
+block head
+    - var projectName = "H4D";
+    - var navImg = 'background-image: url(../images/hacking-for-defense-team.jpeg); background-position-y: 20%;';
+    title Ben // #{projectName}
+
+block content
+    .container.project
+        .intro 
+            +introsection('Hacking for Defense (H4D) ✌️', 'A 16-week, team-based collaboration with the U.S. State Department and Intelligence Community to counter online terrorism.', 'September 21, 2018')
+
+            h6 
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+
+            button.orange-btn View the #{projectName} website
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+
+            +quote('"[One] rarely hears about the Air Force or the CIA in conversations about tech disruption. ‘H4D’ presents students with a real, wicked problem faced by [those groups] and more, and provides you with the resources and mentorship to define a problem and create a solution."', '- Ben Stanfield in USC News')
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+
+            +article('https://news.usc.edu/148630/hacking-for-defense-students-take-on-cybersecurity-from-a-new-angle', '../images/uscnews.png', '‘Hacking for Defense’ students take on cybersecurity from a new angle', 'USC Iovine and Young Academy team ponders a tough question: How do you counter online radicalization?', 'USC News', 'background-image: url(https://static.politico.com/dims4/default/d28c2ab/2147483647/resize/1160x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fb4%2F92%2Fbd7d8df34cedb5dd98bdaddc012f%2F180314-dept-state.jpg);')
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+
+        hr
+        br
+        br
+        h1 More projects:
+        br
+        .flex-grid.thirds
+            +3card('projects/sparksc.html', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
+            +3card('projects/skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
+            +3card('projects/lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
+
+        
+            
+

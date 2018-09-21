@@ -1,0 +1,20 @@
+br
+br
+
+footer
+    .grid-bg.grid.long
+        .container
+            img#footerla(src='images/personalsite-footer.png')
+
+script.  
+    tippy('.orange-link', {
+        theme: 'ben',
+        followCursor: true
+    });
+
+    tippy.browser.onUserInputChange = type => {
+        const method = type === 'touch' ? 'disable' : 'enable'
+        for (const tooltip of tip.tooltips) {
+          tooltip[method]()
+        }
+    }

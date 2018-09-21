@@ -58,29 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var timeout1 = setTimeout( function(){
         $('video').css('opacity', '0');
-    }, 9500);
+    }, 19000);
 
     var timeout2 = setTimeout( function(){
         $('video').attr('src', '../images/benmoji-sleeping.mp4');
-    }, 11000);
+    }, 21000);
 
     var timeout3 = setTimeout( function() {
         $('video').css('opacity', '1');
-    }, 11500);
+    }, 21500);
 
     $('video').click(function(){
         this.paused ? this.play() : this.pause();
-        if(this.paused == true) {
-            clearTimeout(timeout1);
-            clearTimeout(timeout2);
-            clearTimeout(timeout3);
-        } else {
-            setTimeout(timeout1);
-            setTimeout(timeout2);
-            setTimeout(timeout3);
-        }
-
-
     });
 
     setInterval(function(){ 

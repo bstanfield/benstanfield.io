@@ -1,16 +1,4 @@
 //- INCLUDES > MIXINS
-
-mixin article(url, p, t, a, i)
-    .card.article.card-spacer
-        .jank-tape
-            img(src='images/home-bluetape.png')
-        a(href=url target="_blank")
-            .card-content
-                h4.publisher #{p}
-                h1.title #{t}
-                h4.author by #{a} 
-                h4.info #{i} 
-
 mixin project(color, title, description, img)
     .project-card.top(style="background-color:" + color + ";")
         .project-content
@@ -19,8 +7,8 @@ mixin project(color, title, description, img)
             button View more
             img(src="images/" + img)
 
-mixin link(href, name, tooltip)
-    a(target='_blank' class='orange-link' href=href title=tooltip)= name
+mixin link(url, name, tooltip)
+    a(target='_blank' class='orange-link' href=url title=tooltip)= name
 
 mixin more()
     p.more Learn more <span>&rarr;</span>
@@ -35,7 +23,7 @@ mixin contact()
     h1 Contact
     p
         | If you'd like to work with me or learn more, please send me an email through the form below or find me on 
-        +link('https://www.linkedin.com/in/meetben', 'LinkedIn', '"Join my professional network 🤓"')
+        +link('linkedin.com/in/meetben', 'LinkedIn', '"Join my professional network 🤓"')
         | . Thanks for stopping by!
 
     br
@@ -52,4 +40,28 @@ mixin contact()
             <textarea id="subject" name="subject" placeholder="Hey Ben! Adam here. Just checked out your website and I have some... feedback." style="height:200px" required></textarea>
 
         input(type='submit' value='Submit')
-    
+
+//- PROJECT PAGE
+mixin introsection(title, subtitle, date)
+    h1 #{title}
+    p #{subtitle}
+    p.update-line last updated: #{date}
+    br
+    hr
+    br
+
+mixin quote(quote, byline)
+    .quote
+        h2 #{quote}
+        p #{byline}
+
+mixin article(url, iconpath, title, subtitle, sourcename, bgimage)
+    <div style="clear: both;"></div>
+    a(target='_blank' href=url).card.project-card
+        img(src=iconpath)
+        h2 #{title}
+        p #{subtitle}
+        
+        p.more Read on #{sourcename} <span>&rarr;</span>
+        .project-img(style=bgimage)
+

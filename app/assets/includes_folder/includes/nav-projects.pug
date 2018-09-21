@@ -1,22 +1,16 @@
    
 .container-wide.mobile-full
     .hero
-        .grid-bg
-            <video id='first' autoplay loop muted playsinline>
-                <source src="../images/benmoji-10s.mp4" type="video/mp4">
-            </video>
-            h1#show Hi! I'm Ben.
-
-            .rising
+        .bg-orange(style=navImg)
 
 #stick-here
 .nav#stickThis
     .nav-content
         .nav-text   
-            a(href="/").left#name Home
+            a(href="/").left#root <span id='homeRoot'>Home</span> / <span class='projectRoot'>#{projectName}</span>
             .right.nav-links
                 a(href="/") About
-                a(target='_blank' href="images/resume-update.pdf") Résumé
+                a(target='_blank' href="../images/resume-update-comp2.pdf") Résumé
                 a(href="/") Work
 
 
