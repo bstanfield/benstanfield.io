@@ -416,6 +416,10 @@ button {
 }
 
 // CONTACT FORM
+::placeholder {
+  opacity: .4;
+}
+
 input, select, textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */  

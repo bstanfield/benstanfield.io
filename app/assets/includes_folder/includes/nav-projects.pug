@@ -9,9 +9,8 @@
         .nav-text   
             a(href="/").left#root <span id='homeRoot'>Home</span> / <span class='projectRoot'>#{projectName}</span>
             .right.nav-links
-                a(href="/") About
+                a(href="#contact") Contact
                 a(target='_blank' href="../images/resume-update-comp2.pdf") Résumé
-                a(href="/") Work
 
 
 script.
@@ -36,4 +35,3 @@ script.
     console.log("newDuration: ", newDuration);
 
     setInterval(changeAnimationTime, newDuration);
-    // console.log((Math.round(newDuration * 1000)));

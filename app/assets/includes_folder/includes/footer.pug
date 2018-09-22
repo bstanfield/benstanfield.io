@@ -4,12 +4,14 @@ br
 footer
     .grid-bg.grid.long
         .container
-            img#footerla(src='images/personalsite-footer.png')
+            img#footerla(src='/images/personalsite-footer.jpg')
 
 script.  
     tippy('.orange-link', {
         theme: 'ben',
-        followCursor: true
+        arrow: true,
+        arrowType: 'round',
+        delay: [500, 0]
     });
 
     tippy.browser.onUserInputChange = type => {
