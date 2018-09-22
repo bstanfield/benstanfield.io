@@ -70,6 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $('video').click(function(){
         this.paused ? this.play() : this.pause();
+        if (this.paused == true) {
+            $('.pauseicon').css('display', 'block');
+        } else {
+            $('.pauseicon').css('display', 'none');
+        }
     });
 
     setInterval(function(){ 

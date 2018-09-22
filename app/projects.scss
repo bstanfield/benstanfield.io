@@ -2,8 +2,7 @@
 
 // Kinda hacky but this is for paragraphs of text on project pages
 h6 {
-    color: $grey;
-    font-family: Georgia;
+    color: rgb(90, 90, 90);
     font-weight: 300;
     font-size: 22px;
     line-height: 40px;
@@ -39,6 +38,7 @@ h6 {
     float: left;
     margin-top: 15px;
     margin-right: 20px;
+    margin-bottom: 10px;
     background-color: rgb(245, 245, 245);
     width: fit-content;
     max-width: 350px;

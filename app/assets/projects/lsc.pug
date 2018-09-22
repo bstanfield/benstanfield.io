@@ -1,0 +1,42 @@
+extends layout-projects
+block head
+    - var projectName = "Laudato Si' Challenge 🇮🇹";
+    - var navImg = 'background-image: url(https://fundingsage.com/wp-content/uploads/2017/04/Luiss-Enlabs-Feature-1024x685.jpg);';
+    title Ben // #{projectName}
+
+block content
+    .container.project
+        .intro 
+            +introsection("Laudato Si' Challenge (LSC)", 'Technology accelerator supporting and launching startups that are developing sustainable ways to tackle the effects of climate change by 2030.', 'September 22, 2018')
+
+            h6 
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+
+            button.orange-btn View the #{projectName} website
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+
+            +quote('"H4D presents students with real problems faced by the Intelligence Community and provides you with the resources to prototypes a solution."', '- Ben Stanfield in USC News')
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+
+            +article('https://news.usc.edu/148630/hacking-for-defense-students-take-on-cybersecurity-from-a-new-angle', '../images/fast-company-logo.jpg', 'Inside The Vatican-Blessed Tech Accelerator Tackling Climate Change', 'Inspired by Pope Francis’s call for global action on climate change, two venture capitalists launch the Laudato Si Startup Challenge—at the Holy See.', 'Fast Company', 'background-image: url(https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg);')
+
+            h6
+                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+
+        hr
+        br
+        br
+        h1 More projects:
+        br
+        .flex-grid.thirds
+            +3card('projects/h4d.html', '🔐', 'Hacking for Defense', 'Project with U.S. State Department to counter terrorism online.' )
+            +3card('projects/skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
+            +3card('projects/bonsai.html', '🌳', 'Bonsai', 'AI startup building a deep reinforcement learning platform for enterprise.' )
+
+        
+            
+

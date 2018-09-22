@@ -11,6 +11,9 @@ node_modules: package.json
 public/index.html: node_modules
 	brunch build
 
+server:
+	brunch watch --server
+
 # if you just want to remove unnecessary local files: make {clean|nuke}
 clean:
 	rm -rf public
