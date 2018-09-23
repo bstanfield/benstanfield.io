@@ -1,17 +1,17 @@
 extends layout-projects
 block head
-    - var projectName = "Skipper";
+    - var projectName = "Skipper ️⛵️";
     - var navImg = 'background-image: url(../images/personalsite-assets-6.jpg); background-position-y: 30%;';
     title Ben // #{projectName}
 
 block content
     .container.project
         .intro 
-            h1 #{projectName} ✌️
+            h1 Skipper
             h6 
                 | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
 
-            button.orange-btn View the #{projectName} website
+            button.orange-btn View Skipper's website
 
             a(target='_blank' href='https://cdn-images-1.medium.com/max/2000/1*xsZByF7s6JRdUHRP68Cg6Q.jpeg').card.project-card
                 img(src='../images/medium-logo.png')
@@ -21,3 +21,13 @@ block content
                 
                 p.more Read on Medium <span>&rarr;</span>
                 .project-img(style='background-image: url(https://cdn-images-1.medium.com/max/2000/1*xsZByF7s6JRdUHRP68Cg6Q.jpeg);')
+
+        hr
+        br
+        br
+        h1 More projects:
+        br
+        .flex-grid.thirds
+            +3card('sparksc.html', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
+            +3card('skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
+            +3card('lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )

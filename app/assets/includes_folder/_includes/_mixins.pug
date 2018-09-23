@@ -13,8 +13,8 @@ mixin link(url, name, tooltip)
 mixin more()
     p.more Learn more <span>&rarr;</span>
 
-mixin 3card(url, emoji, title, description)
-    a(href=url).thirds-col.card
+mixin 3card(url, emoji, title, description, target)
+    a(target=target href=url).thirds-col.card
         h2 <span class='emo'>#{emoji}</span> #{title}
         p #{description}
         +more()
@@ -52,6 +52,11 @@ mixin introsection(title, subtitle, date)
 
 mixin quote(quote, byline)
     .quote
+        h2 #{quote}
+        p #{byline}
+
+mixin widequote(quote, byline)
+    .quote(style='width: 80%; display: block; max-width: 600px; margin-right: 30px;')
         h2 #{quote}
         p #{byline}
 

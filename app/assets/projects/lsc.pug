@@ -1,6 +1,6 @@
 extends layout-projects
 block head
-    - var projectName = "Laudato Si' Challenge 🇮🇹";
+    - var projectName = "LSC 🇮🇹";
     - var navImg = 'background-image: url(https://fundingsage.com/wp-content/uploads/2017/04/Luiss-Enlabs-Feature-1024x685.jpg);';
     title Ben // #{projectName}
 
@@ -9,23 +9,35 @@ block content
         .intro 
             +introsection("Laudato Si' Challenge (LSC)", 'Technology accelerator supporting and launching startups that are developing sustainable ways to tackle the effects of climate change by 2030.', 'September 22, 2018')
 
+            <iframe src="https://www.youtube.com/embed/4MjLZc4Uk3k?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
             h6 
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+                | A few months before the summer of 2017, I was offered the opportunity to work with Fresco Capital’s Stephen Forte on a new startup accelerator, in collaboration with the Vatican. From then through August of 2017, the leadership team built out the vision for the Laudato Si’ Challenge and recruited dozens of mentors and investors to support the project.
 
-            button.orange-btn View the #{projectName} website
-
-            h6
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
-
-            +quote('"H4D presents students with real problems faced by the Intelligence Community and provides you with the resources to prototypes a solution."', '- Ben Stanfield in USC News')
+            button.orange-btn View website
 
             h6
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+                | Before the summer began I spent my time building out our application, recruiting mentors, and screening early applications. A big focus of our program from the beginning was to pool together an extremely diverse group of startup applications and to have each continent represented in the accelerator. This focus coincided with the mission of the program, which really only begins to be solved when different geographical areas tackle these problems together. You can find a PDF I created 
+                +link('https://www.scribd.com/document/389218134/LSC-Fellowship', 'here') 
+                |   that highlights our final round of startups to the program, all of which reached our community stage. The community stage offers access to mentorship, each other’s expertise and advice, and of course a shot at the summer program in Rome.
+            
+            //- <iframe class="scribd_iframe_embed" src="https://www.scribd.com/embeds/389218134/content?start_page=1&view_mode=scroll&show_recommendations=false&access_key=key-GZmyKEnwpOIQzCiHyp7j" data-auto-height="true" data-aspect-ratio="null"  frameborder="0"></iframe>
+
+            br
+            h6
+                | Twenty-three companies were selected for our Fellowship program, representing a dozen countries and five continents. More than half of the companies had at least one female founder.
+
+                | From that batch of companies, nine were chosen for the summer accelerator program in Rome. Each company recieved $100,000 in seed funding, in exchange for 4-6% equity. On average, teams had previously raised ~$500,000 before attending LSC.
+            br
+
+            +quote('"Laudato Si functions like a typical accelerator program. . . but the twist is that all of the companies that are selected fit in one way or another into a number of big global problem areas that the pope identified in his encyclical."', '- Paul Orlando, LSC Program Director')
+
+            h6
+                | During the summer I lived in Rome, commuting every day to Luiss Enlabs, the co-working space out of which the accelerator operated. The role I played during the summer was pretty strange—I became the utility man of sorts, helping companies with product development, SEO, brand, and product design work when needed. Every week I'd sit down with founders from a few of the teams and get progress updates on the week.
+
+                | Since I was in charge of corraling the mentors pre-summer, I was also in charge of making sure the mentors made it to Rome and were able to talk with each company.
 
             +article('https://news.usc.edu/148630/hacking-for-defense-students-take-on-cybersecurity-from-a-new-angle', '../images/fast-company-logo.jpg', 'Inside The Vatican-Blessed Tech Accelerator Tackling Climate Change', 'Inspired by Pope Francis’s call for global action on climate change, two venture capitalists launch the Laudato Si Startup Challenge—at the Holy See.', 'Fast Company', 'background-image: url(https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg);')
-
-            h6
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
 
         hr
         br
@@ -33,9 +45,9 @@ block content
         h1 More projects:
         br
         .flex-grid.thirds
-            +3card('projects/h4d.html', '🔐', 'Hacking for Defense', 'Project with U.S. State Department to counter terrorism online.' )
-            +3card('projects/skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
-            +3card('projects/bonsai.html', '🌳', 'Bonsai', 'AI startup building a deep reinforcement learning platform for enterprise.' )
+            +3card('h4d.html', '🔐', 'Hacking for Defense', 'Project with U.S. State Department to counter terrorism online.' )
+            +3card('skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
+            +3card('bonsai.html', '🌳', 'Bonsai', 'AI startup building a deep reinforcement learning platform for enterprise.' )
 
         
             

@@ -8,16 +8,24 @@ block content
     .container.project
         .intro 
             +introsection('Spark SC', 'Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.', 'September 21, 2018')
+            
+            img.fill(style='background-image: url(http://sparksc.org/images/home/photo2.jpg)')
             h6 
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+                <i>Excerpts taken from Jenny Zhang's Spark SC post, "State of Spark", from 2017:</i>
+                br
+                br
+                | Southern California is currently experiencing a wonderful and rare “superbloom” of flowers. Experts say that this spring, everything has “just been growing, growing, growing.” Spark SC has had a wonderful bloom too! From kicking off TechLA Fellows, our first summer fellowship program for interns at our partner startups, to piloting our Project Launch workshops for inner-city high school students, our impact continues to grow. Here’s a peek at a few of our buds.
 
-            button.orange-btn View the #{projectName} website
+            a(target='_blank' href='http://sparksc.org/')
+                button.orange-btn Check out Spark's website
 
             h6
                 | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+            br
 
-            h2.quote "Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero."
-
+            .quote 
+                h2 "Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero."
+                p - Ben Stanfield
             h6
                 | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
 
@@ -34,8 +42,8 @@ block content
                 | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
 
         .flex-grid.thirds
-            +3card('tech.la', '✌️', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.' )
-            +3card('breaktomake.com', '⛵', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.' )
-            +3card('projectlaunch.io/', '🔐', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.' )
+            +3card('https://www.tech.la', '✌️', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.', '_blank')
+            +3card('http://www.breaktomake.com', '⛵', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.', '_blank')
+            +3card('http://www.projectlaunch.io/', '🔐', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.', '_blank')
         
             

@@ -9,23 +9,47 @@ block content
         .intro 
             +introsection(' Hacking for Defense (H4D)', 'A 16-week, team-based collaboration with the U.S. State Department and Intelligence Community to counter online terrorism.', 'September 21, 2018')
 
+            .project-hero
+                .fill(style='background-image: url(https://viterbischool.usc.edu/wp-content/uploads/2018/05/MagicWire-HPS.jpg)')
+                p USC Hacking for Defense team "MagicWire" (Air Force), presenting their final solution to the audience of military professionals and fellow classmates.
+            
             h6 
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+                | Hacking for Defense (H4D) is a graduate-level course offered at USC and approximately a dozen other schools across the country. The course tackles complex problems critical to national security by prototyping new technologies with diverse teams of students from engineering, MBA, and policy backgrounds.
 
-            button.orange-btn View the #{projectName} website
 
-            h6
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
-
-            +quote('"H4D presents students with real problems faced by the Intelligence Community and provides you with the resources to prototypes a solution."', '- Ben Stanfield in USC News')
+            a(target='_blank' href='http://hacking4defense.stanford.edu/')
+                button.orange-btn View the H4D website
 
             h6
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
+                | Started by Steve Blank, the Silicon Valley entrepreneur most recognized for developing the Customer Development method that launched the 
+                +link('https://www.amazon.com/Four-Steps-Epiphany-Steve-Blank-ebook/dp/B00FLZKNUQ', 'Lean Startup')
+                |   movement, H4D is hands down the most intense and demanding class I have taken at USC. I recommend it for all undergraduate (it's a grad course but you can get clearance) and graduate students alike.
+
+            h6
+                | The name can be deceptive, however. Hacking for Defense is not a course that teaches you how to hack into mainframes, steal passwords, and sabotage nuclear centrifuges. Rather, H4D focuses on how to apply startup methodologies to a presumably bureaucratic and uninviting space: government.
+
+            h6
+                | I certainly held that assumption when I signed up for the course—I really was hesitant about signing up in the first place. To dispel the anxiety that I was feeling, and the rest of the class felt as well, our teams were quickly assigned mentors within our prompt's problem space. My team of 4 (Mimi Tran Zambetti, Adam Grushan, and Brian Anglin) chose to work with the State Department on a big, nebulous problem: online terrorism. This was our prompt, given on Day 1:
+                br
+                br
+                | "Countering Violent Extremism (CVE), particularly countering the use of the Internet to radicalize, recruit and inspire others to commit acts of violence, is a top priority for the State Department. While multiple pathways exist to prevent and counter violent extremism, few address potential violent extremists who may be on the path to radicalization to violence. 
+                br
+                br
+                | Situated in the lifecycle of radicalization to violence between the prevention of terrorist radicalization and recruitment among potentially vulnerable populations – and the rehabilitation ‎and reintegration (R&amp;R) of those already radicalized or previously recruited – are interventions in cases of individuals where radicalization to violence is in process, but no criminal act has been committed. Interventions work draws on and integrates a range of sectors and actors – social work, mental health, religious leaders, teachers, parents, and peers."
+
+            h6
+                | And the challenge posed:
+            
+            +quote('"Provide a way to creatively and effectively identify and reach those on the path to radicalization to violence (including online) and intervene with effective messages at the appropriate time to provide safe, non-law enforcement off-ramps."', '- U.S. State Department, Challenge Document')
+
+            h6
+                | Throughout the course of the semester, our team—which we named Turnstone—interviewed 70 individuals in spaces with specific expertise on countering terrorism, including experts on extremism, cybersecurity, religion, academia, and law enforcement. You can take a look at our final presentation here, and read more about Turnstone and H4D itself below.
 
             +article('https://news.usc.edu/148630/hacking-for-defense-students-take-on-cybersecurity-from-a-new-angle', '../images/uscnews.png', '‘Hacking for Defense’ students take on cybersecurity from a new angle', 'USC Iovine and Young Academy team ponders a tough question: How do you counter online radicalization?', 'USC News', 'background-image: url(https://static.politico.com/dims4/default/d28c2ab/2147483647/resize/1160x/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fb4%2F92%2Fbd7d8df34cedb5dd98bdaddc012f%2F180314-dept-state.jpg);')
 
             h6
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:
+                | <i>Note: I'm not publishing some details about our interviews and about Turnstone on the web, as many of our conversations with the CVE were held in confidentiality. If you have any specific questions about Turnstone or Hacking for Defense, please send me a message!</i>
+            br
 
         hr
         br
@@ -33,9 +57,9 @@ block content
         h1 More projects:
         br
         .flex-grid.thirds
-            +3card('projects/sparksc.html', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
-            +3card('projects/skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
-            +3card('projects/lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
+            +3card('sparksc.html', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
+            +3card('skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
+            +3card('lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
 
         
             
