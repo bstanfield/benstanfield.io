@@ -223,6 +223,11 @@ video {
   transition: 0.3s ease-in-out all;
 }
 
+  .no-pad {
+    padding: 0;
+    position: relative;
+  }
+
   .card:hover {
     .more {
       color: $orange;
@@ -396,6 +401,35 @@ button {
   display: block;
   padding: 10px;
 }
+
+.audio-text {
+  position: absolute;
+  top: 0;
+  left: 340px;
+}
+
+.audio-box {
+  width: 300px;
+  height: fit-content;
+  background-color: $grey;
+  border-right: 5px solid $grey;
+  display: block;
+}
+
+  .audio-box img {
+    border-top-left-radius: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .controls-container {
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+  }
+  .controls-container audio {
+    width: 100%;
+  }
 
 // FLEXBOX
 .flex-grid {
