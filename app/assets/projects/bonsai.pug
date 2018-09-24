@@ -1,0 +1,42 @@
+extends layout-projects
+block head
+    - var projectName = "Bonsai 🌳";
+    - var navImg = 'background-image: url(https://techcrunch.com/wp-content/uploads/2018/06/HSB_9596-1024x580.jpg?w=1390&crop=1); background-position-y: 30%;';
+    title Ben // #{projectName}
+
+block content
+    .container.project
+        .intro 
+            +introsection('Bonsai Artificial Intelligence', 'Bonsai’s deep reinforcement learning platform provides the tools to build subject matter expertise into complex industrial systems.', 'September 23, 2018')
+
+        <iframe src="https://www.youtube.com/embed/OwgBXwTnFgo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        h6 
+            | As my first internship in college, Bonsai provided great foundational knowledge for me in regard to how young companies operate, how employees are motivated, and how work gets done on a blistering timeline. As a design and development intern I got experience working with clients on beta products, like Integrity, an application using Bonsai’s tech to spot breaches of truth in legal language. 
+
+        a(target='_blank' href='http://www.bons.ai/')
+            button.orange-btn View Bonsai's website
+
+        h6
+            | Recently, Bonsai was acquired by Microsoft and is merging with the growing ecosystem of artificial intelligence units within the giant company. But while I was working there in 2016, the technology was in the very early stage and the systems we were designing were completely novel. I'm extremeley greatful for the opportunity to learn more about design and engineering, as well as receive a <i>crazy</i> crash course in artificial intelligence. My time at Bonsai inspired me to apply for the role of president of Spark SC just a few months later, and to help launch the Laudato Si' Challenge the next summer. 
+
+            +article('https://techcrunch.com/2018/06/20/microsoft-is-buying-a-ai-startup-bonsai/', '/images/techcrunch-logo.png', 'Microsoft is buying AI startup, Bonsai', "If all of the big tech co's agree on one thing at the moment, it's that artificial intelligence and machine learning point the way forward for their business forward", 'TechCrunch', 'background-image: url(https://techcrunch.com/wp-content/uploads/2018/06/HSB_9596-1024x580.jpg?w=1390&crop=1)')
+
+            +article('https://www.forbes.com/sites/janakirammsv/2018/06/20/microsofts-ai-platform-gets-a-big-boost-with-bonsai-acquisition/#499d1a852dff', '/images/techcrunch-logo.png', "Microsoft's AI Platform Gets A Big Boost With Bonsai Acquisition", "Microsoft has announced that it is acquiring Bonsai – an AI startup focused on reinforcement learning – to expand its AI offerings.", 'TechCrunch', 'background-image: url(https://images.axios.com/9EHr3SPnsO-AHgb6Q05m9gM34Oc=/0x580:6261x4102/1920x1080/2018/06/20/1529520689828.jpg)')
+
+        h6
+            | <i>Note: I'm in the process of transitioning portfolio work over to this site as well. For now, if you're interested in seeing more detailed work from my projects, email me at bstanfie@usc.edu. </i>
+        
+        hr
+        br
+        br
+        h1 More projects:
+        br
+        .flex-grid.thirds
+            +3card('sparksc.html', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
+            +3card('skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
+            +3card('lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
+
+        
+            
+
