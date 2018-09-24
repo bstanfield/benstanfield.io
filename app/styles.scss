@@ -28,6 +28,10 @@ br {
   margin-bottom: 20px;
 }
 
+img {
+  background-color: rgb(230, 230, 230);
+}
+
 h1 {
   font-size: 40px;
   font-family: $header;
@@ -36,7 +40,24 @@ h1 {
   margin-bottom: 10px;
 }
 
+  #time {
+    color: $grey;
+    background-color: rgba(211, 211, 211, 0.39);
+    font-size: 16px;
+    margin-left: 5px;
+    padding: 2px 6px 3px 6px;
+    border-radius: 4px;
+  }
+
+  #time-leadup {
+    color: grey;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+
   #one {
+    margin-top: 15px;
     opacity: .1;
     transition: 1s ease all;
   }
@@ -453,6 +474,14 @@ button {
       position: relative;
     }
 
+      .thirds-col video {
+        background-image: url('/images/Flickr-1s-85px.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100px;
+        border-radius: 4px;
+      }
+
       #col-bg {
         background-image: url('images/personalsite-assets-6.jpg');
         background-size: cover;
@@ -638,6 +667,15 @@ img#footerla {
 }
 
 @media screen and (max-width: 650px) {
+  .nav-text {
+    font-size: 16px;
+  }
+
+  #root {
+    font-size: 16px;
+  }
+
+
   .grid-bg {
     text-align: center;
   }

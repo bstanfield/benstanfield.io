@@ -3,6 +3,7 @@ extends layout
 block content
     .container
         .intro 
+            h1 <span id='time-leadup'>WHAT I'M UP TO AT <span id='time'></span></span>
             h1#one <span class='emoji'></span>
             p
                 | Hi! I’m Ben Stanfield, a senior finishing up at the 
@@ -20,9 +21,9 @@ block content
         br
             
         .flex-grid.thirds
-            +3card('projects/sparksc.html', '🌟', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
-            +3card('projects/skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
-            +3card('projects/h4d.html', '🔐', 'Hacking for Defense', 'Project with U.S. State Department to counter terrorism online.' )
+            +3card('projects/sparksc.html', '🌟', 'Spark SC', 'Technology and entrepreneurship club at USC.')
+            +3card('https://www.skipper.ai', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.', '_blank')
+            +3card('projects/h4d.html', '🔐', 'Hacking for Defense', 'Project with U.S. State Department to counter terrorism online.')
 
         .flex-grid.thirds
             +3card('projects/lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )

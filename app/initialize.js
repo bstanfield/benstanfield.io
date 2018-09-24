@@ -11,26 +11,32 @@ document.addEventListener('DOMContentLoaded', () => {
       let time = d.getHours();
 
       if (time > 12 && time < 16) {
-          $('.emoji').prepend('🌇');
-          $('#one').append(' Good afternoon! ');
+          $('.emoji').prepend('📚');
+          $('#one').append('Reading a book...');
+          $('#time').append(time + ':' + min + ' PM' + ':')
       } else if (time < 10 && time > 5) {
           $('.emoji').prepend('☕️');
-          $('#one').append(" G'morning! Coffee?");
+          $('#one').append("Brewing coffee...");
+          $('#time').append(time + ':' + min + ' AM' + ':')
       } else if (time > 16 && time < 20) {
-          $('.emoji').prepend('🌃');
-          $('#one').append(' Good evening!');
+          $('.emoji').prepend('🏡');
+          $('#one').append('Working at Bricks n Scones...');
+          $('#time').append(time + ':' + min + ' PM' + ':')
       } else if (time > 20) {
           $('.emoji').prepend('😴');
+          $('#time').append(time + ':' + min + ' PM' + ':')
           $('#one').append(' ZzZzz');
       } else if (time >= 10 && time <= 12) {
           $('.emoji').prepend('🍲');
-          $('#one').append(' Reheating leftovers...');
+          $('#time').append(time + ':' + min + ' PM' + ':')
+          $('#one').append('Reheating leftovers...');
       } else if (time == 16) {
           $('.emoji').prepend('🚴');
-          $('#one').append(' Biking home from class...');
+          $('#one').append('Biking home from class...');
+          $('#time').append(time + ':' + min + ' PM' + ':')
       } else {
           $('.emoji').prepend('👋');
-          $('#one').append(' Welcome!');
+          $('#one').append('Welcome!');
       }
   });
 
