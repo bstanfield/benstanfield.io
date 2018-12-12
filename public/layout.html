@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor.js"></script>
+  <script src="/app.js"></script>
+  <script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+  <script>require('initialize');</script>
+    
+  <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
+  
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benstanfield.io">
+  <meta property="og:site_name" content="benstanfield.io">
+  <meta property="og:title" content="Ben Stanfield">
+  <meta property="og:description" content="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
+  <meta property="og:image" content="https://i.imgur.com/adqY6pe.png">
+  
+  <meta name="twitter:domain" value="benstanfield.io" />
+  <meta name="twitter:title" value="Ben Stanfield" />
+  <meta name="twitter:description" value="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
+  <meta name="twitter:image" content="https://i.imgur.com/adqY6pe.png" />
+  <meta name="twitter:url" value="https://www.benstanfield.io/" />
+</head>
+<title>Ben Stanfield</title>
+<body></body>
+<!-- loads navigation bar for each page-->  
+<div class="container-wide mobile-full">
+  <div class="hero">
+    <div class="grid-bg">
+      <div class="flex-grid thirds flex-nav">
+        <div class="thirds-col"><video id='first' autoplay loop muted playsinline>
+<source src="../../images/benmoji-10s.mp4" type="video/mp4">
+</video>
+          <p class="pauseicon">Paused</p>
+        </div>
+        <div class="two-thirds-col big-text">
+          <h1 id="show">Hi! I'm Ben.</h1>
+        </div>
+      </div>
+      <div class="rising"></div>
+    </div>
+  </div>
+</div>
+<div id="stick-here"></div>
+<div class="nav" id="stickThis">
+  <div class="nav-content">
+    <div class="nav-text">  <a class="left" href="/" id="root">Home</a>
+      <div class="right nav-links"><a href="#contact">Contact</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  var s1 = document.querySelector('#s1');
+  let animationDuration = 10;
+  console.log("Test");
+  
+  
+  function set(animationDuration) {
+       s1.style.setProperty('--animation-time', animationDuration + 's');
+  }
+  
+  set(animationDuration);
+  
+  function changeAnimationTime() {
+      animationDuration = Math.random() * 10;
+      let newDuration = animationDuration;
+      set(animationDuration);
+      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+      return newDuration;
+  }
+  console.log("newDuration: ", newDuration);
+  
+  setInterval(changeAnimationTime, newDuration);
+  // console.log((Math.round(newDuration * 1000)));
+</script>
+<!-- this is where content will be loaded for subsequent pages-->
+<!-- footer--><br><br>
+<footer>
+  <div class="grid-bg grid long"></div>
+</footer><script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
+<noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+<script>
+  tippy('.orange-link', {
+      theme: 'ben',
+      arrow: true,
+      arrowType: 'round',
+      delay: [500, 0]
+  });
+  
+  tippy.browser.onUserInputChange = type => {
+      const method = type === 'touch' ? 'disable' : 'enable'
+      for (const tooltip of tip.tooltips) {
+        tooltip[method]()
+      }
+  }
+</script>

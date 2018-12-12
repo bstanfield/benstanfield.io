@@ -1,0 +1,20 @@
+<br><br>
+<footer>
+  <div class="grid-bg grid long"></div>
+</footer><script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
+<noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+<script>
+  tippy('.orange-link', {
+      theme: 'ben',
+      arrow: true,
+      arrowType: 'round',
+      delay: [500, 0]
+  });
+  
+  tippy.browser.onUserInputChange = type => {
+      const method = type === 'touch' ? 'disable' : 'enable'
+      for (const tooltip of tip.tooltips) {
+        tooltip[method]()
+      }
+  }
+</script>

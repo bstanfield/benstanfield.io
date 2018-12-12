@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor.js"></script>
+  <script src="/app.js"></script>
+  <script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+  <script>require('initialize');</script>
+    
+  <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
+  
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benstanfield.io">
+  <meta property="og:site_name" content="benstanfield.io">
+  <meta property="og:title" content="Ben Stanfield">
+  <meta property="og:description" content="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
+  <meta property="og:image" content="https://i.imgur.com/adqY6pe.png">
+  
+  <meta name="twitter:domain" value="benstanfield.io" />
+  <meta name="twitter:title" value="Ben Stanfield" />
+  <meta name="twitter:description" value="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
+  <meta name="twitter:image" content="https://i.imgur.com/adqY6pe.png" />
+  <meta name="twitter:url" value="https://www.benstanfield.io/" />
+</head>
+<title>Ben // Spark 🌟</title>
+<body></body>
+<!-- loads navigation bar for each page-->  
+<div class="container-wide mobile-full">
+  <div class="hero">
+    <div class="bg-orange" style="background-image: url(http://sparksc.org/images/home/photo1.jpg)"></div>
+  </div>
+</div>
+<div id="stick-here"></div>
+<div class="nav" id="stickThis">
+  <div class="nav-content">
+    <div class="nav-text">  <a class="left" href="/" id="root"><span id='homeRoot'>Home</span> / <span class='projectRoot'>Spark 🌟</span></a>
+      <div class="right nav-links"><a href="#contact">Contact</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  var s1 = document.querySelector('#s1');
+  let animationDuration = 10;
+  console.log("Test");
+  
+  
+  function set(animationDuration) {
+       s1.style.setProperty('--animation-time', animationDuration + 's');
+  }
+  
+  set(animationDuration);
+  
+  function changeAnimationTime() {
+      animationDuration = Math.random() * 10;
+      let newDuration = animationDuration;
+      set(animationDuration);
+      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+      return newDuration;
+  }
+  console.log("newDuration: ", newDuration);
+  
+  setInterval(changeAnimationTime, newDuration);
+</script>
+<!-- this is where content will be loaded for subsequent pages-->
+<div class="container project">
+  <div class="intro"> 
+    <h1>Spark SC</h1>
+    <p>Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.</p>
+    <p class="update-line">last updated: September 21, 2018</p><br>
+    <hr><br>
+    <div class="project-hero">
+      <div class="fill" style="background-image: url(http://sparksc.org/images/home/photo2.jpg)"></div>
+      <p>Spark members Priscilla Pan (left) and Abigail Africa (right) laughing after a long brainstorm session.</p>
+    </div>
+    <h6 class="leader">
+       Southern California is currently experiencing a wonderful and rare “superbloom” of flowers. Experts say that this spring, everything has “just been growing, growing, growing.” Spark SC has had a wonderful bloom too! From kicking off TechLA Fellows, our first summer fellowship program for interns at our partner startups, to piloting our Project Launch workshops for inner-city high school students, our impact continues to grow. Here’s a peek at a few of our buds.</h6><a target="_blank" href="http://sparksc.org/">
+      <button class="orange-btn">Check out Spark's website</button></a>
+    <h6>Spark SC has been the foundation of my time in college, and also some of the best collection of friends I've ever made. For the past three years I've worked as a committee member on projects like Tech.LA Fellows, Venture Studios, Unite, and Ideas to Impact. I also had the great opportunity to lead a committee myself, and to then take the leap onto the leadership team as co-President.</h6><div style="clear: both;"></div><a class="card project-card" target="_blank" href="medium.com/sparksc/state-of-spark-spring-2017-ddeeab535d33"><img src="../images/medium-logo.png">
+      <h2>State of Spark: Spring 2017</h2>
+      <p>Spark SC is the student-run entrepreneurial hub at the University of Southern California. So, what have we been up to this semester?</p>
+      <p class="more">Read on Medium <span>&rarr;</span></p>
+      <div class="project-img" style="background-image: url(https://cdn-images-1.medium.com/max/1200/1*m2NXtbpuEhumpWG72RDYpQ.jpeg);"></div></a>
+    <h6>Next I'll go in depth on a few of the committees I mentioned above, and what I've learned from building them.</h6>
+    <h4>Tech.LA Fellows</h4>
+    <h6>Tech.LA Fellow’s 10-week Summer Fellowship gives highly motivated students in design, engineering, and business a paid internship with a Los Angeles startup. The impetus for starting this project began when several Spark members had gone through the KPCB Fellows recruitment cycle and really appreciated what they built up north, but were thoroughly unimpressed by what Los Angeles had to offer, in regard to a community of interns.</h6>
+    <h6>So, we gathered a small group of Los Angeles startups, all in line with our mission of creating a tighter ecosystem of young tech talent in LA, and opened our application. That first year alone we received over 300 applications for just a handful of spots. In our second iteration (last summer), we received nearly 600 applications and are deep into our third iteration of the fellowship program today.</h6>
+    <div class="quote">
+      <h2>Los Angeles is a welcoming tech environment, which is scarce these days. I also love that I get to work with &amp; interact with people from non-tech backgrounds and mindsets. It’s enlightening.</h2>
+      <p>- Olivia Brown, 2017 Fellow</p>
+    </div>
+    <h6>If you're interested in applying to the Fellowship program for the summer of 2019, keep an eye on our website, <a class="orange-link" target="_blank" href="https://www.tech.la" title="Write some code under the sun 😎">tech.la</a>.
+    </h6>
+    <h4>Unite Conference</h4>
+    <h6>In late 2016, a Spark committee formed with the concept of bringing together different entrepreneurial orgs from around the country to share ideas and learn from one another. This culminated in a 2-day conference at Google's San Francisco Headquarters over the summer of 2017. Click <a class="orange-link" target="_blank" href="https://www.scribd.com/document/389346056/Unite-Next-Steps-Document">here</a> to check out the welcome packet received by invited schools.
+    </h6>
+    <h4>Ideas to Impact</h4>
+    <h6>Ideas to Impact (now Innovating for the Refugee Crisis), which ran in 2017, was the first student-led course at the University of Southern California. Inspired by design-thinking principles from companies like IDEO, and by the idea that students teaching students is a novel way to connect in the classroom, a small group of Spark SC students pushed the Viterbi School of Engineering to champion the course.</h6>
+    <div class="project-hero">
+      <div class="fill" style="background-image: url(/images/499.jpg)"></div>
+      <p>USC Provost Michael Quick (center-right) with Ideas to Impact students in the "Hacker House," the off-campus classroom for the course.</p>
+    </div>
+  </div>
+  <hr><br><br>
+  <h1>More Spark SC projects:</h1><br>
+  <div class="flex-grid thirds"><a class="thirds-col card" target="_blank" href="https://www.tech.la">
+      <h2><span class='emo'>🌴</span> Tech.LA Fellows</h2>
+      <p>Internship community for connecting students across the country with budding LA startups.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" target="_blank" href="http://www.breaktomake.com">
+      <h2><span class='emo'>🔧</span> Break to Make</h2>
+      <p>All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" target="_blank" href="http://www.projectlaunch.io/">
+      <h2><span class='emo'>🚀</span> Project Launch</h2>
+      <p>Program that connects underserved LA high school students to USC mentors to develop hard skills.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a>
+  </div>
+</div>
+<div class="container project"><br><br>
+  <hr><br>
+  <h1>Contact</h1>
+  <p>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="https://www.linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
+  </p><br>
+  <form accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST">
+    <div class="label-input-group">
+      <label for="fname">NAME</label>
+      <input type="text" id="fname" name="firstname" placeholder="Adam Grant">
+    </div>
+    <div class="label-input-group">
+      <label for="lname">EMAIL *</label>
+      <input type="email" id="email" name="email" placeholder="adamgrant@email.com" required>
+    </div>
+    <div class="label-input-group">
+      <label for="subject">MESSAGE *</label><textarea id="subject" name="subject" placeholder="Hey Ben! Adam here. Just checked out your website and I have some... feedback." style="height:200px" required></textarea>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<!-- footer--><br><br>
+<footer>
+  <div class="grid-bg grid long"></div>
+</footer><script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
+<noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+<script>
+  tippy('.orange-link', {
+      theme: 'ben',
+      arrow: true,
+      arrowType: 'round',
+      delay: [500, 0]
+  });
+  
+  tippy.browser.onUserInputChange = type => {
+      const method = type === 'touch' ? 'disable' : 'enable'
+      for (const tooltip of tip.tooltips) {
+        tooltip[method]()
+      }
+  }
+</script>

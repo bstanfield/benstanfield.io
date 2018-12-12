@@ -9,31 +9,40 @@ document.addEventListener('DOMContentLoaded', () => {
       const d = new Date();
       let min = d.getMinutes();
       let time = d.getHours();
+      let hours = ((time + 11) % 12 + 1);
 
-      if (time > 12 && time < 16) {
+      if (time >= 12 && time <= 16) {
           $('.emoji').prepend('📚');
           $('#one').append('Reading a book...');
-          $('#time').append(time + ':' + min + ' PM' + ':')
-      } else if (time < 10 && time > 5) {
+          $('#time').append(hours + ' PM' + ':')
+      } else if (time <= 10 && time >= 5) {
           $('.emoji').prepend('☕️');
           $('#one').append("Brewing coffee...");
-          $('#time').append(time + ':' + min + ' AM' + ':')
-      } else if (time > 16 && time < 20) {
+          $('#time').append(hours + 'AM' + ':')
+      } else if (time >= 18 && time <= 22) {
           $('.emoji').prepend('🏡');
-          $('#one').append('Working at Bricks n Scones...');
-          $('#time').append(time + ':' + min + ' PM' + ':')
-      } else if (time > 20) {
+          $('#one').append('Working at a coffee shop...');
+          $('#time').append(hours + ' PM' + ':')
+      } else if (time >= 20) {
           $('.emoji').prepend('😴');
-          $('#time').append(time + ':' + min + ' PM' + ':')
-          $('#one').append(' ZzZzz');
-      } else if (time >= 10 && time <= 12) {
-          $('.emoji').prepend('🍲');
-          $('#time').append(time + ':' + min + ' PM' + ':')
-          $('#one').append('Reheating leftovers...');
-      } else if (time == 16) {
+          $('#time').append(hours + ' PM' + ':')
+          $('#one').append('ZzZzz...');
+      } else if (time >= 10 && time < 12) {
+          $('.emoji').prepend('📝');
+          $('#time').append(hours + ' AM' + ':')
+          $('#one').append('Taking notes...');
+      } else if (time >= 13 && time < 15) {
+        $('.emoji').prepend('🍕');
+        $('#one').append('Reheating leftovers...');
+        $('#time').append(hours + ' PM' + ':')
+    } else if (time == 16) {
           $('.emoji').prepend('🚴');
           $('#one').append('Biking home from class...');
-          $('#time').append(time + ':' + min + ' PM' + ':')
+          $('#time').append(hours + ' PM' + ':')
+      } else if (time == 17) {
+        $('.emoji').prepend('📰');
+        $('#one').append('Reading NY Times...');
+        $('#time').append(hours + ' PM' + ':')          
       } else {
           $('.emoji').prepend('👋');
           $('#one').append('Welcome!');
@@ -67,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 19000);
 
     var timeout2 = setTimeout( function(){
-        $('video').attr('src', '../images/benmoji-sleeping.mp4');
+        $('video').attr('src', '../../images/benmoji-sleeping.mp4');
     }, 21000);
 
     var timeout3 = setTimeout( function() {

@@ -1,0 +1,38 @@
+  
+<div class="container-wide mobile-full">
+  <div class="hero">
+    <div class="bg-orange bg-spark"></div>
+  </div>
+</div>
+<div id="stick-here"></div>
+<div class="nav" id="stickThis">
+  <div class="nav-content">
+    <div class="nav-text">  <a class="left" href="/" id="name">Home / </a>
+      <div class="right nav-links"><a href="/">About</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a><a href="/">Work</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  var s1 = document.querySelector('#s1');
+  let animationDuration = 10;
+  console.log("Test");
+  
+  
+  function set(animationDuration) {
+       s1.style.setProperty('--animation-time', animationDuration + 's');
+  }
+  
+  set(animationDuration);
+  
+  function changeAnimationTime() {
+      animationDuration = Math.random() * 10;
+      let newDuration = animationDuration;
+      set(animationDuration);
+      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+      return newDuration;
+  }
+  console.log("newDuration: ", newDuration);
+  
+  setInterval(changeAnimationTime, newDuration);
+  // console.log((Math.round(newDuration * 1000)));
+</script>

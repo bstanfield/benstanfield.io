@@ -29,7 +29,7 @@ deploy:
 
 deploy2:
 	now alias ${CLIPBOARD} benstanfield.io
-
+	now alias benstanfield.io www.benstanfield.io
 foo:
 		@echo ${CLIPBOARD}
 

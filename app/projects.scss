@@ -4,14 +4,26 @@
 h6 {
     color: $grey;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 40px;
     padding: 0;
     margin: 0;
     margin-bottom: 30px;
 }
 
+    .leader:first-letter {
+        color: $orange;
+        float: left;
+        font-family: Georgia !important;
+        font-size: 75px;
+        line-height: 60px;
+        padding-top: 10px;
+        padding-right: 8px;
+        padding-left: 3px;
+    }
+
 h4 {
+    font-family: $ss;
     font-size: 25px;
     margin-bottom: 10px;
 }

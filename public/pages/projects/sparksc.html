@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor.js"></script>
+  <script src="/app.js"></script>
+  <script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+  <script>require('initialize');</script>
+  
+  <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
+  
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet">
+</head>
+<title>Ben // Project: Spark SC</title>
+<body></body>
+<!-- loads navigation bar for each page-->  
+<div class="container-wide mobile-full">
+  <div class="hero">
+    <div class="bg-orange bg-spark"></div>
+  </div>
+</div>
+<div id="stick-here"></div>
+<div class="nav" id="stickThis">
+  <div class="nav-content">
+    <div class="nav-text">  <a class="left" href="/" id="name">Home / Spark SC</a>
+      <div class="right nav-links"><a href="/">About</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a><a href="/">Work</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  var s1 = document.querySelector('#s1');
+  let animationDuration = 10;
+  console.log("Test");
+  
+  
+  function set(animationDuration) {
+       s1.style.setProperty('--animation-time', animationDuration + 's');
+  }
+  
+  set(animationDuration);
+  
+  function changeAnimationTime() {
+      animationDuration = Math.random() * 10;
+      let newDuration = animationDuration;
+      set(animationDuration);
+      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+      return newDuration;
+  }
+  console.log("newDuration: ", newDuration);
+  
+  setInterval(changeAnimationTime, newDuration);
+  // console.log((Math.round(newDuration * 1000)));
+</script>
+<!-- this is where content will be loaded for subsequent pages-->
+<div class="container project">
+  <div class="intro"> 
+    <h1>Project: Spark SC ✌️</h1>
+    <h6>
+       Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.</h6>
+    <button class="orange-btn">View the Spark SC website</button>
+    <h6>Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:</h6>
+    <h2 class="quote">"Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero."</h2>
+    <h6>Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:</h6><a class="card project-card" target="_blank" href="http://medium.com/sparksc/state-of-spark-spring-2017-ddeeab535d33"><img src="../images/medium-logo.png">
+      <h2>State of Spark: Spring 2017</h2>
+      <p>Spark SC is the student-run entrepreneurial hub at the University of Southern California. So, what have we been up to this semester?</p>
+      <p class="more">Read on Medium <span>&rarr;</span></p>
+      <div class="project-img"></div></a>
+    <h6>Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero:</h6>
+  </div>
+  <div class="flex-grid thirds"><a class="thirds-col card" href="http://tech.la">
+      <h2><span class='emo'>✌️</span> Tech.LA Fellows</h2>
+      <p>Internship community for connecting students across the country with budding LA startups.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="http://breaktomake.com">
+      <h2><span class='emo'>⛵</span> Break to Make</h2>
+      <p>All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="http://projectlaunch.io/">
+      <h2><span class='emo'>🔐</span> Project Launch</h2>
+      <p>Program that connects underserved LA high school students to USC mentors to develop hard skills.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a>
+  </div>
+</div>
+<div class="container project"><br><br>
+  <hr><br>
+  <h1>Contact</h1>
+  <p>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="http://linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
+  </p><br>
+  <form action="https://formspree.io/bstanfie@usc.edu" method="post" enctype="text/plain">
+    <div class="label-input-group">
+      <label for="fname">NAME</label>
+      <input type="text" id="fname" name="firstname" placeholder="Adam Grant">
+    </div>
+    <div class="label-input-group">
+      <label for="lname">EMAIL *</label>
+      <input type="email" id="email" name="email" placeholder="adamgrant@email.com" required>
+    </div>
+    <div class="label-input-group">
+      <label for="subject">MESSAGE *</label><textarea id="subject" name="subject" placeholder="Hey Ben! Adam here. Just checked out your website and I have some... feedback." style="height:200px" required></textarea>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<!-- footer--><br><br>
+<footer>
+  <div class="grid-bg grid long">
+    <div class="container"><img id="footerla" src="images/personalsite-footer.png"></div>
+  </div>
+</footer>
+<script>
+  tippy('.orange-link', {
+      theme: 'ben',
+      followCursor: true
+  });
+  
+  tippy.browser.onUserInputChange = type => {
+      const method = type === 'touch' ? 'disable' : 'enable'
+      for (const tooltip of tip.tooltips) {
+        tooltip[method]()
+      }
+  }
+</script>

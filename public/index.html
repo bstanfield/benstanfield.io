@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor.js"></script>
+  <script src="/app.js"></script>
+  <script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+  <script>require('initialize');</script>
+    
+  <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
+  
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benstanfield.io">
+  <meta property="og:site_name" content="benstanfield.io">
+  <meta property="og:title" content="Ben Stanfield">
+  <meta property="og:description" content="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
+  <meta property="og:image" content="https://i.imgur.com/adqY6pe.png">
+  
+  <meta name="twitter:domain" value="benstanfield.io" />
+  <meta name="twitter:title" value="Ben Stanfield" />
+  <meta name="twitter:description" value="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
+  <meta name="twitter:image" content="https://i.imgur.com/adqY6pe.png" />
+  <meta name="twitter:url" value="https://www.benstanfield.io/" />
+</head>
+<title>Ben Stanfield</title>
+<body></body>
+<!-- loads navigation bar for each page-->  
+<div class="container-wide mobile-full">
+  <div class="hero">
+    <div class="grid-bg">
+      <div class="flex-grid thirds flex-nav">
+        <div class="thirds-col"><video id='first' autoplay loop muted playsinline>
+<source src="../../images/benmoji-10s.mp4" type="video/mp4">
+</video>
+          <p class="pauseicon">Paused</p>
+        </div>
+        <div class="two-thirds-col big-text">
+          <h1 id="show">Hi! I'm Ben.</h1>
+        </div>
+      </div>
+      <div class="rising"></div>
+    </div>
+  </div>
+</div>
+<div id="stick-here"></div>
+<div class="nav" id="stickThis">
+  <div class="nav-content">
+    <div class="nav-text">  <a class="left" href="/" id="root">Home</a>
+      <div class="right nav-links"><a href="#contact">Contact</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  var s1 = document.querySelector('#s1');
+  let animationDuration = 10;
+  console.log("Test");
+  
+  
+  function set(animationDuration) {
+       s1.style.setProperty('--animation-time', animationDuration + 's');
+  }
+  
+  set(animationDuration);
+  
+  function changeAnimationTime() {
+      animationDuration = Math.random() * 10;
+      let newDuration = animationDuration;
+      set(animationDuration);
+      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+      return newDuration;
+  }
+  console.log("newDuration: ", newDuration);
+  
+  setInterval(changeAnimationTime, newDuration);
+  // console.log((Math.round(newDuration * 1000)));
+</script>
+<!-- this is where content will be loaded for subsequent pages-->
+<div class="container">
+  <div class="intro"> 
+    <h1><span id='time-leadup'>WHAT I'M PROBABLY UP TO AT <span id='time'></span></span></h1>
+    <h1 id="one"><span class='emoji'></span></h1>
+    <p>Hi! I’m Ben Stanfield, a senior finishing up at the <a class="orange-link" target="_blank" href="http://iovine-young.usc.edu" title="Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen' 🎧">Iovine &amp; Young Academy</a>  and working on a company called <a class="orange-link" target="_blank" href="http://skipper.ai" title="Reporting software for HR... check out our website! 🌟"> Skipper</a>. On the side I’m building a design firm with my friend,  <a class="orange-link" target="_blank" href="http://jenny.world" title="Jenny Zhang! 🙋🏽">Jenny</a>, and scouting companies for <a class="orange-link" target="_blank" href="http://fresco.vc" title="Seed 🌱 and early-stage VC for Future of Work and EdTech.">Fresco Capital</a>.
+    </p>
+  </div><br>
+  <h1>Experiences</h1><br>
+  <div class="flex-grid thirds"><a class="thirds-col card" href="projects/sparksc.html">
+      <h2><span class='emo'>🌟</span> Spark SC</h2>
+      <p>Technology and entrepreneurship club at USC.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" target="_blank" href="https://www.skipper.ai">
+      <h2><span class='emo'>⛵</span> Skipper</h2>
+      <p>Tech startup helping SMBs use their workforce data to make work better.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="projects/h4d.html">
+      <h2><span class='emo'>🔐</span> Hacking for Defense</h2>
+      <p>Project with U.S. State Department to counter terrorism online.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a>
+  </div>
+  <div class="flex-grid thirds"><a class="thirds-col card" href="projects/lsc.html">
+      <h2><span class='emo'>🇮🇹</span> Laudato Si Challenge</h2>
+      <p>Green tech accelerator inspired by Pope Francis, hosted in Rome.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" href="projects/bonsai.html">
+      <h2><span class='emo'>🌳</span> Bonsai</h2>
+      <p>AI startup building a deep reinforcement learning platform for enterprise.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a><a class="thirds-col card" target="_blank" href="https://medium.com/@bstanfie/kpcb-design-challenge-adc83cee5ed1#.2gjfm12pz.com/">
+      <h2><span class='emo'>📚</span> Medium Articles</h2>
+      <p>Articles going in-depth on design projects for KPCB.</p>
+      <p class="more">Learn more <span>&rarr;</span></p></a>
+  </div><br><br>
+  <h1><span class="pulse">💓</span> Pulse</h1>
+  <p>What I’ve been up to recently... check back in every once in a while for a new Pulse update!</p><br>
+</div>
+<div class="grid-bg grid long">
+  <div class="container"><a target="_blank" href="http://www.skipper.ai">
+      <div class="flex-grid">
+        <div class="thirds-col" id="col-bg"></div>
+        <div class="two-thirds-col card static">
+          <div class="pulsetxt">
+            <h2>💓 Skipper Software at HR Technology Conference '18</h2>
+            <p>
+               In early September, I and Skipper's other co-founders, Landon Brand and Mimi Tran Zambetti, exhibited at a Human Resources Tech conference in Vegas.</p>
+            <p class="more">Learn more <span>&rarr;</span></p>
+          </div>
+        </div>
+      </div></a></div>
+</div><br><br>
+<div class="container">
+  <h1>Expertise</h1>
+  <p>
+     I've worked in a mix of positions, from designer and developer at  <a class="orange-link" target="_blank" href="https://www.bons.ai" title="Check out this sick url: &lt;a href='bons.ai'&gt;bons.ai&lt;/a&gt; 😲">Bonsai AI</a> to associate at Fresco Capital, and in leadership positions as president of <a class="orange-link" target="_blank" href="http://www.sparksc.org" title="Entrepreneurship and technology club at USC... also my best friends 😉">Spark SC</a>  and co-founder of <a class="orange-link" target="_blank" href="https://www.skipper.ai" title="Reporting software for HR... check out our website! 🌟">Skipper</a>. Recently I've been captivated by the future of work and the future of capitalism. This resulted in starting Skipper, and also co-founding <a class="orange-link" target="_blank" href="https://www.laudatosichallenge.org/" title="Lots of wine and pasta... and startups. 🇮🇹">Laudato Si' Challenge</a>, a startup incubator in Rome focused on sustainability.
+  </p><br><a target="_blank" href="images/resume-update-comp2.pdf" id="whisper">
+    <p>Psst, here's my résumé!</p></a>
+</div><br><br><br><a name="contact"></a>
+<div class="container">
+  <h1>Contact</h1>
+  <p>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="https://www.linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
+  </p><br>
+  <form accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST">
+    <div class="label-input-group">
+      <label for="fname">NAME</label>
+      <input type="text" id="fname" name="firstname" placeholder="Adam Grant">
+    </div>
+    <div class="label-input-group">
+      <label for="lname">EMAIL *</label>
+      <input type="email" id="email" name="email" placeholder="adamgrant@email.com" required>
+    </div>
+    <div class="label-input-group">
+      <label for="subject">MESSAGE *</label><textarea id="subject" name="subject" placeholder="Hey Ben! Adam here. Just checked out your website and I have some... feedback." style="height:200px" required></textarea>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<!-- footer--><br><br>
+<footer>
+  <div class="grid-bg grid long"></div>
+</footer><script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
+<noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+<script>
+  tippy('.orange-link', {
+      theme: 'ben',
+      arrow: true,
+      arrowType: 'round',
+      delay: [500, 0]
+  });
+  
+  tippy.browser.onUserInputChange = type => {
+      const method = type === 'touch' ? 'disable' : 'enable'
+      for (const tooltip of tip.tooltips) {
+        tooltip[method]()
+      }
+  }
+</script>

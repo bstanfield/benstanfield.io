@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor.js"></script>
+  <script src="/app.js"></script>
+  <script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+  <script>require('initialize');</script>
+  
+  <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
+  
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet">
+</head>
+<title>Ben Stanfield</title>
+<body></body>
+<!-- loads navigation bar for each page-->  
+<div class="container-wide mobile-full">
+  <div class="hero">
+    <div class="bg-orange bg-spark"></div>
+  </div>
+</div>
+<div id="stick-here"></div>
+<div class="nav" id="stickThis">
+  <div class="nav-content">
+    <div class="nav-text">  <a class="left" href="/" id="name">Home / </a>
+      <div class="right nav-links"><a href="/">About</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a><a href="/">Work</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  var s1 = document.querySelector('#s1');
+  let animationDuration = 10;
+  console.log("Test");
+  
+  
+  function set(animationDuration) {
+       s1.style.setProperty('--animation-time', animationDuration + 's');
+  }
+  
+  set(animationDuration);
+  
+  function changeAnimationTime() {
+      animationDuration = Math.random() * 10;
+      let newDuration = animationDuration;
+      set(animationDuration);
+      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
+      return newDuration;
+  }
+  console.log("newDuration: ", newDuration);
+  
+  setInterval(changeAnimationTime, newDuration);
+  // console.log((Math.round(newDuration * 1000)));
+</script>
+<!-- this is where content will be loaded for subsequent pages-->
+<div class="container project"><br><br>
+  <hr><br>
+  <h1>Contact</h1>
+  <p>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="http://linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
+  </p><br>
+  <form action="https://formspree.io/bstanfie@usc.edu" method="post" enctype="text/plain">
+    <div class="label-input-group">
+      <label for="fname">NAME</label>
+      <input type="text" id="fname" name="firstname" placeholder="Adam Grant">
+    </div>
+    <div class="label-input-group">
+      <label for="lname">EMAIL *</label>
+      <input type="email" id="email" name="email" placeholder="adamgrant@email.com" required>
+    </div>
+    <div class="label-input-group">
+      <label for="subject">MESSAGE *</label><textarea id="subject" name="subject" placeholder="Hey Ben! Adam here. Just checked out your website and I have some... feedback." style="height:200px" required></textarea>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<!-- footer--><br><br>
+<footer>
+  <div class="grid-bg grid long">
+    <div class="container"><img id="footerla" src="images/personalsite-footer.png"></div>
+  </div>
+</footer>
+<script>
+  tippy('.orange-link', {
+      theme: 'ben',
+      followCursor: true
+  });
+  
+  tippy.browser.onUserInputChange = type => {
+      const method = type === 'touch' ? 'disable' : 'enable'
+      for (const tooltip of tip.tooltips) {
+        tooltip[method]()
+      }
+  }
+</script>
