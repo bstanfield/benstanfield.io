@@ -29,10 +29,12 @@ h4 {
 }
 
 .update-line {
+    font-family: $ss;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
     padding-top: 10px;
+    letter-spacing: .3px;
     opacity: .3;
 }
 
@@ -126,6 +128,92 @@ iframe {
         margin-bottom: -20px;
         background-color: transparent;
     }
+
+// REVIEWS
+.review h4 {
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.review a {
+    font-family: $ss;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.review p {
+    font-family: $ss;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.review .fill {
+    height: 400px;
+}
+
+.gallery-photo {
+    background-color: lightgrey;
+    width: 24%;
+    height: 150px;
+    position: relative;
+}
+
+    .layer {
+        background-color: rgba(119, 119, 119, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .gallery-photo a img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .gallery-photo a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .fill a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .scorecard {
+        background-color: rgb(241, 241, 241);
+        width: 24%;
+    }
+
+    .score-col {
+        padding: 20px 0px 20px 30px;
+    }
+
+    .score-col p {
+        font-size: 16px;
+        line-height: 30px;
+        padding-bottom: 5px;
+    }
+
+        .score-col i {
+            font-size: 18px;
+            opacity: .4;
+            width: 30px;
+            padding-right: 10px;
+            text-align: center;
+            margin-left: -5px;
+        }
+
+        .score-col div {
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+
 
 @media screen and (max-width: 720px) {
     .project-img {

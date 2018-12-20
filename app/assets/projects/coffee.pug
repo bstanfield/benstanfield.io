@@ -1,0 +1,95 @@
+extends layout-projects
+block head
+    - var projectName = "Coffee Spots ☕️";
+    - var navImg = 'background-image: url(https://i.imgur.com/Tgt3Z8J.jpg)';
+    title Ben // #{projectName}
+
+    script.
+        const $ = require('jquery');
+        $(document).ready(function() {
+            console.log('Good morning!');
+            $('<div>&#9733;&#9734;&#9734;</div>').replaceAll('.1');
+            $('<div>&#9733;&#9733;&#9734;</div>').replaceAll('.2');
+            $('<div>&#9733;&#9733;&#9733;</div>').replaceAll('.3');
+        });
+
+
+block content
+    .container.project
+        .intro 
+            +introsection("20 Best Coffee Shops in LA (for students)", 'A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.', 'December 19, 2018')
+            
+            .project-hero
+                .fill(style='background-image: url(../../images/projects/coffee/ben-balcony-coffee.jpg);')
+                p Ben Stanfield (me) and Fiona Pescana at Balcony Coffee in Koreatown, Los Angeles.
+
+            h6.leader 
+                | Just over two years ago to this day, during finals week of my Sophomore year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. 
+
+            h6
+                | Fortunate to have jobs that could be worked remotely during the school year, I’ve had many opportunities to scour LA for the best coffee shops to flip open my laptop and work. But often I’ve found just the right spot difficult to find, mainly because there are criteria that, as a student, I'm looking for. It's a bit of a goldilocks dilemma. For me, Yelp was too general and didn’t satisfy some of the general constraints of a college student in a coffee shop: Is it good for group project meetings? How fast is the wifi up/down? Where are the outlets? Refills on the coffee? Will the owners look at me weird after I’ve been there for a fortnight?
+
+            .review
+                <a target='_blank' href='https://www.yelp.com/biz/prism-coffee-los-angeles'>
+                    h4 Prism Coffee
+                </a>
+                p &nbsp; ✅  &nbsp; They're <strong style='color: green;'>open</strong> right now!
+                p &nbsp; 🚙  &nbsp; It's typically a 15 minute drive from campus at 10 AM.
+                br
+                .fill
+                    <a data-fancybox='prism' href='../../images/projects/coffee/prism-coffee-ben-stanfield-usc.jpg'>
+                        img(src='../../images/projects/coffee/prism-coffee-ben-stanfield-usc.jpg')
+                    </a>
+
+                .flex-grid
+                    .gallery-photo
+                        <a data-fancybox='prism' href='https://s3-media3.fl.yelpcdn.com/bphoto/QHqla6lZToujtgFbfK0kxw/o.jpg'>
+                            img(src='https://s3-media3.fl.yelpcdn.com/bphoto/QHqla6lZToujtgFbfK0kxw/o.jpg')
+                        </a>
+                    .gallery-photo
+                        <a data-fancybox='prism' href='https://s3-media3.fl.yelpcdn.com/bphoto/RYw33hmOBp2t5DK0gJz_XA/o.jpg'>
+                            img(src='https://s3-media3.fl.yelpcdn.com/bphoto/RYw33hmOBp2t5DK0gJz_XA/o.jpg')
+                        </a>
+                    .gallery-photo
+                        <a data-fancybox='prism' href='https://s3-media1.fl.yelpcdn.com/bphoto/iS8MebhEOh3UHgnLPuXFVg/o.jpg'>
+                            img(src='https://s3-media1.fl.yelpcdn.com/bphoto/iS8MebhEOh3UHgnLPuXFVg/o.jpg')
+                        </a>
+                    .gallery-photo
+                        <a data-fancybox='prism' href='https://s3-media3.fl.yelpcdn.com/bphoto/UzAQvKuyURy6Gh8pTn8sTA/o.jpg'>
+                            img(src='https://s3-media3.fl.yelpcdn.com/bphoto/UzAQvKuyURy6Gh8pTn8sTA/o.jpg')
+                        </a>
+                        
+                .scorecard
+                    .score-col
+                        p <i class="fas fa-plug"></i> CHARGING
+                        <i class='1'></i>
+                        
+                        p <i class="fas fa-wifi"></i> WIFI
+                        <i class='2'></i>
+
+                        p <i class="fas fa-coffee"></i> COFFEE
+                        <i class='3'></i>
+                    .score-col
+                        p <i class="fas fa-plug"></i> <i class='1'></i>
+                        p <i class="fas fa-wifi"></i> <i class='2'></i>
+                        p <i class="fas fa-coffee"></i> <i class='3'></i>
+                    .score-col
+                        p <i class="fas fa-plug"></i> <i class='1'></i>
+                        p <i class="fas fa-wifi"></i> <i class='2'></i>
+                        p <i class="fas fa-coffee"></i> <i class='3'></i>
+        br
+        br
+        br
+
+        hr
+        br
+        br
+        h1 More Spark SC projects:
+        br
+
+        .flex-grid.thirds
+            +3card('https://www.tech.la', '🌴', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.', '_blank')
+            +3card('http://www.breaktomake.com', '🔧', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.', '_blank')
+            +3card('http://www.projectlaunch.io/', '🚀', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.', '_blank')
+        
+            

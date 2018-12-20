@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   // do your setup here
-  console.log('Initialized app');
-
   var $ = require('jquery');
 
   // EMOJI TIME
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
           $('.emoji').prepend('😴');
           $('#time').append(hours + ' PM' + ':')
           $('#one').append('ZzZzz...');
-      } else if (time >= 10 && time < 12) {
+      } else if (time >= 10 && time <= 12) {
           $('.emoji').prepend('📝');
           $('#time').append(hours + ' AM' + ':')
           $('#one').append('Taking notes...');
@@ -43,7 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
         $('.emoji').prepend('📰');
         $('#one').append('Reading NY Times...');
         $('#time').append(hours + ' PM' + ':')          
-      } else {
+      } else if (time == 0) {
+        $('.emoji').prepend('🌮');
+        $('#one').append("Midnight snackin'");
+        $('#time').append(hours + ' AM' + ':');
+      } 
+      else {
           $('.emoji').prepend('👋');
           $('#one').append('Welcome!');
       }
