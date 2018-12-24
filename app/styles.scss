@@ -18,6 +18,16 @@ $buffer: 30px 0px;
   src: url("fonts/lavastd-regular.woff");
 }
 
+@font-face {
+  font-family: "Lava Italic";
+  src: url("fonts/lavastd-regularitalic.woff");
+}
+
+@font-face {
+  font-family: "Lava Bold";
+  src: url("fonts/lavastd-bold.woff");
+}
+
 // - END FONTS
 body {
   font-family: $bodyreg, sans-serif;
@@ -625,6 +635,22 @@ img#footerla {
 .tippy-tooltip.ben-theme a {
   color: blue;
 }
+
+.tippy-tooltip.ben-img-theme {
+  background-color: white !important;
+  color: $grey;
+  padding: 0px !important;
+  max-height: 200px;
+  max-width: 300px;
+}
+
+  .tippy-tooltip.ben-img-theme img {
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    border: 2px solid $grey;
+    border-radius: 3px;
+  }
 
 // MEDIA QUERIES
 @media screen and (max-width: 915px) {

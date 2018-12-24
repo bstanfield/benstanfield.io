@@ -12,8 +12,19 @@ script.
         theme: 'ben',
         arrow: true,
         arrowType: 'round',
-        delay: [500, 0]
+        delay: [500, 0],
     });
+
+    tippy('.img-link', {
+        theme: 'ben-img',
+        arrow: true,
+        arrowType: 'round',
+        placement: 'right',
+        delay: [200, 0],
+        allowHTML: true,
+        distance: 30,
+        trigger: 'click mouseenter',
+    })
 
     tippy.browser.onUserInputChange = type => {
         const method = type === 'touch' ? 'disable' : 'enable'

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- COFFEE SHOPS-->
+<!-- PRISM COFFEE-->
+<!-- ----->
+<!---->
+<!-- DULCE COFFEE-->
 <head lang="en">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -34,7 +39,7 @@
   <meta name="twitter:image" content="https://i.imgur.com/adqY6pe.png" />
   <meta name="twitter:url" value="https://www.benstanfield.io/" />
 </head>
-<title>Ben // Spark 🌟</title>
+<title>Ben - Spark 🌟</title>
 <body></body>
 <!-- loads navigation bar for each page-->  
 <div class="container-wide mobile-full">
@@ -156,8 +161,19 @@
       theme: 'ben',
       arrow: true,
       arrowType: 'round',
-      delay: [500, 0]
+      delay: [500, 0],
   });
+  
+  tippy('.img-link', {
+      theme: 'ben-img',
+      arrow: true,
+      arrowType: 'round',
+      placement: 'right',
+      delay: [200, 0],
+      allowHTML: true,
+      distance: 30,
+      trigger: 'click mouseenter',
+  })
   
   tippy.browser.onUserInputChange = type => {
       const method = type === 'touch' ? 'disable' : 'enable'

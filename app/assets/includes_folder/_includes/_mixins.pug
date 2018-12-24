@@ -10,6 +10,14 @@ mixin project(color, title, description, img)
 mixin link(url, name, tooltip)
     a(target='_blank' class='orange-link' href=url title=tooltip)= name
 
+mixin imgLink(item)
+    if item.img
+        li    
+            a.img-link(title=item.img) #{item.name} ✨
+    else
+        li
+            a.img-link #{item.name}
+
 mixin more()
     p.more Learn more <span>&rarr;</span>
 
@@ -70,3 +78,69 @@ mixin article(url, iconpath, title, subtitle, sourcename, bgimage)
         p.more Read on #{sourcename} <span>&rarr;</span>
         .project-img(style=bgimage)
 
+mixin reviewGallery(meta, hours, arr)
+    - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
+    - const heroImg = '../../images/projects/coffee/' + meta.heroImg;
+    - const urlBase = 'https://s3-media3.fl.yelpcdn.com/bphoto/';
+    - const date = new Date;
+
+    .review
+        a(target='_blank' href=shopUrl)
+            h4 #{meta.shopName}
+        </a>
+        if hours.everyday
+            if date.getHours() > hours.everyday.open && date.getHours() < hours.everyday.close
+                p &nbsp; ✅  &nbsp; They're <strong style='color: green;'>open</strong> right now! (#{hours.everyday.open} AM - #{((hours.everyday.close + 11) % 12 + 1)} PM)
+            else
+                p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the day.
+        else
+            // TO-DO: Find day of week
+            p &nbsp; ✅  &nbsp; They're <strong style='color: green;'>open</strong> right now!
+        p &nbsp; 🚙  &nbsp; It's typically a 15 minute drive from campus at 10 AM.
+        br
+        .gallery-blackbox
+            .fill
+                a(data-fancybox=meta.shopName href=heroImg)
+                    img(src=heroImg)
+
+            .gallery-container.flex-grid
+                each url in arr
+                    +galleryPhoto(meta.shopName, urlBase+url+'/o.jpg')
+
+mixin galleryPhoto(shopName, yelpImg)
+    .gallery-photo
+        a(data-fancybox=shopName href=yelpImg)
+            img(src=yelpImg)
+
+mixin scorecard(goodObj, badObj)
+    .scorecard
+        .flex-grid
+            .score-col
+                p Best for:
+                    each pair in Object.entries(goodObj)
+                        p ✅ &nbsp; #{pair[0]}: <strong>#{pair[1]}</strong>
+            .score-col
+                p Not great for:
+                    each pair in Object.entries(badObj)
+                        p 😕 &nbsp; #{pair[0]}: <strong>#{pair[1]}</strong>
+
+mixin recs(itemObjs)
+    h2 Coffee and food recommendations:
+    ol
+        each item in itemObjs
+            +imgLink(item)
+    br
+    br
+
+mixin reviewNotes(meta, notes, recs)
+    - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
+    .writeup
+        h4 📝 Notes on #{meta.shopName}: 
+        each par in notes
+            h6= par
+        +recs(recs)
+        .proj-button-container
+            a(href=shopUrl class='proj-button') <i class="fab fa-yelp"></i>&nbsp; View #{meta.shopName} on Yelp 
+            hr
+            br
+            br

@@ -429,6 +429,14 @@ th {
   font-family: "Lava";
   src: url("fonts/lavastd-regular.woff"); }
 
+@font-face {
+  font-family: "Lava Italic";
+  src: url("fonts/lavastd-regularitalic.woff"); }
+
+@font-face {
+  font-family: "Lava Bold";
+  src: url("fonts/lavastd-bold.woff"); }
+
 body {
   font-family: "Lava", sans-serif, sans-serif;
   font-size: 18px;
@@ -931,6 +939,20 @@ img#footerla {
 .tippy-tooltip.ben-theme a {
   color: blue; }
 
+.tippy-tooltip.ben-img-theme {
+  background-color: white !important;
+  color: #333333;
+  padding: 0px !important;
+  max-height: 200px;
+  max-width: 300px; }
+
+.tippy-tooltip.ben-img-theme img {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  border: 2px solid #333333;
+  border-radius: 3px; }
+
 @media screen and (max-width: 915px) {
   .big-text > h1 {
     margin-right: 10px; } }
@@ -1018,10 +1040,19 @@ h6 {
   padding-right: 8px;
   padding-left: 3px; }
 
+h6 i {
+  font-family: 'Lava Italic'; }
+
+h6 strong {
+  font-family: 'Lava Bold'; }
+
 h4 {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 25px;
   margin-bottom: 10px; }
+
+ol {
+  list-style-type: square; }
 
 .update-line {
   font-family: "IBM Plex Sans", sans-serif;
@@ -1127,29 +1158,45 @@ iframe {
 .review .fill {
   height: 400px; }
 
+.review .fill a img {
+  border-radius: 3px;
+  border: 1px solid #a8a8a8;
+  width: 100%; }
+
+.gallery-blackbox {
+  margin-bottom: 20px;
+  border-radius: 3px; }
+
+.gallery-container {
+  margin: auto;
+  height: 120px;
+  margin-left: -10px; }
+
+.gallery-container.flex-grid {
+  margin-bottom: 0px; }
+
 .gallery-photo {
-  background-color: lightgrey;
-  width: 24%;
-  height: 150px;
+  flex: 1;
+  padding-left: 10px;
   position: relative; }
 
-.layer {
-  background-color: rgba(119, 119, 119, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
+.gallery-photo a img {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  object-fit: contain;
+  border: 1px solid #a8a8a8; }
 
 .gallery-photo a img {
   width: 100%;
   height: 100%;
-  object-fit: contain; }
+  background-color: #f3f3f3;
+  object-fit: cover;
+  border-radius: 3px;
+  opacity: 1;
+  transition: .3s ease all; }
 
-.gallery-photo a img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; }
+.gallery-photo a img:hover {
+  opacity: .8; }
 
 .fill a img {
   width: 100%;
@@ -1157,16 +1204,21 @@ iframe {
   object-fit: cover; }
 
 .scorecard {
-  background-color: #f1f1f1;
-  width: 24%; }
+  width: 100%;
+  margin-bottom: 50px; }
 
 .score-col {
-  padding: 20px 0px 20px 30px; }
+  padding: 20px 0px 20px 30px;
+  text-align: left;
+  width: 46%;
+  background-color: rgba(243, 243, 243, 0.603);
+  border-radius: 3px; }
 
 .score-col p {
   font-size: 16px;
   line-height: 30px;
-  padding-bottom: 5px; }
+  padding-bottom: 15px;
+  padding-right: 20px; }
 
 .score-col i {
   font-size: 18px;
@@ -1180,15 +1232,64 @@ iframe {
   padding-left: 40px;
   margin-bottom: 20px; }
 
+.writeup {
+  padding: 0px 30px 0px 30px; }
+
+.writeup h2 {
+  margin-bottom: 20px;
+  padding-bottom: 8px; }
+
+.proj-button-container {
+  width: 100%;
+  margin: auto;
+  text-align: center; }
+
+.proj-button-container hr {
+  margin-top: -18px; }
+
+.proj-button {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  font-weight: bold;
+  border-radius: 3px;
+  background-color: white; }
+
+.proj-button:hover {
+  background-color: #eeeeee; }
+
+.img-link {
+  cursor: pointer;
+  display: inline-block; }
+
 @media screen and (max-width: 720px) {
   .project-img {
     display: none; }
   .project-card > p {
     width: 100%; } }
 
+@media screen and (max-width: 850px) {
+  .gallery-container.flex-grid {
+    display: none; }
+  .gallery-photo {
+    display: none; }
+  .score-col {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px; }
+  .score-col p {
+    padding-left: 30px; } }
+
 @font-face {
   font-family: "Lava";
   src: url("fonts/lavastd-regular.woff"); }
+
+@font-face {
+  font-family: "Lava Italic";
+  src: url("fonts/lavastd-regularitalic.woff"); }
+
+@font-face {
+  font-family: "Lava Bold";
+  src: url("fonts/lavastd-bold.woff"); }
 
 body {
   font-family: "Lava", sans-serif, sans-serif;
@@ -1691,6 +1792,20 @@ img#footerla {
 
 .tippy-tooltip.ben-theme a {
   color: blue; }
+
+.tippy-tooltip.ben-img-theme {
+  background-color: white !important;
+  color: #333333;
+  padding: 0px !important;
+  max-height: 200px;
+  max-width: 300px; }
+
+.tippy-tooltip.ben-img-theme img {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  border: 2px solid #333333;
+  border-radius: 3px; }
 
 @media screen and (max-width: 915px) {
   .big-text > h1 {
