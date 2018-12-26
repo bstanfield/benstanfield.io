@@ -1,33 +1,61 @@
 // COFFEE SHOPS
-
-// PRISM COFFEE
-- const prismMeta = { yelpUrl: 'prism-coffee-los-angeles', shopName: 'Prism Coffee', heroImg: 'prism-coffee-ben-stanfield-usc.jpg'};
-
-- const prismImages = ['UzAQvKuyURy6Gh8pTn8sTA','Qakb6tPz2lBtKT0wF4w4CQ','oAuGYsDEYygfgp-j518e7A','yhtw3FO8V1s5Oz19SVeTYw'];
-
-- const prismGood = { Charging: 'Plenty of outlets', Wifi: 'Pretty good', Coffee: 'Amazing pour-over and iced coffee', Service: 'Very friendly and knowledgeable!' };
-
-- const prismBad = { Food: 'Mostly pastries', Distance: 'Not close to campus', 'All day grind': 'No comfortable seating', 'Large groups': 'Limited total space' };
-
-- const prismNotes = [ "Prism Coffee is a wonderful, tiny slice of coffee heaven. Robin (the manager) and his staff's attention to detail—mainly for their pour-over and iced coffee—is undeniably the shop's strongsuit, but ample charging, good wifi, and friendly service pushes Prism into my top 20.", "You won't hear much about Prism because of its distance from campus (15 minutes without traffic) and low-profile shop (there isn't much else to do within walking distance). Save Prism for a day when you're craving a great cup of coffee and a nice chat over a long work session."];
-
-- const prismRecs = [{ name: 'Moon cake', img: "<img  style ='max-width: 100%;'src='https://s3-media1.fl.yelpcdn.com/bphoto/8owv2WSFtu-5FL1tPGvVGg/o.jpg'></img>"}, { name: 'Iced coffee', img: ''}];
-
-- const prismHours = { everyDay: {open: 8, close: 21 } };
-
-// ---
-//
-// DULCE COFFEE
-- const dulceMeta = { yelpUrl: 'dulce-los-angeles', shopName: 'Dulce', heroImg: 'dulce-ben-stanfield-usc.jpg'};
-
-- const dulceImages = ['MGXvS4Via7X2uj0DcVEG-Q','IPjKDgUwZr9byp6mvWI79A','emQgfU-oRS-NBFu1XDAYCg','zTZeBj5wQGMFT1TZDZdGaQ'];
-
-- const dulceGood = { Charging: 'Plenty of outlets', Wifi: 'Pretty good', Coffee: 'Amazing pour-over and iced coffee', Service: 'Very friendly and knowledgeable!' };
-
-- const dulceBad = { Food: 'Mostly pastries', Distance: 'Not close to campus', 'All day grind': 'No comfortable seating', 'Large groups': 'Limited total space' };
-
-- const dulceNotes = [ "Prism Coffee is a wonderful, tiny slice of coffee heaven. Robin (the manager) and his staff's attention to detail—mainly for their pour-over and iced coffee—is undeniably the shop's strongsuit, but ample charging, good wifi, and friendly service pushes Prism into my top 20.", "You won't hear much about Prism because of its distance from campus (15 minutes without traffic) and low-profile shop (there isn't much else to do within walking distance). Save Prism for a day when you're craving a great cup of coffee and a nice chat over a long work session."];
-
-- const dulceRecs = [{ name: 'Moon cake', img: "<img  style ='max-width: 100%;'src='https://s3-media1.fl.yelpcdn.com/bphoto/8owv2WSFtu-5FL1tPGvVGg/o.jpg'></img>"}, { name: 'Iced coffee', img: ''}];
-
-- const dulceHours = { everyDay: {open: 8, close: 21 } };
+-
+    const shops = {
+        prism: [{
+            meta: {
+                yelpUrl: 'prism-coffee-los-angeles', 
+                shopName: 'Prism Coffee', 
+                heroImg: 'prism-coffee-ben-stanfield-usc.jpg'
+            },
+            images: [
+                'UzAQvKuyURy6Gh8pTn8sTA','Qakb6tPz2lBtKT0wF4w4CQ','oAuGYsDEYygfgp-j518e7A','yhtw3FO8V1s5Oz19SVeTYw'
+            ],
+            good: {
+                Charging: 'Plenty of outlets', Wifi: 'Pretty good', Coffee: 'Amazing pour-over and iced coffee', Service: 'Very friendly and knowledgeable!'
+            },
+            bad: {
+                Food: 'Mostly pastries', Distance: 'Not close to campus', 'All day grind': 'No comfortable seating', 'Large groups': 'Limited total space'  
+            },
+            notes: [
+                "Prism Coffee is a wonderful, tiny slice of coffee heaven. Robin (the manager) and his staff's attention to detail—mainly for their pour-over and iced coffee—is undeniably the shop's strongsuit, but ample charging, good wifi, and friendly service pushes Prism into my top 20.", "You won't hear much about Prism because of its distance from campus (15 minutes without traffic) and low-profile shop (there isn't much else to do within walking distance). Save Prism for a day when you're craving a great cup of coffee and a nice chat over a long work session."
+            ],
+            recs: [
+                { name: 'Moon cake', img: "<img  style ='max-width: 100%;'src='https://s3-media1.fl.yelpcdn.com/bphoto/8owv2WSFtu-5FL1tPGvVGg/o.jpg'></img>"}, { name: 'Iced coffee', img: ''}
+            ],
+            hours: {
+                everyDay: {open: 8, close: 21 }
+            }
+        }],
+      dulce: [{
+        meta: {
+          yelpUrl: 'dulce-coffee-los-angeles', 
+          shopName: 'Dulce Coffee', 
+          heroImg: 'dulce-ben-stanfield-usc.jpg'
+        },
+        images: [
+          'kq8xEi9Hh_Ipnztu3_ORqQ','7W0OblEZl1YGhzRTimV5Ug','5Oc58-qbCoo3oaiQogP0Yw','IPjKDgUwZr9byp6mvWI79A'
+        ],
+        good: {
+            Distance: 'On campus!', Coffee: 'Good drip and matcha coffee', Service: 'Very friendly!', Food: 'Donuts, sandwiches, breakfast burritos', 
+        },
+        bad: {
+           'All day grind': 'Too loud and limited charging', 'Large groups': 'Limited total space', Charging: 'Only a few outlets!', Wifi: 'Kicks you off every 15 min.',
+        },
+        notes: [
+          "Located in the USC Village, Dulce’s combination of accessibility and quality coffee is hard to beat. Most people around campus will rave about Dulce’s Matcha drinks, but not being a big fan of Matcha, I’ve really enjoyed their inauspicious drip coffees. Their regular lattes are also very good and the service friendly.", 
+          "In addition to good drinks, Dulce also makes a KILLER breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes."
+        ],
+        guestNotes: {
+            name: 'Abigail Africa: ',
+            url: 'https://www.google.com',
+            img: 'https://i.imgur.com/DfjZKlH.jpg',
+            notes: "Dulce is overall a mixed bag. It produces great food and coffee, but you should never expect to settle there unless you're exceptionally prepared to deal with poor wifi and a tough selection of outlets. Lighting is great, but noise is high, so I go there to do remote work, but not for group projects. Outdoors is a lovely experience in the first months of fall or the bulk of spring. It’s quieter than inside, but there are variables like harsh sun and no power."
+        },
+        recs: [
+          { name: 'Matcha drinks', img: "<img  style ='max-width: 100%;'src='https://s3-media1.fl.yelpcdn.com/bphoto/8owv2WSFtu-5FL1tPGvVGg/o.jpg'></img>"}, { name: 'Iced coffee', img: ''}
+        ],
+        hours: {
+          everyDay: {open: 8, close: 23 }
+        }
+      }]
+    };

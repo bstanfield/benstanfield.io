@@ -1,41 +1,29 @@
 extends layout-projects
 block head
     - var projectName = "Coffee ☕️";
-    - var navImg = 'background-image: url(https://i.imgur.com/Tgt3Z8J.jpg)';
     title Ben - #{projectName}
 
 block content
     .container.project
         .intro 
-            +introsection("20 Best Coffee Shops in LA (for students)", 'A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.', 'December 19, 2018')
+            +introsection('☕️', "The Best Coffee Spots for Students in LA", 'A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.', 'December 19, 2018')
             
-            .project-hero
-                .fill(style='background-image: url(../../images/projects/coffee/ben-balcony-coffee.jpg);')
-                p Ben Stanfield (me) and Fiona Pescana at Balcony Coffee in Koreatown, Los Angeles.
+    <div class='project-hero'>
+        .fill(style='background-image: url(../../images/projects/coffee/ben-balcony-coffee.jpg);')
+        .caption 
+            p Ben Stanfield (me) and Fiona Pestana at Balcony Coffee in Koreatown, Los Angeles.
+    </div>
 
-            h6.leader 
-                | Just over two years ago to this day, during finals week of my Sophomore year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. 
+        .container.project
+            .intro 
+                h6.leader 
+                    | Just over two years ago to this day, during finals week of my Sophomore year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!
 
-            h6
-                | Fortunate to have jobs that could be worked remotely during the school year, I’ve had many opportunities to scour LA for the best coffee shops to flip open my laptop and work. But often I’ve found just the right spot difficult to find, mainly because there are criteria that, as a student, I'm looking for. It's a bit of a goldilocks dilemma. For me, Yelp was too general and didn’t satisfy some of the general constraints of a college student in a coffee shop: Is it good for group project meetings? How fast is the wifi up/down? Where are the outlets? Refills on the coffee? Will the owners look at me weird after I’ve been there for a fortnight?
+            // Generates all reviews from mixin 'Review'
+            +review(shops)
 
-        .review
-            +reviewGallery(prismMeta, prismHours, prismImages)
-            +scorecard(prismGood, prismBad)
-            +reviewNotes(prismMeta, prismNotes, prismRecs)
+            br
+            br
 
-        .review
-            +reviewGallery(dulceMeta, dulceHours, dulceImages)
-            +scorecard(dulceGood, dulceBad)
-            +reviewNotes(dulceMeta, dulceNotes, dulceRecs)
-        br
-        br
-        h1 More Spark SC projects:
-        br
-
-        .flex-grid.thirds
-            +3card('https://www.tech.la', '🌴', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.', '_blank')
-            +3card('http://www.breaktomake.com', '🔧', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.', '_blank')
-            +3card('http://www.projectlaunch.io/', '🚀', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.', '_blank')
         
             

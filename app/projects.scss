@@ -40,6 +40,36 @@ ol {
     list-style-type: square;
 }
 
+.project-hero {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  
+    .project-hero p {
+      font-size: 20px;
+      color: rgb(172, 172, 172);
+      margin-bottom: 20px;
+      line-height: 30px;
+    }
+
+    .big-emoji {
+        font-size: 60px;
+        margin-bottom: 0px;
+    }
+
+    .caption {
+        width: 90%;
+        margin: auto;
+    }
+
+        .caption p {
+            font-size: 18px;
+            font-family: $ss;
+        }
+
 .update-line {
     font-family: $ss;
     text-transform: uppercase;
@@ -252,6 +282,10 @@ iframe {
             margin-bottom: 20px;
         }
 
+        .score-col hr {
+            display: none;
+        }
+
 .writeup {
     padding: 0px 30px 0px 30px;
 }
@@ -259,13 +293,40 @@ iframe {
     .writeup h2 {
         margin-bottom: 20px;
         padding-bottom: 8px;
-
     }
 
+    .writeup img {
+        width: 60px;
+        height: 60px;
+        background-position: center;
+        background-size: contain;
+        border-radius: 50%;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    .writeup-guest {
+        background-color: rgba(243, 243, 243, 0.603);
+        padding: 20px 20px 5px 30px;
+        margin-top: 35px;
+        margin-bottom: 40px;
+        border-radius: 5px;
+    }
+    
+        .writeup-guest strong {
+            font-family: $ss;
+            font-size: 18px;
+        }
+
+        .writeup-guest h6 {
+            font-family: $ss;
+            font-size: 18px;
+        }
 .proj-button-container {
     width: 100%;
     margin: auto;
     text-align: center;
+    padding-top: 15px;
 }
 
     .proj-button-container hr {
@@ -299,7 +360,7 @@ iframe {
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 885px) {
     .gallery-container.flex-grid {
         display: none;
     }
@@ -311,9 +372,24 @@ iframe {
         width: 100%;
         padding-right: 0px;
         padding-left: 0px;
+        background-color: white;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
 
-    .score-col p {
-        padding-left: 30px;
+        .score-col p {
+            padding-left: 15px;
+        }
+
+        .score-col hr {
+            display: block;
+        }
+
+    .writeup {
+        padding: 0px 5px;
+    }
+
+    .recs {
+        display: none;
     }
 }

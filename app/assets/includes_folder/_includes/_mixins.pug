@@ -50,12 +50,11 @@ mixin contact()
         input(type='submit' value='Submit')
 
 //- PROJECT PAGE
-mixin introsection(title, subtitle, date)
-    h1 #{title}
-    p #{subtitle}
+mixin introsection(emoji, title, subtitle, date)
+    h1.big-emoji #{emoji}
+    h1= title
+    p= subtitle
     p.update-line #{date}
-    br
-    hr
     br
 
 mixin quote(quote, byline)
@@ -119,28 +118,43 @@ mixin scorecard(goodObj, badObj)
                 p Best for:
                     each pair in Object.entries(goodObj)
                         p ✅ &nbsp; #{pair[0]}: <strong>#{pair[1]}</strong>
+                
+                hr 
+                br
             .score-col
                 p Not great for:
                     each pair in Object.entries(badObj)
                         p 😕 &nbsp; #{pair[0]}: <strong>#{pair[1]}</strong>
 
 mixin recs(itemObjs)
-    h2 Coffee and food recommendations:
-    ol
-        each item in itemObjs
-            +imgLink(item)
-    br
-    br
+    .recs
+        h2 Coffee and food recommendations:
+        ol
+            each item in itemObjs
+                +imgLink(item)
+        br
+        br
 
-mixin reviewNotes(meta, notes, recs)
+mixin reviewNotes(meta, notes, guestNotes, recs)
     - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
     .writeup
-        h4 📝 Notes on #{meta.shopName}: 
+        h4 Notes on #{meta.shopName}:
         each par in notes
             h6= par
+        if guestNotes
+            .writeup-guest
+                img(style='background-image: url(' + guestNotes.img + ')')
+                h6 <strong>From #{guestNotes.name}</strong> #{guestNotes.notes}
         +recs(recs)
         .proj-button-container
             a(href=shopUrl class='proj-button') <i class="fab fa-yelp"></i>&nbsp; View #{meta.shopName} on Yelp 
             hr
             br
             br
+
+mixin review(shops)        
+    each shop in shops
+        .review
+            +reviewGallery(shop[0].meta, shop[0].hours, shop[0].images)
+            +scorecard(shop[0].good, shop[0].bad)
+            +reviewNotes(shop[0].meta, shop[0].notes, shop[0].guestNotes, shop[0].recs)

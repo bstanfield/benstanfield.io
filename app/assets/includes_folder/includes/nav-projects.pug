@@ -1,7 +1,9 @@
    
 .container-wide.mobile-full
-    .hero
-        .bg-orange(style=navImg)
+    if navImg
+        .hero
+            .bg-orange(style=navImg)
+    else
 
 #stick-here
 .nav#stickThis
