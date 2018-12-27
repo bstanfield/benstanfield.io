@@ -3,27 +3,44 @@ block head
     - var projectName = "Coffee ☕️";
     title Ben - #{projectName}
 
-block content
-    .container.project
-        .intro 
-            +introsection('☕️', "The Best Coffee Spots for Students in LA", 'A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.', 'December 19, 2018')
-            
-    <div class='project-hero'>
-        .fill(style='background-image: url(../../images/projects/coffee/ben-balcony-coffee.jpg);')
-        .caption 
-            p Ben Stanfield (me) and Fiona Pestana at Balcony Coffee in Koreatown, Los Angeles.
-    </div>
+    script.
+        $(document).ready(function() {
+            $('.Cha').append('🔌');
+            $('.Wif').append('📡');
+            $('.Cof').append('☕️');
+            $('.Ser').append('😁');
+            $('.Foo').append('🍝');
+            $('.Dis').append('🛣');
+            $('.All').append('⏰');
+            $('.Lar').append('👨‍👩‍👧‍👧');
+        });
 
+block content
+    .x-files
         .container.project
             .intro 
-                h6.leader 
-                    | Just over two years ago to this day, during finals week of my Sophomore year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!
+                +introsection("Top Coffee Shops for Work in Los Angeles", 'A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.', 'December 19, 2018', '☕️')
+                
+        <div class='project-hero'>
+            .fill.project-hero-img
+            .caption 
+                p Ben Stanfield (me) and Fiona Pestana at Balcony Coffee in Koreatown, Los Angeles.
+        </div>
 
-            // Generates all reviews from mixin 'Review'
-            +review(shops)
+            .container.project
+                .intro 
+                    h6.leader 
+                        | Just over two years ago to this day, during finals week of my Sophomore year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!
 
-            br
-            br
+                // Generates all reviews from mixin 'Review'
+                +review(shops)
+
+                br
+                br
+                p (Under construction...)
+                br
+                br
+                br
 
         
             

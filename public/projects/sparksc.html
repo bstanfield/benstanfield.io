@@ -43,44 +43,19 @@
     <div class="bg-orange" style="background-image: url(http://sparksc.org/images/home/photo1.jpg)"></div>
   </div>
 </div>
-<div id="stick-here"></div>
-<div class="nav" id="stickThis">
+<div class="nav">
   <div class="nav-content">
     <div class="nav-text">  <a class="left" href="/" id="root"><span id='homeRoot'>Home</span> / <span class='projectRoot'>Spark 🌟</span></a>
       <div class="right nav-links"><a href="#contact">Contact</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a></div>
     </div>
   </div>
 </div>
-<script>
-  var s1 = document.querySelector('#s1');
-  let animationDuration = 10;
-  console.log("Test");
-  
-  
-  function set(animationDuration) {
-       s1.style.setProperty('--animation-time', animationDuration + 's');
-  }
-  
-  set(animationDuration);
-  
-  function changeAnimationTime() {
-      animationDuration = Math.random() * 10;
-      let newDuration = animationDuration;
-      set(animationDuration);
-      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
-      return newDuration;
-  }
-  console.log("newDuration: ", newDuration);
-  
-  setInterval(changeAnimationTime, newDuration);
-</script>
 <!-- this is where content will be loaded for subsequent pages-->
 <div class="container project">
   <div class="intro"> 
-    <h1 class="big-emoji">Spark SC</h1>
-    <h1>Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.</h1>
-    <p>September 21, 2018</p>
-    <p class="update-line"></p><br>
+    <h1>Spark SC</h1>
+    <p>Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.</p>
+    <p class="update-line">September 21, 2018</p><br>
     <div class="project-hero">
       <div class="fill" style="background-image: url(http://sparksc.org/images/home/photo2.jpg)"></div>
       <p>Spark members Priscilla Pan (left) and Abigail Africa (right) laughing after a long brainstorm session.</p>

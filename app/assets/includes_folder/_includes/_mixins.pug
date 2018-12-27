@@ -50,8 +50,9 @@ mixin contact()
         input(type='submit' value='Submit')
 
 //- PROJECT PAGE
-mixin introsection(emoji, title, subtitle, date)
-    h1.big-emoji #{emoji}
+mixin introsection(title, subtitle, date, emoji)
+    if emoji
+        h1.big-emoji #{emoji}
     h1= title
     p= subtitle
     p.update-line #{date}
@@ -77,7 +78,7 @@ mixin article(url, iconpath, title, subtitle, sourcename, bgimage)
         p.more Read on #{sourcename} <span>&rarr;</span>
         .project-img(style=bgimage)
 
-mixin reviewGallery(meta, hours, arr)
+mixin reviewGallery(meta, hours, distance, arr)
     - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
     - const heroImg = '../../images/projects/coffee/' + meta.heroImg;
     - const urlBase = 'https://s3-media3.fl.yelpcdn.com/bphoto/';
@@ -87,20 +88,22 @@ mixin reviewGallery(meta, hours, arr)
         a(target='_blank' href=shopUrl)
             h4 #{meta.shopName}
         </a>
-        if hours.everyday
-            if date.getHours() > hours.everyday.open && date.getHours() < hours.everyday.close
-                p &nbsp; ✅  &nbsp; They're <strong style='color: green;'>open</strong> right now! (#{hours.everyday.open} AM - #{((hours.everyday.close + 11) % 12 + 1)} PM)
-            else
-                p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the day.
-        else
-            // TO-DO: Find day of week
-            p &nbsp; ✅  &nbsp; They're <strong style='color: green;'>open</strong> right now!
-        p &nbsp; 🚙  &nbsp; It's typically a 15 minute drive from campus at 10 AM.
+        if hours
+            each obj in hours
+                if (date.toString().slice(0,3) == obj.day)
+                    if date.getHours() > obj.open && date.getHours() < obj.close
+                        p <span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{obj.open} AM - #{((obj.close + 11) % 12 + 1)} PM)
+                        p <span class='meta-emoji'>&nbsp;🚙 &nbsp;</span> It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM.
+                    else
+                        p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the rest of #{date.toLocaleDateString(locale, { weekday: 'long' })}.
+                        p &nbsp; 🚙  &nbsp; It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM.
         br
         .gallery-blackbox
             .fill
                 a(data-fancybox=meta.shopName href=heroImg)
                     img(src=heroImg)
+            .gallery-indicator
+                a(data-fancybox=meta.shopName href=heroImg) <i class="far fa-image"></i> View gallery
 
             .gallery-container.flex-grid
                 each url in arr
@@ -115,16 +118,22 @@ mixin scorecard(goodObj, badObj)
     .scorecard
         .flex-grid
             .score-col
-                p Best for:
-                    each pair in Object.entries(goodObj)
-                        p ✅ &nbsp; #{pair[0]}: <strong>#{pair[1]}</strong>
-                
+                h2 Best for:
+                each pair in Object.entries(goodObj)
+                    div
+                        .score-emoji
+                            span(class=pair[0].slice(0,3))
+                        .score-text
+                            p <strong>#{pair[0]}:</strong> #{pair[1]}
                 hr 
-                br
             .score-col
-                p Not great for:
-                    each pair in Object.entries(badObj)
-                        p 😕 &nbsp; #{pair[0]}: <strong>#{pair[1]}</strong>
+                h2 Not great for:
+                each pair in Object.entries(badObj)
+                    div
+                        .score-emoji
+                            span(class=pair[0].slice(0,3))
+                        .score-text
+                            p <strong>#{pair[0]}:</strong> #{pair[1]}
 
 mixin recs(itemObjs)
     .recs
@@ -146,15 +155,15 @@ mixin reviewNotes(meta, notes, guestNotes, recs)
                 img(style='background-image: url(' + guestNotes.img + ')')
                 h6 <strong>From #{guestNotes.name}</strong> #{guestNotes.notes}
         +recs(recs)
-        .proj-button-container
-            a(href=shopUrl class='proj-button') <i class="fab fa-yelp"></i>&nbsp; View #{meta.shopName} on Yelp 
-            hr
-            br
-            br
+    .proj-button-container
+        a(href=shopUrl class='proj-button' target='_blank') <i class="fab fa-yelp"></i>&nbsp; View #{meta.shopName} on Yelp 
+        hr
+        br
+        br
 
 mixin review(shops)        
     each shop in shops
         .review
-            +reviewGallery(shop[0].meta, shop[0].hours, shop[0].images)
+            +reviewGallery(shop[0].meta, shop[0].hours, shop[0].distance, shop[0].images)
             +scorecard(shop[0].good, shop[0].bad)
             +reviewNotes(shop[0].meta, shop[0].notes, shop[0].guestNotes, shop[0].recs)

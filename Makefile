@@ -27,7 +27,7 @@ deploy:
 	brunch build
 	now -p public
 
-deploy2:
+alias:
 	now alias ${CLIPBOARD} benstanfield.io
 	now alias benstanfield.io www.benstanfield.io
 foo:

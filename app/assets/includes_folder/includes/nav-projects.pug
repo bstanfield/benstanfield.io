@@ -5,35 +5,10 @@
             .bg-orange(style=navImg)
     else
 
-#stick-here
-.nav#stickThis
+.nav
     .nav-content
         .nav-text   
             a(href="/").left#root <span id='homeRoot'>Home</span> / <span class='projectRoot'>#{projectName}</span>
             .right.nav-links
                 a(href="#contact") Contact
                 a(target='_blank' href="../images/resume-update-comp2.pdf") Résumé
-
-
-script.
-    var s1 = document.querySelector('#s1');
-    let animationDuration = 10;
-    console.log("Test");
-
-    
-    function set(animationDuration) {
-         s1.style.setProperty('--animation-time', animationDuration + 's');
-    }
-
-    set(animationDuration);
-
-    function changeAnimationTime() {
-        animationDuration = Math.random() * 10;
-        let newDuration = animationDuration;
-        set(animationDuration);
-        console.log("durTransform: ", (Math.round(animationDuration * 1000)));
-        return newDuration;
-    }
-    console.log("newDuration: ", newDuration);
-
-    setInterval(changeAnimationTime, newDuration);
