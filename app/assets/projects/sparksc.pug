@@ -5,27 +5,24 @@ block head
     title Ben - #{projectName}
 
 block content
-    .container.project
-        .intro 
-            +introsection('Spark SC', 'Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.', 'September 21, 2018')
-            
-            .project-hero
-                .fill(style='background-image: url(http://sparksc.org/images/home/photo2.jpg)')
+    .x-files
+        .container.project
+            .intro 
+                +introsection('Spark SC', 'Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.', 'September 21, 2018')
+                
+        <div class='project-hero'>
+            .fill.project-hero-img(style='background-image: url(http://sparksc.org/images/home/photo2.jpg);')
+            .caption
                 p Spark members Priscilla Pan (left) and Abigail Africa (right) laughing after a long brainstorm session.
-
+        </div>
+        .container.project
             h6.leader 
                 | Southern California is currently experiencing a wonderful and rare “superbloom” of flowers. Experts say that this spring, everything has “just been growing, growing, growing.” Spark SC has had a wonderful bloom too! From kicking off TechLA Fellows, our first summer fellowship program for interns at our partner startups, to piloting our Project Launch workshops for inner-city high school students, our impact continues to grow. Here’s a peek at a few of our buds.
-
-            a(target='_blank' href='http://sparksc.org/')
-                button.orange-btn Check out Spark's website
 
             h6
                 | Spark SC has been the foundation of my time in college, and also some of the best collection of friends I've ever made. For the past three years I've worked as a committee member on projects like Tech.LA Fellows, Venture Studios, Unite, and Ideas to Impact. I also had the great opportunity to lead a committee myself, and to then take the leap onto the leadership team as co-President.
 
             +article('medium.com/sparksc/state-of-spark-spring-2017-ddeeab535d33', '../images/medium-logo.png', 'State of Spark: Spring 2017', 'Spark SC is the student-run entrepreneurial hub at the University of Southern California. So, what have we been up to this semester?', 'Medium', 'background-image: url(https://cdn-images-1.medium.com/max/1200/1*m2NXtbpuEhumpWG72RDYpQ.jpeg);')
-
-            h6
-                | Next I'll go in depth on a few of the committees I mentioned above, and what I've learned from building them.
 
             h4 Tech.LA Fellows
 
@@ -54,16 +51,22 @@ block content
             .project-hero
                 .fill(style='background-image: url(/images/499.jpg)')
                 p USC Provost Michael Quick (center-right) with Ideas to Impact students in the "Hacker House," the off-campus classroom for the course.
+            br
 
-        hr
-        br
-        br
-        h1 More Spark SC projects:
-        br
+            h6
+                | There's one great thing about Spark I've yet to mention: it changes EVERY YEAR... turnover is part of the beauty of a student organization. While I and many of the people who worked on some of the initiatives above may have already graduated, I urge you, if you're interested, to continue to support what's going on in Spark by clicking 
+                +link('https://sparksc.org/about/support-sponsor/', 'here')
+                | .
 
-        .flex-grid.thirds
-            +3card('https://www.tech.la', '🌴', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.', '_blank')
-            +3card('http://www.breaktomake.com', '🔧', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.', '_blank')
-            +3card('http://www.projectlaunch.io/', '🚀', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.', '_blank')
+            hr
+            br
+            br
+            h1 More Spark SC projects:
+            br
+
+            .flex-grid.thirds
+                +3card('https://www.tech.la', '🌴', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.', '_blank')
+                +3card('http://www.breaktomake.com', '🔧', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.', '_blank')
+                +3card('http://www.projectlaunch.io/', '🚀', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.', '_blank')
         
             
