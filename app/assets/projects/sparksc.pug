@@ -1,7 +1,6 @@
 extends layout-projects
 block head
     - var projectName = "Spark 🌟";
-    - var navImg = 'background-image: url(http://sparksc.org/images/home/photo1.jpg)';
     title Ben - #{projectName}
 
 block content
@@ -10,11 +9,9 @@ block content
             .intro 
                 +introsection('Spark SC', 'Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.', 'September 21, 2018')
                 
-        <div class='project-hero'>
-            .fill.project-hero-img(style='background-image: url(http://sparksc.org/images/home/photo2.jpg);')
-            .caption
-                p Spark members Priscilla Pan (left) and Abigail Africa (right) laughing after a long brainstorm session.
-        </div>
+        - const sparkHero = 'http://sparksc.org/images/home/photo2.jpg';
+        - const sparkHeroCaption = 'Spark members Priscilla Pan (left) and Abigail Africa (right) laughing after a long brainstorm session.';
+        +bigphoto(sparkHero, sparkHeroCaption)
         .container.project
             h6.leader 
                 | Southern California is currently experiencing a wonderful and rare “superbloom” of flowers. Experts say that this spring, everything has “just been growing, growing, growing.” Spark SC has had a wonderful bloom too! From kicking off TechLA Fellows, our first summer fellowship program for interns at our partner startups, to piloting our Project Launch workshops for inner-city high school students, our impact continues to grow. Here’s a peek at a few of our buds.
@@ -40,23 +37,21 @@ block content
 
             h4 Unite Conference
             h6
-                | In late 2016, a Spark committee formed with the concept of bringing together different entrepreneurial orgs from around the country to share ideas and learn from one another. This culminated in a 2-day conference at Google's San Francisco Headquarters over the summer of 2017. Click 
-                +link('https://www.scribd.com/document/389346056/Unite-Next-Steps-Document', 'here')
-                |  to check out the welcome packet received by invited schools.
+                | In late 2016, a Spark committee formed with the concept of bringing together different entrepreneurial orgs from around the country to share ideas and learn from one another. This culminated in a 2-day conference at Google's San Francisco Headquarters over the summer of 2017.
 
             h4 Ideas to Impact
             h6
                 | Ideas to Impact (now Innovating for the Refugee Crisis), which ran in 2017, was the first student-led course at the University of Southern California. Inspired by design-thinking principles from companies like IDEO, and by the idea that students teaching students is a novel way to connect in the classroom, a small group of Spark SC students pushed the Viterbi School of Engineering to champion the course.
 
-            .project-hero
-                .fill(style='background-image: url(/images/499.jpg)')
-                p USC Provost Michael Quick (center-right) with Ideas to Impact students in the "Hacker House," the off-campus classroom for the course.
+            - const IdeasToImpactImg = '/images/499.jpg';
+            - const IdeasToImpactCaption = 'USC Provost Michael Quick (center-right) with Ideas to Impact students in the "Hacker House," the off-campus classroom for the course.';
+            +mediumphoto(IdeasToImpactImg, IdeasToImpactCaption)
             br
 
             h6
-                | There's one great thing about Spark I've yet to mention: it changes EVERY YEAR... turnover is part of the beauty of a student organization. While I and many of the people who worked on some of the initiatives above may have already graduated, I urge you, if you're interested, to continue to support what's going on in Spark by clicking 
-                +link('https://sparksc.org/about/support-sponsor/', 'here')
-                | .
+                | There's one great thing about Spark I've yet to mention: it changes EVERY YEAR... turnover is part of the beauty of a student organization. While I and many of the people who worked on some of the initiatives above may have already graduated, I urge you, if you're interested, to  
+                +link('https://sparksc.org/about/support-sponsor/', 'continue to support ') 
+                | what's going on in Spark.
 
             hr
             br

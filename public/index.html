@@ -63,30 +63,6 @@
     </div>
   </div>
 </div>
-<script>
-  var s1 = document.querySelector('#s1');
-  let animationDuration = 10;
-  console.log("Test");
-  
-  
-  function set(animationDuration) {
-       s1.style.setProperty('--animation-time', animationDuration + 's');
-  }
-  
-  set(animationDuration);
-  
-  function changeAnimationTime() {
-      animationDuration = Math.random() * 10;
-      let newDuration = animationDuration;
-      set(animationDuration);
-      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
-      return newDuration;
-  }
-  console.log("newDuration: ", newDuration);
-  
-  setInterval(changeAnimationTime, newDuration);
-  // console.log((Math.round(newDuration * 1000)));
-</script>
 <!-- this is where content will be loaded for subsequent pages-->
 <div class="container">
   <div class="intro"> 
@@ -122,14 +98,13 @@
   <p>What I’ve been up to recently... check back in every once in a while for a new Pulse update!</p><br>
 </div>
 <div class="grid-bg grid long">
-  <div class="container"><a target="_blank" href="http://www.skipper.ai">
+  <div class="container"><a href="projects/coffee.html">
       <div class="flex-grid">
-        <div class="thirds-col" id="col-bg"></div>
+        <div class="thirds-col" id="col-bg" style="background-image: url('images/coffee-thumb.png');"></div>
         <div class="two-thirds-col card static">
           <div class="pulsetxt">
-            <h2>💓 Skipper Software at HR Technology Conference '18</h2>
-            <p>
-               In early September, I and Skipper's other co-founders, Landon Brand and Mimi Tran Zambetti, exhibited at a Human Resources Tech conference in Vegas.</p>
+            <h2>☕️ The best coffee shops in LA (for USC students)</h2>
+            <p> I really like coffee. I've been to a lot of coffee shops over the past couple of years. So, naturally, I made a list.</p>
             <p class="more">Learn more <span>&rarr;</span></p>
           </div>
         </div>

@@ -85,18 +85,27 @@ mixin reviewGallery(meta, hours, distance, arr)
     - const date = new Date;
 
     .review
-        a(target='_blank' href=shopUrl)
-            h4 #{meta.shopName}
-        </a>
+        a.anchor(name=meta.yelpUrl id=meta.yelpUrl)
+        h4 #{meta.shopName}
+        br
+        if meta.food
+            - const total = meta.food[1] + meta.drink[1];
+            p <a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $#{total} <sup>?</sup></a>
+            p.explainer ↳&nbsp; #{meta.food[0]} ($#{meta.food[1]}) + #{meta.drink[0]} ($#{meta.drink[1]}) = $#{total}
+
         if hours
             each obj in hours
                 if (date.toString().slice(0,3) == obj.day)
                     if date.getHours() > obj.open && date.getHours() < obj.close
-                        p <span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{obj.open} AM - #{((obj.close + 11) % 12 + 1)} PM)
-                        p <span class='meta-emoji'>&nbsp;🚙 &nbsp;</span> It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM.
+                        p <a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{obj.open} AM - #{((obj.close + 11) % 12 + 1)} PM) </a>
+
                     else
                         p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the rest of #{date.toLocaleDateString(locale, { weekday: 'long' })}.
-                        p &nbsp; 🚙  &nbsp; It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM.
+        
+        if distance
+            p <a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM. </a>
+
+
         br
         .gallery-blackbox
             .fill
@@ -124,8 +133,8 @@ mixin scorecard(goodObj, badObj)
                         .score-emoji
                             span(class=pair[0].slice(0,3))
                         .score-text
-                            p <strong>#{pair[0]}:</strong> #{pair[1]}
-                hr 
+                            p <strong>#{pair[0]}</strong> 
+                            p.small-note #{pair[1]}
             .score-col
                 h2 Not great for:
                 each pair in Object.entries(badObj)
@@ -133,7 +142,9 @@ mixin scorecard(goodObj, badObj)
                         .score-emoji
                             span(class=pair[0].slice(0,3))
                         .score-text
-                            p <strong>#{pair[0]}:</strong> #{pair[1]}
+                            p <strong>#{pair[0]}</strong>
+                            p.small-note #{pair[1]}
+
 
 mixin recs(itemObjs)
     .recs 
@@ -147,9 +158,9 @@ mixin recs(itemObjs)
 mixin reviewNotes(meta, notes, guestNotes, recs)
     - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
     .writeup
-        h4 Notes on #{meta.shopName}:
+        h2 Notes on #{meta.shopName}:
         each par in notes
-            h6= par
+            h6!= par
         if guestNotes
             .writeup-guest
                 img(style='background-image: url(' + guestNotes.img + ')')
@@ -167,3 +178,41 @@ mixin review(shops)
             +reviewGallery(shop[0].meta, shop[0].hours, shop[0].distance, shop[0].images)
             +scorecard(shop[0].good, shop[0].bad)
             +reviewNotes(shop[0].meta, shop[0].notes, shop[0].guestNotes, shop[0].recs)
+
+mixin pulse(pulses)
+    - const currentPulse = pulses.conference[0];
+    .container
+        a(href=currentPulse.link)
+            .flex-grid
+                .thirds-col#col-bg(style="background-image: url('images/" + currentPulse.img + "');")
+                
+                .two-thirds-col.card.static
+                    .pulsetxt
+                        h2 ☕️ #{currentPulse.title}
+                        p 
+                            | #{currentPulse.sub}
+                        +more()
+
+mixin overview(shops)
+    h2 Jump to:
+    ol.shop-list 
+        each shop in shops
+            - const date = new Date();
+            if date.getHours() > shop.open && date.getHours() < shop.close
+                li
+                    a(href='#' + shop[0].meta.yelpUrl + '') #{shop[0].meta.shopName}
+            else
+                li
+                    a(href='#' + shop[0].meta.yelpUrl + '') #{shop[0].meta.shopName} <span class='closed-indicator'>Closed</span>
+
+mixin bigphoto(img, caption)
+    .big-photo
+        .fill.project-hero-img(style='background-image: url(' + img + ');')
+        .caption
+            p= caption
+
+mixin mediumphoto(img, caption)
+    .med-photo
+        .fill.project-hero-img(style='background-image: url(' + img + ');')
+        .caption
+            p= caption

@@ -63,30 +63,6 @@
     </div>
   </div>
 </div>
-<script>
-  var s1 = document.querySelector('#s1');
-  let animationDuration = 10;
-  console.log("Test");
-  
-  
-  function set(animationDuration) {
-       s1.style.setProperty('--animation-time', animationDuration + 's');
-  }
-  
-  set(animationDuration);
-  
-  function changeAnimationTime() {
-      animationDuration = Math.random() * 10;
-      let newDuration = animationDuration;
-      set(animationDuration);
-      console.log("durTransform: ", (Math.round(animationDuration * 1000)));
-      return newDuration;
-  }
-  console.log("newDuration: ", newDuration);
-  
-  setInterval(changeAnimationTime, newDuration);
-  // console.log((Math.round(newDuration * 1000)));
-</script>
 <!-- this is where content will be loaded for subsequent pages-->
 <!-- footer--><br><br>
 <footer>

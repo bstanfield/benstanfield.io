@@ -7,12 +7,22 @@ block head
         $(document).ready(function() {
             $('.Cha').append('🔌');
             $('.Wif').append('📡');
-            $('.Cof').append('☕️');
+            $('.Dri').append('☕️');
             $('.Ser').append('😁');
             $('.Foo').append('🍝');
             $('.Dis').append('🛣');
             $('.All').append('⏰');
             $('.Lar').append('👨‍👩‍👧‍👧');
+        });
+
+    script.
+        $(document).ready(function() {
+            $( ".g1" ).click(function() {
+                if ($('.explainer:visible').length)
+                    $('.explainer').css('display', 'none');
+                else
+                    $('.explainer').css('display', 'block');
+            });
         });
 
 block content
@@ -32,13 +42,17 @@ block content
                     h6.leader 
                         | Just over two years ago to this day, during finals week of my second year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!
 
+                +overview(shops)
+
                 // Generates all reviews from mixin 'Review'
                 +review(shops)
 
                 br
                 br
-                p (Under construction...)
-                br
+                
+                a(name='glossary')
+                h1 That's it!
+                h6 Thanks for reading. If you'd like to comment on one of these shops or recommend your favorite, send me an email. In case you're wondering:
                 br
                 br
 

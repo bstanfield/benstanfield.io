@@ -40,7 +40,7 @@
   $(document).ready(function() {
       $('.Cha').append('🔌');
       $('.Wif').append('📡');
-      $('.Cof').append('☕️');
+      $('.Dri').append('☕️');
       $('.Ser').append('😁');
       $('.Foo').append('🍝');
       $('.Dis').append('🛣');
@@ -49,13 +49,24 @@
   });
   
 </script>
+<script>
+  $(document).ready(function() {
+      $( ".g1" ).click(function() {
+          if ($('.explainer:visible').length)
+              $('.explainer').css('display', 'none');
+          else
+              $('.explainer').css('display', 'block');
+      });
+  });
+  
+</script>
 <body></body>
 <!-- loads navigation bar for each page-->  
 <div class="container-wide mobile-full">
 </div>
-<div class="nav">
+<div class="nav stick" id="stickThis">
   <div class="nav-content">
-    <div class="nav-text">  <a class="left" href="/" id="root"><span id='homeRoot'>Home</span> / <span class='projectRoot'>Coffee ☕️</span></a>
+    <div class="nav-text">  <a class="left" href="/" id="root"><span id='homeRoot'>BEN</span> / <span class='projectRoot'>Coffee ☕️</span></a>
       <div class="right nav-links"><a href="#contact">Contact</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a></div>
     </div>
   </div>
@@ -79,12 +90,24 @@
       <h6 class="leader">
          Just over two years ago to this day, during finals week of my second year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!</h6>
     </div>
+    <h2>Jump to:</h2>
+    <ol class="shop-list"> 
+      <li><a href="#prism-coffee-los-angeles">Prism Coffee <span class='closed-indicator'>Closed</span></a></li>
+      <li><a href="#dulce-los-angeles">Dulce Coffee <span class='closed-indicator'>Closed</span></a></li>
+      <li><a href="#loit-cafe-los-angeles">Loit Cafe <span class='closed-indicator'>Closed</span></a></li>
+      <li><a href="#alchemist-coffee-project-los-angeles-2">Alchemist Coffee <span class='closed-indicator'>Closed</span></a></li>
+      <li><a href="#Ignatius-cafe-los-angeles">Ignatius Cafe <span class='closed-indicator'>Closed</span></a></li>
+      <li><a href="#with-love-market-and-cafe-los-angeles">With Love Cafe <span class='closed-indicator'>Closed</span></a></li>
+      <li><a href="#Yellow-house-cafe-los-angeles">Yellow House Cafe <span class='closed-indicator'>Closed</span></a></li>
+    </ol>
     <!-- Generates all reviews from mixin 'Review'-->
     <div class="review">
-      <div class="review"><a target="_blank" href="https://www.yelp.com/biz/prism-coffee-los-angeles">
-          <h4>Prism Coffee</h4></a></a>
-        <p><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 7 AM - 9 PM)</p>
-        <p><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span> It's typically a <strong>15 minute</strong> drive from campus at 10 AM.</p><br>
+      <div class="review"><a class="anchor" name="prism-coffee-los-angeles" id="prism-coffee-los-angeles"></a>
+        <h4>Prism Coffee</h4><br>
+        <p><a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $10 <sup>?</sup></a></p>
+        <p class="explainer">↳&nbsp; waffle ($5) + cortado ($5) = $10</p>
+        <p><a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 7 AM - 9 PM) </a></p>
+        <p><a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>15 minute</strong> drive from campus at 10 AM. </a></p><br>
         <div class="gallery-blackbox">
           <div class="fill"><a data-fancybox="Prism Coffee" href="../../images/projects/coffee/prism-coffee-ben-stanfield-usc.jpg"><img src="../../images/projects/coffee/prism-coffee-ben-stanfield-usc.jpg"></a></div>
           <div class="gallery-indicator"><a data-fancybox="Prism Coffee" href="../../images/projects/coffee/prism-coffee-ben-stanfield-usc.jpg"><i class="far fa-image"></i> View gallery</a></div>
@@ -103,61 +126,69 @@
             <div>
               <div class="score-emoji"><span class="Cha"></span></div>
               <div class="score-text">
-                <p><strong>Charging:</strong> Plenty of outlets</p>
+                <p><strong>Charging</strong> </p>
+                <p class="small-note">Plenty of outlets</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Wif"></span></div>
               <div class="score-text">
-                <p><strong>Wifi:</strong> Pretty good</p>
+                <p><strong>Wifi</strong> </p>
+                <p class="small-note">Pretty good</p>
               </div>
             </div>
             <div>
-              <div class="score-emoji"><span class="Cof"></span></div>
+              <div class="score-emoji"><span class="Dri"></span></div>
               <div class="score-text">
-                <p><strong>Coffee:</strong> Amazing pour-over and iced coffee</p>
+                <p><strong>Drinks</strong> </p>
+                <p class="small-note">Amazing pour-over and iced coffee</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Ser"></span></div>
               <div class="score-text">
-                <p><strong>Service:</strong> Very friendly and knowledgeable!</p>
+                <p><strong>Service</strong> </p>
+                <p class="small-note">Very friendly and knowledgeable!</p>
               </div>
             </div>
-            <hr>
           </div>
           <div class="score-col">
             <h2>Not great for:</h2>
             <div>
               <div class="score-emoji"><span class="Foo"></span></div>
               <div class="score-text">
-                <p><strong>Food:</strong> Mostly pastries</p>
+                <p><strong>Food</strong></p>
+                <p class="small-note">Mostly pastries</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Dis"></span></div>
               <div class="score-text">
-                <p><strong>Distance:</strong> Not close to campus</p>
+                <p><strong>Distance</strong></p>
+                <p class="small-note">Not close to campus</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="All"></span></div>
               <div class="score-text">
-                <p><strong>All day grind:</strong> No comfortable seating</p>
+                <p><strong>All day grind</strong></p>
+                <p class="small-note">No comfortable seating</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Lar"></span></div>
               <div class="score-text">
-                <p><strong>Large groups:</strong> Limited total space</p>
+                <p><strong>Large groups</strong></p>
+                <p class="small-note">Limited total space</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="writeup">
-        <h4>Notes on Prism Coffee:</h4>
-        <h6>Prism Coffee is a wonderful, tiny slice of coffee heaven. Robin (the manager) and his staff's attention to detail—mainly for their pour-over and iced coffee—is undeniably the shop's strongsuit, but ample charging, good wifi, and friendly service pushes Prism into my top 20.</h6>
+        <h2>Notes on Prism Coffee:</h2>
+        <h6>Prism Coffee is a wonderful, tiny slice of coffee heaven. Robin (the manager) and his staff's attention to detail—mainly for their pour-over and iced coffee—is undeniably the shop's strongsuit, but ample charging, good wifi, and friendly service pushes Prism into my top 10.</h6>
+        <h6>If you're not into pourover coffee, or don't want to front the steep price for it, try the cortado. There isn't much food at Prism, but their waffle is to die for.</h6>
         <h6>You won't hear much about Prism because of its distance from campus (15 minutes without traffic) and low-profile shop (there isn't much else to do within walking distance). Save Prism for a day when you're craving a great cup of coffee and a nice chat over a long work session.</h6>
         <div class="recs"> 
           <h2>Coffee and food recommendations:</h2>
@@ -172,10 +203,12 @@
       </div>
     </div>
     <div class="review">
-      <div class="review"><a target="_blank" href="https://www.yelp.com/biz/dulce-los-angeles">
-          <h4>Dulce Coffee</h4></a></a>
-        <p><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 7 AM - 9 PM)</p>
-        <p><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span> It's typically a <strong>2 minute</strong> drive from campus at 10 AM.</p><br>
+      <div class="review"><a class="anchor" name="dulce-los-angeles" id="dulce-los-angeles"></a>
+        <h4>Dulce Coffee</h4><br>
+        <p><a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $11.5 <sup>?</sup></a></p>
+        <p class="explainer">↳&nbsp; breakfast burrito ($8) + drip coffee ($3.5) = $11.5</p>
+        <p><a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 7 AM - 9 PM) </a></p>
+        <p><a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>2 minute</strong> drive from campus at 10 AM. </a></p><br>
         <div class="gallery-blackbox">
           <div class="fill"><a data-fancybox="Dulce Coffee" href="../../images/projects/coffee/dulce-ben-stanfield-usc.jpg"><img src="../../images/projects/coffee/dulce-ben-stanfield-usc.jpg"></a></div>
           <div class="gallery-indicator"><a data-fancybox="Dulce Coffee" href="../../images/projects/coffee/dulce-ben-stanfield-usc.jpg"><i class="far fa-image"></i> View gallery</a></div>
@@ -194,62 +227,69 @@
             <div>
               <div class="score-emoji"><span class="Dis"></span></div>
               <div class="score-text">
-                <p><strong>Distance:</strong> On campus!</p>
+                <p><strong>Distance</strong> </p>
+                <p class="small-note">On campus!</p>
               </div>
             </div>
             <div>
-              <div class="score-emoji"><span class="Cof"></span></div>
+              <div class="score-emoji"><span class="Dri"></span></div>
               <div class="score-text">
-                <p><strong>Coffee:</strong> Good drip and matcha coffee</p>
+                <p><strong>Drinks</strong> </p>
+                <p class="small-note">Good drip and matcha coffee</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Ser"></span></div>
               <div class="score-text">
-                <p><strong>Service:</strong> Very friendly!</p>
+                <p><strong>Service</strong> </p>
+                <p class="small-note">Very friendly!</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Foo"></span></div>
               <div class="score-text">
-                <p><strong>Food:</strong> Donuts, sandwiches, breakfast burritos</p>
+                <p><strong>Food</strong> </p>
+                <p class="small-note">Donuts, sandwiches, breakfast burritos</p>
               </div>
             </div>
-            <hr>
           </div>
           <div class="score-col">
             <h2>Not great for:</h2>
             <div>
               <div class="score-emoji"><span class="All"></span></div>
               <div class="score-text">
-                <p><strong>All day grind:</strong> Too loud and limited charging</p>
+                <p><strong>All day grind</strong></p>
+                <p class="small-note">Too loud and limited charging</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Lar"></span></div>
               <div class="score-text">
-                <p><strong>Large groups:</strong> Limited total space</p>
+                <p><strong>Large groups</strong></p>
+                <p class="small-note">Limited total space</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Cha"></span></div>
               <div class="score-text">
-                <p><strong>Charging:</strong> Only a few outlets!</p>
+                <p><strong>Charging</strong></p>
+                <p class="small-note">Only a few outlets!</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Wif"></span></div>
               <div class="score-text">
-                <p><strong>Wifi:</strong> Kicks you off every 15 min.</p>
+                <p><strong>Wifi</strong></p>
+                <p class="small-note">Kicks you off every 15 min.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="writeup">
-        <h4>Notes on Dulce Coffee:</h4>
+        <h2>Notes on Dulce Coffee:</h2>
         <h6>Located in the USC Village, Dulce’s combination of accessibility and quality coffee is hard to beat. Most people around campus will rave about Dulce’s Matcha drinks, but not being a big fan of Matcha, I’ve really enjoyed their inauspicious drip coffees. Their regular lattes are also very good and the service friendly.</h6>
-        <h6>In addition to good drinks, Dulce also makes a KILLER breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes.</h6>
+        <h6>In addition to good drinks, Dulce also makes a <i>killer</i> breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes.</h6>
         <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/DfjZKlH.jpg)">
           <h6><strong>From Abigail Africa: </strong> Dulce is overall a mixed bag. It produces great food and coffee, but you should never expect to settle there unless you're exceptionally prepared to deal with poor wifi and a tough selection of outlets. Lighting is great, but noise is high, so I go there to do remote work, but not for group projects. Outdoors is a lovely experience in the first months of fall or the bulk of spring. It’s quieter than inside, but there are variables like harsh sun and no power.</h6>
         </div>
@@ -267,10 +307,12 @@
       </div>
     </div>
     <div class="review">
-      <div class="review"><a target="_blank" href="https://www.yelp.com/biz/loit-cafe-los-angeles">
-          <h4>Loit Cafe</h4></a></a>
-        <p><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 7 AM - 9 PM)</p>
-        <p><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span> It's typically a <strong>10 minute</strong> drive from campus at 10 AM.</p><br>
+      <div class="review"><a class="anchor" name="loit-cafe-los-angeles" id="loit-cafe-los-angeles"></a>
+        <h4>Loit Cafe</h4><br>
+        <p><a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $14 <sup>?</sup></a></p>
+        <p class="explainer">↳&nbsp; avocado toast ($8) + charcoal latte ($6) = $14</p>
+        <p><a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 7 AM - 9 PM) </a></p>
+        <p><a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>10 minute</strong> drive from campus at 10 AM. </a></p><br>
         <div class="gallery-blackbox">
           <div class="fill"><a data-fancybox="Loit Cafe" href="../../images/projects/coffee/loit-hero.jpg"><img src="../../images/projects/coffee/loit-hero.jpg"></a></div>
           <div class="gallery-indicator"><a data-fancybox="Loit Cafe" href="../../images/projects/coffee/loit-hero.jpg"><i class="far fa-image"></i> View gallery</a></div>
@@ -287,44 +329,48 @@
           <div class="score-col">
             <h2>Best for:</h2>
             <div>
-              <div class="score-emoji"><span class="Cof"></span></div>
+              <div class="score-emoji"><span class="Dri"></span></div>
               <div class="score-text">
-                <p><strong>Coffee:</strong> Charcoal lattes, pour-over</p>
+                <p><strong>Drinks</strong> </p>
+                <p class="small-note">Charcoal lattes, pour-over</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Foo"></span></div>
               <div class="score-text">
-                <p><strong>Food:</strong> Surpisingly good small dishes!</p>
+                <p><strong>Food</strong> </p>
+                <p class="small-note">Surpisingly good small dishes!</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="All"></span></div>
               <div class="score-text">
-                <p><strong>All day grind:</strong> You should make a day out of Loit</p>
+                <p><strong>All day grind</strong> </p>
+                <p class="small-note">You should make a day out of Loit</p>
               </div>
             </div>
             <div>
               <div class="score-emoji"><span class="Lar"></span></div>
               <div class="score-text">
-                <p><strong>Large groups:</strong> Large, open space with tablespace</p>
+                <p><strong>Large groups</strong> </p>
+                <p class="small-note">Large, open space with tablespace</p>
               </div>
             </div>
-            <hr>
           </div>
           <div class="score-col">
             <h2>Not great for:</h2>
             <div>
               <div class="score-emoji"><span class="Wif"></span></div>
               <div class="score-text">
-                <p><strong>Wifi:</strong> It is pretty spotty</p>
+                <p><strong>Wifi</strong></p>
+                <p class="small-note">It is pretty spotty</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="writeup">
-        <h4>Notes on Loit Cafe:</h4>
+        <h2>Notes on Loit Cafe:</h2>
         <h6>Located in the USC Village, Dulce’s combination of accessibility and quality coffee is hard to beat. Most people around campus will rave about Dulce’s Matcha drinks, but not being a big fan of Matcha, I’ve really enjoyed their inauspicious drip coffees. Their regular lattes are also very good and the service friendly.</h6>
         <h6>In addition to good drinks, Dulce also makes a KILLER breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes.</h6>
         <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/iiRfBbk.jpg)">
@@ -342,8 +388,339 @@
       <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/loit-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Loit Cafe on Yelp </a>
         <hr><br><br>
       </div>
-    </div><br><br>
-    <p>(Under construction...)</p><br><br><br>
+    </div>
+    <div class="review">
+      <div class="review"><a class="anchor" name="alchemist-coffee-project-los-angeles-2" id="alchemist-coffee-project-los-angeles-2"></a>
+        <h4>Alchemist Coffee</h4><br>
+        <p><a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $17.5 <sup>?</sup></a></p>
+        <p class="explainer">↳&nbsp; egg bat sandwich ($12) + single origin (hario) ($5.5) = $17.5</p>
+        <p><a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 8 AM - 10 PM) </a></p>
+        <p><a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>12 minute</strong> drive from campus at 10 AM. </a></p><br>
+        <div class="gallery-blackbox">
+          <div class="fill"><a data-fancybox="Alchemist Coffee" href="../../images/projects/coffee/alchemist-hero.jpg"><img src="../../images/projects/coffee/alchemist-hero.jpg"></a></div>
+          <div class="gallery-indicator"><a data-fancybox="Alchemist Coffee" href="../../images/projects/coffee/alchemist-hero.jpg"><i class="far fa-image"></i> View gallery</a></div>
+          <div class="gallery-container flex-grid">
+            <div class="gallery-photo"><a data-fancybox="Alchemist Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/Xn_68u-1vTKQPdWRnECwgw/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/Xn_68u-1vTKQPdWRnECwgw/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Alchemist Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/BzKMGMMsLN0hG6Ijw-IpHg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/BzKMGMMsLN0hG6Ijw-IpHg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Alchemist Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/i-I_5XAYzNNPm9HB5ZfJJw/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/i-I_5XAYzNNPm9HB5ZfJJw/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Alchemist Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/CEv8GoOGS1sbsr3gcVMGxA/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/CEv8GoOGS1sbsr3gcVMGxA/o.jpg"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="scorecard">
+        <div class="flex-grid">
+          <div class="score-col">
+            <h2>Best for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Dri"></span></div>
+              <div class="score-text">
+                <p><strong>Drinks</strong> </p>
+                <p class="small-note">Great pour-over and tea selection.</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Foo"></span></div>
+              <div class="score-text">
+                <p><strong>Food</strong> </p>
+                <p class="small-note">Awesome breakfast and paninis</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="All"></span></div>
+              <div class="score-text">
+                <p><strong>All day grind</strong> </p>
+                <p class="small-note"> Cheap parking and good Korean food in plaza</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dis"></span></div>
+              <div class="score-text">
+                <p><strong>Distance</strong> </p>
+                <p class="small-note">Just follow Vermont all the way from campus</p>
+              </div>
+            </div>
+          </div>
+          <div class="score-col">
+            <h2>Not great for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Lar"></span></div>
+              <div class="score-text">
+                <p><strong>Large groups</strong></p>
+                <p class="small-note"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="writeup">
+        <h2>Notes on Alchemist Coffee:</h2>
+        <h6>Located in the USC Village, Dulce’s combination of accessibility and quality coffee is hard to beat. Most people around campus will rave about Dulce’s Matcha drinks, but not being a big fan of Matcha, I’ve really enjoyed their inauspicious drip coffees. Their regular lattes are also very good and the service friendly.</h6>
+        <h6>In addition to good drinks, Dulce also makes a KILLER breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes.</h6>
+        <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/iiRfBbk.jpg)">
+          <h6><strong>From Landon Brand: </strong> I’d say this is one of the best spots downtown for working—tons of space and outlets, and since it serves food you can keep going even if you get hungry. That said, it is pricy, especially if you factor in parking/transportation to downtown. Maybe not worth it as an everyday go-to, but it’s hard to beat their workspace or coffee quality.</h6>
+        </div>
+        <div class="recs"> 
+          <h2>Coffee and food recommendations:</h2>
+          <ol>
+            <li><a class="img-link">Charcoal latte</a></li>
+            <li><a class="img-link">Avocado toast</a></li>
+            <li><a class="img-link">Ethiopia pour-over</a></li>
+          </ol><br><br>
+        </div>
+      </div>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/alchemist-coffee-project-los-angeles-2" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Alchemist Coffee on Yelp </a>
+        <hr><br><br>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review"><a class="anchor" name="Ignatius-cafe-los-angeles" id="Ignatius-cafe-los-angeles"></a>
+        <h4>Ignatius Cafe</h4><br>
+        <p><a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $3.5 <sup>?</sup></a></p>
+        <p class="explainer">↳&nbsp; none ($0) + lemon tea ($3.5) = $3.5</p>
+        <p><a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 9 AM - 5 PM) </a></p>
+        <p><a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>3 minute</strong> drive from campus at 10 AM. </a></p><br>
+        <div class="gallery-blackbox">
+          <div class="fill"><a data-fancybox="Ignatius Cafe" href="../../images/projects/coffee/ignatius-hero.jpg"><img src="../../images/projects/coffee/ignatius-hero.jpg"></a></div>
+          <div class="gallery-indicator"><a data-fancybox="Ignatius Cafe" href="../../images/projects/coffee/ignatius-hero.jpg"><i class="far fa-image"></i> View gallery</a></div>
+          <div class="gallery-container flex-grid">
+            <div class="gallery-photo"><a data-fancybox="Ignatius Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/c8TsiJtqwfFpidleG1Dm4g/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/c8TsiJtqwfFpidleG1Dm4g/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Ignatius Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/K0O1qrVbYrG_4SYXifb3MA/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/K0O1qrVbYrG_4SYXifb3MA/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Ignatius Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/htkFfqiwCQFy0KYrznEROQ/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/htkFfqiwCQFy0KYrznEROQ/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Ignatius Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/PevT5MypKSj_MLSweT6Kfw/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/PevT5MypKSj_MLSweT6Kfw/o.jpg"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="scorecard">
+        <div class="flex-grid">
+          <div class="score-col">
+            <h2>Best for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Ser"></span></div>
+              <div class="score-text">
+                <p><strong>Service</strong> </p>
+                <p class="small-note">Very sweet Korean ladies</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dri"></span></div>
+              <div class="score-text">
+                <p><strong>Drinks</strong> </p>
+                <p class="small-note">The best lemon tea on earth</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dis"></span></div>
+              <div class="score-text">
+                <p><strong>Distance</strong> </p>
+                <p class="small-note">10 minute WALK from north of campus</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Cha"></span></div>
+              <div class="score-text">
+                <p><strong>Charging</strong> </p>
+                <p class="small-note">Plugs are plentiful, even outside</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Lar"></span></div>
+              <div class="score-text">
+                <p><strong>Large groups</strong> </p>
+                <p class="small-note">It's never really packed, so there are often multiple tables or even long benches available outside.</p>
+              </div>
+            </div>
+          </div>
+          <div class="score-col">
+            <h2>Not great for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Foo"></span></div>
+              <div class="score-text">
+                <p><strong>Food</strong></p>
+                <p class="small-note">There just isn't any</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Wif"></span></div>
+              <div class="score-text">
+                <p><strong>Wifi</strong></p>
+                <p class="small-note">It's not a priority here. Bring a book and enjoy the sunshine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="writeup">
+        <h2>Notes on Ignatius Cafe:</h2>
+        <h6>Located just five minutes away from campus, With Love Cafe is a sweet community spot. Its dedication to serving the community is reflected in the truly diverse array of people that come through the market and cafe everyday. Small downsides are limited street parking and unremarkable coffee, but all of the pros easily make up for these. You can stay fueled with solid food, wifi, and charging all day here at an affordable price.</h6>
+        <h6>It has different workspace options too. You can move from the wide open downstairs to the more studious and quiet upstairs, or even into the small conference room available by reservation — that room is a personal favorite for group meetings.</h6>
+        <h6>You won’t regret choosing With Love Cafe as your coffee spot for the full day — and you’re likely to be the only USC students there too, which is a refreshing change of pace from classic downtown brunch and coffee spot teeming with college students. </h6>
+        <div class="recs"> 
+          <h2>Coffee and food recommendations:</h2>
+          <ol>
+            <li><a class="img-link">Honey Tea</a></li>
+          </ol><br><br>
+        </div>
+      </div>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/Ignatius-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Ignatius Cafe on Yelp </a>
+        <hr><br><br>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review"><a class="anchor" name="with-love-market-and-cafe-los-angeles" id="with-love-market-and-cafe-los-angeles"></a>
+        <h4>With Love Cafe</h4><br>
+        <p><a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $11 <sup>?</sup></a></p>
+        <p class="explainer">↳&nbsp; cubano ($8.5) + coffee ($2.5) = $11</p>
+        <p><a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 9 AM - 5 PM) </a></p>
+        <p><a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>5 minute</strong> drive from campus at 10 AM. </a></p><br>
+        <div class="gallery-blackbox">
+          <div class="fill"><a data-fancybox="With Love Cafe" href="../../images/projects/coffee/with-love-cafe.jpg"><img src="../../images/projects/coffee/with-love-cafe.jpg"></a></div>
+          <div class="gallery-indicator"><a data-fancybox="With Love Cafe" href="../../images/projects/coffee/with-love-cafe.jpg"><i class="far fa-image"></i> View gallery</a></div>
+          <div class="gallery-container flex-grid">
+            <div class="gallery-photo"><a data-fancybox="With Love Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/Z1tKow0jML_OyIZ3VcImBQ/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/Z1tKow0jML_OyIZ3VcImBQ/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="With Love Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/AbTjWOUeBzD9Qhs8Hb42zg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/AbTjWOUeBzD9Qhs8Hb42zg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="With Love Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/mI-5YLN1pumBskeKbsibYg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/mI-5YLN1pumBskeKbsibYg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="With Love Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/M84ZspyK-jXCVvCW-ea6Cg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/M84ZspyK-jXCVvCW-ea6Cg/o.jpg"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="scorecard">
+        <div class="flex-grid">
+          <div class="score-col">
+            <h2>Best for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Foo"></span></div>
+              <div class="score-text">
+                <p><strong>Food</strong> </p>
+                <p class="small-note">Healthy meals or snacks from the market</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="All"></span></div>
+              <div class="score-text">
+                <p><strong>All day grind</strong> </p>
+                <p class="small-note"> Friendly and open space with big tables</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dis"></span></div>
+              <div class="score-text">
+                <p><strong>Distance</strong> </p>
+                <p class="small-note">Closer to campus than you think</p>
+              </div>
+            </div>
+          </div>
+          <div class="score-col">
+            <h2>Not great for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Dri"></span></div>
+              <div class="score-text">
+                <p><strong>Drinks</strong></p>
+                <p class="small-note">Compared to the rest of these shops, it's nothing special. But the prices are good!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="writeup">
+        <h2>Notes on With Love Cafe:</h2>
+        <h6>Located just five minutes away from campus, With Love Cafe is a sweet community spot. Its dedication to serving the community is reflected in the truly diverse array of people that come through the market and cafe everyday. Small downsides are limited street parking and unremarkable coffee, but all of the pros easily make up for these. You can stay fueled with solid food, wifi, and charging all day here at an affordable price.</h6>
+        <h6>It has different workspace options too. You can move from the wide open downstairs to the more studious and quiet upstairs, or even into the small conference room available by reservation — that room is a personal favorite for group meetings.</h6>
+        <h6>You won’t regret choosing With Love Cafe as your coffee spot for the full day — and you’re likely to be the only USC students there too, which is a refreshing change of pace from classic downtown brunch and coffee spot teeming with college students. </h6>
+        <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/pm0DZjU.jpg)">
+          <h6><strong>From Mimi: </strong> With Love Cafe feels like the perfect blend between warm community library and health food store. If you’re the type to grab snacks at Trader Joe’s and then stop by Cafe 84 on a Saturday afternoon, skip both and head to With Love instead.</h6>
+        </div>
+        <div class="recs"> 
+          <h2>Coffee and food recommendations:</h2>
+          <ol>
+            <li><a class="img-link">Pulled pork sandwich</a></li>
+            <li><a class="img-link">The Fuego smoothie</a></li>
+            <li><a class="img-link">Drip coffee</a></li>
+          </ol><br><br>
+        </div>
+      </div>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/with-love-market-and-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View With Love Cafe on Yelp </a>
+        <hr><br><br>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review"><a class="anchor" name="Yellow-house-cafe-los-angeles" id="Yellow-house-cafe-los-angeles"></a>
+        <h4>Yellow House Cafe</h4><br>
+        <p><a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $11 <sup>?</sup></a></p>
+        <p class="explainer">↳&nbsp; cubano ($8.5) + coffee ($2.5) = $11</p>
+        <p><a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (Sat. 9 AM - 5 PM) </a></p>
+        <p><a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>5 minute</strong> drive from campus at 10 AM. </a></p><br>
+        <div class="gallery-blackbox">
+          <div class="fill"><a data-fancybox="Yellow House Cafe" href="../../images/projects/coffee/yellowhouse-hero.jpg"><img src="../../images/projects/coffee/yellowhouse-hero.jpg"></a></div>
+          <div class="gallery-indicator"><a data-fancybox="Yellow House Cafe" href="../../images/projects/coffee/yellowhouse-hero.jpg"><i class="far fa-image"></i> View gallery</a></div>
+          <div class="gallery-container flex-grid">
+            <div class="gallery-photo"><a data-fancybox="Yellow House Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/Z1tKow0jML_OyIZ3VcImBQ/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/Z1tKow0jML_OyIZ3VcImBQ/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Yellow House Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/AbTjWOUeBzD9Qhs8Hb42zg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/AbTjWOUeBzD9Qhs8Hb42zg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Yellow House Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/mI-5YLN1pumBskeKbsibYg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/mI-5YLN1pumBskeKbsibYg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Yellow House Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/M84ZspyK-jXCVvCW-ea6Cg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/M84ZspyK-jXCVvCW-ea6Cg/o.jpg"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="scorecard">
+        <div class="flex-grid">
+          <div class="score-col">
+            <h2>Best for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Foo"></span></div>
+              <div class="score-text">
+                <p><strong>Food</strong> </p>
+                <p class="small-note">Healthy meals or snacks from the market</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="All"></span></div>
+              <div class="score-text">
+                <p><strong>All day grind</strong> </p>
+                <p class="small-note"> Friendly and open space with big tables</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dis"></span></div>
+              <div class="score-text">
+                <p><strong>Distance</strong> </p>
+                <p class="small-note">Closer to campus than you think</p>
+              </div>
+            </div>
+          </div>
+          <div class="score-col">
+            <h2>Not great for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Dri"></span></div>
+              <div class="score-text">
+                <p><strong>Drinks</strong></p>
+                <p class="small-note">Compared to the rest of these shops, it's nothing special. But the prices are good!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="writeup">
+        <h2>Notes on Yellow House Cafe:</h2>
+        <h6>Located just five minutes away from campus, With Love Cafe is a sweet community spot. Its dedication to serving the community is reflected in the truly diverse array of people that come through the market and cafe everyday. Small downsides are limited street parking and unremarkable coffee, but all of the pros easily make up for these. You can stay fueled with solid food, wifi, and charging all day here at an affordable price.</h6>
+        <h6>It has different workspace options too. You can move from the wide open downstairs to the more studious and quiet upstairs, or even into the small conference room available by reservation — that room is a personal favorite for group meetings.</h6>
+        <h6>You won’t regret choosing With Love Cafe as your coffee spot for the full day — and you’re likely to be the only USC students there too, which is a refreshing change of pace from classic downtown brunch and coffee spot teeming with college students. </h6>
+        <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/pm0DZjU.jpg)">
+          <h6><strong>From Mimi: </strong> With Love Cafe feels like the perfect blend between warm community library and health food store. If you’re the type to grab snacks at Trader Joe’s and then stop by Cafe 84 on a Saturday afternoon, skip both and head to With Love instead.</h6>
+        </div>
+        <div class="recs"> 
+          <h2>Coffee and food recommendations:</h2>
+          <ol>
+            <li><a class="img-link">Pulled pork sandwich</a></li>
+            <li><a class="img-link">The Fuego smoothie</a></li>
+            <li><a class="img-link">Drip coffee</a></li>
+          </ol><br><br>
+        </div>
+      </div>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/Yellow-house-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Yellow House Cafe on Yelp </a>
+        <hr><br><br>
+      </div>
+    </div><br><br><a name="glossary"></a>
+    <h1>That's it!</h1>
+    <h6>Thanks for reading. If you'd like to comment on one of these shops or recommend your favorite, send me an email. In case you're wondering:</h6><br><br>
   </div>
 </div>
 <div class="container project"><br><br>
