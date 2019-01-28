@@ -54,9 +54,9 @@ mixin contact()
 mixin introsection(title, subtitle, date, emoji)
     if emoji
         h1.big-emoji #{emoji}
-    h1= title
-    p= subtitle
-    p.update-line #{date}
+    h1!= title
+    p!= subtitle
+    p.update-line!= date
     br
 
 mixin quote(quote, byline)
@@ -92,31 +92,18 @@ mixin reviewGallery(meta, hours, distance, arr)
         br
         if meta.food
             - const total = (meta.food[1] + meta.drink[1]).toFixed(2);
-            p <a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $#{total} <sup>?</sup></a>
+            p <a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$#{total}</strong> <sup>?</sup></a>
             p.explainer ↳&nbsp; #{meta.food[0]} ($#{meta.food[1].toFixed(2)}) + #{meta.drink[0]} ($#{meta.drink[1].toFixed(2)}) = $#{total}
 
         if hours
-            each obj in hours
-                - const open = obj.open;
-                - const closed = obj.close;
-                if closed <= 24
-                    if (date.toString().slice(0,3) == obj.day)
-                        if date.getHours() >= open && date.getHours() < closed
-                            p <a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{open} AM - #{((closed + 11) % 12 + 1)} PM) </a>
-
-                        else
-                            p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the rest of #{date.toLocaleDateString(locale, { weekday: 'long' })}.
-                else
-                    if (date.toString().slice(0,3) == obj.day)
-                        if date.getHours() >= open
-                            p <a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{open} AM - #{((closed + 11) % 12 + 1)} AM) </a>
-
-                        else
-                            p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the rest of #{date.toLocaleDateString(locale, { weekday: 'long' })}.
+            - const open = hours.open;
+            - const closed = hours.close;
+            p <span class='meta-emoji'>&nbsp;🗓&nbsp;</span>
+                span(id= anchorName + 'Hours').
 
         
         if distance
-            p <a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM. </a>
+            p <span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM.
 
 
         br

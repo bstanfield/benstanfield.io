@@ -5,39 +5,6 @@ block head
     - var projectName = "Coffee ☕️";
     title Ben - #{projectName}
 
-    script.
-        $(document).ready(function() {
-            $('.Cha').append('🔌');
-            $('.Wif').append('📡');
-            $('.Dri').append('☕️');
-            $('.Ser').append('😁');
-            $('.Foo').append('🍝');
-            $('.Dis').append('🛣');
-            $('.All').append('⏰');
-            $('.Lar').append('👨‍👩‍👧‍👧');
-        });
-
-    script.
-        $(document).ready(function() {
-            $( ".g1" ).click(function() {
-                if ($('.explainer:visible').length)
-                    $('.explainer').css('display', 'none');
-                else
-                    $('.explainer').css('display', 'block');
-            });
-        });
-
-    script.
-        $(document).ready(function() {
-            const d = new Date();
-            let time = d.getHours();
-            if (time >= 20) {
-                $('.closes-early').css('opacity', '.5');
-                $('.closes-early').append(' (closed)');
-            }
-        });
-
-
 block content
     .scroll-to-top
         button <i class="fas fa-arrow-alt-circle-up"></i> Return to Top

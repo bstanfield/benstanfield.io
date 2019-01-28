@@ -290,6 +290,10 @@ video {
     line-height: 30px;
   }
 
+  .pulsetxt {
+    text-align: left;
+  }
+
   .card > .pulsetxt > p {
     opacity: .5;
     font-size: 20px;
@@ -656,6 +660,10 @@ img#footerla {
     display: block;
   }
 
+  #col-bg {
+    display: none;
+  }
+
   .flex-grid.thirds.flex-nav {
     display: flex;
   }
@@ -694,10 +702,6 @@ img#footerla {
   
   .grid-bg {
     width: 100%;
-  }
-
-  #col-bg {
-    display: none;
   }
 }
 

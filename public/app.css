@@ -1247,6 +1247,9 @@ iframe {
 .project .intro h1 {
   font-weight: 600; }
 
+.project-hero-img, .project-img {
+  background-color: rgba(242, 242, 242, 0.762); }
+
 .project-card {
   position: relative;
   margin-top: 60px;
@@ -1758,6 +1761,9 @@ video {
   font-size: 20px !important;
   line-height: 30px; }
 
+.pulsetxt {
+  text-align: left; }
+
 .card > .pulsetxt > p {
   opacity: .5;
   font-size: 20px;
@@ -2063,6 +2069,8 @@ img#footerla {
 @media screen and (max-width: 835px) {
   .flex-grid {
     display: block; }
+  #col-bg {
+    display: none; }
   .flex-grid.thirds.flex-nav {
     display: flex; }
   .big-text > h1 {
@@ -2084,9 +2092,7 @@ img#footerla {
   body {
     font-size: 20px; }
   .grid-bg {
-    width: 100%; }
-  #col-bg {
-    display: none; } }
+    width: 100%; } }
 
 @media screen and (max-width: 650px) {
   .nav-text {

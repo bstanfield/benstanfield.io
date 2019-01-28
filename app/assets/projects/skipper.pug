@@ -1,33 +1,64 @@
 extends layout-projects
 block head
-    - var projectName = "Skipper ️⛵️";
-    - var navImg = 'background-image: url(../images/personalsite-assets-6.jpg); background-position-y: 30%;';
+    - var projectName = "Skipper ⛵️";
     title Ben - #{projectName}
 
 block content
-    .container.project
-        .intro 
-            h1 Skipper
-            h6 
-                | Integer tincidunt consequat ligula, vel ultrices quam interdum et. Donec bibendum et arcu eu porttitor. Suspendisse potenti. Nullam id lobortis tortor. In iaculis sagittis libero, interdum molestie sem cursus eget. Cras in ultricies justo. Proin porta augue sem, eget commodo nulla pharetra eu. Quisque aliquam est a leo aliquet gravida. Praesent lacus diam, bibendum in ligula eu, commodo placerat dui. Morbi nisi turpis, imperdiet eget purus consectetur, fermentum posuere diam. Integer fringilla dictum posuere. Proin ac massa id erat laoreet consectetur. Aliquam placerat ligula sed suscipit finibus.
-
-            button.orange-btn View Skipper's website
-
-            a(target='_blank' href='https://cdn-images-1.medium.com/max/2000/1*xsZByF7s6JRdUHRP68Cg6Q.jpeg').card.project-card
-                img(src='../images/medium-logo.png')
-                h2 5 Memorable Quotes from Culture First
-                p
-                    | Culture First addressed using culture as a competitive edge, approaching difficult conversations around diversity & inclusion, and accommodating new ways of working.
+    .x-files
+        .container.project
+            .intro 
+                +introsection("What I've learned from six months building a startup as a student", "<a class='orange' href='https://www.skipper.ai'>Skipper</a> is a workforce analytics tool that helps budding HR teams understand and utilize their data for good.", 'January 27, 2019')
                 
-                p.more Read on Medium <span>&rarr;</span>
-                .project-img(style='background-image: url(https://cdn-images-1.medium.com/max/2000/1*xsZByF7s6JRdUHRP68Cg6Q.jpeg);')
+        - const sparkHero = '../images/skipper-hero-image.jpeg';
+        - const sparkHeroCaption = 'Landon Brand and Ben Stanfield (me) brainstorming feature designs for Skipper.';
+        +bigphoto(sparkHero, sparkHeroCaption)
+        .container.project
+            h6.leader 
+                | Southern California is currently experiencing a wonderful and rare “superbloom” of flowers. Experts say that this spring, everything has “just been growing, growing, growing.” Spark SC has had a wonderful bloom too! From kicking off TechLA Fellows, our first summer fellowship program for interns at our partner startups, to piloting our Project Launch workshops for inner-city high school students, our impact continues to grow. Here’s a peek at a few of our buds.
 
-        hr
-        br
-        br
-        h1 More projects:
-        br
-        .flex-grid.thirds
-            +3card('sparksc.html', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
-            +3card('skipper.html', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.' )
-            +3card('lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
+            +article('medium.com/sparksc/state-of-spark-spring-2017-ddeeab535d33', '../images/medium-logo.png', 'State of Spark: Spring 2017', 'Spark SC is the student-run entrepreneurial hub at the University of Southern California. So, what have we been up to this semester?', 'Medium', 'background-image: url(https://cdn-images-1.medium.com/max/1200/1*m2NXtbpuEhumpWG72RDYpQ.jpeg);')
+
+            h4 Tech.LA Fellows
+
+            h6
+                | Tech.LA Fellow’s 10-week Summer Fellowship gives highly motivated students in design, engineering, and business a paid internship with a Los Angeles startup. The impetus for starting this project began when several Spark members had gone through the KPCB Fellows recruitment cycle and really appreciated what they built up north, but were thoroughly unimpressed by what Los Angeles had to offer, in regard to a community of interns.
+            h6
+                | So, we gathered a small group of Los Angeles startups, all in line with our mission of creating a tighter ecosystem of young tech talent in LA, and opened our application. That first year alone we received over 300 applications for just a handful of spots. In our second iteration (last summer), we received nearly 600 applications and are deep into our third iteration of the fellowship program today.
+
+            +quote('Los Angeles is a welcoming tech environment, which is scarce these days. I also love that I get to work with & interact with people from non-tech backgrounds and mindsets. It’s enlightening.', '- Olivia Brown, 2017 Fellow')
+
+            h6
+                | If you're interested in applying to the Fellowship program for the summer of 2019, keep an eye on our website, 
+                +link('https://www.tech.la', 'tech.la', 'Write some code under the sun 😎')
+                |.
+
+            h4 Unite Conference
+            h6
+                | In late 2016, a Spark committee formed with the concept of bringing together different entrepreneurial orgs from around the country to share ideas and learn from one another. This culminated in a 2-day conference at Google's San Francisco Headquarters over the summer of 2017.
+
+            h4 Ideas to Impact
+            h6
+                | Ideas to Impact (now Innovating for the Refugee Crisis), which ran in 2017, was the first student-led course at the University of Southern California. Inspired by design-thinking principles from companies like IDEO, and by the idea that students teaching students is a novel way to connect in the classroom, a small group of Spark SC students pushed the Viterbi School of Engineering to champion the course.
+
+            - const IdeasToImpactImg = '/images/499.jpg';
+            - const IdeasToImpactCaption = 'USC Provost Michael Quick (center-right) with Ideas to Impact students in the "Hacker House," the off-campus classroom for the course.';
+            +mediumphoto(IdeasToImpactImg, IdeasToImpactCaption)
+            br
+
+            h6
+                | There's one great thing about Spark I've yet to mention: it changes EVERY YEAR... turnover is part of the beauty of a student organization. While I and many of the people who worked on some of the initiatives above may have already graduated, I urge you, if you're interested, to  
+                +link('https://sparksc.org/about/support-sponsor/', 'continue to support ') 
+                | what's going on in Spark.
+
+            hr
+            br
+            br
+            h1 More Spark SC projects:
+            br
+
+            .flex-grid.thirds
+                +3card('https://www.tech.la', '🌴', 'Tech.LA Fellows', 'Internship community for connecting students across the country with budding LA startups.', '_blank')
+                +3card('http://www.breaktomake.com', '🔧', 'Break to Make', 'All-women makeathon hosted at the Reef in Los Angeles, with an emphasis on introducing young women to engineering.', '_blank')
+                +3card('http://www.projectlaunch.io/', '🚀', 'Project Launch', 'Program that connects underserved LA high school students to USC mentors to develop hard skills.', '_blank')
+        
+            
