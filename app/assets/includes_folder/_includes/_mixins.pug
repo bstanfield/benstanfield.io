@@ -86,7 +86,8 @@ mixin reviewGallery(meta, hours, distance, arr)
     - const date = new Date;
 
     .review
-        - const anchorName = meta.shopName.replace(/\s/g, '');
+        - let anchorName = meta.shopName.replace(/\s/g, '');
+        - anchorName = anchorName.replace(/&/g, 'And');
         a.anchor(name=anchorName id=anchorName)
         h4.shop-name #{meta.shopName}
         br
@@ -212,7 +213,8 @@ mixin overview(shops)
                 }
             - const today = getDate(day);
             - const closing = shop[0].hours[today].close;
-            - const anchorName = shop[0].meta.shopName.replace(/\s/g, '');
+            - let anchorName = shop[0].meta.shopName.replace(/\s/g, '');
+            - anchorName = anchorName.replace(/&/g, 'And');
             if (closing > 21)
                 li
                     a(href='#' + anchorName class='late-night') #{shop[0].meta.shopName} <span class='open-indicator'>🌝</span>

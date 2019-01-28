@@ -102,6 +102,24 @@ document.addEventListener('DOMContentLoaded', () => {
             { day: 'Sat', open: 8, close: 26},
             { day: 'Sun', open: 8, close: 26},
         ],
+        'NothingButCoffee': [
+            { day: 'Mon', open: 8, close: 20},
+            { day: 'Tue', open: 8, close: 20},
+            { day: 'Wed', open: 8, close: 20},
+            { day: 'Thu', open: 8, close: 20},
+            { day: 'Fri', open: 8, close: 20},
+            { day: 'Sat', open: 8, close: 20},
+            { day: 'Sun', open: 8, close: 20},
+        ],
+        'BricksAndScones': [
+            { day: 'Mon', open: 8, close: 20},
+            { day: 'Tue', open: 8, close: 20},
+            { day: 'Wed', open: 8, close: 20},
+            { day: 'Thu', open: 8, close: 20},
+            { day: 'Fri', open: 8, close: 20},
+            { day: 'Sat', open: 8, close: 20},
+            { day: 'Sun', open: 8, close: 20},
+        ],
     }];
 
     const d = new Date();
@@ -110,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const storeCloseTimes = (arr) => {
         if (today == -1) {
-            today = 0;
+            today = 6;
         }
         delete arr[today].day;
         return arr[today];
@@ -133,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const setShopHours = (hours, name) => {
         const open = hours[0][name][today].open;
         const close = hours[0][name][today].close;
-        const tomorrowOpen = hours[0][name][(today + 1)].open;
+        const tomorrowOpen = hours[0][name][(d.getDay())].open;
         let closeWithMarker = ((close + 11) % 12 + 1);
         if (closeWithMarker >= 1 && closeWithMarker <= 3) {
             closeWithMarker = closeWithMarker + ' AM';
@@ -144,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if ((time + 1) === close) {
             $('#' + name + 'Hours').append(' This shop is <strong>closing soon. </strong>');
             $('#' + name + 'Hours').append(`(${open} AM to ${closeWithMarker})`);
-        } else if (time >= open && time <= close) {
+        } else if (time >= open && time < close) {
             $('#' + name + 'Hours').append(' This shop is <strong>open!</strong> ');
             $('#' + name + 'Hours').append(`(${open} AM to ${closeWithMarker})`);
         } else {
