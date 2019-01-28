@@ -155,6 +155,96 @@ document.addEventListener('DOMContentLoaded', function () {
     // do your setup here
     var $ = require('jquery');
 
+    // FOR COFFEE
+    $(document).ready(function () {
+        $('.Cha').append('🔌');
+        $('.Wif').append('📡');
+        $('.Dri').append('☕️');
+        $('.Ser').append('😁');
+        $('.Foo').append('🍝');
+        $('.Dis').append('🛣');
+        $('.All').append('⏰');
+        $('.Lar').append('👨‍👩‍👧‍👧');
+
+        $(".g1").click(function () {
+            if ($('.explainer:visible').length) $('.explainer').css('display', 'none');else $('.explainer').css('display', 'block');
+        });
+
+        var d = new Date();
+        var time = d.getHours();
+        if (time >= 20) {
+            $('.closes-early').css('opacity', '.5');
+            $('.closes-early').append(' (closed)');
+        }
+    });
+
+    $(document).ready(function () {
+        var shopHours = [{
+            'PrismCoffee': [{ day: 'Mon', open: 7, close: 21 }, { day: 'Tue', open: 7, close: 21 }, { day: 'Wed', open: 7, close: 21 }, { day: 'Thu', open: 7, close: 21 }, { day: 'Fri', open: 7, close: 21 }, { day: 'Sat', open: 7, close: 21 }, { day: 'Sun', open: 7, close: 21 }],
+            'DulceCoffee': [{ day: 'Mon', open: 7, close: 21 }, { day: 'Tue', open: 7, close: 21 }, { day: 'Wed', open: 7, close: 21 }, { day: 'Thu', open: 7, close: 21 }, { day: 'Fri', open: 7, close: 21 }, { day: 'Sat', open: 7, close: 21 }, { day: 'Sun', open: 7, close: 21 }],
+            'LoitCafe': [{ day: 'Mon', open: 7, close: 21 }, { day: 'Tue', open: 7, close: 21 }, { day: 'Wed', open: 7, close: 21 }, { day: 'Thu', open: 7, close: 21 }, { day: 'Fri', open: 7, close: 21 }, { day: 'Sat', open: 7, close: 21 }, { day: 'Sun', open: 7, close: 21 }],
+            'AlchemistCoffee': [{ day: 'Mon', open: 8, close: 22 }, { day: 'Tue', open: 8, close: 22 }, { day: 'Wed', open: 8, close: 22 }, { day: 'Thu', open: 8, close: 22 }, { day: 'Fri', open: 8, close: 22 }, { day: 'Sat', open: 8, close: 22 }, { day: 'Sun', open: 8, close: 22 }],
+            'IgnatiusCafe': [{ day: 'Mon', open: 9, close: 17 }, { day: 'Tue', open: 9, close: 17 }, { day: 'Wed', open: 9, close: 17 }, { day: 'Thu', open: 9, close: 17 }, { day: 'Fri', open: 9, close: 17 }, { day: 'Sat', open: 9, close: 17 }, { day: 'Sun', open: 13, close: 21 }],
+            'WithLoveCafe': [{ day: 'Mon', open: 7, close: 17 }, { day: 'Tue', open: 7, close: 17 }, { day: 'Wed', open: 7, close: 17 }, { day: 'Thu', open: 7, close: 17 }, { day: 'Fri', open: 7, close: 17 }, { day: 'Sat', open: 9, close: 17 }, { day: 'Sun', open: 9, close: 17 }],
+            'YellowHouseCafe': [{ day: 'Mon', open: 11, close: 24 }, { day: 'Tue', open: 11, close: 24 }, { day: 'Wed', open: 11, close: 24 }, { day: 'Thu', open: 11, close: 24 }, { day: 'Fri', open: 11, close: 26 }, { day: 'Sat', open: 11, close: 26 }, { day: 'Sun', open: 11, close: 24 }],
+            'BourgeoisPig': [{ day: 'Mon', open: 8, close: 26 }, { day: 'Tue', open: 8, close: 26 }, { day: 'Wed', open: 8, close: 26 }, { day: 'Thu', open: 8, close: 26 }, { day: 'Fri', open: 8, close: 26 }, { day: 'Sat', open: 8, close: 26 }, { day: 'Sun', open: 8, close: 26 }],
+            'NothingButCoffee': [{ day: 'Mon', open: 8, close: 20 }, { day: 'Tue', open: 8, close: 20 }, { day: 'Wed', open: 8, close: 20 }, { day: 'Thu', open: 8, close: 20 }, { day: 'Fri', open: 8, close: 20 }, { day: 'Sat', open: 8, close: 20 }, { day: 'Sun', open: 8, close: 20 }],
+            'BricksAndScones': [{ day: 'Mon', open: 8, close: 20 }, { day: 'Tue', open: 8, close: 20 }, { day: 'Wed', open: 8, close: 20 }, { day: 'Thu', open: 8, close: 20 }, { day: 'Fri', open: 8, close: 20 }, { day: 'Sat', open: 8, close: 20 }, { day: 'Sun', open: 8, close: 20 }]
+        }];
+
+        var d = new Date();
+        var today = d.getDay() - 1;
+        var time = d.getHours();
+
+        var storeCloseTimes = function storeCloseTimes(arr) {
+            if (today == -1) {
+                today = 6;
+            }
+            delete arr[today].day;
+            return arr[today];
+        };
+
+        var getHours = function getHours(shop) {
+            var hoursArr = Object.values(shop).map(storeCloseTimes);
+            return hoursArr;
+        };
+
+        var getShopNames = function getShopNames(shop) {
+            return Object.keys(shop);
+        };
+
+        var names = shopHours.map(getShopNames);
+        console.log('Names: ', names);
+        // openAndClose looks like: [{open, close}, {}, {}]
+        var openAndClose = shopHours.map(getHours);
+
+        var setShopHours = function setShopHours(hours, name) {
+            var open = hours[0][name][today].open;
+            var close = hours[0][name][today].close;
+            var tomorrowOpen = hours[0][name][d.getDay()].open;
+            var closeWithMarker = (close + 11) % 12 + 1;
+            if (closeWithMarker >= 1 && closeWithMarker <= 3) {
+                closeWithMarker = closeWithMarker + ' AM';
+            } else {
+                closeWithMarker = closeWithMarker + ' PM';
+            }
+
+            if (time + 1 === close) {
+                $('#' + name + 'Hours').append(' This shop is <strong>closing soon. </strong>');
+                $('#' + name + 'Hours').append('(' + open + ' AM to ' + closeWithMarker + ')');
+            } else if (time >= open && time < close) {
+                $('#' + name + 'Hours').append(' This shop is <strong>open!</strong> ');
+                $('#' + name + 'Hours').append('(' + open + ' AM to ' + closeWithMarker + ')');
+            } else {
+                $('#' + name + 'Hours').append(' This shop is <strong>closed.</strong>');
+                $('#' + name + 'Hours').append(' (Opens tomorrow at ' + tomorrowOpen + ')');
+            }
+        };
+
+        names[0].map(function (x) {
+            return setShopHours(shopHours, x);
+        });
+    });
     // EMOJI TIME
     $(document).ready(function () {
         var d = new Date();
