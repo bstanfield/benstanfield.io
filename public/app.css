@@ -503,6 +503,12 @@ a {
   color: #e75c16;
   text-decoration-color: #afafaf; }
 
+.orange {
+  color: #F26C29; }
+
+.orange:hover {
+  color: #e75c16; }
+
 p {
   font-size: 22px;
   line-height: 38px;
@@ -547,9 +553,6 @@ p {
 .nav-links > a:hover {
   color: #F26C29; }
 
-.nav-links > a:last-child {
-  font-style: italic; }
-
 .nav-content {
   max-width: 1000px;
   height: 48px;
@@ -581,7 +584,8 @@ video {
   background: #e4e4e4;
   padding: 0px 10px;
   border-radius: 4px;
-  display: none; }
+  display: none;
+  font-family: "IBM Plex Sans", sans-serif; }
 
 #videoimg {
   display: none;
@@ -617,9 +621,6 @@ video {
 
 #homeRoot:hover {
   opacity: 1; }
-
-.intro {
-  margin: 30px 0px; }
 
 .card {
   display: block;
@@ -669,6 +670,11 @@ video {
 .grow {
   opacity: 0.2 !important;
   transition: 0.3s ease-in-out; }
+
+.center {
+  text-align: center;
+  max-width: 600px;
+  margin: auto; }
 
 .news-card {
   background-image: url("https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg");
@@ -1017,11 +1023,27 @@ body, .x-files {
   padding: 0px;
   margin: 0px; }
 
+.scroll-to-top {
+  display: none; }
+
+.scroll-to-top button {
+  padding: 10px;
+  border-radius: 3px;
+  position: fixed;
+  bottom: 20px;
+  right: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: #333;
+  color: white;
+  z-index: 9999;
+  outline: none; }
+
 h6 {
   color: #333333;
   font-weight: 300;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 32px;
   padding: 0;
   margin: 0;
   margin-bottom: 30px; }
@@ -1033,11 +1055,10 @@ h6 {
   color: #F26C29;
   float: left;
   font-family: Georgia !important;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 10px;
-  padding-right: 8px;
-  padding-left: 3px; }
+  font-size: 65px;
+  line-height: 50px;
+  padding-top: 5px;
+  padding-right: 12px; }
 
 h6 i {
   font-family: 'Lava Italic'; }
@@ -1102,11 +1123,9 @@ sup:hover {
   opacity: 1;
   color: #F26C29; }
 
-.closed-indicator {
+.open-indicator {
   font-size: 12px;
-  padding-left: 5px;
-  opacity: .7;
-  color: red; }
+  padding-left: 5px; }
 
 .med-photo {
   margin-top: 50px;
@@ -1147,11 +1166,17 @@ sup:hover {
 
 .caption {
   width: 90%;
-  margin: auto; }
+  max-width: 900px;
+  margin: auto;
+  text-align: left; }
 
 .caption p {
   font-size: 18px;
   font-family: "IBM Plex Sans", sans-serif; }
+
+.move-up {
+  background-position-y: 70% !important;
+  background-position-x: 20% !important; }
 
 .update-line {
   font-family: "IBM Plex Sans", sans-serif;
@@ -1184,6 +1209,11 @@ iframe {
   margin-top: 20px;
   margin-bottom: 40px; }
 
+.anchor {
+  display: block;
+  position: relative;
+  top: -100px; }
+
 .quote {
   border-radius: 4px;
   background-color: whitesmoke;
@@ -1205,7 +1235,8 @@ iframe {
 .quote > p {
   font-size: 18px;
   font-weight: 600;
-  color: grey; }
+  color: grey;
+  font-family: "IBM Plex Sans", sans-serif; }
 
 .rootProject {
   opacity: .5; }
@@ -1246,6 +1277,10 @@ iframe {
 .review h4 {
   font-size: 35px;
   font-weight: 300; }
+
+h4.shop-name {
+  font-size: 30px;
+  font-weight: bold !important; }
 
 .review h4:first-of-type {
   margin-bottom: -10px; }
@@ -1359,6 +1394,10 @@ iframe {
   display: inline-block;
   vertical-align: top; }
 
+.small-note {
+  font-size: 16px;
+  font-family: "IBM Plex Sans", sans-serif; }
+
 .score-col .small-note {
   opacity: .7; }
 
@@ -1366,14 +1405,14 @@ iframe {
   padding: 0px 30px 0px 30px; }
 
 .writeup h2 {
-  margin-bottom: 20px;
-  padding-bottom: 8px; }
+  margin-bottom: 15px;
+  font-weight: bold; }
 
 .writeup img {
   width: 60px;
   height: 60px;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   border-radius: 50%;
   margin-top: 15px;
   margin-bottom: 5px; }
@@ -1393,15 +1432,24 @@ iframe {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 18px; }
 
+.writeup a {
+  color: #F26C29;
+  font-family: inherit;
+  font-size: inherit; }
+
+.writeup a:hover {
+  color: #c24e13; }
+
 .proj-button-container {
   width: 100%;
   margin: auto;
   text-align: center;
   padding-top: 15px;
-  z-index: 10; }
+  z-index: 10;
+  margin-bottom: 80px; }
 
 .proj-button-container hr {
-  margin-top: -18px;
+  margin-top: -3px;
   width: 120vw;
   margin-left: -25%;
   position: absolute;
@@ -1423,7 +1471,15 @@ iframe {
 
 .img-link {
   cursor: pointer;
-  display: inline-block; }
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: "IBM Plex Sans", sans-serif; }
+
+@media screen and (max-width: 500px) {
+  .scroll-to-top button {
+    display: none; }
+  .mobile-hide {
+    display: none; } }
 
 @media screen and (max-width: 720px) {
   .project-img {
@@ -1555,6 +1611,12 @@ a {
   color: #e75c16;
   text-decoration-color: #afafaf; }
 
+.orange {
+  color: #F26C29; }
+
+.orange:hover {
+  color: #e75c16; }
+
 p {
   font-size: 22px;
   line-height: 38px;
@@ -1599,9 +1661,6 @@ p {
 .nav-links > a:hover {
   color: #F26C29; }
 
-.nav-links > a:last-child {
-  font-style: italic; }
-
 .nav-content {
   max-width: 1000px;
   height: 48px;
@@ -1633,7 +1692,8 @@ video {
   background: #e4e4e4;
   padding: 0px 10px;
   border-radius: 4px;
-  display: none; }
+  display: none;
+  font-family: "IBM Plex Sans", sans-serif; }
 
 #videoimg {
   display: none;
@@ -1669,9 +1729,6 @@ video {
 
 #homeRoot:hover {
   opacity: 1; }
-
-.intro {
-  margin: 30px 0px; }
 
 .card {
   display: block;
@@ -1721,6 +1778,11 @@ video {
 .grow {
   opacity: 0.2 !important;
   transition: 0.3s ease-in-out; }
+
+.center {
+  text-align: center;
+  max-width: 600px;
+  margin: auto; }
 
 .news-card {
   background-image: url("https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg");

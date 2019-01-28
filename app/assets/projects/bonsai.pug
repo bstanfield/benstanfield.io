@@ -1,21 +1,19 @@
 extends layout-projects
 block head
     - var projectName = "Bonsai 🌳";
-    - var navImg = 'background-image: url(https://techcrunch.com/wp-content/uploads/2018/06/HSB_9596-1024x580.jpg?w=1390&crop=1); background-position-y: 30%;';
-    title Ben - #{projectName}
 
 block content
     .container.project
         .intro 
             +introsection('Bonsai Artificial Intelligence', 'Bonsai’s deep reinforcement learning platform provides the tools to build subject matter expertise into complex industrial systems.', 'September 23, 2018')
 
-        <iframe src="https://www.youtube.com/embed/OwgBXwTnFgo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    - const h4dHero = '../images/bonsai-hero.jpg';
+    - const h4dHeroCaption = "A Bonsai tree emobdies the essence of the company's approach: a system that is simultaneously natural and artificial; structured yet flowing; carefully trained; and elegant.";
+    +bigphoto(h4dHero, h4dHeroCaption)
+    .container.project
 
         h6.leader
             | As my first internship in college, Bonsai provided great foundational knowledge for me in regard to how young companies operate, how employees are motivated, and how work gets done on a blistering timeline. As a design and development intern I got experience working with clients on beta products, like Integrity, an application using Bonsai’s tech to spot breaches of truth in legal language. 
-
-        a(target='_blank' href='http://www.bons.ai/')
-            button.orange-btn View Bonsai's website
 
         h6
             | Recently, Bonsai was acquired by Microsoft and is merging with the growing ecosystem of artificial intelligence units within the giant company. But while I was working there in 2016, the technology was in the very early stage and the systems we were designing were completely novel. I'm extremeley greatful for the opportunity to learn more about design and engineering, as well as receive a <i>crazy</i> crash course in artificial intelligence. My time at Bonsai inspired me to apply for the role of president of Spark SC just a few months later, and to help launch the Laudato Si' Challenge the next summer. 

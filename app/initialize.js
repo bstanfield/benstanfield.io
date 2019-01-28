@@ -52,22 +52,41 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 
-  // STICKY NAV
-  function sticktothetop() {
-    var window_top = $(window).scrollTop();
-    var top = $('#stick-here').offset().top;
-    if (window_top > top) {
-        $('#stickThis').addClass('stick');
-        $('#stick-here').height($('#stickThis').outerHeight());
+  // BACK TO TOP BTN
+  $(document).scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 800) {
+      $('.scroll-to-top').fadeIn();
     } else {
-        $('#stickThis').removeClass('stick');
-        $('#stick-here').height(0);
+      $('.scroll-to-top').fadeOut();
     }
+  });
+
+  // STICKY NAV
+  if ($('#stick-here').length ) {
+    function sticktothetop() {
+        var window_top = $(window).scrollTop();
+        var top = $('#stick-here').offset().top;
+        if (window_top > top) {
+            $('#stickThis').addClass('stick');
+            $('#stick-here').height($('#stickThis').outerHeight());
+        } else {
+            $('#stickThis').removeClass('stick');
+            $('#stick-here').height(0);
+        }
     }
 
     $(function() {
         $(window).scroll(sticktothetop);
         sticktothetop();
+    });
+  }
+
+    // SCROLL-TO-TOP
+    $(document).ready(function() {
+        $('.scroll-to-top').click(function(){
+            $('html, body').animate({ scrollTop: 0 }, 800);
+        });
     });
 
   // FADE INS

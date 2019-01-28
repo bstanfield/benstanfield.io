@@ -1,4 +1,6 @@
 extends layout-projects
+block variables
+    - var metapic = "https://i.imgur.com/rTOhocU.png";
 block head
     - var projectName = "Coffee ☕️";
     title Ben - #{projectName}
@@ -25,36 +27,53 @@ block head
             });
         });
 
+    script.
+        $(document).ready(function() {
+            const d = new Date();
+            let time = d.getHours();
+            if (time >= 20) {
+                $('.closes-early').css('opacity', '.5');
+                $('.closes-early').append(' (closed)');
+            }
+        });
+
+
 block content
+    .scroll-to-top
+        button <i class="fas fa-arrow-alt-circle-up"></i> Return to Top
     .x-files
         .container.project
             .intro 
                 +introsection("Top Coffee Shops for Work in Los Angeles", 'A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.', 'December 19, 2018', '☕️')
                 
-        <div class='project-hero'>
-            .fill.project-hero-img
-            .caption 
-                p Ben Stanfield (me) and Fiona Pestana at Balcony Coffee in Koreatown, Los Angeles.
-        </div>
+        - const coffeeHero = '../images/projects/coffee/ben-balcony-coffee.jpg';
+        - const coffeeHeroCaption = 'Ankur Rastogi, Ben Stanfield (me) and Fiona Pestana at Balcony Coffee in Koreatown, Los Angeles.';
+        +bigphoto(coffeeHero, coffeeHeroCaption)(class='move-up')
 
-            .container.project
-                .intro 
-                    h6.leader 
-                        | Just over two years ago to this day, during finals week of my second year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!
+        .container.project
+            h6.leader 
+                | Just over two years ago to this day, during finals week of my second year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!
 
-                +overview(shops)
+            +overview(shops)
 
-                // Generates all reviews from mixin 'Review'
-                +review(shops)
+            br
+            hr
 
-                br
-                br
-                
-                a(name='glossary')
+            // Generates all reviews from mixin 'Review'
+            +review(shops)
+
+            br
+            br
+            
+            a(name='glossary')
+            .center
+                .big-emoji 👋
                 h1 That's it!
-                h6 Thanks for reading. If you'd like to comment on one of these shops or recommend your favorite, send me an email. In case you're wondering:
-                br
-                br
+                h6 Thanks for stopping by! If you'd like to comment on one of these shops, recommend your favorite, or simply grab coffee together, shoot me a message! 😁 ☕ ️
+                h6 
+                    a.orange(href='/') &larr; Go home.
+            br
+            br
 
         
             

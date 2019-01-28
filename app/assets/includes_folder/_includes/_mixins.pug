@@ -13,10 +13,10 @@ mixin link(url, name, tooltip)
 mixin imgLink(item)
     if item.img
         li    
-            a.img-link(title=item.img) #{item.name} ✨
+            .img-link(title=item.img) #{item.name} ✨
     else
         li
-            a.img-link #{item.name}
+            .img-link #{item.name}
 
 mixin more()
     p.more Learn more <span>&rarr;</span>
@@ -33,6 +33,7 @@ mixin contact()
         | If you'd like to work with me or learn more, please send me an email through the form below or find me on 
         +link('https://www.linkedin.com/in/meetben', 'LinkedIn', '"Join my professional network 🤓"')
         | . Thanks for stopping by!
+    p.italic (Mail goes to bstanfie@usc.edu)
 
     br
     form(accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST")
@@ -85,22 +86,34 @@ mixin reviewGallery(meta, hours, distance, arr)
     - const date = new Date;
 
     .review
-        a.anchor(name=meta.yelpUrl id=meta.yelpUrl)
-        h4 #{meta.shopName}
+        - const anchorName = meta.shopName.replace(/\s/g, '');
+        a.anchor(name=anchorName id=anchorName)
+        h4.shop-name #{meta.shopName}
         br
         if meta.food
-            - const total = meta.food[1] + meta.drink[1];
+            - const total = (meta.food[1] + meta.drink[1]).toFixed(2);
             p <a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about $#{total} <sup>?</sup></a>
-            p.explainer ↳&nbsp; #{meta.food[0]} ($#{meta.food[1]}) + #{meta.drink[0]} ($#{meta.drink[1]}) = $#{total}
+            p.explainer ↳&nbsp; #{meta.food[0]} ($#{meta.food[1].toFixed(2)}) + #{meta.drink[0]} ($#{meta.drink[1].toFixed(2)}) = $#{total}
 
         if hours
             each obj in hours
-                if (date.toString().slice(0,3) == obj.day)
-                    if date.getHours() > obj.open && date.getHours() < obj.close
-                        p <a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{obj.open} AM - #{((obj.close + 11) % 12 + 1)} PM) </a>
+                - const open = obj.open;
+                - const closed = obj.close;
+                if closed <= 24
+                    if (date.toString().slice(0,3) == obj.day)
+                        if date.getHours() >= open && date.getHours() < closed
+                            p <a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{open} AM - #{((closed + 11) % 12 + 1)} PM) </a>
 
-                    else
-                        p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the rest of #{date.toLocaleDateString(locale, { weekday: 'long' })}.
+                        else
+                            p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the rest of #{date.toLocaleDateString(locale, { weekday: 'long' })}.
+                else
+                    if (date.toString().slice(0,3) == obj.day)
+                        if date.getHours() >= open
+                            p <a class='g2' ><span class='meta-emoji'>&nbsp;✅&nbsp;</span> They're <strong style='color: green;'>open</strong> right now! (#{obj.day}. #{open} AM - #{((closed + 11) % 12 + 1)} AM) </a>
+
+                        else
+                            p &nbsp; 🌃  &nbsp; They're <strong>closed</strong> for the rest of #{date.toLocaleDateString(locale, { weekday: 'long' })}.
+
         
         if distance
             p <a class='g3'><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM. </a>
@@ -148,7 +161,7 @@ mixin scorecard(goodObj, badObj)
 
 mixin recs(itemObjs)
     .recs 
-        h2 Coffee and food recommendations:
+        h2 Ben's Recommendations
         ol
             each item in itemObjs
                 +imgLink(item)
@@ -158,7 +171,7 @@ mixin recs(itemObjs)
 mixin reviewNotes(meta, notes, guestNotes, recs)
     - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
     .writeup
-        h2 Notes on #{meta.shopName}:
+        h2 Notes on #{meta.shopName}
         each par in notes
             h6!= par
         if guestNotes
@@ -194,20 +207,38 @@ mixin pulse(pulses)
                         +more()
 
 mixin overview(shops)
-    h2 Jump to:
+    h2
+        strong Jump to:
     ol.shop-list 
         each shop in shops
             - const date = new Date();
-            if date.getHours() > shop.open && date.getHours() < shop.close
+            - let day = date.getDay() - 1;
+            -
+                const getDate = (dateNum) => {
+                    let today = 0;
+                    if (dateNum == -1) {
+                        today = 0;
+                    } else {
+                        today = dateNum;
+                    }
+                    return today;
+                }
+            - const today = getDate(day);
+            - const closing = shop[0].hours[today].close;
+            - const anchorName = shop[0].meta.shopName.replace(/\s/g, '');
+            if (closing > 21)
                 li
-                    a(href='#' + shop[0].meta.yelpUrl + '') #{shop[0].meta.shopName}
+                    a(href='#' + anchorName class='late-night') #{shop[0].meta.shopName} <span class='open-indicator'>🌝</span>
             else
                 li
-                    a(href='#' + shop[0].meta.yelpUrl + '') #{shop[0].meta.shopName} <span class='closed-indicator'>Closed</span>
+                    a(href='#' + anchorName class='closes-early') #{shop[0].meta.shopName}
+    
+    p.small-note 
+        strong 🌝 = Open late
 
-mixin bigphoto(img, caption)
+mixin bigphoto(img, caption, name)
     .big-photo
-        .fill.project-hero-img(style='background-image: url(' + img + ');')
+        .fill.project-hero-img(style='background-image: url(' + img + ');')&attributes(attributes)= name
         .caption
             p= caption
 

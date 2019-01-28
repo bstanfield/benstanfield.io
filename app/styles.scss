@@ -107,6 +107,14 @@ a {
     text-decoration-color: #afafaf;
   }
 
+  .orange {
+    color: $orange;
+  }
+
+    .orange:hover {
+      color: rgb(231, 92, 22);
+    }
+
 p {
   font-size: 22px;
   line-height: 38px;
@@ -162,10 +170,6 @@ p {
   color: $orange;
 }
 
-.nav-links > a:last-child {
-  font-style: italic;
-}
-
 .nav-content {
   max-width: 1000px;
   height: 48px;
@@ -203,6 +207,7 @@ video {
     padding: 0px 10px;
     border-radius: 4px;
     display: none;
+    font-family: $ss;
   }
 
   #videoimg {
@@ -247,9 +252,6 @@ video {
     }
 
 // - INTRO
-.intro {
-  margin: $buffer;
-}
 
 // - PROJECT CARD
 .card {
@@ -312,6 +314,12 @@ video {
 .grow {
   opacity: 0.2 !important;
   transition: 0.3s ease-in-out;
+}
+
+.center {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
 }
 
 .news-card {
