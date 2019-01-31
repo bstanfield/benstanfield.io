@@ -155,6 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // do your setup here
     var $ = require('jquery');
 
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('#jsHide').css('opacity', '1');
+        }, 1000);
+    });
+
     // FOR COFFEE
     $(document).ready(function () {
         $('.Cha').append('🔌');
@@ -252,45 +258,62 @@ document.addEventListener('DOMContentLoaded', function () {
         var time = d.getHours();
         var hours = (time + 11) % 12 + 1;
 
-        if (time >= 12 && time <= 16) {
-            $('.emoji').prepend('📚');
-            $('#one').append('Reading a book...');
-            $('#time').append(hours + ' PM' + ':');
-        } else if (time <= 10 && time >= 5) {
-            $('.emoji').prepend('☕️');
-            $('#one').append("Brewing coffee...");
-            $('#time').append(hours + 'AM' + ':');
-        } else if (time >= 18 && time <= 22) {
-            $('.emoji').prepend('🏡');
-            $('#one').append('Working at a coffee shop...');
-            $('#time').append(hours + ' PM' + ':');
-        } else if (time >= 20) {
-            $('.emoji').prepend('😴');
-            $('#time').append(hours + ' PM' + ':');
-            $('#one').append('ZzZzz...');
-        } else if (time >= 10 && time <= 12) {
-            $('.emoji').prepend('📝');
-            $('#time').append(hours + ' AM' + ':');
-            $('#one').append('Taking notes...');
-        } else if (time >= 13 && time < 15) {
-            $('.emoji').prepend('🍕');
-            $('#one').append('Reheating leftovers...');
-            $('#time').append(hours + ' PM' + ':');
-        } else if (time == 16) {
-            $('.emoji').prepend('🚴');
-            $('#one').append('Biking home from class...');
-            $('#time').append(hours + ' PM' + ':');
-        } else if (time == 17) {
-            $('.emoji').prepend('📰');
-            $('#one').append('Reading NY Times...');
-            $('#time').append(hours + ' PM' + ':');
-        } else if (time == 0) {
-            $('.emoji').prepend('🌮');
-            $('#one').append("Midnight snackin'");
-            $('#time').append(hours + ' AM' + ':');
+        // SILLY REBEL
+        if (window.location.href.indexOf("?rebel") > -1) {
+            setTimeout(function () {
+                $('.emoji').prepend('😎');
+                $('#one').append('You still clicked it... I like you.');
+                $('#time').append(hours + ' PM' + ':');
+
+                $('#rebelReplace').replaceWith("<p>Hey there! Well, I guess you clicked on my Slack profile... and here we are. What'd you expect? Now <a class='orange' href='https://sparksc.slack.com/app_redirect?channel=ihavealotofworktodo'>GET BACK TO WORK!</a></p> ");
+                $('.rebelReplaceHeader').replaceWith("<h1>You rebel...</h1> ");
+
+                $('a').each(function () {
+                    $(this).attr("href", "https://sparksc.slack.com/app_redirect?channel=ihavealotofworktodo");
+                });
+            });
         } else {
-            $('.emoji').prepend('👋');
-            $('#one').append('Welcome!');
+
+            if (time >= 12 && time <= 16) {
+                $('.emoji').prepend('📚');
+                $('#one').append('Reading a book...');
+                $('#time').append(hours + ' PM' + ':');
+            } else if (time <= 10 && time >= 5) {
+                $('.emoji').prepend('☕️');
+                $('#one').append("Brewing coffee...");
+                $('#time').append(hours + 'AM' + ':');
+            } else if (time >= 18 && time <= 22) {
+                $('.emoji').prepend('🏡');
+                $('#one').append('Working at a coffee shop...');
+                $('#time').append(hours + ' PM' + ':');
+            } else if (time >= 20) {
+                $('.emoji').prepend('😴');
+                $('#time').append(hours + ' PM' + ':');
+                $('#one').append('ZzZzz...');
+            } else if (time >= 10 && time <= 12) {
+                $('.emoji').prepend('📝');
+                $('#time').append(hours + ' AM' + ':');
+                $('#one').append('Taking notes...');
+            } else if (time >= 13 && time < 15) {
+                $('.emoji').prepend('🍕');
+                $('#one').append('Reheating leftovers...');
+                $('#time').append(hours + ' PM' + ':');
+            } else if (time == 16) {
+                $('.emoji').prepend('🚴');
+                $('#one').append('Biking home from class...');
+                $('#time').append(hours + ' PM' + ':');
+            } else if (time == 17) {
+                $('.emoji').prepend('📰');
+                $('#one').append('Reading NY Times...');
+                $('#time').append(hours + ' PM' + ':');
+            } else if (time == 0) {
+                $('.emoji').prepend('🌮');
+                $('#one').append("Midnight snackin'");
+                $('#time').append(hours + ' AM' + ':');
+            } else {
+                $('.emoji').prepend('👋');
+                $('#one').append('Welcome!');
+            }
         }
     });
 
