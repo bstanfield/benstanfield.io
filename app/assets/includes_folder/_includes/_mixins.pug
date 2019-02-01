@@ -93,21 +93,21 @@ mixin reviewGallery(meta, hours, distance, arr)
         br
         if meta.food
             - const total = (meta.food[1] + meta.drink[1]).toFixed(2);
-            p <a class='g1'><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$#{total}</strong> <sup>?</sup></a>
-            .explainer
-                p.explainerText ↳&nbsp; #{meta.food[0]} ($#{meta.food[1].toFixed(2)}) + #{meta.drink[0]} ($#{meta.drink[1].toFixed(2)}) = $#{total}
+            .foodEst
+                p <span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$#{total}</strong> <sup>?</sup>
+                .explainer
+                    p.explainerText ↳&nbsp; #{meta.food[0]} ($#{meta.food[1].toFixed(2)}) + #{meta.drink[0]} ($#{meta.drink[1].toFixed(2)}) = $#{total}
 
         if hours
             - const open = hours.open;
             - const closed = hours.close;
-            <a class='g2'>
+            .shopStatus
                 p <span class='meta-emoji'>&nbsp;🗓&nbsp;</span>
                     span(id= anchorName + 'Hours')
-            </a>
-            .explainer2
-                p ↳ &nbsp;
-                .hoursContainer
-                    +fullHours(hours)
+                .explainer2
+                    p ↳ &nbsp;
+                    .hoursContainer
+                        +fullHours(hours)
 
 
         

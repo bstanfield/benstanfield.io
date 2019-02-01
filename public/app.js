@@ -172,12 +172,14 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.All').append('⏰');
         $('.Lar').append('👨‍👩‍👧‍👧');
 
-        $(".g1").click(function () {
-            if ($('.explainer:visible').length) $('.explainerText').closest('.explainer').css('display', 'none');else $('.explainerText').closest('.explainer').css('display', 'block');
+        $(".foodEst").click(function () {
+            if ($(this).find('.explainer').is(':visible')) $(this).find('.explainer').first().css('display', 'none');else $(this).find('.explainer').first().css('display', 'block');
         });
-
-        $(".g2").click(function () {
-            if ($('.explainer2:visible').length) $('.explainer2').closest('.explainer2').css('display', 'none');else $('.explainer2').closest('.explainer2').css('display', 'block');
+        //
+        //
+        //
+        $(".shopStatus").click(function () {
+            if ($(this).find('.explainer2').is(':visible')) $(this).find('.explainer2').first().css('display', 'none');else $(this).find('.explainer2').first().css('display', 'block');
         });
 
         $(".explainer2").click(function () {

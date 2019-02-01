@@ -1291,6 +1291,17 @@ iframe {
 .project-hero-img, .project-img {
   background-color: rgba(242, 242, 242, 0.762); }
 
+.shopStatus, .foodEst {
+  cursor: pointer; }
+
+.foodEst:hover sup {
+  color: #F26C29;
+  opacity: 1; }
+
+.shopStatus:hover sup {
+  color: #F26C29;
+  opacity: 1; }
+
 .project-card {
   position: relative;
   margin-top: 60px;

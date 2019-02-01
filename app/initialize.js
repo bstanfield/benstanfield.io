@@ -19,18 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.All').append('⏰');
     $('.Lar').append('👨‍👩‍👧‍👧');
 
-    $( ".g1" ).click(function() {
-        if ($('.explainer:visible').length)
-            $('.explainerText').closest('.explainer').css('display', 'none');
+    $( ".foodEst" ).click(function() {
+        if ($(this).find('.explainer').is(':visible'))
+            $(this).find('.explainer').first().css('display', 'none');
         else
-            $('.explainerText').closest('.explainer').css('display', 'block');
+            $(this).find('.explainer').first().css('display', 'block');
     });
-
-    $( ".g2" ).click(function() {
-        if ($('.explainer2:visible').length)
-            $('.explainer2').closest('.explainer2').css('display', 'none');
+    //
+    //
+    //
+    $( ".shopStatus" ).click(function() {
+        if ($(this).find('.explainer2').is(':visible'))
+            $(this).find('.explainer2').first().css('display', 'none');
         else
-            $('.explainer2').closest('.explainer2').css('display', 'block');
+            $(this).find('.explainer2').first().css('display', 'block');
     });
 
         $( ".explainer2").click(() => {
@@ -208,9 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
     names[0].map(x => setShopHours(shopHours, x));
     
     const todayAsString = d.toString().split(' ')[0];
-    const tester = '.' + todayAsString;
-    console.log(tester);
-    $(tester).css('color', 'green');
+    const todayAsClass = '.' + todayAsString;
+    $(todayAsClass).css('color', 'green');
     
   });
   // EMOJI TIME
