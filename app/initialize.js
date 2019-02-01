@@ -26,6 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
             $('.explainer').css('display', 'block');
     });
 
+    $( ".g2" ).click(function() {
+        if ($('.explainer2:visible').length)
+            $('.explainer2').css('display', 'none');
+        else
+            $('.explainer2').css('display', 'block');
+    });
+
+        $( ".explainer2").click(() => {
+            $('.explainer2').css('display', 'none');
+        })
+
+        $( ".explainer").click(() => {
+            $('.explainer').css('display', 'none');
+        })
+
     const d = new Date();
     let time = d.getHours();
     if (time >= 20) {
@@ -51,35 +66,35 @@ document.addEventListener('DOMContentLoaded', () => {
             { day: 'Wed', open: 7, close: 21},
             { day: 'Thu', open: 7, close: 21},
             { day: 'Fri', open: 7, close: 21},
-            { day: 'Sat', open: 7, close: 21},
-            { day: 'Sun', open: 7, close: 21},
+            { day: 'Sat', open: 8, close: 21},
+            { day: 'Sun', open: 8, close: 21},
         ],
         'LoitCafe': [
-            { day: 'Mon', open: 7, close: 21},
-            { day: 'Tue', open: 7, close: 21},
-            { day: 'Wed', open: 7, close: 21},
-            { day: 'Thu', open: 7, close: 21},
-            { day: 'Fri', open: 7, close: 21},
-            { day: 'Sat', open: 7, close: 21},
-            { day: 'Sun', open: 7, close: 21},
+            { day: 'Mon', open: 7, close: 19},
+            { day: 'Tue', open: 7, close: 19},
+            { day: 'Wed', open: 7, close: 19},
+            { day: 'Thu', open: 7, close: 19},
+            { day: 'Fri', open: 7, close: 19},
+            { day: 'Sat', open: 7, close: 19},
+            { day: 'Sun', open: 8, close: 19},
         ],
         'AlchemistCoffee': [
-            { day: 'Mon', open: 8, close: 22},
-            { day: 'Tue', open: 8, close: 22},
-            { day: 'Wed', open: 8, close: 22},
-            { day: 'Thu', open: 8, close: 22},
-            { day: 'Fri', open: 8, close: 22},
-            { day: 'Sat', open: 8, close: 22},
+            { day: 'Mon', open: 7.5, close: 22},
+            { day: 'Tue', open: 7.5, close: 22},
+            { day: 'Wed', open: 7.5, close: 22},
+            { day: 'Thu', open: 7.5, close: 22},
+            { day: 'Fri', open: 7.5, close: 22},
+            { day: 'Sat', open: 7.5, close: 22},
             { day: 'Sun', open: 8, close: 22},
         ],
         'IgnatiusCafe': [
-            { day: 'Mon', open: 9, close: 17},
-            { day: 'Tue', open: 9, close: 17},
-            { day: 'Wed', open: 9, close: 17},
-            { day: 'Thu', open: 9, close: 17},
-            { day: 'Fri', open: 9, close: 17},
+            { day: 'Mon', open: 9, close: 21},
+            { day: 'Tue', open: 9, close: 21},
+            { day: 'Wed', open: 9, close: 21},
+            { day: 'Thu', open: 9, close: 21},
+            { day: 'Fri', open: 9, close: 21},
             { day: 'Sat', open: 9, close: 17},
-            { day: 'Sun', open: 13, close: 21},
+            { day: 'Sun', open: 9, close: 21},
         ],
         'WithLoveCafe': [
             { day: 'Mon', open: 7, close: 17},
@@ -109,13 +124,13 @@ document.addEventListener('DOMContentLoaded', () => {
             { day: 'Sun', open: 8, close: 26},
         ],
         'NothingButCoffee': [
-            { day: 'Mon', open: 8, close: 20},
-            { day: 'Tue', open: 8, close: 20},
-            { day: 'Wed', open: 8, close: 20},
-            { day: 'Thu', open: 8, close: 20},
-            { day: 'Fri', open: 8, close: 20},
-            { day: 'Sat', open: 8, close: 20},
-            { day: 'Sun', open: 8, close: 20},
+            { day: 'Mon', open: 9, close: 26},
+            { day: 'Tue', open: 9, close: 26},
+            { day: 'Wed', open: 9, close: 26},
+            { day: 'Thu', open: 9, close: 26},
+            { day: 'Fri', open: 9, close: 26},
+            { day: 'Sat', open: 9, close: 26},
+            { day: 'Sun', open: 9, close: 26},
         ],
         'BricksAndScones': [
             { day: 'Mon', open: 8, close: 20},
@@ -155,29 +170,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const openAndClose = shopHours.map(getHours);
 
     const setShopHours = (hours, name) => {
-        const open = hours[0][name][today].open;
-        const close = hours[0][name][today].close;
+        let open = hours[0][name][today].open;
+        let close = hours[0][name][today].close;
+        let sto = ((open + 11) % 12 + 1);
+        let stc = ((close + 11) % 12 + 1);
+
+            if (sto % 1 != 0) {
+                sto = sto.toString();
+                sto = sto.slice(0,1);
+                sto = sto + ":30";
+            }
+            if (stc % 1 != 0) {
+                stc = stc.toString();
+                stc = stc.slice(0,1);
+                stc = stc + ":30";
+            }
+
         const tomorrowOpen = hours[0][name][(d.getDay())].open;
-        let closeWithMarker = ((close + 11) % 12 + 1);
-        if (closeWithMarker >= 1 && closeWithMarker <= 3) {
-            closeWithMarker = closeWithMarker + ' AM';
+        if (stc >= 1 && stc <= 3) {
+            stc = stc + ' AM';
         } else {
-            closeWithMarker = closeWithMarker + ' PM';
+            stc = stc + ' PM';
         }
 
         if ((time + 1) === close) {
             $('#' + name + 'Hours').append(' This shop is <strong>closing soon. </strong>');
-            $('#' + name + 'Hours').append(`(${open} AM to ${closeWithMarker})`);
+            $('#' + name + 'Hours').append(`(${sto} AM to ${stc})<sup> ?</sup>`);
         } else if (time >= open && time < close) {
             $('#' + name + 'Hours').append(' This shop is <strong>open!</strong> ');
-            $('#' + name + 'Hours').append(`(${open} AM to ${closeWithMarker})`);
+            $('#' + name + 'Hours').append(`(${sto} AM to ${stc})<sup> ?</sup>`);
         } else {
             $('#' + name + 'Hours').append(' This shop is <strong>closed.</strong>');
-            $('#' + name + 'Hours').append(` (Opens tomorrow at ${tomorrowOpen})`);
+            $('#' + name + 'Hours').append(` (Opens at ${tomorrowOpen} AM)<sup> ?</sup>`);
         }
     }
 
     names[0].map(x => setShopHours(shopHours, x));
+    
+    const todayAsString = d.toString().split(' ')[0];
+    const tester = '.' + todayAsString;
+    console.log(tester);
+    $(tester).css('color', 'green');
+    $(tester).css('font-weight', '800');
+    
   });
   // EMOJI TIME
   $(document).ready(function() {

@@ -99,8 +99,15 @@ mixin reviewGallery(meta, hours, distance, arr)
         if hours
             - const open = hours.open;
             - const closed = hours.close;
-            p <span class='meta-emoji'>&nbsp;🗓&nbsp;</span>
-                span(id= anchorName + 'Hours').
+            <a class='g2'>
+                p <span class='meta-emoji'>&nbsp;🗓&nbsp;</span>
+                    span(id= anchorName + 'Hours')
+            </a>
+            .explainer2
+                p ↳ &nbsp;
+                .hoursContainer
+                    +fullHours(hours)
+
 
         
         if distance
@@ -236,3 +243,23 @@ mixin mediumphoto(img, caption)
         .fill.project-hero-img(style='background-image: url(' + img + ');')
         .caption
             p= caption
+
+mixin fullHours(hours)
+    each day in hours
+        - let sto = ((day.open + 11) % 12 + 1);
+        - let stc = ((day.close + 11) % 12 + 1);
+        -
+            if (sto % 1 != 0) {
+                sto = sto.toString();
+                sto = sto.slice(0,1);
+                sto = sto + ":30";
+            }
+            if (stc % 1 != 0) {
+                stc = stc.toString();
+                stc = stc.slice(0,1);
+                stc = stc + ":30";
+            }
+        if stc > 3
+            span.separate(class=day.day) #{day.day}: #{sto} <span class='light'>AM</span> - #{stc} <span class='light'>PM</span>
+        else 
+            span.separate(class=day.day) #{day.day}: #{sto} <span class='light'>AM</span> to #{stc} <span class='light'>AM</span>

@@ -95,7 +95,17 @@ h6 {
     .explainer {
         padding-left: 10px;
         padding-bottom: 10px;
-        opacity: .5;
+        display: none;
+        cursor: pointer;
+    }
+
+        p.explainer {
+            opacity: .5 !important;
+        }
+
+    .explainer2 {
+        padding-left: 10px;
+        padding-bottom: 10px;
         display: none;
         cursor: pointer;
     }
