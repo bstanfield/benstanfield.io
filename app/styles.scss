@@ -320,7 +320,9 @@ video {
   margin-left: 25px;
   margin-bottom: 5px;
   background-color: rgba(244, 244, 244, 0.5);
-  width: fit-content;
+  width: 150px;
+  min-width: fit-content;
+  text-align: center;
   padding: 10px 30px;
   color: black;
 

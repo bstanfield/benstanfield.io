@@ -173,19 +173,19 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.Lar').append('👨‍👩‍👧‍👧');
 
         $(".g1").click(function () {
-            if ($('.explainer:visible').length) $('.explainer').css('display', 'none');else $('.explainer').css('display', 'block');
+            if ($('.explainer:visible').length) $('.explainerText').closest('.explainer').css('display', 'none');else $('.explainerText').closest('.explainer').css('display', 'block');
         });
 
         $(".g2").click(function () {
-            if ($('.explainer2:visible').length) $('.explainer2').css('display', 'none');else $('.explainer2').css('display', 'block');
+            if ($('.explainer2:visible').length) $('.explainer2').closest('.explainer2').css('display', 'none');else $('.explainer2').closest('.explainer2').css('display', 'block');
         });
 
         $(".explainer2").click(function () {
-            $('.explainer2').css('display', 'none');
+            $('.explainer2').closest('.explainer2').css('display', 'none');
         });
 
         $(".explainer").click(function () {
-            $('.explainer').css('display', 'none');
+            $('.explainer').closest('.explainer').css('display', 'none');
         });
 
         var d = new Date();
@@ -280,7 +280,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var tester = '.' + todayAsString;
         console.log(tester);
         $(tester).css('color', 'green');
-        $(tester).css('font-weight', '800');
     });
     // EMOJI TIME
     $(document).ready(function () {

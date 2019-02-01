@@ -21,24 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $( ".g1" ).click(function() {
         if ($('.explainer:visible').length)
-            $('.explainer').css('display', 'none');
+            $('.explainerText').closest('.explainer').css('display', 'none');
         else
-            $('.explainer').css('display', 'block');
+            $('.explainerText').closest('.explainer').css('display', 'block');
     });
 
     $( ".g2" ).click(function() {
         if ($('.explainer2:visible').length)
-            $('.explainer2').css('display', 'none');
+            $('.explainer2').closest('.explainer2').css('display', 'none');
         else
-            $('.explainer2').css('display', 'block');
+            $('.explainer2').closest('.explainer2').css('display', 'block');
     });
 
         $( ".explainer2").click(() => {
-            $('.explainer2').css('display', 'none');
+            $('.explainer2').closest('.explainer2').css('display', 'none');
         })
 
         $( ".explainer").click(() => {
-            $('.explainer').css('display', 'none');
+            $('.explainer').closest('.explainer').css('display', 'none');
         })
 
     const d = new Date();
@@ -211,7 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const tester = '.' + todayAsString;
     console.log(tester);
     $(tester).css('color', 'green');
-    $(tester).css('font-weight', '800');
     
   });
   // EMOJI TIME
