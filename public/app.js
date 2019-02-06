@@ -279,9 +279,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         var todayAsString = d.toString().split(' ')[0];
-        var tester = '.' + todayAsString;
-        console.log(tester);
-        $(tester).css('color', 'green');
+        var todayAsClass = '.' + todayAsString;
+        $(todayAsClass).css('color', 'green');
     });
     // EMOJI TIME
     $(document).ready(function () {
