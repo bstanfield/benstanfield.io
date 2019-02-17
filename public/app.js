@@ -387,20 +387,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // FADE INS
     $(document).ready(function () {
-        $('video').css('opacity', '1');
-
-        var timeout1 = setTimeout(function () {
-            $('video').css('opacity', '0');
-        }, 19000);
-
-        var timeout2 = setTimeout(function () {
-            $('video').attr('src', '../../images/benmoji-sleeping.mp4');
-        }, 21000);
-
-        var timeout3 = setTimeout(function () {
-            $('video').css('opacity', '1');
-        }, 21500);
-
         $('video').click(function () {
             this.paused ? this.play() : this.pause();
             if (this.paused == true) {
@@ -409,6 +395,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 $('.pauseicon').css('display', 'none');
             }
         });
+
+        var description = ["../../images/benmoji-sunglasses.mp4", "../../images/benmoji-sunglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-sleeping.mp4", "../../images/benmoji-sleeping.mp4", "../../images/benmoji-10s.mp4", "../../images/benmoji-10s.mp4"];
+        var size = description.length;
+        var rand = Math.floor(size * Math.random());
+        $('.benmoji').attr('src', description[rand]);
 
         setInterval(function () {
             // toggle the class every five second

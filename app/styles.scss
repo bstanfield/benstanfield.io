@@ -187,13 +187,17 @@ p {
 
 // - HERO
 video {
-  opacity: .1;
   width: 300px;
   position: relative;
-  transition: 1s ease-in-out all;
+  transition: 1s ease-in-out all !important;
   margin-top: 20px;
   cursor: pointer;
 }
+
+  video.secondvid {
+    display: none;
+    opacity: 1;
+  }
 
   .pauseicon {
     z-index: 100;
@@ -525,7 +529,6 @@ button {
     }
 
       .thirds-col video {
-        background-image: url('/images/benmoji-screenshot.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: 300px 225px;

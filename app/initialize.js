@@ -321,38 +321,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // FADE INS
     $(document).ready(function() {
-    $('video').css('opacity', '1');
+        $('video').click(function(){
+            this.paused ? this.play() : this.pause();
+            if (this.paused == true) {
+                $('.pauseicon').css('display', 'block');
+            } else {
+                $('.pauseicon').css('display', 'none');
+            }
+        });
+        
+        const description = [
+            "../../images/benmoji-sunglasses.mp4",
+            "../../images/benmoji-sunglasses.mp4",
+            "../../images/benmoji-newglasses.mp4",
+            "../../images/benmoji-newglasses.mp4",
+            "../../images/benmoji-newglasses.mp4",
+            "../../images/benmoji-newglasses.mp4",
+            "../../images/benmoji-newglasses.mp4",
+            "../../images/benmoji-newglasses.mp4",
+            "../../images/benmoji-sleeping.mp4",
+            "../../images/benmoji-sleeping.mp4",
+            "../../images/benmoji-10s.mp4",
+            "../../images/benmoji-10s.mp4"
+        ];
+        const size = description.length;
+        const rand = Math.floor(size *Math.random());
+        $('.benmoji').attr('src', description[rand]);
 
-    var timeout1 = setTimeout( function(){
-        $('video').css('opacity', '0');
-    }, 19000);
+        setInterval(function(){ 
+        // toggle the class every five second
+            $('.pulse').toggleClass('grow');  
+            setTimeout(function(){
+                // toggle back after 1 second
+                $('.pulse').toggleClass('grow');  
+            },1200);
 
-    var timeout2 = setTimeout( function(){
-        $('video').attr('src', '../../images/benmoji-sleeping.mp4');
-    }, 21000);
-
-    var timeout3 = setTimeout( function() {
-        $('video').css('opacity', '1');
-    }, 21500);
-
-    $('video').click(function(){
-        this.paused ? this.play() : this.pause();
-        if (this.paused == true) {
-            $('.pauseicon').css('display', 'block');
-        } else {
-            $('.pauseicon').css('display', 'none');
-        }
-    });
-
-    setInterval(function(){ 
-      // toggle the class every five second
-          $('.pulse').toggleClass('grow');  
-          setTimeout(function(){
-              // toggle back after 1 second
-              $('.pulse').toggleClass('grow');  
-          },1200);
-
-      },2400);  
+        },2400);  
       
       setTimeout(
       function() 
