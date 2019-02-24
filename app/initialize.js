@@ -43,6 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
             $('.explainer').closest('.explainer').css('display', 'none');
         })
 
+    $( ".mapLink" ).click(function() {
+        if ($(this).find('.map').is(':visible')) {
+            $(this).find('.map').first().css('display', 'none');
+            console.log('something');
+        }
+        else {
+            $(this).find('.map').first().css('display', 'block');
+            console.log('something else');
+        }
+    });
+
     const d = new Date();
     let time = d.getHours();
     if (time >= 20) {

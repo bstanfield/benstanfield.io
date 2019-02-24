@@ -13,7 +13,7 @@ mixin link(url, name, tooltip)
 mixin imgLink(item)
     if item.img
         li    
-            .img-link(title=item.img) #{item.name} ✨
+            .img-link(title=item.img) #{item.name}
     else
         li
             .img-link #{item.name}
@@ -109,10 +109,11 @@ mixin reviewGallery(meta, hours, distance, arr)
                     .hoursContainer
                         +fullHours(hours)
 
-
-        
         if distance
-            p <span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM.
+            .mapLink
+                p <span class='meta-emoji'>&nbsp;🌎 &nbsp;</span>Toggle <strong>map</strong> for #{meta.shopName}
+                .iframe.map
+                    iframe(src=meta.maps frameBorder="0" allowfullscreen)
 
 
         br
@@ -160,7 +161,8 @@ mixin recs(itemObjs)
         h2 Ben's Recommendations
         ol
             each item in itemObjs
-                +imgLink(item)
+                li=item.name
+                br
         br
         br
 
@@ -175,10 +177,10 @@ mixin reviewNotes(meta, notes, guestNotes, recs)
                 img(style='background-image: url(' + guestNotes.img + ')')
                 h6 <strong>From #{guestNotes.name}</strong> #{guestNotes.notes}
         +recs(recs)
+    
     .proj-button-container
         a(href=shopUrl class='proj-button' target='_blank') <i class="fab fa-yelp"></i>&nbsp; View #{meta.shopName} on Yelp 
         hr
-        br
         br
 
 mixin review(shops)        

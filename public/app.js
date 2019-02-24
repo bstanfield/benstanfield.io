@@ -190,6 +190,16 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.explainer').closest('.explainer').css('display', 'none');
         });
 
+        $(".mapLink").click(function () {
+            if ($(this).find('.map').is(':visible')) {
+                $(this).find('.map').first().css('display', 'none');
+                console.log('something');
+            } else {
+                $(this).find('.map').first().css('display', 'block');
+                console.log('something else');
+            }
+        });
+
         var d = new Date();
         var time = d.getHours();
         if (time >= 20) {
