@@ -1,0 +1,413 @@
+// TEST
+-
+    const hello = 'Test';
+
+// COFFEE SHOPS
+-
+    const shops = {
+        prism: [{
+            meta: {
+                yelpUrl: 'prism-coffee-los-angeles', 
+                shopName: 'Prism Coffee', 
+                heroImg: 'prism-coffee-ben-stanfield-usc.jpg',
+                food: ['waffle', 5],
+                drink: ['spanish latte', 6],
+            },
+            images: [
+                'UzAQvKuyURy6Gh8pTn8sTA','Qakb6tPz2lBtKT0wF4w4CQ','oAuGYsDEYygfgp-j518e7A','yhtw3FO8V1s5Oz19SVeTYw'
+            ],
+            good: {
+                Charging: 'Plenty of outlets', 
+                Wifi: 'Pretty good', 
+                Drinks: 'Amazing pour-over and iced coffee', 
+                Service: 'Very friendly and knowledgeable!'
+            },
+            bad: {
+                Food: 'Mostly pastries', 
+                Distance: 'Not close to campus', 
+                'All day grind': 'No comfortable seating', 
+                'Large groups': 'Limited total space'  
+            },
+            notes: [
+                "Prism Coffee is a wonderful, tiny slice of coffee heaven. Robin (the manager) and his staff's attention to detail—mainly for their pour-over and iced coffee—is undeniably the shop's strongsuit. That and ample charging, good wifi, and friendly service pushes Prism into my top 10.", "If you're not into pourover coffee, or don't want to front the steep price for it, try the cortado. There isn't much food at Prism, but their waffle is to die for.", "You won't hear much about Prism because of its <a target='_blank' href='https://www.google.com/maps/dir/McClintock+Ave,+Los+Angeles,+CA/90019+California,+Los+Angeles,+Crenshaw+Blvd,+Prism+Coffee/@34.0391018,-118.3277465,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x80c2c7fb2cd55bf1:0x25aa7c6591fc1928!2m2!1d-118.28808!2d34.0235525!1m5!1m1!1s0x80c2b8f353d4aa63:0x1feedbc1f37dc755!2m2!1d-118.3231592!2d34.0537072'> distance from campus</a> (15 minutes without traffic) and low-profile shop (there isn't much else to do within walking distance). Save Prism for a day when you're craving a great cup of coffee and a nice chat over a long work session."
+            ],
+            recs: [
+                { name: 'Moon cake', img: "<img  style ='max-width: 100%;'src='https://s3-media1.fl.yelpcdn.com/bphoto/8owv2WSFtu-5FL1tPGvVGg/o.jpg'></img>"}, { name: 'Iced coffee', img: ''}
+            ],
+            hours: [
+                { day: 'Mon', open: 7, close: 21},
+                { day: 'Tue', open: 7, close: 21},
+                { day: 'Wed', open: 7, close: 21},
+                { day: 'Thu', open: 7, close: 21},
+                { day: 'Fri', open: 7, close: 21},
+                { day: 'Sat', open: 7, close: 21},
+                { day: 'Sun', open: 7, close: 21},
+            ],
+            distance: '15',
+        }],
+      dulce: [{
+        meta: {
+            yelpUrl: 'dulce-los-angeles', 
+            shopName: 'Dulce Coffee', 
+            heroImg: 'dulce-ben-stanfield-usc.jpg',
+            food: ['breakfast burrito', 8],
+            drink: ['drip coffee', 3.5],
+        },
+        images: [
+          'kq8xEi9Hh_Ipnztu3_ORqQ','7W0OblEZl1YGhzRTimV5Ug','5Oc58-qbCoo3oaiQogP0Yw','IPjKDgUwZr9byp6mvWI79A'
+        ],
+        good: {
+            Distance: 'On campus!', Drinks: 'Good drip and matcha coffee', Service: 'Very friendly!', Food: 'Donuts, sandwiches, breakfast burritos', 
+        },
+        bad: {
+           'All day grind': 'Too loud and limited charging', 'Large groups': 'Limited total space', Charging: 'Only a few outlets!', Wifi: 'Kicks you off every 15 min.',
+        },
+        notes: [
+          "Located in the USC Village, Dulce’s combination of accessibility and quality coffee is hard to beat. Most people around campus will rave about Dulce’s Matcha drinks, but not being a big fan of Matcha, I’ve really enjoyed their plain-old drip coffees. Their lattes and teas are also very good and the service friendly.", 
+          "In addition to good drinks, Dulce also makes a <i>killer</i> breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes."
+        ],
+        guestNotes: {
+            name: 'Abigail Africa: ',
+            url: 'https://www.google.com',
+            img: 'https://i.imgur.com/DfjZKlH.jpg',
+            notes: "Dulce is overall a mixed bag. It produces great food and coffee, but you should never expect to settle there unless you're exceptionally prepared to deal with poor wifi and a tough selection of outlets. Lighting is great, but noise is high, so I go there to do remote work, but not for group projects. Outdoors is a lovely experience in the first months of fall or the bulk of spring. It’s quieter than inside, but there are variables like harsh sun and no power."
+        },
+        recs: [
+          { name: 'Matcha drinks', img: "<img  style ='max-width: 100%;'src='https://s3-media3.fl.yelpcdn.com/bphoto/emQgfU-oRS-NBFu1XDAYCg/o.jpg'></img>"}, { name: 'Breakfast burrito', img: '' }, 
+          { name: 'Ruby Whole Beans (Roasted)', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 7, close: 21},
+            { day: 'Tue', open: 7, close: 21},
+            { day: 'Wed', open: 7, close: 21},
+            { day: 'Thu', open: 7, close: 21},
+            { day: 'Fri', open: 7, close: 21},
+            { day: 'Sat', open: 7, close: 21},
+            { day: 'Sun', open: 7, close: 21},
+        ],
+        distance: '2',
+      }],
+      loit: [{
+        meta: {
+          yelpUrl: 'loit-cafe-los-angeles', 
+          shopName: 'Loit Cafe', 
+          heroImg: 'loit-hero.jpg',
+          food: ['avocado toast', 8],
+          drink: ['charcoal latte', 6],
+        },
+        images: [
+            'JcEFlZjEeVOQqInd5WhDMQ','CQuVeiUptc9ToEQEDvH-LQ','hFaTr-zQyv5TTWu6MeHp1Q','rIXXSGDlhXNQQtjJGziHzA'
+        ],
+        good: {
+            Drinks: 'Charcoal lattes, pour-over', Food: 'Surpisingly good small dishes!', 'All day grind': 'You should make a day out of Loit', 'Large groups': 'Large, open space with tablespace',
+        },
+        bad: {
+            Wifi: 'It is pretty spotty',
+        },
+        notes: [
+          "You can find Loit Cafe in the middle of Downtown Los Angeles, on the bustling corner of Olympic and Hill. The shop’s aesthetic matches the sleek, modern vibe that the rest of downtown embraces, but no function is sacrificed for form here. At Loit, you’ll find one large, open space with long marble tables in the center, beautiful couches along the windows, and smaller round tables sprinkled between.",
+          "Best known for their <a href='https://www.instagram.com/p/Bjqn2IdhLzP/'>Instagram-friendly charcoal lattes</a>, Loit also has really good pour over, cortados, and fruit drinks like the <i>Sunset.</i> For food, Loit offers the standard array of pastries, but also some delicious, larger items like avocado toast or quiche. ",
+          "Overall, Loit is a great spot for group work with ample seating space, outlets, and consistent wifi, and can keep you going for hours on end with great food and coffee.",
+        ],
+        guestNotes: {
+            name: 'Landon Brand: ',
+            url: 'https://www.google.com',
+            img: 'https://i.imgur.com/iiRfBbk.jpg',
+            notes: "I’d say this is one of the best spots downtown for working—tons of space and outlets, and since it serves food you can keep going even if you get hungry. That said, it is pricy, especially if you factor in parking/transportation to downtown. Maybe not worth it as an everyday go-to, but it’s hard to beat their workspace or coffee quality."
+        },
+        recs: [
+          { name: 'Charcoal latte', img: ""}, { name: 'Avocado toast', img: '' }, 
+          { name: 'Ethiopia pour-over', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 7, close: 19},
+            { day: 'Tue', open: 7, close: 19},
+            { day: 'Wed', open: 7, close: 19},
+            { day: 'Thu', open: 7, close: 19},
+            { day: 'Fri', open: 7, close: 19},
+            { day: 'Sat', open: 7, close: 19},
+            { day: 'Sun', open: 8, close: 19},
+        ],
+        distance: '10',
+      }],
+      alchemist: [{
+        meta: {
+          yelpUrl: 'alchemist-coffee-project-los-angeles-2', 
+          shopName: 'Alchemist Coffee', 
+          heroImg: 'alchemist-hero.jpg',
+          food: ['egg bat sandwich', 12],
+          drink: ['single origin (hario)', 5.5],
+        },
+        images: [
+            'Xn_68u-1vTKQPdWRnECwgw','BzKMGMMsLN0hG6Ijw-IpHg','i-I_5XAYzNNPm9HB5ZfJJw','CEv8GoOGS1sbsr3gcVMGxA'
+        ],
+        good: {
+            Drinks: 'Great pour-over and tea selection.', Food: 'Awesome breakfast and paninis', 'All day grind': ' Cheap parking and good Korean food in plaza', Distance: 'Just follow Vermont all the way from campus'
+        },
+        bad: {
+            'Large groups': 'Small tables', Charging: 'There are some in the middle, but lots of tables have limited access'
+        },
+        notes: [
+          "My most frequented off-campus coffee shop, Alchemist has just about everything you could want: good food, coffee, atmosphere, wifi, and cheap parking. Nestled in a small plaza in Koreatown, the area affords tons of tasty and cheap places to eat nearby, <a href=’https://www.yelp.com/biz/buchun-gamjatang-los-angeles’>even in the same plaza</a>.", 
+          "Alchemist is a self-proclaimed “New Orleans” style coffee shop (previously named Bourbon Street Cafe), and the owner, Marcelo, really pushes to make great, artisanal coffee at an affordable price. I’d recommend trying their single-origin cold brew with the Egg Bat Sandwich for breakfast or lunch.",
+          "<i>Watch out:</i> If you’re planning on parking in the plaza’s central lot, make sure you have two dollars in cash ready to hand over to the “valet.” ",
+        ],
+        recs: [
+          { name: 'Egg bat sandwich', img: ""}, { name: 'Single origin pour-over', img: '' }, 
+        ],
+        hours: [
+            { day: 'Mon', open: 7.5, close: 22},
+            { day: 'Tue', open: 7.5, close: 22},
+            { day: 'Wed', open: 7.5, close: 22},
+            { day: 'Thu', open: 7.5, close: 22},
+            { day: 'Fri', open: 7.5, close: 22},
+            { day: 'Sat', open: 7.5, close: 22},
+            { day: 'Sun', open: 8, close: 22},
+        ],
+        distance: '12',
+      }],
+      ignatius: [{
+        meta: {
+          yelpUrl: 'Ignatius-cafe-los-angeles', 
+          shopName: 'Ignatius Cafe', 
+          heroImg: 'ignatius-hero.jpg',
+          food: ['none', 0],
+          drink: ['lemon tea', 3.5],
+        },
+        images: [
+            'c8TsiJtqwfFpidleG1Dm4g','K0O1qrVbYrG_4SYXifb3MA','htkFfqiwCQFy0KYrznEROQ','PevT5MypKSj_MLSweT6Kfw'
+        ],
+        good: {
+             Service: 'Very sweet Korean ladies', Drinks: 'The best lemon tea on earth', Distance: '10 minute WALK from north of campus', Charging: 'Plugs are plentiful, even outside', 'Large groups': "It's never really packed, so there are often multiple tables or even long benches available outside."
+        },
+        bad: {
+            Food: "There just isn't any", Wifi: "It's not a priority here. Bring a book and enjoy the sunshine"
+        },
+        notes: [
+            "This might be the only Korean Church that serves coffee and tea out of a cottage. If not, it’s probably still the <i>best</i> coffee and tea served out of a Korean Church. Ignatius Cafe is a tiny shop with outdoor garden seating, the perfect serene escape from the hustle and bustle on campus. And it’s walking distance (right near Ralph’s, north of campus)!",
+            "The wifi is spotty, so I’d recommend bringing a friend for a nice chat while you enjoy delicious lemon tea. Come here to unwind—the fresh air and peaceful garden is rare in Los Angeles. ",
+            "Nothing is more than a few dollars here, and they only serve a few things in total: espresso; americano; café latte; and lemon tea.",
+            "<i>They only take cash, so make sure to bring a couple bucks with you. </i>",
+        ],
+        guestNotes: {
+            name: 'Jenny Zhang: ',
+            url: 'https://www.google.com',
+            img: 'https://i.imgur.com/sHINpaJ.jpg',
+            notes: "There are two ideals at Ignatius. One: bring a friend you haven’t seen in a while to catch up and reflect on life. Sip iced tea across from each other at a small round table with an umbrella, especially at 3 in the afternoon when the sun is warm. Two: bring a novel about love and fate in a small town. Admire the warmth of the yellow interiors over a latte. Smile sporadically at the friendly korean owners at the counter. Write a poem."
+        },
+        recs: [
+          { name: 'Honey Tea', img: ""},
+        ],
+        hours: [
+            { day: 'Mon', open: 9, close: 21},
+            { day: 'Tue', open: 9, close: 21},
+            { day: 'Wed', open: 9, close: 21},
+            { day: 'Thu', open: 9, close: 21},
+            { day: 'Fri', open: 9, close: 21},
+            { day: 'Sat', open: 9, close: 17},
+            { day: 'Sun', open: 9, close: 21},
+        ],
+        distance: '3',
+      }],
+      withLove: [{
+        meta: {
+          yelpUrl: 'with-love-market-and-cafe-los-angeles', 
+          shopName: 'With Love Cafe', 
+          heroImg: 'with-love-cafe.jpg',
+          food: ['cubano', 8.5],
+          drink: ['coffee', 2.5],
+        },
+        images: [
+            'Z1tKow0jML_OyIZ3VcImBQ','AbTjWOUeBzD9Qhs8Hb42zg','mI-5YLN1pumBskeKbsibYg','M84ZspyK-jXCVvCW-ea6Cg'
+        ],
+        good: {
+             Food: 'Healthy meals or snacks from the market', 'All day grind': ' Friendly and open space with big tables', Distance: 'Closer to campus than you think'
+        },
+        bad: {
+            'Drinks': "Compared to the rest of these shops, it's nothing special. But the prices are good!",
+        },
+        notes: [
+          "Located just five minutes away from campus, With Love Cafe is a sweet community spot. Its dedication to serving the community is reflected in the truly diverse array of people that come through the market and cafe everyday. Small downsides are limited street parking and unremarkable coffee, but all of the pros easily make up for these. You can stay fueled with solid food, wifi, and charging all day here at an affordable price.", 
+          'It has different workspace options too. You can move from the wide open downstairs to the more studious and quiet upstairs, or even into the <a target="_blank" href="http://www.withlovela.com/product/community-room-reservation/">small conference room available by reservation</a> — that room is a personal favorite for group meeting (first two hours are free!).', "You won’t regret choosing With Love Cafe as your coffee spot for the full day — and you’re likely to be the only USC students there too, which is a refreshing change of pace from classic downtown brunch and coffee spot teeming with college students. "
+        ],
+        guestNotes: {
+            name: 'Mimi: ',
+            img: 'https://i.imgur.com/pm0DZjU.jpg',
+            notes: "With Love Cafe feels like the perfect blend between warm community library and health food store. If you’re the type to grab snacks at Trader Joe’s and then stop by Cafe 84 on a Saturday afternoon, skip both and head to With Love instead."
+        },
+        recs: [
+          { name: 'Pulled pork sandwich', img: ""}, { name: 'The Fuego smoothie', img: '' }, 
+          { name: 'Drip coffee', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 7, close: 17},
+            { day: 'Tue', open: 7, close: 17},
+            { day: 'Wed', open: 7, close: 17},
+            { day: 'Thu', open: 7, close: 17},
+            { day: 'Fri', open: 7, close: 17},
+            { day: 'Sat', open: 9, close: 17},
+            { day: 'Sun', open: 9, close: 17},
+        ],
+        distance: '5',
+      }],
+      yellowHouse: [{
+        meta: {
+          yelpUrl: 'Yellow-house-cafe-los-angeles', 
+          shopName: 'Yellow House Cafe', 
+          heroImg: 'yellowhouse-hero.jpg',
+          food: ['kimchi pasta', 14.95],
+          drink: ['green tea', 4.5],
+        },
+        images: [
+            'SbaovH7Mbz49ZZpIEBFiZQ','WcdE0MxsSOuhN5uAhYNang','wpXGodtbMgSgrC6D87n8tQ','RJcEdC1GY9ie8IwmG5vHOg',
+        ],
+        good: {
+             Food: 'Tons of options from different cuisines!', Drinks: 'Big selection of teas and coffee. Try the blooming tea!' 
+        },
+        bad: {
+            'All day grind': 'It might just be me, but they seem to give dirty looks if you stay longer than an hour or two.'
+        },
+        notes: [
+          "Yellow House sits somewhere between a coffee shop and a full-fledged restaurant. Most days, you’ll find groups of Korean women sipping on tea and hashing out plans for their business, while some young couple slurps down pasta in the corner, and a guy on his laptop (me) nurses his coffee. ", 
+          'If you’re looking for an all-day place to have lunch, drink coffee, and get work done, Yellow House is a prime spot. The back patio area feels like you’ve exited LA and entered a misty jungle. Cozy fires roar in a few spots—I’d recommend grabbing a table next to one of those in the winter.',
+        ],
+        guestNotes: {
+            name: 'Melisa Seah: ',
+            url: 'https://www.google.com',
+            img: 'https://i.imgur.com/IscDjD9.jpg',
+            notes: "If you're looking to find a place to hide out (while also fill your stomach with a blend of anything from Korean food to s'mores) Yellow House is your spot. Skip the inside and head to the patio out back, where you can nestle into a corner and get to work."
+        },
+        recs: [
+          { name: "S'mores", img: ""}, { name: 'Blooming Tea', img: '' }, 
+          { name: 'Kimchi Pasta', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 11, close: 24},
+            { day: 'Tue', open: 11, close: 24},
+            { day: 'Wed', open: 11, close: 24},
+            { day: 'Thu', open: 11, close: 24},
+            { day: 'Fri', open: 11, close: 26},
+            { day: 'Sat', open: 11, close: 26},
+            { day: 'Sun', open: 11, close: 24},
+        ],
+        distance: '5',
+      }],
+      bourgeoisPig: [{
+        meta: {
+          yelpUrl: 'bourgeois-pig-los-angeles', 
+          shopName: 'Bourgeois Pig', 
+          heroImg: 'bourgeois-hero.jpg',
+          food: ['panini', 10.0],
+          drink: ['espresso', 3.21],
+        },
+        images: [
+            'MdWNZr2-pvU9hYhTWTDBOw','7Z5_2-d9C4BJVq_gZX2jwg','dmQag-K_aUg0NPYB0IT6xA','AFKrDXhRYVCnSly0gCDd1g'
+        ],
+        good: {
+            'All day grind': 'Open very late and full of hard-at-work Hollywood writers', 'Drinks': "Good tea and lattes to keep you going late into the night",
+        },
+        bad: {
+            Distance: "All the way in Hollywood, but the drive isn't bad if you go late at night!",
+        },
+        notes: [
+          "A classic Hollywood writer’s den, Bourgeois Pig is the ultimate oh-shit-i-have-to-write-my-paper-by-tomorrow study spot. It’s vibey, it’s always open late, and everyone there is working hard on something.", 
+          'While their coffee and pastries won’t blow you away, the mystical, purple light, the “forest room,” and pool table offer an ambience unlike any other coffee shop you’ve ever visited (to add to the intrigue, Scientology’s <i>Celebrity Center</i> is located right across the street).', "I recommend departing from campus for Bourgeois Pig long after the sun has set. Bring a blanket. Order an espresso. Work til two and ride the empty freeways back home to USC in record time. "
+        ],
+        recs: [
+          { name: "Espresso", img: ""}, { name: 'Birthday cake latte', img: '' }, 
+          { name: 'Rooibos tea', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 8, close: 26},
+            { day: 'Tue', open: 8, close: 26},
+            { day: 'Wed', open: 8, close: 26},
+            { day: 'Thu', open: 8, close: 26},
+            { day: 'Fri', open: 8, close: 26},
+            { day: 'Sat', open: 8, close: 26},
+            { day: 'Sun', open: 8, close: 26},
+        ],
+        distance: '20',
+      }],
+      nothingButCoffee: [{
+        meta: {
+          yelpUrl: 'nothing-but-coffee-los-angeles', 
+          shopName: 'Nothing But Coffee', 
+          heroImg: 'nbc-hero.jpg',
+          food: ['waffle', 5],
+          drink: ['pour-over', 4.50],
+        },
+        images: [
+            '_79gOvSawn3U_FEdsMjAUA','As0iirrEImtKpuj3LyCwgQ','beBAtuu7bSh3SwyBa8EvxQ','I6nPkMeeD6rfFkf2ThSaPQ'
+        ],
+        good: {
+            'All day grind': 'Open late; but limited table space and parking', 'Drinks': "Amazing coffee",
+        },
+        bad: {
+            'Large groups': "Can't seat more than 4 at a table, and table space is generally limited"
+        },
+        notes: [
+          "As the name suggests, Nothing But Coffee (NBC) serves… coffee. And a really good waffle (which you can smell every time one is made to order). Pourover, matcha, cold brew, lattes… NBC nails all of these and serves until 2 AM.", 
+          'NBC is a wonderful spot for late-night work sessions, but mind the limited parking in the back lot if you’re driving, and limited table space (no room for groups larger than 3 or 4). ', "The coffee might look expensive on the menu, but their pours are <i>generous</i>... often <a href='https://s3-media1.fl.yelpcdn.com/bphoto/H1J0C0NDvKZfMKzOsmfiew/o.jpg'>coming in pitchers</a> large enough to keep you caffeinated for hours. "
+        ],
+        recs: [
+          { name: "Truffle honey latte", img: ""}, { name: 'Pourover coffee', img: '' }, 
+          { name: 'Waffle', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 9, close: 26},
+            { day: 'Tue', open: 9, close: 26},
+            { day: 'Wed', open: 9, close: 26},
+            { day: 'Thu', open: 9, close: 26},
+            { day: 'Fri', open: 9, close: 26},
+            { day: 'Sat', open: 9, close: 26},
+            { day: 'Sun', open: 9, close: 26},
+        ],
+        distance: '14',
+      }],
+      bricksAndScones: [{
+        meta: {
+          yelpUrl: 'bricks-and-scones-los-angeles', 
+          shopName: 'Bricks & Scones', 
+          heroImg: 'bricksandscones-hero.jpg',
+          food: ['scone', 10.0],
+          drink: ['arnold palmer', 3.21],
+        },
+        images: [
+            'sixuguFD6OHGvIiS_VFqeQ','Q0w7UowI3RavuaoSnGwKWw','s7HqjyLuPOW_xrDuAK8tpQ','P8caBAoLqbItEQHiCJ3IQQ'
+        ],
+        good: {
+            'All day grind': 'Lots of comfortable seating and very conducive to studying!', 'Drinks': "Amazing coffee", Food: "Large selection of breakfast and lunch, plus lots of great shops just down the road in Larchmont", "Large groups": "If you can get a large table downstairs, you can comfortably seat a group of six. Just be ready to fight over outlets"
+        },
+        bad: {
+            Distance: "Larchmont can be tricky to get to. Time your drive wisely, or traffic will eat up your day"
+        },
+        notes: [
+          "Bricks & Scones is situated in Larchmont, a beautiful neighborhood with plentiful shops and eating options for a nice lunch on a sunny day. The cafe itself is gigantic, taking up all of the first and second floors of what looks like an old home. Downstairs, there are long tables for groups and upstairs, collections of odd-shaped tables, desks, and couches.", "As the shop’s name suggests, the scones and other pastries at Bricks & Scones are quite good. There are plenty of food options here, but I’d recommend walking down the street to a <a target='_blank' href='https://www.yelp.com/biz/larchmont-village-wine-spirits-and-cheese-los-angeles'>small deli</a> with some of the freshest, most delicious sandwiches. Drink-wise, you can’t go wrong with their multitude of iced coffees or cappuccino. ",
+          "Traffic can really make Bricks & Scones feel far from campus, so plan your trip around avoiding rush hour.",
+        ],
+        recs: [
+          { name: "Truffle honey latte", img: ""}, { name: 'Pourover coffee', img: '' }, 
+          { name: 'Waffle', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 7.5, close: 20},
+            { day: 'Tue', open: 7.5, close: 20},
+            { day: 'Wed', open: 8, close: 20},
+            { day: 'Thu', open: 8, close: 20},
+            { day: 'Fri', open: 8, close: 20},
+            { day: 'Sat', open: 8, close: 20},
+            { day: 'Sun', open: 8, close: 20},
+        ],
+        distance: '25',
+      }],
+    };
+
+-
+    const pulses = {
+        conference: [{
+            title: "The best coffee shops in LA (for 'SC students)",
+            sub: "I really like coffee. I've been to a lot of coffee shops over the past couple of years. I made a list.",
+            img: 'coffee-thumb.png',
+            link: 'projects/coffee.html',
+        }],
+    };

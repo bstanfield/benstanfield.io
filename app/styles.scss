@@ -358,6 +358,10 @@ span.separate {
   margin: auto;
 }
 
+.full-img {
+  width: 100%;
+}
+
 .news-card {
   background-image: url('https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg');
   background-size: cover;
@@ -422,6 +426,10 @@ span.separate {
   display: block;
 }
 
+  .vid-fill {
+    height: auto;
+  }
+
 .grid-bg {
   overflow: hidden;
   position: relative;
@@ -452,6 +460,10 @@ span.separate {
   width: 90%;
   margin: auto;
 }
+
+  .proj-container {
+    max-width: 800px;
+  }
 
 .bottom {
   margin-bottom: $buffer-bottom;

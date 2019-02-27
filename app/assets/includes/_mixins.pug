@@ -1,0 +1,278 @@
+//- INCLUDES > MIXINS
+
+//- simpletons
+mixin img(path)
+  img(class='full-img' src=path)
+//-
+mixin project(color, title, description, img)
+  .project-card.top(style="background-color:" + color + ";")
+    .project-content
+      h1 #{title}
+      p #{description}
+      button View more
+      img(src="images/" + img)
+
+mixin link(url, name, tooltip)
+  a(target='_blank' class='orange-link' href=url title=tooltip)= name
+
+mixin imgLink(item)
+  if item.img
+    li    
+      .img-link(title=item.img) #{item.name} ✨
+  else
+    li
+      .img-link #{item.name}
+
+mixin more()
+  p.more Learn more <span>&rarr;</span>
+
+mixin 3card(url, emoji, title, description, target)
+  a(target=target href=url).thirds-col.card
+    h2 <span class='emo'>#{emoji}</span> #{title}
+    p #{description}
+    +more()
+
+mixin contact()
+  h1 Contact
+  p
+    | If you'd like to work with me or learn more, please send me an email through the form below or find me on 
+    +link('https://www.linkedin.com/in/meetben', 'LinkedIn', '"Join my professional network 🤓"')
+    | . Thanks for stopping by!
+  p.italic (Mail goes to bstanfie@usc.edu)
+
+  br
+  form(accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST")
+    .label-input-group
+      label(for='fname') NAME
+      input(type='text' id='fname' name='firstname' placeholder='Adam Grant')
+    .label-input-group
+      label(for='lname') EMAIL *
+      input(type='email' id='email' name='email' placeholder='adamgrant@email.com' required)
+
+    .label-input-group
+      label(for='subject') MESSAGE *
+      <textarea id="subject" name="subject" placeholder="Hey Ben! Adam here. Just checked out your website and I have some... feedback." style="height:200px" required></textarea>
+
+    input(type='submit' value='Submit')
+
+//- PROJECT PAGE
+mixin introsection(title, sub, date, emoji)
+  if emoji
+    h1.big-emoji!= emoji
+  h1.headline!= title
+  h6!=sub
+  // p.update-line!= date
+  br
+
+mixin quote(quote, byline)
+  .quote
+    h2 #{quote}
+    p #{byline}
+
+mixin widequote(quote, byline)
+  .quote(style='width: 80%; display: block; max-width: 600px; margin-right: 30px;')
+    h2 #{quote}
+    p #{byline}
+
+mixin article(url, iconpath, title, subtitle, sourcename, bgimage)
+  <div style="clear: both;"></div>
+  a(target='_blank' href=url).card.project-card
+    img(src=iconpath)
+    h2 #{title}
+    p #{subtitle}
+    
+    p.more Read on #{sourcename} <span>&rarr;</span>
+    .project-img(style=bgimage)
+
+mixin reviewGallery(meta, hours, distance, arr)
+  - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
+  - const heroImg = '../../images/projects/coffee/' + meta.heroImg;
+  - const urlBase = 'https://s3-media3.fl.yelpcdn.com/bphoto/';
+  - const date = new Date;
+
+  .review
+    - let anchorName = meta.shopName.replace(/\s/g, '');
+    - anchorName = anchorName.replace(/&/g, 'And');
+    a.anchor(name=anchorName id=anchorName)
+    h4.shop-name #{meta.shopName}
+    br
+    if meta.food
+      - const total = (meta.food[1] + meta.drink[1]).toFixed(2);
+      .foodEst
+        p <span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$#{total}</strong> <sup>?</sup>
+        .explainer
+          p.explainerText ↳&nbsp; #{meta.food[0]} ($#{meta.food[1].toFixed(2)}) + #{meta.drink[0]} ($#{meta.drink[1].toFixed(2)}) = $#{total}
+
+    if hours
+      - const open = hours.open;
+      - const closed = hours.close;
+      .shopStatus
+        p <span class='meta-emoji'>&nbsp;🗓&nbsp;</span>
+          span(id= anchorName + 'Hours')
+        .explainer2
+          p ↳ &nbsp;
+          .hoursContainer
+            +fullHours(hours)
+
+
+    
+    if distance
+      p <span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>#{distance} minute</strong> drive from campus at 10 AM.
+
+
+    br
+    .gallery-blackbox
+      .fill
+        a(data-fancybox=meta.shopName href=heroImg)
+          img(src=heroImg)
+      .gallery-indicator
+        a(data-fancybox=meta.shopName href=heroImg) <i class="far fa-image"></i> View gallery
+
+      .gallery-container.flex-grid
+        each url in arr
+          +galleryPhoto(meta.shopName, urlBase+url+'/o.jpg')
+
+mixin galleryPhoto(shopName, yelpImg)
+  .gallery-photo
+    a(data-fancybox=shopName href=yelpImg)
+      img(src=yelpImg)
+
+mixin scorecard(goodObj, badObj)
+  .scorecard
+    .flex-grid
+      .score-col
+        h2 Best for:
+        each pair in Object.entries(goodObj)
+          div
+            .score-emoji
+              span(class=pair[0].slice(0,3))
+            .score-text
+              p <strong>#{pair[0]}</strong> 
+              p.small-note #{pair[1]}
+      .score-col
+        h2 Not great for:
+        each pair in Object.entries(badObj)
+          div
+            .score-emoji
+              span(class=pair[0].slice(0,3))
+            .score-text
+              p <strong>#{pair[0]}</strong>
+              p.small-note #{pair[1]}
+
+
+mixin recs(itemObjs)
+  .recs 
+    h2 Ben's Recommendations
+    ol
+      each item in itemObjs
+        +imgLink(item)
+    br
+    br
+
+mixin reviewNotes(meta, notes, guestNotes, recs)
+  - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
+  .writeup
+    h2 Notes on #{meta.shopName}
+    each par in notes
+      h6!= par
+    if guestNotes
+      .writeup-guest
+        img(style='background-image: url(' + guestNotes.img + ')')
+        h6 <strong>From #{guestNotes.name}</strong> #{guestNotes.notes}
+    +recs(recs)
+  .proj-button-container
+    a(href=shopUrl class='proj-button' target='_blank') <i class="fab fa-yelp"></i>&nbsp; View #{meta.shopName} on Yelp 
+    hr
+    br
+    br
+
+mixin review(shops)        
+  each shop in shops
+    .review
+      +reviewGallery(shop[0].meta, shop[0].hours, shop[0].distance, shop[0].images)
+      +scorecard(shop[0].good, shop[0].bad)
+      +reviewNotes(shop[0].meta, shop[0].notes, shop[0].guestNotes, shop[0].recs)
+
+mixin pulse(pulses)
+  - const currentPulse = pulses.conference[0];
+  .container
+    a(href=currentPulse.link)
+      .flex-grid
+        .thirds-col#col-bg(style="background-image: url('images/" + currentPulse.img + "');")
+        
+        .two-thirds-col.card.static
+          .pulsetxt
+            h2 ☕️ #{currentPulse.title}
+            p 
+              | #{currentPulse.sub}
+            +more()
+
+mixin overview(shops)
+  h2
+    strong Jump to:
+  ol.shop-list 
+    each shop in shops
+      - const date = new Date();
+      - let day = date.getDay() - 1;
+      -
+        const getDate = (dateNum) => {
+          let today = 0;
+          if (dateNum == -1) {
+            today = 0;
+          } else {
+            today = dateNum;
+          }
+          return today;
+        }
+      - const today = getDate(day);
+      - const closing = shop[0].hours[today].close;
+      - let anchorName = shop[0].meta.shopName.replace(/\s/g, '');
+      - anchorName = anchorName.replace(/&/g, 'And');
+      if (closing > 21)
+        li
+          a(href='#' + anchorName class='late-night') #{shop[0].meta.shopName} <span class='open-indicator'>🌝</span>
+      else
+        li
+          a(href='#' + anchorName class='closes-early') #{shop[0].meta.shopName}
+  
+  p.small-note 
+    strong 🌝 = Open late
+
+mixin bigphoto(img, caption, name)
+  .big-photo
+    .fill.project-hero-img(style='background-image: url(' + img + ');')&attributes(attributes)= name
+    .caption
+      p= caption
+
+mixin bigvid(vid, caption)
+    <video autoplay loop muted playsinline>
+    source(src=vid type='video/mp4')
+    </video>
+    .caption
+      p= caption
+
+mixin mediumphoto(img, caption)
+  .med-photo
+    .fill.project-hero-img(style='background-image: url(' + img + ');')
+    .caption
+      p= caption
+
+mixin fullHours(hours)
+  each day in hours
+    - let sto = ((day.open + 11) % 12 + 1);
+    - let stc = ((day.close + 11) % 12 + 1);
+    -
+      if (sto % 1 != 0) {
+        sto = sto.toString();
+        sto = sto.slice(0,1);
+        sto = sto + ":30";
+      }
+      if (stc % 1 != 0) {
+        stc = stc.toString();
+        stc = stc.slice(0,1);
+        stc = stc + ":30";
+      }
+    if stc > 3
+      span.separate(class=day.day) #{day.day}: #{sto} <span class='light'>AM</span> - #{stc} <span class='light'>PM</span>
+    else 
+      span.separate(class=day.day) #{day.day}: #{sto} <span class='light'>AM</span> to #{stc} <span class='light'>AM</span>

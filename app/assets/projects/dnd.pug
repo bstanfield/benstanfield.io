@@ -1,0 +1,134 @@
+extends layout-projects
+block variables
+  - var metapic = "https://i.imgur.com/rTOhocU.png";
+block head
+  - var projectName = "DnD 📡";
+  title Ben - #{projectName}
+
+block content
+  .scroll-to-top
+    button <i class="fas fa-arrow-alt-circle-up"></i> Return to Top
+  .x-files
+    .container.project.project-container
+      .intro 
+        +introsection("Deploy a site from scratch in minutes.", "A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.", 'February 24, 2019', "📡")
+        
+    - const coffeeHero = '';
+    - const coffeeHeroCaption = '';
+    +bigphoto(coffeeHero, coffeeHeroCaption)(class='move-up')
+
+    .container.project.md-style
+      br
+      .markdown-body
+        include:markdown-it ../markdown/dnd.md
+
+        pre
+          code.
+            ben@bs-tb13 ~ » <span class="hljs-built_in hljs-strong">ls</span>
+            Applications/            
+            Creative Cloud Files/   
+            <strong>Desktop/</strong>                  
+            Documents/             
+            Downloads/           
+            Dropbox/               
+            Internships/
+            Public/                       
+            Library/                
+            Movies/                  
+            Music/                   
+            Pictures/
+
+            ben@bs-tb13 ~ »
+
+        :markdown-it
+          To get started with our new project, we'll need to **change directory** (folder) from our root to wherever you want your code to live. You can use the command `cd` to enter an existing directory. For this demo, our project will live on **Desktop.**
+
+        pre
+          code(class='bash').
+            cd Desktop                              <span class="comment">// Enters your Desktop folder</span>
+            <span class="hljs-built_in">mkdir</span> sampleProject && cd sampleProject <span class="comment">// Chains two commands: creating and entering a directory</span>
+
+        :markdown-it
+          Adding files to a directory is easy from the command line. Use the following command to create an **index.html** page to kick off our homepage.
+
+        pre
+          code(class='bash').
+            echo "&lt;h1&gt;I can't wait to be deployed...&lt;/h1&gt;" &gt; index.html
+
+        :markdown-it
+          Let's open that file up quickly in our browser to make sure it worked.
+
+        pre
+          code(class='bash').
+            <span class="hljs-built_in">open</span> 'index.html'
+
+        +img('../images/projects/dnd/index-file.png')
+
+        :markdown-it
+          # 2. Create a **Zeit** account
+          The **Zeit Now** platform is extremely powerful, but for now we can think of Zeit as a **dead-simple hosting service for our static website.** In the next few minutes we'll get deployment of our code to the web working with just one command in Terminal 🤖.
+          >
+          **First, visit [zeit.co](https://www.zeit.co/signup) and sign up**
+          (choosing "continue with email" is fastest).
+
+        +img('../images/projects/dnd/zeit-signup.png')
+
+        :markdown-it
+          When prompted, make sure to install the **Now CLI (Command Line Interface).** This allows us to write commands to deploy our website from Terminal, similar to `cd`, `echo`, and others from earlier.
+          >
+          To confirm that you're logged in and have Now CLI installed, return to your project directory in Terminal and run this command:
+
+        pre
+          code(class='bash').
+            <span class="hljs-built_in">now</span> --version
+  
+        :markdown-it
+          If all is well, that command should return the version number of your Now CLI.
+          >
+          🤕 [Stuck?](https://www.google.com)
+
+          # 3. Deploy
+          🚨 We're one step from deployment! Just type the command `now` and your directory sampleProject will be deployed to a **staging URL.** 
+          >
+          You should see something like this (I'll get back to the warning briefly):
+
+        pre
+          code(class='bash').
+            ben@bs-tb13 zeitApp » <span class="hljs-built_in">now</span>
+            > WARN! Your project is missing a now.json file with a `version` property. More: https://zeit.co/docs/version-config
+            > Deploying ~/Desktop/zeitApp under <strong>benstanfield</strong>
+            > Using project <strong>zeitApp</strong>
+            > Synced 1 file (40B) [1s]
+            > <span class="hljs-string">https://zeitapp-d005ajovh.now.sh</span> [v2] [in clipboard] [826ms]
+            ┌ **        Ready               [404ms]
+            └── index.html
+            > <span class="hljs-keyword">Success!</span> Deployment ready [3s]
+
+        :markdown-it
+          That's it! Our sample project has been deployed to the outputted link (now in your clipboard). Anyone on the internet can view that link. 
+
+        
+
+        //- :markdown-it
+        //-   ### 2. Open your code editor
+        //-   Open your preferred editor (I recommend [VS Code](https://vscode.com)) to the **zeitApp** directory we just made. 
+
+
+
+      br
+      br
+      br
+      br
+      
+      a(name='glossary')
+      .center
+        .big-emoji 👋
+        h1 That's it!
+        h6 Thanks for stopping by! If you'd like to comment on one of these shops, recommend your favorite, or simply grab coffee together, shoot me a message! 😁 ☕ ️
+        h6 
+          a.orange(href='/') &larr; Go home.
+      br
+      br
+
+    
+      
