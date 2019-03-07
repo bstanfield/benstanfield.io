@@ -1,0 +1,17 @@
+   
+.container-wide.mobile-full
+    if navImg
+        .hero
+            .bg-orange(style=navImg)
+    else
+
+.nav#stickThis.stick
+    .nav-content
+        .nav-text   
+            .left#root <a href='/'><span id='homeRoot'>BEN</span></a> / <a href=''><span class='projectRoot'>#{projectName}</span></a>
+            .right.nav-links
+                a(class='mobile-hide' href="/") Home
+                a(class='mobile-hide') • 
+                a(target='_blank' href='https://www.skipper.ai')
+                    i Skipper
+                a(href='/#experiences') Experiences

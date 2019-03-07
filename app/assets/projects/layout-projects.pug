@@ -1,13 +1,13 @@
 doctype html
-include ../includes_folder/_includes/_mixins.pug
-include ../includes_folder/_includes/_variables.pug 
-include ../includes_folder/includes/head
+include ../includes/_mixins.pug
+include ../includes/_variables.pug 
+include ../includes/head
     block head
         title Ben Stanfield
 
 body
 // loads navigation bar for each page
-include ../includes_folder/includes/nav-projects
+include ../includes/nav-projects
 
 // this is where content will be loaded for subsequent pages
 block content
@@ -19,7 +19,7 @@ block content
     br
     +contact()
 // footer
-include ../includes_folder/includes/footer
+include ../includes/footer
 
 
 

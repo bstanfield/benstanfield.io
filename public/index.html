@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" href="markdown.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script>require('initialize');</script>
 <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
@@ -30,7 +33,7 @@
   <div class="hero">
     <div class="grid-bg">
       <div class="flex-grid thirds flex-nav" id="jsHide">
-        <div class="thirds-col"><video class='benmoji' autoplay loop muted playsinline>
+        <div class="thirds-col always-show"><video class='benmoji' autoplay loop muted playsinline>
 <source src="../../images/benmoji-sunglasses.mp4" type="video/mp4">
 </video>
           <p class="pauseicon">Paused</p>
@@ -56,7 +59,7 @@
   <div class="intro"> 
     <h1><span id='time-leadup'>WHAT I'M PROBABLY UP TO AT <span id='time'></span></span></h1>
     <h1 id="one"><span class='emoji'></span></h1>
-    <p id="rebelReplace">Hello! I’m Ben Stanfield, a college senior finishing up at the <a class="orange-link" target="_blank" href="http://iovine-young.usc.edu" title="Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen' 🎧">Iovine &amp; Young Academy</a>  and working on a company called <a class="orange-link" target="_blank" href="http://skipper.ai" title="Reporting software for HR... check out our website! 🌟"> Skipper</a>.
+    <p id="rebelReplace">Hello people on the internet! I’m Ben Stanfield, a college senior finishing up at the <a class="orange-link" target="_blank" href="http://iovine-young.usc.edu" title="Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen' 🎧">Iovine &amp; Young Academy</a>  and working on a company called <a class="orange-link" target="_blank" href="http://skipper.ai" title="Reporting software for HR... check out our website! 🌟"> Skipper</a>.
     </p>
   </div><br><br><a class="anchor" name="experiences" id="experiences"></a>
   <h1>Experiences</h1><br>
@@ -107,9 +110,9 @@
 </div><br><br><br><a name="contact"></a>
 <div class="container">
   <h1>Contact</h1>
-  <p>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="https://www.linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
-  </p>
-  <p class="italic">(Mail goes to bstanfie@usc.edu)</p><br>
+  <h6>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="https://www.linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
+  </h6>
+  <h6 class="italic">(Mail goes to bstanfie@usc.edu)</h6><br>
   <form accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST">
     <div class="label-input-group">
       <label for="fname">NAME</label>

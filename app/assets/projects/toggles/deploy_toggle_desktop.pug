@@ -1,0 +1,63 @@
+include /includes/_mixins.pug
+:markdown-it
+  # Objective (Beginner)
+  To learn a simple, elegant deployment process for publishing web content that works for beginners *and* experienced developers 🤖.
+  >
+  **Disclaimer:** If you're interested in learning more about the command line or just want the fastest possible path to deployment, switch to the advanced tutorial (radio buttons above).
+
+  # Step 1: Setup
+  ## Create a project folder
+  Start by creating a new folder somewhere on your computer where the code for your website will live.
+
+  ## Create "index.html"
+  Create an `index.html` file within your project folder and include the following line of code:
+
+pre
+  code(class='html').
+    &lt;h1>I can't wait to be deployed...&lt;/h1>
+
+:markdown-it
+  ## Double-check it
+  Open your file system and navigate to your `index.html` file. Right click and launch it in Safari or Chrome (or whichever browser you prefer). You should see something like this:
+
++img('../images/projects/dnd/index-file.png')
+
+:markdown-it
+  ## Create "now.json"
+  Create a second file named `now.json`. Insert the following code into the json file.
+  
+pre
+  code(class='json').
+    {
+      "version": 2,
+      "alias": []
+    }
+
+:markdown-it
+  # 2. Create a **Zeit** account
+  The **Zeit Now** platform is extremely powerful, but for now we can think of Zeit as a **dead-simple hosting service for our static website.** In the next few minutes we'll get deployment of our code to the web working by simply dragging a folder! 😲
+  >
+  **First, visit [zeit.co](https://www.zeit.co/signup) and sign up**
+  (choosing "continue with email" is fastest).
+
++img('../images/projects/dnd/zeit-signup.png')
+
+:markdown-it
+  To confirm that you're logged in and have the app running, check your navigation bar. Click on the Zeit triangle icon "&#9650;". 
+  >
+  You might be prompted to watch a tutorial or enter your email. Once you've cleared that screen, you should see something like this:
+  >
+  
++bigimg('../images/projects/dnd/zeit-desktop.png')
+
+:markdown-it
+  # 3. Deploy the sample app
+  To deploy the index.html and now.json files we created with our project folder, simply drag that folder from Finder onto the Zeit triangle icon. Your deployed content should be opened up automatically! 🎉
+  >
+
+//- +bigvid('../../videos/projects/dnd/zeit-desktop-drag-compressed.mp4')
+
+<iframe class="iframe-shit" src="https://player.vimeo.com/video/321866194?autoplay=1&loop=1&autopause=0" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+:markdown-it
+  >

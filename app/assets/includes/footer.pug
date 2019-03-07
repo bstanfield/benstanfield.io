@@ -1,0 +1,34 @@
+br
+br
+
+footer
+    .grid-bg.grid.long
+
+<script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
+<noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+
+script.  
+    tippy('.orange-link', {
+        theme: 'ben',
+        arrow: true,
+        arrowType: 'round',
+        delay: [500, 0],
+    });
+
+    tippy('.img-link', {
+        theme: 'ben-img',
+        arrow: true,
+        arrowType: 'round',
+        placement: 'right',
+        delay: [200, 0],
+        allowHTML: true,
+        distance: 30,
+        trigger: 'click mouseenter',
+    })
+
+    tippy.browser.onUserInputChange = type => {
+        const method = type === 'touch' ? 'disable' : 'enable'
+        for (const tooltip of tip.tooltips) {
+          tooltip[method]()
+        }
+    }
