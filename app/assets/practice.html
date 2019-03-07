@@ -1,0 +1,90 @@
+<style>
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    font-size: 18px;
+    background-color: lightblue;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+}
+
+.main-nav {
+    list-style-type: none;
+}
+.nav-links,
+
+.logo {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-nav li {
+text-align: center;
+margin: 15px auto;
+}
+
+.logo {
+display: inline-block;
+font-size: 22px;
+margin-top: 10px;
+margin-left: 20px;
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer; 
+    color: rgba(255,255,255,0.8);
+    font-size: 24px;
+}
+
+.main-nav {
+    list-style-type: none;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+</style>
+
+
+<nav class="navbar">
+    <span class="navbar-toggle" id="js-navbar-toggle">
+        <i class="fas fa-bars">≈</i>
+    </span>
+    <a href="#" class="logo">logo</a>
+    <ul class="main-nav" id="js-menu">
+        <li>
+            <a href="#" class="nav-links">Home</a>
+        </li>
+        <li>
+            <a href="#" class="nav-links">Products</a>
+        </li>
+        <li>
+            <a href="#" class="nav-links">About Us</a>
+        </li>
+        <li>
+            <a href="#" class="nav-links">Contact Us</a>
+        </li>
+        <li>
+            <a href="#" class="nav-links">Blog</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    let mainNav = document.getElementById('js-menu');
+    let navBarToggle = document.getElementById('js-navbar-toggle');
+
+    navBarToggle.addEventListener('click', function () {
+
+        mainNav.classList.toggle('active');
+    });
+</script>

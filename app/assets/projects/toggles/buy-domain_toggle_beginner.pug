@@ -1,0 +1,28 @@
+include /includes/_mixins.pug
+:markdown-it
+    # Part 2: Buy
+    Once you've found your domain, click on it to buy. You might need to enter credit card information on Zeit if you haven't yet.
+
+:markdown-it
+    After purchasing, navigate to your dashboard and click on the **Domains** section. You should see a list of all your domains there (likely just the one that you bought).
+
++img('../images/projects/dnd/zeit-domains-list.png')
+
+:markdown-it
+    # Publish your content!
+    The last step to having a fully-functioning website is to connect, or **alias**, the content from [step one](./deploy.html) to your custom domain.
+    > 
+    Return to your code folder and modify your **now.json** file:
+    >
+
+pre
+    code(class='javascript').
+        {
+            "version": 2,
+            "alias": [ "yourwebsite.com" ]
+        }
+
+:markdown-it
+    Now, when you deploy your site (see the final step in the previous tutorial) Zeit also updates the content on your **custom domain!**.
+    >
+    Congratulations, you have a new website up and running on Zeit!

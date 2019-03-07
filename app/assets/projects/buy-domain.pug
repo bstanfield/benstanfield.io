@@ -1,0 +1,78 @@
+extends layout-projects
+block variables
+  - const metapic = "https://i.imgur.com/rTOhocU.png";
+
+block head
+  - const projectName = "Deploy 🛠";
+  title Ben - #{projectName}
+
+block content
+  .scroll-to-top
+    button <i class="fas fa-arrow-alt-circle-up"></i> Return to Top
+  .x-files
+    .container.project.project-container
+      .intro 
+        +introsection("Buying a domain from Zeit.", "This is <strong>part two</strong> of my series on deploying your website with the Zeit deployment service. If you haven't viewed <a style='color: #F26C29' href='./deploy.html'>part one</a>, I recommend checking that out first.", 'February 28, 2019', "💸")
+        
+    +bigphoto('../images/projects/dnd/deployment-article-hero.png', '')(class='background-contain')
+
+    .container.project.md-style
+      br
+      .markdown-body
+        :markdown-it
+            🤔 **Note:** I still have a lot to learn, so take what I write with a grain of salt. I want to share what I've learned with you because learning it genuinely brought me joy, and I want you to have some 🙂.
+            >
+
+        h2 What's your experience level?
+
+        <input type="radio" name="demo" value="one" id="advanced" class="form-radio" checked>
+        p.inline.toggle-text Advanced tutorial <a class="orange-link" title="Uses the command line (terminal) interface for deployment"><sup>?</sup></a>
+        br
+
+        <input type="radio" name="demo" value="one" id="beginner" class="form-radio">
+        p.inline.toggle-text Beginner tutorial <a class="orange-link" title="Uses the desktop app for deployment"><sup>?</sup></a>
+        br
+        br
+
+        :markdown-it
+            # Objective
+            Browse and buy a domain on **Zeit Domains** and connect it to the project we deployed in [part one](./deploy.html).
+
+            # Step 1: Browse
+            ## But why browse on Zeit?
+            There are a lot of companies that will sell you a domain—GoDaddy, Namecheap, FreeDNS, Google Domains, etc.—so what makes one better than the next? Here's one reason: Some domain registrars **share your domain search history** with squatters that will swoop in and buy domains before you can make a decision.
+            > Note: If you already have your domain, [check out my guide](./migrate-domain.html) for migrating an existing domain to Zeit.
+            >
+            Zeit **guarantees** that no searches made on their site will be shared, so search away! Plus, buying a domain through Zeit makes *deploying* your site through Zeit (see part one) that much easier. Here are some other benefits of buying through Zeit:
+            >
+            - Free SSL certification
+            - Free WHOIS privacy
+            - Built-in **Zeit Now** integration
+            - Free DNS (Your site will work across the globe, among [other things](https://zeit.co/network))
+
+            > 
+            ## Find a domain
+            To start looking for your domain, visit [Zeit.co/domains](https://zeit.co/domains)
+
+        +img('../images/projects/dnd/zeit-domains.png')
+
+        .toggle-advanced
+          include toggles/buy-domain_toggle_advanced
+        .toggle-beginner
+          include toggles/buy-domain_toggle_beginner
+
+        br
+        br
+        <p class='strong-center'>Choose one of the following to continue:</p>
+          
+        +buttonGrid(
+            [
+                { text: '&larr; Back to step one', url: './deploy.html', inverted: 'true' },
+                { text: 'Transfer an existing domain', url: './transfer.html' }
+            ]
+        )
+
+    +farewell
+
+    
+      

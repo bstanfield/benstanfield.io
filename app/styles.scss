@@ -10,6 +10,15 @@ $buffer-top: 30px;
 $buffer-bottom: 30px;
 $buffer: 30px 0px;
 
+// Bumpers
+.bumper-top {
+  margin-top: 15px;
+}
+
+.bumper-bottom {
+  margin-bottom: 15px;
+}
+//
 
 // - FONTS
 
@@ -185,6 +194,23 @@ p {
   display: none;
 }
 
+// .vid-full-width {
+//   width: 100%;
+//   margin: 20px;
+//   background-color: rgb(238, 238, 238);
+//   border-radius: 3px;
+//   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+//     0 10px 10px rgba(0, 0, 0, 0.22);
+// }
+
+.img-full-width {
+  width: 100%;
+  background-color: rgb(238, 238, 238);
+  border-radius: 3px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+  0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
 // - HERO
 video {
   width: 300px;
@@ -192,6 +218,12 @@ video {
   transition: 1s ease-in-out all !important;
   margin-top: 20px;
   cursor: pointer;
+  background-image: url(/images/spinner.svg);
+  background-repeat: no-repeat;
+  background-size: 100px 100px !important;
+  background-position: center center;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.3s ease-in-out;
 }
 
   video.secondvid {
@@ -484,6 +516,26 @@ button {
   padding: 10px;
 }
 
+.btn {
+  font-size: 18px;
+  background-color: $orange!important;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 10px 10px;
+  border-radius: 3px;
+  margin: 15px 0px;
+  cursor: pointer;
+  width: 48%;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+  .btn-inverted {
+    color: $grey !important;
+    background-color: white !important;
+    border: 2px solid $grey;
+  }
+
 .audio-text {
   position: absolute;
   top: 0;
@@ -519,6 +571,16 @@ button {
   justify-content: space-between;
   margin-bottom: 30px;
 }
+
+  .btn-grid {
+    padding-top: 10px;
+    max-width: 650px;
+    margin: auto;
+  }
+
+  .flex-even {
+    justify-content: space-evenly;
+  }
 
   .flex-nav {
     align-items: center;
@@ -563,13 +625,19 @@ button {
       .big-text {
         text-align: center !important;
         z-index: 100;
+        height: 250px;
+        position: relative;
       }
 
         .big-text > h1 {
           font-size: 80px;
           color: $grey;
-          float: right !important;
-          width: 100%;
+          position: absolute;
+          left:0;
+          right:0;
+          top: 25%;
+          margin-left:auto;
+          margin-right:auto
         }
   
 // MISC
@@ -697,6 +765,46 @@ img#footerla {
     border-radius: 3px;
   }
 
+// EXPERIMENTING
+.form-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #f1f1f1;
+  color: #666;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 7px;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.form-radio:checked::before {
+  position: absolute;
+  font: 13px/1 'Open Sans', sans-serif;
+  left: 11px;
+  top: 7px;
+  content: '\02143';
+  transform: rotate(40deg);
+}
+
+.form-radio:hover {
+  background-color: rgba(51, 51, 51, 0.500);
+}
+
+.form-radio:checked {
+  background-color: $grey;
+  color: white;
+}
+
+// END EXPERIMENTING
+
 // MEDIA QUERIES
 @media screen and (max-width: 915px) {
   .big-text > h1 {
@@ -719,6 +827,11 @@ img#footerla {
   .big-text > h1 {
     font-size: 80px;
     margin-left: 20px;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
   }
 
   .thirds-col {
@@ -757,6 +870,10 @@ img#footerla {
   h1 {
     font-size: 30px;
   }
+
+    .big-text > h1 {
+      top: 0;
+    }
   
   .nav-text {
     font-size: 16px;
@@ -806,6 +923,10 @@ img#footerla {
         width: 200px;
         z-index: 1;
       }
+
+  .img-full-width, .vid-full-width {
+    margin: 0;
+  }
 
   .project-hero {
     margin-top: 10px;

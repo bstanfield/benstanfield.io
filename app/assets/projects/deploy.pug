@@ -1,0 +1,67 @@
+extends layout-projects
+block variables
+  //- - const metapic = "https://i.imgur.com/rTOhocU.png";
+block head
+  - const projectName = "Deploy 🛠";
+  title Ben - #{projectName}
+
+block content
+  .scroll-to-top
+    button <i class="fas fa-arrow-alt-circle-up"></i> Return to Top
+  .x-files
+    .container.project.project-container
+      .intro 
+        +introsection("Deploy a website from scratch in minutes with Zeit Now.", "Part one of a simple introduction to a powerful (and free!) deployment technique. Choose below whether you want to follow the command line or desktop tutorial.", 'February 24, 2019', "🛠")
+        
+    +bigphoto('../images/projects/dnd/deployment-article-hero.png', '')(class='background-contain')
+
+    .container.project.md-style
+      br
+      .markdown-body
+        :markdown-it
+          **Note:** I still have a lot to learn, so **take what I write with a grain of salt.** I want to share what I've learned with you because learning it genuinely brought me joy, and I want you to have some.
+          >
+          I am **not affiliated** in any way with Zeit. (I wish... 🤑) 
+          >
+        
+        br
+        br
+
+        h2 What's your experience level?
+
+        <input type="radio" name="demo" value="one" id="advanced" class="form-radio" checked>
+        p.inline.toggle-text Advanced tutorial <a class="orange-link" title="Uses the command line (terminal) interface for deployment"><sup>?</sup></a>
+        br
+
+        <input type="radio" name="demo" value="one" id="beginner" class="form-radio">
+        p.inline.toggle-text Beginner tutorial <a class="orange-link" title="Uses the desktop app for deployment"><sup>?</sup></a>
+        br
+        br
+
+        .toggle-advanced
+          include toggles/deploy_toggle_terminal
+        .toggle-beginner
+          include toggles/deploy_toggle_desktop
+
+
+        :markdown-it
+          That's it! Our sample project has been deployed to the outputted link (now in your clipboard). Anyone on the internet can view that link.
+          > Psst: Wondering why Zeit outputs that strange URL? [Tell me more...](https://www.benstanfield.io)
+
+        :markdown-it
+          # What's next?
+          *Technically* we've accomplished a very quick and easy deployment to the web! But the `.sh` output URL of a Now deployment isn't ideal for your website. Ideally, you want to deploy to your custom domain. So this leaves a couple options...
+        
+        br
+        br
+        <p class='strong-center'>Choose one of the following to continue:</p>
+          
+        +buttonGrid(
+          [
+              { text: 'Buy a <strong>new domain</strong>', url: './buy-domain.html', filled: true },
+              { text: 'Transfer an <strong>existing domain</strong>', url: './transfer.html' }
+          ]
+        )
+
+    
+      

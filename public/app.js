@@ -161,6 +161,53 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     });
 
+    // FOR PROJECT TOGGLE
+    //   $('.tutorial-toggle').click(() => {
+    //     if (document.getElementById('beginner').checked) {
+    //         console.log('Toggled!');
+    //         $('.toggle-advanced').fadeOut(300);
+    //         $('.toggle-advanced').fadeTo(300, 0);
+    //         $('.toggle-beginner').fadeIn(300);
+    //         $('.toggle-beginner').fadeTo(1000, 100);
+
+    //     } else if (document.getElementById('advanced').checked) {
+    //         $('.toggle-beginner').fadeOut(300);
+    //         $('.toggle-beginner').fadeTo(300, 0);
+    //         $('.toggle-advanced').fadeIn(300);
+    //         $('.toggle-advanced').fadeTo(1000, 100);
+    //     }
+    //   })
+
+    $('#beginner').click(function () {
+        history.pushState(null, null, '?beginner');
+        $('.toggle-advanced').fadeOut(300);
+        $('.toggle-advanced').fadeTo(300, 0);
+        $('.toggle-beginner').fadeIn(300);
+        $('.toggle-beginner').fadeTo(1000, 100);
+    });
+
+    $('#advanced').click(function () {
+        history.pushState(null, null, '?advanced');
+        $('.toggle-beginner').fadeOut(300);
+        $('.toggle-beginner').fadeTo(300, 0);
+        $('.toggle-advanced').fadeIn(300);
+        $('.toggle-advanced').fadeTo(1000, 100);
+    });
+
+    if (window.location.href.indexOf("?beginner") > -1) {
+        $('#beginner').prop("checked", true);
+        $('.toggle-advanced').hide();
+        $('.toggle-beginner').show();
+    } else if (window.location.href.indexOf("?advanced") > -1) {
+        $('#advanced').prop("checked", true);
+        $('.toggle-beginner').hide();
+        $('.toggle-advanced').show();
+    } else {
+        $('#advanced').prop("checked", true);
+        $('.toggle-beginner').hide();
+        $('.toggle-advanced').show();
+    }
+
     // FOR COFFEE
     $(document).ready(function () {
         $('.Cha').append('🔌');
@@ -396,7 +443,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        var description = ["../../images/benmoji-sunglasses.mp4", "../../images/benmoji-sunglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-sleeping.mp4", "../../images/benmoji-sleeping.mp4", "../../images/benmoji-10s.mp4", "../../images/benmoji-10s.mp4"];
+        var description = ["../../images/benmoji-sunglasses.mp4", "../../images/benmoji-sunglasses.mp4", "../../images/benmoji-sunglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-newglasses.mp4", "../../images/benmoji-10s.mp4", "../../images/benmoji-10s.mp4"];
         var size = description.length;
         var rand = Math.floor(size * Math.random());
         $('.benmoji').attr('src', description[rand]);

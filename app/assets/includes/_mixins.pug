@@ -34,11 +34,11 @@ mixin 3card(url, emoji, title, description, target)
 
 mixin contact()
   h1 Contact
-  p
+  h6
     | If you'd like to work with me or learn more, please send me an email through the form below or find me on 
     +link('https://www.linkedin.com/in/meetben', 'LinkedIn', '"Join my professional network 🤓"')
     | . Thanks for stopping by!
-  p.italic (Mail goes to bstanfie@usc.edu)
+  h6.italic (Mail goes to bstanfie@usc.edu)
 
   br
   form(accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST")
@@ -61,7 +61,7 @@ mixin introsection(title, sub, date, emoji)
     h1.big-emoji!= emoji
   h1.headline!= title
   h6!=sub
-  // p.update-line!= date
+  p.update-line= new Date().toDateString()
   br
 
 mixin quote(quote, byline)
@@ -245,11 +245,16 @@ mixin bigphoto(img, caption, name)
       p= caption
 
 mixin bigvid(vid, caption)
-    <video autoplay loop muted playsinline>
+  <video class="vid-full-width" autoplay controls loop muted playsinline>
     source(src=vid type='video/mp4')
-    </video>
-    .caption
-      p= caption
+  </video>
+  .caption
+    p!= caption
+
+mixin bigimg(img, caption)
+  img(src=img class="img-full-width")
+  .caption
+    p!= caption
 
 mixin mediumphoto(img, caption)
   .med-photo
@@ -276,3 +281,47 @@ mixin fullHours(hours)
       span.separate(class=day.day) #{day.day}: #{sto} <span class='light'>AM</span> - #{stc} <span class='light'>PM</span>
     else 
       span.separate(class=day.day) #{day.day}: #{sto} <span class='light'>AM</span> to #{stc} <span class='light'>AM</span>
+
+//- {
+//-   class: '',
+//-   link: './deploy.html',
+//-   text: '&larr; Back to step one'
+//- }
+
+mixin toggle(toggleObj)
+  if toggleObj.checked
+    <label class="switch">
+      <input id='toggler' type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  else
+    <label class="switch">
+      <input id='toggler' type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+
+mixin buttonGrid(btnArr)
+  .flex-grid.flex-even.btn-grid
+    each btn in btnArr
+      if btn.inverted
+        a(href!=btn.url).btn.btn-inverted.
+          !{btn.text}
+      else
+        a(href!=btn.url).btn.
+          !{btn.text}
+
+    //- a(href='./transfer.html').btn.btn-inverted.
+    //-   Transfer a domain to Zeit
+
+mixin farewell()
+  br
+  br
+  br
+  br
+  .center
+    .big-emoji.wave 👋
+    h1 That's it!
+    h6 Thanks for stopping by! If you'd like to leave your thoughts on this post, shoot me a message below! Always down to grab coffee if you're in LA 😁 ☕ ️
+    h6 
+      a.orange(href='/') &larr; Go home.
+  br
