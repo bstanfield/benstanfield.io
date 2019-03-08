@@ -38,6 +38,15 @@ block content
         br
         br
 
+        // +img('../images/projects/dnd/chapter-headline-1.png', { shadow: false })
+        .full-container
+          .chapter-container
+            .chapter-emoji  
+              h1 📚
+            .chapter-text
+              h1.chapter-uppercase Chapter 1: 
+              h1 First deployment
+    
         .toggle-advanced
           include toggles/deploy_toggle_terminal
         .toggle-beginner
@@ -54,14 +63,38 @@ block content
         
         br
         br
-        <p class='strong-center'>Choose one of the following to continue:</p>
-          
-        +buttonGrid(
-          [
-              { text: 'Buy a <strong>new domain</strong>', url: './buy-domain.html', filled: true },
-              { text: 'Transfer an <strong>existing domain</strong>', url: './transfer.html' }
-          ]
-        )
 
-    
+        //- +img('../images/projects/dnd/chapter-headline.png', { shadow: false })
+        .full-container
+          .chapter-container
+            .chapter-emoji  
+              h1 📚
+            .chapter-text
+              h1.chapter-uppercase Chapter 2: 
+              h1 Buying a domain
+        :markdown-it
+            # Step 1: Browse
+            ## But why browse on Zeit?
+            There are a lot of companies that will sell you a domain—GoDaddy, Namecheap, FreeDNS, Google Domains, etc.—so what makes one better than the next? Here's one reason: Some domain registrars **share your domain search history** with squatters that will swoop in and buy domains before you can make a decision.
+            > Note: If you already have your domain, [check out my guide](./migrate-domain.html) for migrating an existing domain to Zeit.
+            >
+            Zeit **guarantees** that no searches made on their site will be shared, so search away! Plus, buying a domain through Zeit makes *deploying* your site through Zeit (see part one) that much easier. Here are some other benefits of buying through Zeit:
+            >
+            - Free SSL certification
+            - Free WHOIS privacy
+            - Built-in **Zeit Now** integration
+            - Free DNS (Your site will work across the globe, among [other things](https://zeit.co/network))
+
+            > 
+            ## Find a domain
+            To start looking for your domain, visit [Zeit.co/domains](https://zeit.co/domains)
+
+        +img('../images/projects/dnd/zeit-domains.png', { screenshot: true })
+
+        .toggle-advanced
+          include toggles/buy-domain_toggle_advanced
+        .toggle-beginner
+          include toggles/buy-domain_toggle_beginner
+
+      +farewell
       

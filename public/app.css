@@ -1527,11 +1527,22 @@ p {
 #hide {
   display: none; }
 
-.img-full-width {
+.img-container {
   width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0px 20px 0px; }
+
+.primary-img {
   background-color: #eeeeee;
   border-radius: 3px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.no-boxshadow {
+  box-shadow: none; }
+
+iframe::content {
+  background-color: lightgrey; }
 
 video {
   width: 300px;
@@ -1682,6 +1693,11 @@ span.separate {
 
 .full-img {
   width: 100%; }
+
+.small-img {
+  width: 100%;
+  max-width: 250px !important;
+  margin-top: 20px; }
 
 .news-card {
   background-image: url("https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg");
@@ -2622,6 +2638,34 @@ h4.shop-name {
   color: #333333 !important;
   filter: grayscale(100%); }
 
+.full-container {
+  width: 100%;
+  margin: auto;
+  align-content: center;
+  background-color: #f4f4f4;
+  margin-top: 30px; }
+
+.chapter-container {
+  width: fit-content;
+  margin: auto;
+  padding: 20px 25px 5px 25px;
+  border-radius: 3px; }
+  .chapter-container h1 {
+    border: none;
+    margin: 0;
+    font-size: 25px; }
+  .chapter-container .chapter-emoji, .chapter-container .chapter-text {
+    display: inline-block; }
+  .chapter-container .chapter-emoji h1 {
+    font-size: 40px !important; }
+  .chapter-container .chapter-text {
+    padding-left: 15px; }
+  .chapter-container .chapter-uppercase {
+    text-transform: uppercase;
+    color: #F26C29;
+    font-size: 18px;
+    margin-bottom: -5px; }
+
 @media (max-width: 767px) {
   .markdown-body {
     padding: 15px; } }
@@ -3022,11 +3066,22 @@ p {
 #hide {
   display: none; }
 
-.img-full-width {
+.img-container {
   width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0px 20px 0px; }
+
+.primary-img {
   background-color: #eeeeee;
   border-radius: 3px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.no-boxshadow {
+  box-shadow: none; }
+
+iframe::content {
+  background-color: lightgrey; }
 
 video {
   width: 300px;
@@ -3177,6 +3232,11 @@ span.separate {
 
 .full-img {
   width: 100%; }
+
+.small-img {
+  width: 100%;
+  max-width: 250px !important;
+  margin-top: 20px; }
 
 .news-card {
   background-image: url("https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg");

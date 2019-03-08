@@ -1,8 +1,19 @@
 //- INCLUDES > MIXINS
 
 //- simpletons
-mixin img(path)
-  img(class='full-img' src=path)
+mixin img(path, params)
+  .img-container
+    if params
+      if (params.size === 'full')
+        img(class='primary-img full-img' src=path)
+      else if (params.size === 'small')
+        img(class='primary-img small-img' src=path)
+      else if params.screenshot
+        img(class='full-img' src=path)
+      else if (params.shadow == false)
+        img(class='primary-img no-boxshadow small-img left-align' src=path)
+    else
+      img(class='primary-img full-img' src=path)
 //-
 mixin project(color, title, description, img)
   .project-card.top(style="background-color:" + color + ";")

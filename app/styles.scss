@@ -203,12 +203,26 @@ p {
 //     0 10px 10px rgba(0, 0, 0, 0.22);
 // }
 
-.img-full-width {
+.img-container {
   width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0px 20px 0px;
+}
+
+.primary-img {
   background-color: rgb(238, 238, 238);
   border-radius: 3px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
   0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+  .no-boxshadow {
+    box-shadow: none;
+  }
+
+iframe::content {
+  background-color: lightgrey;
 }
 
 // - HERO
@@ -392,6 +406,12 @@ span.separate {
 
 .full-img {
   width: 100%;
+}
+
+.small-img {
+  width: 100%;
+  max-width: 250px !important;
+  margin-top: 20px;
 }
 
 .news-card {
