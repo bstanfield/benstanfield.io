@@ -30,8 +30,6 @@ deploy:
 alias:
 	now alias ${CLIPBOARD} benstanfield.io
 	now alias benstanfield.io www.benstanfield.io
-foo:
-		@echo ${CLIPBOARD}
 
 # when ready to push up for production:make production
 production:

@@ -6,23 +6,20 @@ include /includes/_mixins.pug
 :markdown-it
     After purchasing, navigate to your dashboard and click on the **Domains** section. You should see a list of all your domains there (likely just the one that you bought).
 
-+img('../images/projects/dnd/zeit-domains-list.png')
++img('../images/projects/dnd/zeit-domains-list.png', { screenshot: true })
 
 :markdown-it
     # Publish your content!
-    The last step to having a fully-functioning website is to connect, or **alias**, the content from [step one](./deploy.html) to your custom domain.
+    The last step to having a fully-functioning website is to connect, or **alias**, the content from earlier in the tutorial.
     > 
-    Return to your code folder and modify your **now.json** file:
-    >
+    To alias a deployment, visit zeit.co/dashboard. You should see a list of your project(s). Click into the simple project (mine is called zeitApp) you deployed earlier and select the most recent deployment URL. Alias it with your custom domain, or some variant of your domain name (like `blog.yourwebsite.com`).
 
-pre
-    code(class='javascript').
-        {
-            "version": 2,
-            "alias": [ "yourwebsite.com" ]
-        }
+//- <iframe class="iframe-shit" src="https:/player.vimeo.com/video/322068279?autoplay=1&loop=1&autopause=0" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<iframe src="https://player.vimeo.com/video/322068279?autoplay=1&loop=1" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 
 :markdown-it
-    Now, when you deploy your site (see the final step in the previous tutorial) Zeit also updates the content on your **custom domain!**.
+    Now, whenever you want to update your site, drag your folder into the Now app, check out the deployment URL to make sure everything looks right, and alias it from your dashboard.
     >
-    Congratulations, you have a new website up and running on Zeit!
+    Enjoy your new home on the web! 🏡 
