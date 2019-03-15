@@ -37,6 +37,9 @@ mixin imgLink(item)
 mixin more()
   p.more Learn more <span>&rarr;</span>
 
+mixin read()
+  p.more Read article <span>&rarr;</span>
+
 mixin 3card(url, emoji, title, description, target)
   a(target=target href=url).thirds-col.card
     h2 <span class='emo'>#{emoji}</span> #{title}
@@ -204,8 +207,8 @@ mixin review(shops)
       +scorecard(shop[0].good, shop[0].bad)
       +reviewNotes(shop[0].meta, shop[0].notes, shop[0].guestNotes, shop[0].recs)
 
-mixin pulse(pulses)
-  - const currentPulse = pulses.conference[0];
+mixin pulse(pulses, current)
+  - const currentPulse = pulses[current];
   .container
     a(href=currentPulse.link)
       .flex-grid
@@ -213,10 +216,10 @@ mixin pulse(pulses)
         
         .two-thirds-col.card.static
           .pulsetxt
-            h2 ☕️ #{currentPulse.title}
+            h2 #{currentPulse.emoji} #{currentPulse.title}
             p 
               | #{currentPulse.sub}
-            +more()
+            +read()
 
 mixin overview(shops)
   h2

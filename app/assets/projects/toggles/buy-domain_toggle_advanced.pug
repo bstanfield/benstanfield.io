@@ -1,17 +1,18 @@
+include /includes/_mixins.pug
 :markdown-it
-    # Part 2: Buy
+    # 2. Buy
     Once you've found your domain, return to the `command line`. It doesn't matter what directory (folder) you're in, as long as your `now` command works.
-    > Reminder: If you're unfamiliar with the command line, switch to the **beginner** version of this tutorial.
+    > Reminder: If you're unfamiliar with the command line, you can switch to the **beginner** version of this tutorial using the buttons at the top of the page.
 
 pre
     code(class='bash').
-    <span class="hljs-built_in">now</span> domains buy <span class='hljs-string'>mydomain.com</span>
+        <span class="hljs-built_in">now</span> domains buy <span class='hljs-string'>mydomain.com</span>
 
 :markdown-it
     If you don't have a payment method attached to your Zeit account, you'll be prompted to enter payment info on the command line.
 
     ## Check that your domain has been registered to your account
-    Return to the command line and type `now domains ls`. You should see your domain name appear alongside some meta information like age and serviceType.
+    Return to the command line and type `now domains ls`. You should see your domain name appear alongside some meta information like age and serviceType. `cf` stands for [Cloudflare](https://www.cloudflare.com/). You can toggle Cloudflare services for your Zeit domain from your dashboard.
 
 pre
     code(class='bash').
@@ -23,8 +24,8 @@ pre
             yourdomain.com           zeit.world     true        true     1d
 
 :markdown-it
-    # Publish your content!
-    The last step to having a fully-functioning website is to connect, or **alias**, the content from [step one](./deploy.html) to your custom domain.
+    # 3. Publish your content!
+    The last step to having a fully-functioning website is to connect, or **alias**, the content from **Chapter 1** to your custom domain.
     > 
     Return to the command line. Make sure you're in the correct folder (`ls`), and type `now alias` followed by the long deployment domain from part one, and your custom domain (don't worry about prefixes like "https://" or "www" ... just type "yourdomain.com").
     >
@@ -37,3 +38,27 @@ pre
         > Assigning alias <span class='hljs-string'>yourdomain.com</span> to deployment <span class='hljs-string'>public-fi0dkn9ep.now.sh</span>
         > ...
         > Success! <span class='hljs-string'>yourdomain.com</span> now points to <span class='hljs-string'>public-fi0dkn9ep.now.sh</span> [4s]
+
++img('../images/projects/dnd/zeit-comparison.png', { screenshot: true })
+
+:markdown-it
+    And that's it! Anytime you want to deploy your current codebase, just type `now` to get a new deployment URL.
+    >
+    ## Bonus 🧠
+    For simpler aliasing, you can add your alias locations to the **now.json** file:
+
+pre
+    code(class='bash').
+        {
+            "version": 2,
+            "alias": [ "test.benstanfield.io", "www.test.benstanfield.io" ]
+        }
+
+:markdown-it
+    And to deploy _and_ alias simultaneously, chain two commands.
+
+pre
+    code(class='bash').
+        now && now alias
+
+        <span class='comment-override'>// Deploys once, then aliases that deployment URL to everything in the "alias" array.</span>

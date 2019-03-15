@@ -2634,9 +2634,12 @@ h4.shop-name {
   padding-left: 20px; }
 
 .comment-override {
-  opacity: .5;
+  opacity: .5 !important;
   color: #333333 !important;
   filter: grayscale(100%); }
+
+.comment-override > .hljs-string, .comment-override .hljs-keyword {
+  color: #333333; }
 
 .full-container {
   width: 100%;

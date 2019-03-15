@@ -629,10 +629,14 @@ iframe {
 }
 
 .comment-override {
-  opacity: .5;
+  opacity: .5 !important;
   color: $grey !important;
   filter: grayscale(100%);
 }
+
+  .comment-override > .hljs-string, .comment-override .hljs-keyword {
+    color: $grey;
+  }
 
 .full-container {
   width: 100%;
