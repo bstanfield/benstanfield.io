@@ -12,6 +12,24 @@
             .right.nav-links
                 a(class='mobile-hide' href="/") Home
                 a(class='mobile-hide') • 
-                a(target='_blank' href='https://www.skipper.ai')
-                    i Skipper
-                a(href='/#experiences') Experiences
+                <div class="dropdown mobile-hide">
+                    <a class='dropbtn' aria-haspopup="true">Blog posts <span class='drpdwn'>▾</span></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-link-container">
+                            <a class='dropdown-link' href="/projects/deploy.html">Web Deployment Tutorial</a>
+                        </div>
+                        <div class="dropdown-link-container">
+                            <a class='dropdown-link' href="/coffee.html">Best Coffeeshops for Work in Los Angeles</a>
+                        </div>
+                        <div class="dropdown-link-container">
+                            <a class='dropdown-link' href="/foodforthought.html">Food for Thought Survey</a>
+                        </div>
+                        <div class="dropdown-link-container">
+                            <a class='dropdown-link' href="/#experiences">Experiences</a>
+                        </div>
+                    </div>
+                </div>
+                a(class='mobile-show' href="/coffee.html") Coffee Blog
+                a(href="/#experiences") Experiences
+                //- a(href='/projects/deploy.html') Zeit Tutorial
+                //- a(href='/#experiences') LA Coffeeshops

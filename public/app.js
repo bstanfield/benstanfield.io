@@ -115,7 +115,9 @@
 })();
 
 (function() {
-var global = typeof window === 'undefined' ? this : window;
+var global = typeof window === 'undefined' ? this : window;require.register("fs", function(exports, require, module) {
+  module.exports = {};
+});
 var process;
 var __makeRelativeRequire = function(require, mappings, pref) {
   var none = {};
@@ -157,26 +159,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $(document).ready(function () {
         setTimeout(function () {
+            $('.toast').fadeTo(1000, 100);
+        }, 1000);
+
+        setTimeout(function () {
+            $('.toast').fadeTo(1000, 0).hide();
+        }, 30000);
+    });
+
+    $('.toast-x').click(function () {
+        $('.toast').fadeTo(200, 0).hide();
+    });
+
+    $(document).ready(function () {
+        setTimeout(function () {
             $('#jsHide').css('opacity', '1');
         }, 1000);
     });
-
-    // FOR PROJECT TOGGLE
-    //   $('.tutorial-toggle').click(() => {
-    //     if (document.getElementById('beginner').checked) {
-    //         console.log('Toggled!');
-    //         $('.toggle-advanced').fadeOut(300);
-    //         $('.toggle-advanced').fadeTo(300, 0);
-    //         $('.toggle-beginner').fadeIn(300);
-    //         $('.toggle-beginner').fadeTo(1000, 100);
-
-    //     } else if (document.getElementById('advanced').checked) {
-    //         $('.toggle-beginner').fadeOut(300);
-    //         $('.toggle-beginner').fadeTo(300, 0);
-    //         $('.toggle-advanced').fadeIn(300);
-    //         $('.toggle-advanced').fadeTo(1000, 100);
-    //     }
-    //   })
 
     $('#beginner').click(function () {
         history.pushState(null, null, '?beginner');
@@ -210,6 +209,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // FOR COFFEE
     $(document).ready(function () {
+        $('.dropdown-mobile').click(function () {
+            var query = $('.dropdown-mobile > .dropdown-content');
+            if (query.is(':visible') === true) {
+                $('.dropdown-mobile > .dropdown-content').hide();
+            } else {
+                $('.dropdown-mobile > .dropdown-content').show();
+            }
+        });
+
+        $(document).mouseup(function (e) {
+            var container = $('.dropdown-mobile');
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                $('.dropdown-mobile > .dropdown-content').hide();
+            }
+        });
+
         $('.Cha').append('🔌');
         $('.Wif').append('📡');
         $('.Dri').append('☕️');
@@ -430,7 +447,19 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.scroll-to-top').click(function () {
             $('html, body').animate({ scrollTop: 0 }, 800);
         });
+
+        $('.button-clicker').click(function () {
+            var psw = document.getElementById('password').value;
+            if (['hello', 'password'].indexOf(psw) !== -1) {
+                location.href = '/note/youreyesonly/' + psw + '.html';
+            } else {
+                alert('Wrong Password!');
+                return false;
+            }
+        });
     });
+
+    // PASSWORD
 
     // FADE INS
     $(document).ready(function () {
@@ -470,6 +499,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 });
 
+require.alias("path-browserify/index.js", "path");
 require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');

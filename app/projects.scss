@@ -149,6 +149,10 @@ sup:hover {
   padding-left: 5px;
 }
 
+.mobile-show {
+  display: none !important; 
+}
+
 .med-photo {
   margin-top: 50px;
   margin-bottom: 30px;
@@ -249,23 +253,28 @@ iframe {
 }
 
 .quote {
-  border-radius: 4px;
-  background-color: rgb(245, 245, 245);
-  width: 80%;
-  max-width: 800px;
-  padding: 10px 25px 25px 35px;
-  margin: auto;
-  margin-bottom: 35px;
-  margin-top: 15px;
-  border: 1px solid $grey;
-  border-bottom: 5px solid $grey;
+  width: 90%;
+  max-width: 500px;
+  height: fit-content;
+  padding: 0px 25px 25px 35px;
+  position: relative;
 }
 
   .quote > h2 {
-    font-size: 25px;
-    font-style: italic;
+    font-size: 35px;
+    font-weight: 600;
     color: #333333;
-    line-height: 35px;
+    line-height: 40px;
+    margin-left: 35px;
+  }
+
+  .quote > h2:first-child {
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 30%;
   }
 
   .quote > p {
@@ -609,6 +618,7 @@ iframe {
     }
 
     pre {
+      position: relative;
       margin: 10px 0px 30px 0px;
     }
 
@@ -806,8 +816,18 @@ input:checked+.slider:before {
     display: none;
   }
 
+  .btn-lrg {
+    max-width: 100% !important;
+    font-size: 22px !important;
+    margin-top: 20px !important;
+  }
+
+  .mobile-show {
+    display: inline-block !important;
+  }
+
   .mobile-hide {
-    display: none;
+    display: none !important;
   }
 }
 

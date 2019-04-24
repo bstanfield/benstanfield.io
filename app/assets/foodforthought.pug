@@ -1,0 +1,11 @@
+extends plain-layout
+block variables
+    - var metapic = "https://i.imgur.com/l1VErRr.png";
+    - var metadesc = "Food for Thought (F4T) is a brief survey on people and their food.";
+block head
+    // Make +title() mixin
+    - var title = "Food for Thought - Study";
+    meta(name="twitter:title" value=title)
+    meta(property="og:title" content=title)
+
+    <meta http-equiv="refresh" content="0; url=/projects/survey.html" />
