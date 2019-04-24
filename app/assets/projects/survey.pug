@@ -1,0 +1,57 @@
+extends layout-projects
+
+block variables
+  - const metapic = "https://i.imgur.com/l1VErRr.png";
+
+block head
+    - var projectName = "F4T";
+    title Food for Thought • A food relationship study
+
+block content
+    style.
+        .amazon-gift-card img {
+            width: 100%; 
+            max-width: 300px; 
+            margin: auto; 
+            text-align: center;
+        }
+
+        @media screen and (max-width: 840px) {
+            .amazon-gift-card img {
+                max-width: 180px;
+            }
+
+            .amazon-gift-card {
+                margin-right: 0;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+        }
+    .x-files
+        .container.project
+            .intro 
+                +introsection("Food for Thought", "Food for Thought (F4T) is a brief survey on people and their food, and a USC Iovine & Young Academy-affiliated directed research project.", 'January 27, 2019')
+                
+        - const hero = '../images/skipper-hero-image.jpeg';
+        - const heroCaption = 'Landon Brand and Ben Stanfield (me) brainstorming ideas about the future of food.';
+        +bigphoto(hero, heroCaption)
+        .container.project(style="overflow: hidden;")
+            h6.leader 
+                | A few months ago, my friends Landon and Mimi and I were thinking deeply about consumer behavior around food. We got so excited about what the future of delivery and plant-based foods looked like that we tinkered with the idea of starting a food company ourselves. Out of those discussions I decided to create a set of questions designed to learn more about what food means to other people our age and up.
+
+            h6 This is my final assignment at the #[+link('http://iovine-young.usc.edu', 'Iovine & Young Academy', "Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen'")] before I graduate. The output of this project will be a web data visualization and case study on new trends in the food space.
+
+            .flex-grid
+                .amazon-gift-card(style="margin-right: 30px; text-align: center;")
+                    img(src='http://www.mylifeisajourney.com/uploads/6/3/4/1/6341410/amazon-gift-card_orig.jpg')
+
+                div
+                    h6 Your participation means a lot to me! Everyone who participates has the chance to win a <strong>$100 Amazon gift card</strong> 💳 delivered over email after the conclusion of the Food for Thought study.
+
+            .center
+                <a class="button btn-lrg" href="/projects/surveypage.html" style="display:inline-block;text-decoration:none;background-color: #F26C29;color:white;cursor:pointer;font-family: IBM Plex Sans, sans-serif;font-size:25px;line-height:45px;text-align:center;margin:0;height:45px;padding:10px 35px;border-radius:4px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale; border-bottom: 3px solid #a5481a;">Begin Survey</a>
+                br
+                br
+        
+                div(style="width: 100%; max-width: 300px; margin: auto; opacity: .3; margin-top: -5px;")
+                    p(style='font-size: 15px; line-height: 22px; font-family: "IBM Plex Sans";') All responses are <strong>anonymous</strong> and stored securely on Typeform. <i class="fas fa-lock"></i>

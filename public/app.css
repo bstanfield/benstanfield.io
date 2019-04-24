@@ -1491,7 +1491,7 @@ p {
   height: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  overflow: auto;
+  overflow: unset;
   font-family: "IBM Plex Sans", sans-serif !important; }
 
 :root {
@@ -1526,6 +1526,61 @@ p {
 
 #hide {
   display: none; }
+
+.drpdwn {
+  opacity: .3;
+  transition: .3s ease; }
+
+.dropbtn {
+  padding-right: 20px; }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 2000; }
+
+.dropdown-link-container {
+  width: 100%;
+  background-color: rgba(237, 237, 237, 0.303);
+  border-bottom: 2px solid #333; }
+
+.dropdown-link-container:hover {
+  background-color: white; }
+  .dropdown-link-container:hover .dropdown-link {
+    color: #F26C29 !important; }
+
+.dropdown-link {
+  padding: 10px 10px 10px 10px !important; }
+
+.dropdown li {
+  list-style: none; }
+
+.dropdown li::before {
+  content: '-'; }
+
+.dropdown-content {
+  width: 235px;
+  border: 2px solid #333;
+  background-color: white;
+  display: none;
+  position: absolute; }
+
+.dropdown-content a {
+  color: #F26C29;
+  display: block; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.dropdown:hover .drpdwn {
+  opacity: 1 !important; }
+
+.dropdown-link {
+  color: #333333 !important;
+  font-size: 16px !important;
+  padding: 10px 10px 10px 10px !important;
+  display: block !important;
+  line-height: 25px !important; }
 
 .img-container {
   width: 100%;
@@ -1698,6 +1753,37 @@ span.separate {
   width: 100%;
   max-width: 250px !important;
   margin-top: 20px; }
+
+.toast {
+  width: 250px;
+  color: #333333;
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: white;
+  padding: 20px 10px 20px 25px;
+  border-radius: 3px;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 1000;
+  border: 2px solid #F26C29;
+  border-bottom: 10px solid #F26C29;
+  opacity: 0;
+  transition: 0.5s all ease-in-out; }
+
+.toast > a > p {
+  font-size: 18px;
+  line-height: 25px; }
+
+.emoji-toast {
+  font-size: 25px; }
+
+.toast-x {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  opacity: .3;
+  cursor: pointer;
+  z-index: 9999; }
 
 .news-card {
   background-image: url("https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg");
@@ -1969,6 +2055,17 @@ label {
   top: 9px;
   opacity: 1;
   z-index: 20; }
+
+p.codelabel-editor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 10px;
+  margin: 0;
+  padding: 0px 8px;
+  line-height: 22px;
+  color: #333;
+  background-color: #e8e8e8; }
 
 input:focus, textarea:focus {
   outline: none !important; }
@@ -2245,6 +2342,9 @@ sup:hover {
   font-size: 12px;
   padding-left: 5px; }
 
+.mobile-show {
+  display: none !important; }
+
 .med-photo {
   margin-top: 50px;
   margin-bottom: 30px;
@@ -2330,22 +2430,26 @@ iframe {
   top: -100px; }
 
 .quote {
-  border-radius: 4px;
-  background-color: whitesmoke;
-  width: 80%;
-  max-width: 800px;
-  padding: 10px 25px 25px 35px;
-  margin: auto;
-  margin-bottom: 35px;
-  margin-top: 15px;
-  border: 1px solid #333333;
-  border-bottom: 5px solid #333333; }
+  width: 90%;
+  max-width: 500px;
+  height: fit-content;
+  padding: 0px 25px 25px 35px;
+  position: relative; }
 
 .quote > h2 {
-  font-size: 25px;
-  font-style: italic;
+  font-size: 35px;
+  font-weight: 600;
   color: #333333;
-  line-height: 35px; }
+  line-height: 40px;
+  margin-left: 35px; }
+
+.quote > h2:first-child {
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 30%; }
 
 .quote > p {
   font-size: 18px;
@@ -2621,6 +2725,7 @@ h4.shop-name {
   .markdown-body li {
     font-size: 18px; }
   .markdown-body pre {
+    position: relative;
     margin: 10px 0px 30px 0px; }
   .markdown-body code {
     font-size: 14px !important;
@@ -2634,9 +2739,12 @@ h4.shop-name {
   padding-left: 20px; }
 
 .comment-override {
-  opacity: .5;
+  opacity: .5 !important;
   color: #333333 !important;
   filter: grayscale(100%); }
+
+.comment-override > .hljs-string, .comment-override .hljs-keyword {
+  color: #333333; }
 
 .full-container {
   width: 100%;
@@ -2762,8 +2870,14 @@ input:checked + .slider:before {
 @media screen and (max-width: 500px) {
   .scroll-to-top button {
     display: none; }
+  .btn-lrg {
+    max-width: 100% !important;
+    font-size: 22px !important;
+    margin-top: 20px !important; }
+  .mobile-show {
+    display: inline-block !important; }
   .mobile-hide {
-    display: none; } }
+    display: none !important; } }
 
 @media screen and (max-width: 720px) {
   .project-img {
@@ -3030,7 +3144,7 @@ p {
   height: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  overflow: auto;
+  overflow: unset;
   font-family: "IBM Plex Sans", sans-serif !important; }
 
 :root {
@@ -3065,6 +3179,61 @@ p {
 
 #hide {
   display: none; }
+
+.drpdwn {
+  opacity: .3;
+  transition: .3s ease; }
+
+.dropbtn {
+  padding-right: 20px; }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 2000; }
+
+.dropdown-link-container {
+  width: 100%;
+  background-color: rgba(237, 237, 237, 0.303);
+  border-bottom: 2px solid #333; }
+
+.dropdown-link-container:hover {
+  background-color: white; }
+  .dropdown-link-container:hover .dropdown-link {
+    color: #F26C29 !important; }
+
+.dropdown-link {
+  padding: 10px 10px 10px 10px !important; }
+
+.dropdown li {
+  list-style: none; }
+
+.dropdown li::before {
+  content: '-'; }
+
+.dropdown-content {
+  width: 235px;
+  border: 2px solid #333;
+  background-color: white;
+  display: none;
+  position: absolute; }
+
+.dropdown-content a {
+  color: #F26C29;
+  display: block; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.dropdown:hover .drpdwn {
+  opacity: 1 !important; }
+
+.dropdown-link {
+  color: #333333 !important;
+  font-size: 16px !important;
+  padding: 10px 10px 10px 10px !important;
+  display: block !important;
+  line-height: 25px !important; }
 
 .img-container {
   width: 100%;
@@ -3237,6 +3406,37 @@ span.separate {
   width: 100%;
   max-width: 250px !important;
   margin-top: 20px; }
+
+.toast {
+  width: 250px;
+  color: #333333;
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: white;
+  padding: 20px 10px 20px 25px;
+  border-radius: 3px;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 1000;
+  border: 2px solid #F26C29;
+  border-bottom: 10px solid #F26C29;
+  opacity: 0;
+  transition: 0.5s all ease-in-out; }
+
+.toast > a > p {
+  font-size: 18px;
+  line-height: 25px; }
+
+.emoji-toast {
+  font-size: 25px; }
+
+.toast-x {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  opacity: .3;
+  cursor: pointer;
+  z-index: 9999; }
 
 .news-card {
   background-image: url("https://images.fastcompany.net/image/upload/w_1400,ar_16:9,c_fill,g_auto,f_auto,q_auto,fl_lossy/wp-cms/uploads/2017/05/p-1-Vaticans-Tech-Accelerator.jpg");
@@ -3508,6 +3708,17 @@ label {
   top: 9px;
   opacity: 1;
   z-index: 20; }
+
+p.codelabel-editor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 10px;
+  margin: 0;
+  padding: 0px 8px;
+  line-height: 22px;
+  color: #333;
+  background-color: #e8e8e8; }
 
 input:focus, textarea:focus {
   outline: none !important; }

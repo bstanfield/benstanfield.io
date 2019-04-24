@@ -1,0 +1,12 @@
+doctype html
+include includes/_mixins.pug
+include includes/_variables.pug 
+include includes/head.pug
+    block head
+        if title
+            title= title
+        else
+            title Ben Stanfield
+
+body
+block content

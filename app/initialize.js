@@ -2,28 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // do your setup here
   const $ = require('jquery');
 
+  $(document).ready(() => {
+    setTimeout(() => {
+        $('.toast').fadeTo(1000, 100);
+    }, 1000);
+
+    setTimeout(() => {
+        $('.toast').fadeTo(1000, 0).hide();
+    }, 30000);
+  });
+
+  $('.toast-x').click(() => {
+    $('.toast').fadeTo(200, 0).hide();
+  });
+
   $(document).ready(function() {
     setTimeout(function() {
     $('#jsHide').css('opacity', '1');
     }, 1000);
   });
-
-  // FOR PROJECT TOGGLE
-//   $('.tutorial-toggle').click(() => {
-//     if (document.getElementById('beginner').checked) {
-//         console.log('Toggled!');
-//         $('.toggle-advanced').fadeOut(300);
-//         $('.toggle-advanced').fadeTo(300, 0);
-//         $('.toggle-beginner').fadeIn(300);
-//         $('.toggle-beginner').fadeTo(1000, 100);
-
-//     } else if (document.getElementById('advanced').checked) {
-//         $('.toggle-beginner').fadeOut(300);
-//         $('.toggle-beginner').fadeTo(300, 0);
-//         $('.toggle-advanced').fadeIn(300);
-//         $('.toggle-advanced').fadeTo(1000, 100);
-//     }
-//   })
 
     $('#beginner').click(() => {
         history.pushState(null, null, '?beginner');
@@ -57,6 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // FOR COFFEE
   $(document).ready(function() {
+    $('.dropdown-mobile').click(function () {
+        const query = $('.dropdown-mobile > .dropdown-content');
+        if (query.is(':visible') === true) {
+            $('.dropdown-mobile > .dropdown-content').hide();
+        } else {
+            $('.dropdown-mobile > .dropdown-content').show();
+        }
+    });
+
+    $(document).mouseup(function (e) {
+        var container = $('.dropdown-mobile');
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.dropdown-mobile > .dropdown-content').hide();
+        }
+    });
+
     $('.Cha').append('🔌');
     $('.Wif').append('📡');
     $('.Dri').append('☕️');
@@ -364,7 +379,20 @@ document.addEventListener('DOMContentLoaded', () => {
         $('.scroll-to-top').click(function(){
             $('html, body').animate({ scrollTop: 0 }, 800);
         });
+
+        $('.button-clicker').click(() => {
+            const psw = document.getElementById('password').value;
+            if (['hello', 'password'].indexOf(psw) !== -1) {
+                location.href = `/note/youreyesonly/${psw}.html`;
+            } else {
+                alert('Wrong Password!');
+                return false;
+            }
+        })
+
     });
+
+  // PASSWORD
 
   // FADE INS
     $(document).ready(function() {
