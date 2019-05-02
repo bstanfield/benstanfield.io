@@ -33,6 +33,7 @@
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-highlightjs": "^3.0.0",
     "moment": "^2.23.0",
+    "pug-runtime": "^2.0.4",
     "twilio": "^3.28.0"
   }
 }

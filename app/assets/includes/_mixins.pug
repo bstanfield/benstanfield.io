@@ -1,6 +1,5 @@
 //- INCLUDES > MIXINS
 
-//- simpletons
 mixin img(path, params)
   .img-container
     if params
@@ -14,6 +13,9 @@ mixin img(path, params)
         img(class='primary-img no-boxshadow small-img left-align' src=path)
     else
       img(class='primary-img full-img' src=path)
+
+mixin i(contentToItalicize)
+  span(style='font-family: Lava Italic')!=contentToItalicize
 //-
 mixin project(color, title, description, img)
   .project-card.top(style="background-color:" + color + ";")
@@ -327,6 +329,10 @@ mixin buttonGrid(btnArr)
     //- a(href='./transfer.html').btn.btn-inverted.
     //-   Transfer a domain to Zeit
 
+mixin letter(loc)
+  //- if (loc.indexOf('?secret=' !== -1))
+  h1!=loc
+
 mixin farewell()
   br
   br
@@ -339,3 +345,4 @@ mixin farewell()
     h6 
       a.orange(href='/') &larr; Go home.
   br
+

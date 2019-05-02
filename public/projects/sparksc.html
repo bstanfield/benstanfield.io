@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<!-- TEST-->
+<!-- NAV LINKS-->
 <!-- COFFEE SHOPS--><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="/app.css">
 <script src="/vendor.js"></script>
 <script src="/app.js"></script>
-<script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+<script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<link rel="stylesheet" href="markdown.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>require('initialize');</script>
+<script>require('js/initialize.js');</script>
+<script>require('js/coffee.js');</script>
 <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500" rel="stylesheet">
@@ -36,8 +36,8 @@
   <div class="nav-content">
     <div class="nav-text">  
       <div class="left" id="root"><a href='/'><span id='homeRoot'>BEN</span></a> / <a href=''><span class='projectRoot'>Spark 🌟</span></a></div>
-      <div class="right nav-links"><a class="mobile-hide" href="/">Home</a><a class="mobile-hide">• </a><div class="dropdown mobile-hide">
-<a class='dropbtn' aria-haspopup="true">Blog posts <span class='drpdwn'>▾</span></a>
+      <div class="right nav-links"><div class="dropdown">
+<a class='dropbtn' aria-haspopup="true">View posts <span class='drpdwn'>▾</span></a>
 <div class="dropdown-content">
 <div class="dropdown-link-container">
 <a class='dropdown-link' href="/projects/deploy.html">Web Deployment Tutorial</a>
@@ -52,7 +52,7 @@
 <a class='dropdown-link' href="/#experiences">Experiences</a>
 </div>
 </div>
-</div><a class="mobile-show" href="/coffee.html">Coffee Blog</a><a href="/#experiences">Experiences</a>
+</div><a class="mobile-hide" href="/projects/deploy.html"><strong>New:</strong> Deploy to the Web!</a>
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@
     <div class="intro"> 
       <h1 class="headline">Spark SC</h1>
       <h6>Spark SC is a student organization at the University of Southern California whose purpose is to inspire students of all backgrounds to pursue entrepreneurship.</h6>
-      <p class="update-line">Wed Apr 24 2019</p><br>
+      <p class="update-line">Thu May 02 2019</p><br>
     </div>
   </div>
   <div class="big-photo">

@@ -10,10 +10,8 @@
         .nav-text   
             .left#root <a href='/'><span id='homeRoot'>BEN</span></a> / <a href=''><span class='projectRoot'>#{projectName}</span></a>
             .right.nav-links
-                a(class='mobile-hide' href="/") Home
-                a(class='mobile-hide') • 
-                <div class="dropdown mobile-hide">
-                    <a class='dropbtn' aria-haspopup="true">Blog posts <span class='drpdwn'>▾</span></a>
+                <div class="dropdown">
+                    <a class='dropbtn' aria-haspopup="true">View posts <span class='drpdwn'>▾</span></a>
                     <div class="dropdown-content">
                         <div class="dropdown-link-container">
                             <a class='dropdown-link' href="/projects/deploy.html">Web Deployment Tutorial</a>
@@ -29,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                a(class='mobile-show' href="/coffee.html") Coffee Blog
-                a(href="/#experiences") Experiences
+                //- a(class='mobile-show' href="/coffee.html") Coffee Blog
+                a(class='mobile-hide' href="/projects/deploy.html") <strong>New:</strong> Deploy to the Web!
                 //- a(href='/projects/deploy.html') Zeit Tutorial
                 //- a(href='/#experiences') LA Coffeeshops

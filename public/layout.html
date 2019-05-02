@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<!-- TEST-->
+<!-- NAV LINKS-->
 <!-- COFFEE SHOPS--><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="/app.css">
 <script src="/vendor.js"></script>
 <script src="/app.js"></script>
-<script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+<script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<link rel="stylesheet" href="markdown.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>require('initialize');</script>
+<script>require('js/initialize.js');</script>
+<script>require('js/coffee.js');</script>
 <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500" rel="stylesheet">
@@ -51,7 +51,24 @@
 <div class="nav" id="stickThis">
   <div class="nav-content">
     <div class="nav-text">  <a class="left" href="/" id="root">Home</a>
-      <div class="right nav-links"><a href="/coffee.html">Coffee</a><a target="_blank" href="../images/resume-update-comp2.pdf">Résumé</a></div>
+      <div class="right nav-links"><div class="dropdown">
+<a class='dropbtn' aria-haspopup="true">View posts <span class='drpdwn'>▾</span></a>
+<div class="dropdown-content">
+<div class="dropdown-link-container">
+<a class='dropdown-link' href="/projects/deploy.html">Web Deployment Tutorial</a>
+</div>
+<div class="dropdown-link-container">
+<a class='dropdown-link' href="/coffee.html">Best Coffeeshops for Work in Los Angeles</a>
+</div>
+<div class="dropdown-link-container">
+<a class='dropdown-link' href="/foodforthought.html">Food for Thought Survey</a>
+</div>
+<div class="dropdown-link-container">
+<a class='dropdown-link' href="/#experiences">Experiences</a>
+</div>
+</div>
+</div><a class="mobile-hide" href="/projects/deploy.html"><strong>New:</strong> Deploy to the Web!</a>
+      </div>
     </div>
   </div>
 </div>

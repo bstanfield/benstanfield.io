@@ -10,16 +10,6 @@ $buffer-top: 30px;
 $buffer-bottom: 30px;
 $buffer: 30px 0px;
 
-// Bumpers
-.bumper-top {
-  margin-top: 15px;
-}
-
-.bumper-bottom {
-  margin-bottom: 15px;
-}
-//
-
 // - FONTS
 
 @font-face {
@@ -131,6 +121,16 @@ p {
   transition: 0.3s ease all;
 }
 
+// Bumpers
+.bumper-top {
+  margin-top: 15px;
+}
+
+.bumper-bottom {
+  margin-bottom: 15px;
+}
+//
+
 .emoji {
   opacity: .1;
   transition: 1s ease all;
@@ -196,7 +196,6 @@ p {
 
 .drpdwn {
   opacity: .3;
-  transition: .3s ease;
 }
 
 .dropbtn {
@@ -230,13 +229,11 @@ p {
     list-style: none;
   }
 
-    .dropdown li::before {
-      content: '-';
-    }
-
 .dropdown-content {
+  top: 48px;
   width: 235px;
   border: 2px solid #333;
+  border-top: 3px solid #333;
   background-color: white;
   display: none;
   position: absolute;
@@ -247,15 +244,9 @@ p {
     display: block;
   }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover {
-  .drpdwn {
-    opacity: 1 !important;
-  }
-}
+// .dropdown:hover .dropdown-content {
+//   display: block;
+// }
 
 .dropdown-link {
   color: $grey !important;
@@ -945,6 +936,14 @@ img#footerla {
     display: block;
   }
 
+  .dropdown-content {
+    left: -135px;
+  }
+
+  .dropbtn {
+    padding-right: 0px;
+  }
+
   #col-bg {
     display: none;
   }
@@ -1005,7 +1004,7 @@ img#footerla {
     }
   
   .nav-text {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   #root {
