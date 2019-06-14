@@ -4,26 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
      // FOR COFFEE
      $(document).ready(function () {
-         $('.dropdown').click(function () {
-             const query = $('.dropdown > .dropdown-content');
-             if (query.is(':visible') === true) {
-                 $('.dropdown > .dropdown-content').hide();
-                 $('.dropbtn').css('color', '#333');
-             } else {
-                 $('.dropdown > .dropdown-content').show();
-                 $('.dropbtn').css('color', '#F26C29');
-             }
-         });
-
-         $(document).mouseup(function (e) {
-             let container = $('.dropdown');
-             // if the target of the click isn't the container nor a descendant of the container
-             if (!container.is(e.target) && container.has(e.target).length === 0) {
-                 $('.dropdown > .dropdown-content').hide();
-                 $('.dropbtn').css('color', '#333');
-             }
-         });
-
          $('.Cha').append('🔌');
          $('.Wif').append('📡');
          $('.Dri').append('☕️');
@@ -139,42 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
                      close: 21
                  },
              ],
-             'LoitCafe': [{
-                     day: 'Mon',
-                     open: 7,
-                     close: 19
-                 },
-                 {
-                     day: 'Tue',
-                     open: 7,
-                     close: 19
-                 },
-                 {
-                     day: 'Wed',
-                     open: 7,
-                     close: 19
-                 },
-                 {
-                     day: 'Thu',
-                     open: 7,
-                     close: 19
-                 },
-                 {
-                     day: 'Fri',
-                     open: 7,
-                     close: 19
-                 },
-                 {
-                     day: 'Sat',
-                     open: 7,
-                     close: 19
-                 },
-                 {
-                     day: 'Sun',
-                     open: 8,
-                     close: 19
-                 },
-             ],
              'AlchemistCoffee': [{
                      day: 'Mon',
                      open: 7.5,
@@ -282,6 +226,42 @@ document.addEventListener('DOMContentLoaded', () => {
                      open: 9,
                      close: 17
                  },
+             ],
+             'BalconyCoffee': [{
+                     day: 'Mon',
+                     open: 9,
+                     close: 23
+                 },
+                 {
+                     day: 'Tue',
+                     open: 9,
+                     close: 23
+                 },
+                 {
+                     day: 'Wed',
+                     open: 9,
+                     close: 23
+                 },
+                 {
+                     day: 'Thu',
+                     open: 9,
+                     close: 23
+                 },
+                 {
+                     day: 'Fri',
+                     open: 9,
+                     close: 23
+                 },
+                 {
+                     day: 'Sat',
+                     open: 9,
+                     close: 23
+                 },
+                 {
+                     day: 'Sun',
+                     open: 9,
+                     close: 20
+                 }
              ],
              'YellowHouseCafe': [{
                      day: 'Mon',
@@ -427,6 +407,42 @@ document.addEventListener('DOMContentLoaded', () => {
                      close: 20
                  },
              ],
+             'HighlyLikely': [{
+                     day: 'Mon',
+                     open: 7,
+                     close: 20
+                 },
+                 {
+                     day: 'Tue',
+                     open: 7,
+                     close: 20
+                 },
+                 {
+                     day: 'Wed',
+                     open: 7,
+                     close: 20
+                 },
+                 {
+                     day: 'Thu',
+                     open: 7,
+                     close: 20
+                 },
+                 {
+                     day: 'Fri',
+                     open: 7,
+                     close: 20
+                 },
+                 {
+                     day: 'Sat',
+                     open: 7,
+                     close: 20
+                 },
+                 {
+                     day: 'Sun',
+                     open: 7,
+                     close: 20
+                 },
+             ],
          }];
 
          const d = new Date();
@@ -471,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  stc = stc + ":30";
              }
 
-             const tomorrowOpen = hours[0][name][(d.getDay())].open;
+             const tomorrowOpen = sto;
              if (stc >= 1 && stc <= 3) {
                  stc = stc + ' AM';
              } else {

@@ -2,73 +2,40 @@ extends layout
 
 block content
     .container
-        //- .toast
-        //-     .toast-x
-        //-         i(class="fas fa-times") 
-        //-     a(href='/projects/deploy.html')
-        //-         .emoji-toast 📬
-        //-         p Check out my new article, <strong>"Deploying to the web with Zeit Now!"</strong>
-        .intro 
-            h1 <span id='time-leadup'>WHAT I'M PROBABLY UP TO AT <span id='time'></span></span>
-            h1#one <span class='emoji'></span>
-            p#rebelReplace
-                | I’m Ben Stanfield, a college senior finishing up at the 
-                +link('http://iovine-young.usc.edu', 'Iovine & Young Academy', "Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen' 🎧") 
-                |   and working on a company called 
-                +link('http://skipper.ai', ' Skipper', 'Reporting software for HR... check out our website! 🌟')
-                |.
+        +index_intro()
        
-        br
-        br
-        a.anchor(name='experiences' id='experiences')
+        +anchor('experiences')
         h1 Experiences
         br
             
-        .flex-grid.thirds
-            +3card('projects/sparksc.html', '🌟', 'Spark SC', 'Technology and entrepreneurship club at USC.')
-            +3card('https://www.skipper.ai', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.', '_blank')
-            +3card('projects/h4d.html', '🔐', 'Hacking for Defense', 'Project with U.S. State Department to counter terrorism online.')
-
-        .flex-grid.thirds
-            +3card('projects/lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
-            +3card('projects/bonsai.html', '🌳', 'Bonsai', 'AI startup building a deep reinforcement learning platform for enterprise.' )
-            +3card('https://medium.com/@bstanfie/kpcb-design-challenge-adc83cee5ed1#.2gjfm12pz.com/', '📚', 'Medium Articles', 'Articles going in-depth on design projects for KPCB.', '_blank')
+        +index_blocks(projectCards.slice(0, 3))
+        +index_blocks(projectCards.slice(3))
 
         br 
         br
         h1 <span class="pulse">💓</span> Pulse
-        p What I’ve been up to recently... check back in every once in a while for a new Pulse update!
+        p.os(title='Testing...') What I’ve been up to recently... check back in every once in a while for a new Pulse update!
         br
 
     .grid-bg.grid.long
         +pulse(pulses, 1)
 
-
     br
     br
     .container
-        h1 Expertise
-        p 
-        
-            | I've worked in a variety of positions, from designer and developer at  
-            +link('https://www.bons.ai', 'Bonsai AI', 
-            "Check out this sick url: <a href='bons.ai'>bons.ai</a> 😲") 
-            |  to associate at 
-            +link('https://www.fresco.vc', 'Fresco Capital', 'Seed and early stage VC 🌱')
-            | , and in leadership positions as president of 
-            +link('http://www.sparksc.org', 'Spark SC', 'Entrepreneurship and technology club at USC... also my best friends 😉') 
-            |   and co-founder of Skipper. Recently I've been captivated by the future of work and the future of capitalism. This resulted in starting Skipper, and also co-founding 
-            +link('https://www.laudatosichallenge.org/', "Laudato Si' Challenge", 'Lots of wine and pasta... and startups. 🇮🇹')
-            |, a startup incubator in Rome focused on sustainability.
-
+        h1 Interests
+        p.
+            I've worked in a few different positions, from designer and developer at #[+link('https://www.bons.ai', 'Bonsai AI', "AI startup in Berkeley recently acquired by Microsoft")] to associate at #[+link('https://www.fresco.vc', 'Fresco Capital', 'Seed and early stage VC 🌱')], and in leadership positions as president of #[+link('http://www.sparksc.org', 'Spark SC', 'Entrepreneurship and technology club at USC... also my best friends 😉')] and co-founder of Project Wren. I'm deeply interested in the future of capitalism, and how new-age companies will reference social impact alongside their financial bottomline when making decisions.
         br
-        a(target='_blank' href='images/resume-update-comp2.pdf')#whisper
-            p Psst, here's my résumé!
+        p.
+            I'm thinking a lot right now about #[+link('https://projectwren.com', 'reversing climate change')], full-stack Javascript development, #[+link('https://ramdajs.com/', 'functional programming')], and basketball. Great design is something I always keep an eye out for. If you're looking for a brilliantly designed solution for deploying to the web, #[+link('/projects/deploy.html', 'check out my article on Zeit')].
+
+        //- br
+        //- +resume('images/resume-update-comp2.pdf')
 
     br 
     br
     br
-
 
     a(name='contact')
     .container

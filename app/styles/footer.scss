@@ -1,0 +1,67 @@
+.footer-text {
+    width: 48%;
+}
+
+    .footer-text hr {
+        opacity: .3;
+        width: 60%;
+        max-width: 120px;
+        text-align: left;
+        margin: 0;
+        margin-top: 20px;
+    }
+
+.white {
+    color: white;     
+}
+
+.footer-text a {
+    font-size: 17px;         
+    font-family: 'IBM Plex Sans';
+    opacity: .7;
+    color: white !important;
+    display: block;
+    width: fit-content;
+}
+
+.footer-text a:hover {
+    opacity: 1;
+}
+
+.footer-text h2 {
+    margin-bottom: 15px;
+}
+
+.offsite {
+    opacity: 1;
+    padding-left: 3px;
+    font-size: 12px;
+}
+
+.wave {
+    animation: wave 4s infinite;
+    width: fit-content;
+}
+
+// Animations
+@keyframes wave {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .footer-text {
+        width: fit-content;
+    }
+
+    .bi-directional {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+}

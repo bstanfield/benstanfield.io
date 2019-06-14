@@ -121,6 +121,10 @@ p {
   transition: 0.3s ease all;
 }
 
+i {
+  font-family: 'Lava Italic';
+}
+
 // Bumpers
 .bumper-top {
   margin-top: 15px;
@@ -595,6 +599,17 @@ span.separate {
     z-index: 99;
   }
 
+  .footer-grid {
+    position: relative;
+    background-image: url('images/personalsite-nav-border.png');
+    background-size: cover;
+    background-color: white;
+    max-width: 900px;
+    margin: auto;
+    width: 100%;
+    height: 40px;
+  }
+
 .container {
   max-width: 900px;
   width: 90%;
@@ -758,7 +773,7 @@ button {
 }
 
 #whisper {
-  font-style: italic;
+  font-family: 'Lava Italic';
   color: #dddddd;
 }
 
@@ -839,9 +854,7 @@ input:focus, textarea:focus {
 
 // FOOTER
 footer {
-  text-align: center;
   overflow: hidden;
-  border-bottom: 60px solid $grey;
 }
 
 img#footerla {
@@ -860,9 +873,11 @@ img#footerla {
   padding: 10px;
 }
 
-.tippy-tooltip.ben-theme .tippy-backdrop {
-  /* Your styling here. Example: */
-  background-color: white;
+.tippy-tooltip.os-theme {
+  background-color: rgba(255, 255, 255, 1) !important;
+  color: black;
+  padding: 0px 12px;
+  max-width: 150px;
 }
 
 .tippy-tooltip.ben-theme a {
@@ -963,7 +978,7 @@ img#footerla {
   }
 
   .thirds-col {
-    width: 88%;
+    width: 85%;
     margin-bottom: 30px;
   }
 
@@ -972,7 +987,7 @@ img#footerla {
     }
 
   .two-thirds-col {
-    width: 88%;
+    width: 85%;
   }
 
     .flex-nav > .two-thirds-col {

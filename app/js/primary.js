@@ -2,6 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const $ = require('jquery');
 
   $(document).ready(() => {
+    $('.dropdown').click(function () {
+      const query = $('.dropdown > .dropdown-content');
+      if (query.is(':visible') === true) {
+        $('.dropdown > .dropdown-content').hide();
+        $('.dropbtn').css('color', '#333');
+      } else {
+        $('.dropdown > .dropdown-content').show();
+        $('.dropbtn').css('color', '#F26C29');
+      }
+    });
+
+    $(document).mouseup(function (e) {
+      let container = $('.dropdown');
+      // if the target of the click isn't the container nor a descendant of the container
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+        $('.dropdown > .dropdown-content').hide();
+        $('.dropbtn').css('color', '#333');
+      }
+    });
     setTimeout(() => {
         $('.toast').fadeTo(1000, 100);
     }, 1000);
@@ -155,33 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $(document).ready(function() {
         $('.scroll-to-top').click(function(){
             $('html, body').animate({ scrollTop: 0 }, 800);
-        });
-
-        $('.button-clicker').click(() => {
-            const psw = document.getElementById('password').value;
-            const api_url = `https://${psw}.benstanfield.io`;
-            $.ajax({
-                url: api_url,
-                success: function (xhr) {
-                    $('#password').css('border-color', '#5cc624').css('background-color', '#e7f4df');
-                    location.href = `https://${psw}.benstanfield.io`;
-                },
-                error: function (xhr) {
-                    $('#password').val('').attr('placeholder', 'Invalid secret code');
-                    $('#password').css('border-color', '#f2b7b1').css('background-color', '#f9ebea');
-                }
-            });
-        })
-
-        $(function () {
-            $(".input-container input").keypress(function (e) {
-                if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
-                    $('.button-clicker .orangebutton').click();
-                    return false;
-                } else {
-                    return true;
-                }
-            });
         });
     });
 

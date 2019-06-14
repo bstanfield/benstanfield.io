@@ -1,0 +1,561 @@
+include data
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.26.1/ramda.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
+
+script.
+  let json = {};
+
+  const multipleKeys = R.curry((obj, acc, key) => {
+    json[key] = Object.values(obj)[acc];
+    return acc + 1;
+  });
+
+  // Time + 12 or not
+  const convertTime = (input) => {
+    let time = 0;
+    if (typeof input == 'number') {
+      return input;
+    }
+
+    const [hour, modifier] = input.split(' ');
+    if (hour == '') {
+      return null;
+    }
+
+    (modifier === 'PM') ?
+      time = parseInt(hour, 10) + 12 :
+      time = parseInt(hour) 
+
+    return time;
+  }
+
+  const buildJson = (oneObject) => {
+    // For oneObjects with multiple pairs
+    if (R.isNil(oneObject) || isEmpty(Object.values(oneObject)[0]) || isEmpty(Object.values(oneObject)[0][0]) || R.isNil(Object.values(oneObject)[0])) {
+      return false;
+    }
+
+    if (Object.keys(oneObject).length > 1) {
+      R.reduce(multipleKeys(oneObject), 0, Object.keys(oneObject));
+    } else {
+      const keyName = Object.keys(oneObject);
+      json[keyName] = Object.values(oneObject)[0];
+    }
+  }
+
+  const createPairs = (id) => $(id).val();
+
+  const modifyTime = (open) => {
+    let time;
+    const [hour, modifier] = open.split(' ');
+    modifier.toUpperCase();
+    // time = num
+    // mod = am / pm
+
+    return (
+      modifier === 'PM' ?
+        time = hour + 12 :
+        time
+    )
+  }
+
+  // Useful filters
+  const isEmpty = x => x == '';
+  const isNotEmpty = x => x != '';
+  const isNil = x => x == null;
+
+  const isEmptyValidate = (variable) => {
+    if (variable === undefined) {
+      return false;
+    }
+    isEmpty(Object.values(variable)[0]) ? 
+      $(`#${Object.keys(variable)[0]}`).css('border-color', 'inherit') : 
+      $(`#${Object.keys(variable)[0]}`).css('border-color', 'green')
+  }
+
+  const getFormData = () => {
+    const val = (x) => $(`#${x}`).val();
+    const name = { shopName: $('#shopName').val() }
+    const yelpUrl = { yelpUrl: $('#yelpUrl').val() }
+    const heroImg = { heroImg: $('#heroImg').val() }
+    const distance = { distance: $('#distance').val() }
+    const foodCost = {
+    food: [$('#foodItem').val(), parseInt($('#foodCost').val().replace('$', ''))]
+    }
+    const drinkCost = {
+    drink: [$('#drinkItem').val(), parseInt($('#drinkCost').val().replace('$', ''))]
+    }
+
+    let images;
+    R.isNil(val('images')) ?  
+      images = '' : 
+      images = { images: $('#images')
+        .val()
+        .replace(/\s/g, '')
+        .split(',')
+      }
+
+    const goodIds = ['#good_charging', '#good_wifi', '#good_drinks', '#good_service'];
+    const badIds = ['#bad_charging', '#bad_wifi', '#bad_drinks', '#bad_service'];
+
+    // GOOD AND BAD ARE WRONG
+    const bad = {
+      bad: R.filter(isNotEmpty, R.map(createPairs, badIds))
+    };
+
+    const good = {
+      good: R.filter(isNotEmpty, R.map(createPairs, goodIds))
+    }
+
+    const notes = {
+      notes: R.filter(isNotEmpty, $('#notes').val().split("\n"))
+    }
+
+    // guestNotes are optional
+    let guestNotes;
+    if (val('guestNotes')) {
+      guestNotes = {
+        name: $('#guestName').val(),
+        guestNotes: R.filter(isNotEmpty, $('#guestNotes').val().split("\n"))
+      }
+    }
+
+    // Returns array of recommendations
+    const recs = {
+      recs: $('#recs')
+        .val()
+        .split(',')
+    }
+
+    // cleanOpen :: string -> string
+    // Converts time like "10" to "10 AM"
+    const cleanOpen = (identifier) => {
+      let v = $(identifier).val().toUpperCase();
+      if (v.indexOf(' ') == -1) {
+        return parseInt(v);
+      }
+
+      return (
+        v.includes('PM') == true ?
+          `${v.split(" ")[0]} PM` :
+          `${v.split(" ")[0]} AM`
+      )
+    }
+
+    // cleanClose :: string -> string
+    // Converts time like "10" to "10 PM" or "22" to "22"
+    const cleanClose = (identifier) => {
+      let v = $(identifier).val().toUpperCase();
+      if (parseInt(v) > 12) { return parseInt(v) }
+
+      return (
+        v.includes('AM') == true ?
+          `${v.split(" ")[0]} AM` :
+          `${v.split(" ")[0]} PM`
+      )
+    }
+
+    // Creates array of hour inputs per day
+    const hourInputs = [
+      [cleanOpen('#mon_open'), cleanClose('#mon_close')],
+      [cleanOpen('#tue_open'), cleanClose('#tue_close')],
+      [cleanOpen('#wed_open'), cleanClose('#wed_close')],
+      [cleanOpen('#thu_open'), cleanClose('#thu_close')],
+      [cleanOpen('#fri_open'), cleanClose('#fri_close')],
+      [cleanOpen('#sat_open'), cleanClose('#sat_close')],
+      [cleanOpen('#sun_open'), cleanClose('#sun_close')],
+    ]
+
+    // Use reducer to separate days one by one!
+    // Converts times for each day into 24hr time
+    const renderTimesForDays = (acc, input) => {
+      let days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+      let day = days[acc];
+
+      if (input[0] == ' AM' || isNaN(input[0]) && input[1] == ' PM') {
+        console.log('Just returning acc...');
+        return acc + 1;
+      }
+      const times = R.map(convertTime, input);
+      hours.hours[acc] = { day: day, open: times[0], close: times[1] }
+      return acc + 1;
+    }
+
+    let hours = {
+      hours: [
+
+      ]
+    }
+    
+    R.reduce(renderTimesForDays, 0, hourInputs);
+
+    
+    // Arr of all vals from form
+    const allVars = [name, yelpUrl, heroImg, distance, foodCost, drinkCost, images, good, bad, notes, guestNotes, recs, hours];
+    
+    // Colors boxes red or green
+    R.map(isEmptyValidate, allVars);
+    // Builds JSON object for output
+    R.map(buildJson, allVars);
+
+    // Outputs JSON on page
+    $('.json').text(JSON.stringify(json, undefined, 2));
+
+    // Syntax highlighting for JSON
+    document.querySelectorAll('code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }
+
+  let delay = (() => {
+    let timer = 0;
+    return (callback, ms) => {
+      clearTimeout (timer);
+      timer = setTimeout(callback, ms);
+    };
+  })();
+
+  $(document).ready(function() {
+    $('#coffeeForm input[type=text], textarea[type=text]').keyup(function() {
+      delay(function() {
+        getFormData();
+      }, 1000)
+    });
+  })
+
+style.
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #fdf6e2;
+    color: #333333;
+    font-family: 'Fira Mono', monospace !important;
+    font-size: 16px;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: #586e75;
+  }
+
+  /* Solarized Green */
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-addition {
+    color: #859900;
+  }
+
+  /* Solarized Cyan */
+  .hljs-number,
+  .hljs-string,
+  .hljs-meta .hljs-meta-string,
+  .hljs-literal,
+  .hljs-doctag,
+  .hljs-regexp {
+    color: #2aa198;
+  }
+
+  /* Solarized Blue */
+  .hljs-title,
+  .hljs-section,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class {
+    color: #268bd2;
+  }
+
+  /* Solarized Yellow */
+  .hljs-attribute,
+  .hljs-attr,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-class .hljs-title,
+  .hljs-type {
+    color: #b58900;
+  }
+
+  /* Solarized Orange */
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-subst,
+  .hljs-meta,
+  .hljs-meta .hljs-keyword,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-link {
+    color: #cb4b16;
+  }
+
+  /* Solarized Red */
+  .hljs-built_in,
+  .hljs-deletion {
+    color: #dc322f;
+  }
+
+  .hljs-formula {
+    background: #073642;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  input,
+  label {
+    font-family: Helvetica;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  label.under {
+    display: block;
+    opacity: .5;
+    padding-top: 5px;
+    font-size: 12px;
+  }
+
+  label.under::before {
+    content: 'ex: ';
+  }
+
+  textarea,
+  select,
+  input,
+  button {
+    outline: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-bottom: 2px solid;
+    border-bottom-color: rgba(49, 49, 222, 0.673);
+  }
+
+  body {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: none;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  input,
+  textarea {
+    font-size: 15px;
+    display: block;
+    padding: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 250px;
+  }
+
+  input[type=submit] {
+    padding: 10px !important;
+    background-color: green;
+    width: 300px;
+    margin-top: 50px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .input-box {
+    margin-top: 20px;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  .flex-container {
+    width: 1200px;
+  }
+
+  .flex {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .flex>div {
+    margin-right: 20px;
+  }
+
+  form {
+    width: 750px;
+  }
+
+  .container {
+    width: 1200px;
+    margin: auto;
+  }
+
+  .fixed-container {
+    width: 600px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  .form-content {
+    width: 500px;
+  }
+
+  pre {
+    margin-top: 0;
+    width: 100%;
+    white-space: -moz-pre-wrap;
+    /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap;
+    /* Opera */
+    white-space: -o-pre-wrap;
+    /* Opera */
+    white-space: pre-wrap;
+    /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word;
+    /* IE 5.5+ */
+  }
+
+  code {
+    min-height: 500px;
+    height: 100%;
+    padding: 80px 30px !important;
+  }
+
+mixin regularLabels(inputs)
+  each input in inputs
+    - let placeholder;
+    if input.placeholder
+      - placeholder = input.placeholder
+    else
+      - placeholder = input.label
+    .input-box
+    if input.label
+      if input.required
+        label #{input.label} *
+      else
+        label=input.label
+    if input.ex
+      label.under=input.ex
+    if input.textarea
+      textarea(
+      id=input.id 
+      placeholder=placeholder
+      type='text'
+      )
+    else if input.id
+      input(
+      id=input.id 
+      placeholder=placeholder 
+      type='text'
+      )
+    else
+      - 
+        const toCamel = (str) => {
+          let split = str.split(' ');
+          let appended = '';
+          //- // Creates arr on spaces
+          split.map(x => appended = appended.concat('', x));
+          return appended.substring(0, 1).toLowerCase() + appended.substring(1);
+        }
+      input(
+      id=toCamel(input.label)
+      placeholder=placeholder 
+      type='text'
+      )
+
+mixin dayBoxes()
+  - const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  each day in days
+    .day-box
+      p=day
+      input(id=`${day.substring(0, 3).toLowerCase()}_open` placeholder='Opening time' type='text')
+      input(id=`${day.substring(0, 3).toLowerCase()}_close` placeholder='Closing time' type='text')
+
+
+
+.container
+  .form-content
+    br
+    h1 Coffee Json Creator
+    <p style='font-size: 18px;'>Use this form to translate coffeeshop data into JSON for the <br>coffee API. Final format: <a target='_blank' href='https://benstanfield.io/coffee'>benstanfield.io/coffee</a></p>
+    <form id='coffeeForm' onsubmit="return false">
+      +regularLabels(inputs)
+
+      .flex
+        .div
+          p Good:
+          +regularLabels(good)
+
+
+        .div
+          p Bad:
+          +regularLabels(bad)
+      
+      br
+      br
+
+      +regularLabels([
+        {
+          label: 'Notes',
+          id: 'notes',
+          placeholder: 'Notes (split pars with linebreaks)',
+          ex: '3 paragraphs of detailed notes',
+          textarea: true,
+          required: true
+        },
+        {
+          label: 'Guest Name (optional)',
+          id: 'guestName',
+          placeholder: 'Enter full name',
+          ex: 'Jenny Zhang'
+        },
+        {
+          label: 'Guest Notes (optional)',
+          id: 'guestNotes',
+          placeholder: 'Guest Notes (split pars with linebreaks)',
+          ex: '3 paragraphs of detailed notes',
+          textarea: true
+        }, 
+        
+        {
+          label: 'Recommendations',
+          placeholder: 'Recommendation names (split with commas)',
+          ex: 'Rosemary Baby Latté',
+          id: 'recs',
+          required: true
+        }
+      ])
+
+      <div class="flex">
+        +dayBoxes()
+      </div>
+
+      <input class='button' type='submit' onclick='getFormData()'></input>
+    </form>
+
+.fixed-container
+  p(style='font-size: 15px; position: absolute; left: 30px; opacity: .5;') #[strong JSON Output (real time)]
+  <pre class='output'><code class='javascript json'></code></pre>
+

@@ -3,7 +3,7 @@
     "public": true,
     "builds": [
         {
-            "src": "build.sh",
+            "src": "package.json",
             "use": "@now/static-build",
             "config": {
                 "distDir": "public"
@@ -11,6 +11,16 @@
         }
     ],
     "routes": [
+        { "src": "/(deploy).html", "dest": "/projects/$1.html" },
+        { "src": "/(deploy)", "dest": "/projects/$1.html" },
+        { "src": "/(coffee).html", "dest": "/projects/$1.html" },
+        { "src": "/(coffee)", "dest": "/projects/$1.html" },
+        { "src": "/foodforthought.html", "dest": "/projects/survey.html" },
+        { "src": "/foodforthought", "dest": "/projects/survey.html" },
+        { "src": "/(survey).html", "dest": "/projects/$1.html" },
+        { "src": "/(survey)", "dest": "/projects/$1.html" },
+        { "src": "/(survey).html", "dest": "/projects/$1.html" },
+        { "src": "/(survey)", "dest": "/projects/$1.html" },
         {
             "src": "^(.*)$",
             "dest": "$1.html"

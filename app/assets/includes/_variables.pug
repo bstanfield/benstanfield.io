@@ -19,9 +19,138 @@
     }
   ]
 
+// PROJECT CARDS
+-
+  const projectCards = [
+    {
+      url: 'projects/sparksc.html',
+      emoji: '🌟',
+      title: 'Spark SC',
+      description: 'Technology and entrepreneurship club at USC.'
+    },
+    {
+      url: 'https://www.skipper.ai',
+      emoji: '⛵',
+      title: 'Skipper',
+      description: 'Tech startup helping SMBs use their workforce data to make work better.',
+      target: '_blank'
+    },
+    {
+      url: 'projects/h4d.html',
+      emoji: '🔐',
+      title: 'Hacking for Defense',
+      description: 'Project with U.S. State Department to counter terrorism online.'
+    },
+    {
+      url: 'projects/lsc.html',
+      emoji: '🇮🇹',
+      title: `Laudato Si' Challenge`,
+      description: 'Green tech accelerator inspired by Pope Francis, hosted in Rome.'
+    },
+    {
+      url: 'projects/bonsai.html',
+      emoji: '🌳',
+      title: 'Bonsai',
+      description: 'AI startup building a deep reinforcement learning platform for enterprise.',
+    },
+    {
+      url: 'https://medium.com/@bstanfie/kpcb-design-challenge-adc83cee5ed1#.2gjfm12pz.com/',
+      emoji: '📚',
+      title: 'Medium Articles',
+      description: 'Articles going in-depth on design projects for KPCB.',
+      target: '_blank'
+    }
+  ]
+
 // COFFEE SHOPS
 -
     const shops = {
+      balcony: [{
+        meta: {
+          yelpUrl: 'balcony-coffee-and-tea-los-angeles', 
+          shopName: 'Balcony Coffee', 
+          heroImg: 'balcony-hero.jpg',
+          food: [''],
+          drink: ['Dutch Latte', 5],
+        },
+        images: [
+          'YjFwBBQXx8lq77xJifcjuw','jKyQztlCpv_JI21dooB6AQ','3J1K0vsZTMlJpWHusCFd8A','d2SlDvCteSrco74dm1GqEg'
+        ],
+        good: {
+          'All day grind': 'The mystical and serene atmosphere is great for getting in the zone',
+          'Drinks': 'Good tea selection and specialty lattes',
+          'Service': 'Baristas always greet you with a smile and are eager to help!'
+        },
+        bad: {
+          'Large groups': "This place is small... most tables sit two, with one larger table outside",
+          'Food': 'Mostly cake and other pastries',
+          'Distance': `Driving time is about 30 minutes if you leave midday, since you're taking city streets through K-town`
+        },
+        guestNotes: {
+            name: 'Mimi: ',
+            img: 'https://i.imgur.com/pm0DZjU.jpg',
+            notes: `I loved the service and ambiance at Balcony Coffee. When I got there I ordered their Thai Iced Tea (super, super good) from the very polite baristas. My friend and I spent a full day working in their outdoor area — it's a lovely greenhouse-esque patio that's overflowing with both plants and outlets. It's colorful, it's relaxing, and perfect if you like the idea of studying in a park but can't do without decent wifi and power. 
+
+            There's enough space for you to come with a friend or in a group of four or so, which is more than most L.A. spots can accommodate (I'm looking at you, Alchemist). Based on who was there, Balcony is a good spot for a relaxing study session or a first date 😉... or both!`
+        },
+        notes: [
+          "Balcony Coffee is an absolutely serene experience—granted you sit outside under the tiny greenhouse netting. Although you're just a couple feet from the busy sidewalk and Koreatown street, with buses and trucks rolling by, the thick wall of trees and vines engulfs you in a sort of mystical space.", 
+          'The owners are very eager to help and make you feel welcome staying for hours. The lattes are really interesting, especially the seasonal and specialty drinks like the Dutch Latte or "Brad Pitt." The food selection is limited, but there is food elsewhere in the plaza and around the area in K-town.', 
+          "Balcony is perfect for some study time where you just need to get off campus and really focus. Turn off your computer and read a book out on the patio with some quality coffee—it doesn't get much better than that. 😎"
+        ],
+        recs: [
+          { name: "Dutch Latte", img: ""}, { name: 'Pumpkin "Pop-tart"', img: '' }, 
+          { name: 'Brad Pitt (Signature)', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 9, close: 23},
+            { day: 'Tue', open: 9, close: 23},
+            { day: 'Wed', open: 9, close: 23},
+            { day: 'Thu', open: 9, close: 23},
+            { day: 'Fri', open: 9, close: 23},
+            { day: 'Sat', open: 9, close: 23},
+            { day: 'Sun', open: 9, close: 20},
+        ],
+        distance: '15',
+      }],
+      highlyLikely: [{
+        meta: {
+          yelpUrl: 'highly-likely-los-angeles', 
+          shopName: 'Highly Likely', 
+          heroImg: 'hl-hero.jpg',
+          food: ['Highly Burrito', 11],
+          drink: ['Cortado', 4],
+        },
+        images: [
+          'cQJDT6s4LYoJhqB9hq5nqg','VAtE-qjaN6ax0kSN-3F4lg','GQNk3U9FkTSDA4-j3OfKQg','nw7sCU48LkPfh8LujuJMoQ'
+        ],
+        good: {
+          'All day grind': 'Comfy seating and plenty of outlets (along walls)', 'Food': 'Better than most good restaurants, plus generous portions',
+          'Distance': 'Straightforward drive from USC + easy street parking',
+          'Drinks': 'Try the seasonal specials, or stick to solid classics like a cortado'
+        },
+        bad: {
+          'Wifi': "It's decent, but <strong>turned off</strong> all weekend!"
+        },
+        notes: [
+          "An unexpected hipster-hideaway on Jefferson Street ten minutes west of campus, Highly Likely is a beautiful spot to enjoy coffee, work, and conversation. With a large food menu of healthy breakfast and lunch option—plus a fine array of coffee and tea—this shop is great for all-day work sessions.", 
+          'The warehouse-like façade of the building is opened wide on warm days, spilling in lots of natural light into the space. Large booth tables with comfortable leather couches make for good group hangouts. Plus, there are plenty of outlets underneath the couches!', "There are few downsides to Highly Likely, but a notable one if you're interested in opening up your laptop is the wifi: HL turns off their wifi on the weekends! Hey, here's to more person-to-person conversation and book-reading... but if you're going with the intention of work, avoid the weekends."
+        ],
+        recs: [
+          { name: "Cortado", img: ""}, { name: 'Highly Burrito', img: '' }, 
+          { name: 'Iced Palmette', img: ''}
+        ],
+        hours: [
+            { day: 'Mon', open: 7, close: 20},
+            { day: 'Tue', open: 7, close: 20},
+            { day: 'Wed', open: 7, close: 20},
+            { day: 'Thu', open: 7, close: 20},
+            { day: 'Fri', open: 7, close: 20},
+            { day: 'Sat', open: 7, close: 20},
+            { day: 'Sun', open: 7, close: 20},
+        ],
+        distance: '28',
+      }],
         prism: [{
             meta: {
                 yelpUrl: 'prism-coffee-los-angeles', 
@@ -81,7 +210,7 @@
         },
         notes: [
           "Located in the USC Village, Dulce’s combination of accessibility and quality coffee is hard to beat. Most people around campus will rave about Dulce’s Matcha drinks, but not being a big fan of Matcha, I’ve really enjoyed their plain-old drip coffees. Their lattes and teas are also very good and the service friendly.", 
-          "In addition to good drinks, Dulce also makes a <i>killer</i> breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes."
+          "In addition to good drinks, Dulce also makes a <i>phenomenal</i> breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes."
         ],
         guestNotes: {
             name: 'Abigail Africa: ',
@@ -103,49 +232,6 @@
             { day: 'Sun', open: 7, close: 21},
         ],
         distance: '2',
-      }],
-      loit: [{
-        meta: {
-          yelpUrl: 'loit-cafe-los-angeles', 
-          shopName: 'Loit Cafe', 
-          heroImg: 'loit-hero.jpg',
-          food: ['avocado toast', 8],
-          drink: ['charcoal latte', 6],
-        },
-        images: [
-            'JcEFlZjEeVOQqInd5WhDMQ','CQuVeiUptc9ToEQEDvH-LQ','hFaTr-zQyv5TTWu6MeHp1Q','rIXXSGDlhXNQQtjJGziHzA'
-        ],
-        good: {
-            Drinks: 'Charcoal lattes, pour-over', Food: 'Surpisingly good small dishes!', 'All day grind': 'You should make a day out of Loit', 'Large groups': 'Large, open space with tablespace',
-        },
-        bad: {
-            Wifi: 'It is pretty spotty',
-        },
-        notes: [
-          "You can find Loit Cafe in the middle of Downtown Los Angeles, on the bustling corner of Olympic and Hill. The shop’s aesthetic matches the sleek, modern vibe that the rest of downtown embraces, but no function is sacrificed for form here. At Loit, you’ll find one large, open space with long marble tables in the center, beautiful couches along the windows, and smaller round tables sprinkled between.",
-          "Best known for their <a href='https://www.instagram.com/p/Bjqn2IdhLzP/'>Instagram-friendly charcoal lattes</a>, Loit also has really good pour over, cortados, and fruit drinks like the <i>Sunset.</i> For food, Loit offers the standard array of pastries, but also some delicious, larger items like avocado toast or quiche. ",
-          "Overall, Loit is a great spot for group work with ample seating space, outlets, and consistent wifi, and can keep you going for hours on end with great food and coffee.",
-        ],
-        guestNotes: {
-            name: 'Landon Brand: ',
-            url: 'https://www.google.com',
-            img: 'https://i.imgur.com/iiRfBbk.jpg',
-            notes: "I’d say this is one of the best spots downtown for working—tons of space and outlets, and since it serves food you can keep going even if you get hungry. That said, it is pricy, especially if you factor in parking/transportation to downtown. Maybe not worth it as an everyday go-to, but it’s hard to beat their workspace or coffee quality."
-        },
-        recs: [
-          { name: 'Charcoal latte', img: ""}, { name: 'Avocado toast', img: '' }, 
-          { name: 'Ethiopia pour-over', img: ''}
-        ],
-        hours: [
-            { day: 'Mon', open: 7, close: 19},
-            { day: 'Tue', open: 7, close: 19},
-            { day: 'Wed', open: 7, close: 19},
-            { day: 'Thu', open: 7, close: 19},
-            { day: 'Fri', open: 7, close: 19},
-            { day: 'Sat', open: 7, close: 19},
-            { day: 'Sun', open: 8, close: 19},
-        ],
-        distance: '10',
       }],
       alchemist: [{
         meta: {
@@ -203,7 +289,7 @@
         notes: [
             "This might be the only Korean Church that serves coffee and tea out of a cottage. If not, it’s probably still the <i>best</i> coffee and tea served out of a Korean Church. Ignatius Cafe is a tiny shop with outdoor garden seating, the perfect serene escape from the hustle and bustle on campus. And it’s walking distance (right near Ralph’s, north of campus)!",
             "The wifi is spotty, so I’d recommend bringing a friend for a nice chat while you enjoy delicious lemon tea. Come here to unwind—the fresh air and peaceful garden is rare in Los Angeles. ",
-            "Nothing is more than a few dollars here, and they only serve a few things in total: espresso; americano; café latte; and lemon tea.",
+            "Nothing is more than a few dollars here, and they only serve a few things in total: espresso, americano, café latte, and lemon tea.",
             "<i>They only take cash, so make sure to bring a couple bucks with you. </i>",
         ],
         guestNotes: {
@@ -216,7 +302,7 @@
           { name: 'Honey Tea', img: ""},
         ],
         hours: [
-            { day: 'Mon', open: 9, close: 21},
+            { day: 'Mon', open: 9, close: 21},  
             { day: 'Tue', open: 9, close: 21},
             { day: 'Wed', open: 9, close: 21},
             { day: 'Thu', open: 9, close: 21},

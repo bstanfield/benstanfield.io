@@ -659,7 +659,6 @@ iframe {
 .chapter-container {
   width: fit-content;
   margin: auto;
-
   padding: 20px 25px 5px 25px;
   border-radius: 3px;
   
@@ -667,6 +666,11 @@ iframe {
     border: none;
     margin: 0;
     font-size: 25px;
+    border-bottom: 0px !important;
+  }
+
+  .chapter-name {
+    margin-top: 13px;
   }
   
   .chapter-emoji, .chapter-text {
@@ -683,9 +687,10 @@ iframe {
 
   .chapter-uppercase {
     text-transform: uppercase;
-    color: $orange;
+    color: $grey;
+    opacity: .5;
     font-size: 18px;
-    margin-bottom: -5px;
+    margin-bottom: -20px;
   }
 }
 
@@ -794,22 +799,6 @@ input:checked+.slider:before {
 
 // -- End Deployment Project Styles
 
-// Animations
-@keyframes wave {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(40deg);
-  }
-}
-
-.wave {
-  animation: wave 4s infinite;
-}
-
-// -- End Animations
 
 @media screen and (max-width: 500px) {
   .scroll-to-top button {
@@ -924,6 +913,17 @@ input:checked+.slider:before {
     width: 100% !important;
     height: 350px;
   }
+
+  .chapter-emoji {
+    margin-bottom: -40px;
+    margin-top: -15px;
+  }
+
+  .chapter-container .chapter-text {
+    padding-left: 0px;
+  }
+
+
 }
 
 @media screen and (max-width: 500px) {

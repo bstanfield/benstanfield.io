@@ -10708,6 +10708,166 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
   })();
 });
+require.register("js/api.js", function(exports, require, module) {
+'use strict';
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+document.addEventListener('DOMContentLoaded', function () {
+    var $ = require('jquery');
+    var json = {};
+
+    var multipleKeys = R.curry(function (obj, acc, key) {
+        json[key] = Object.values(obj)[acc];
+        return acc + 1;
+    });
+
+    var camelize = function camelize(str) {
+        return str.replace(/\W+(.)/g, function (match, chr) {
+            return chr.toUpperCase();
+        });
+    };
+
+    // Time + 12 or not
+    var convertTime = function convertTime(input) {
+        var time = 0;
+        if (typeof input == 'number') {
+            return input;
+        }
+
+        var _input$split = input.split(' '),
+            _input$split2 = _slicedToArray(_input$split, 2),
+            hour = _input$split2[0],
+            modifier = _input$split2[1];
+
+        if (modifier === 'PM') {
+            time = parseInt(hour, 10) + 12;
+        } else {
+            time = parseInt(hour);
+        }
+        return time;
+    };
+
+    var buildJson = function buildJson(obj) {
+        // For objs with multiple pairs
+        if (Object.keys(obj).length > 1) {
+            R.reduce(multipleKeys(obj), 0, Object.keys(obj));
+        } else {
+            var keyName = Object.keys(obj);
+            json[keyName] = Object.values(obj)[0];
+        }
+    };
+
+    var createPairs = function createPairs(id) {
+        var val = $(id).val();
+        return val;
+    };
+
+    var isNotEmptyString = function isNotEmptyString(x) {
+        return x != '';
+    };
+
+    var modifyTime = function modifyTime(open) {
+        var time = void 0;
+
+        var _open$split = open.split(' '),
+            _open$split2 = _slicedToArray(_open$split, 2),
+            hour = _open$split2[0],
+            modifier = _open$split2[1];
+
+        modifier.toUpperCase();
+        // time = num
+        // mod = am / pm
+
+        return modifier === 'PM' ? time = hour + 12 : time;
+    };
+
+    var getFormData = function getFormData() {
+        var name = { shopName: $('#shopName').val() };
+        var yelpUrl = { yelpUrl: $('#yelpUrl').val() };
+        var heroImg = { heroImg: $('#heroImg').val() };
+        var distance = { distance: $('#distance').val() };
+        var foodCost = {
+            food: [$('#foodItem').val(), parseInt($('#foodCost').val().replace('$', ''))]
+        };
+        var drinkCost = {
+            food: [$('#drinkItem').val(), parseInt($('#drinkCost').val().replace('$', ''))]
+        };
+
+        isNaN(foodCost.food[1]) ? $('#foodCost').css('background-color', 'red') : $('#foodCost').css('background-color', 'green');
+
+        var images = {
+            images: $('#images').val().replace(/\s/g, '').split(',')
+        };
+
+        var goodIds = ['#good_charging', '#good_wifi', '#good_drinks', '#good_service'];
+        var badIds = ['#bad_charging', '#bad_wifi', '#bad_drinks', '#bad_service'];
+
+        // GOOD AND BAD ARE WRONG
+        var bad = {
+            bad: R.filter(isNotEmptyString, R.map(createPairs, badIds))
+        };
+
+        var good = {
+            good: R.filter(isNotEmptyString, R.map(createPairs, goodIds))
+        };
+
+        var notes = {
+            notes: R.filter(isNotEmptyString, $('#notes').val().split("\n"))
+        };
+
+        var guestNotes = {
+            name: 'Jenny Zhang',
+            img: 'https://i.imgur.com/sHINpaJ.jpg',
+            guestNotes: R.filter(isNotEmptyString, $('#guestNotes').val().split("\n"))
+        };
+
+        var recs = {
+            recs: $('#recs').val().replace(/\s/g, '').split(',')
+        };
+
+        var cleanOpen = function cleanOpen(identifier) {
+            var v = $(identifier).val().toUpperCase();
+            return v.includes('PM') == true ? v.split(" ")[0] + ' PM' : v.split(" ")[0] + ' AM';
+        };
+
+        var cleanClose = function cleanClose(identifier) {
+            var v = $(identifier).val().toUpperCase();
+            if (parseInt(v) > 12) {
+                return parseInt(v);
+            }
+
+            return v.includes('AM') == true ? v.split(" ")[0] + ' AM' : v.split(" ")[0] + ' PM';
+        };
+
+        var hourInputs = [[cleanOpen('#mon_open'), cleanClose('#mon_close')], [cleanOpen('#tue_open'), cleanClose('#tue_close')], [cleanOpen('#wed_open'), cleanClose('#wed_close')], [cleanOpen('#thu_open'), cleanClose('#thu_close')], [cleanOpen('#fri_open'), cleanClose('#fri_close')], [cleanOpen('#sat_open'), cleanClose('#sat_close')], [cleanOpen('#sun_open'), cleanClose('#sun_close')]];
+
+        var hours = {
+            hours: {
+                mon: R.map(convertTime, hourInputs[0]),
+                tue: R.map(convertTime, hourInputs[1]),
+                wed: R.map(convertTime, hourInputs[2]),
+                thu: R.map(convertTime, hourInputs[3]),
+                fri: R.map(convertTime, hourInputs[4]),
+                sat: R.map(convertTime, hourInputs[5]),
+                sun: R.map(convertTime, hourInputs[6])
+            }
+        };
+
+        var allVars = [name, yelpUrl, heroImg, foodCost, drinkCost, images, good, bad, notes, guestNotes, recs, hours];
+
+        R.map(buildJson, allVars);
+
+        // Outputs JSON on page
+        $('.json').text(JSON.stringify(json, undefined, 2));
+
+        document.querySelectorAll('code').forEach(function (block) {
+            hljs.highlightBlock(block);
+        });
+    };
+});
+});
+
 require.register("js/coffee.js", function(exports, require, module) {
 'use strict';
 
@@ -10717,26 +10877,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // FOR COFFEE
     $(document).ready(function () {
-        $('.dropdown').click(function () {
-            var query = $('.dropdown > .dropdown-content');
-            if (query.is(':visible') === true) {
-                $('.dropdown > .dropdown-content').hide();
-                $('.dropbtn').css('color', '#333');
-            } else {
-                $('.dropdown > .dropdown-content').show();
-                $('.dropbtn').css('color', '#F26C29');
-            }
-        });
-
-        $(document).mouseup(function (e) {
-            var container = $('.dropdown');
-            // if the target of the click isn't the container nor a descendant of the container
-            if (!container.is(e.target) && container.has(e.target).length === 0) {
-                $('.dropdown > .dropdown-content').hide();
-                $('.dropbtn').css('color', '#333');
-            }
-        });
-
         $('.Cha').append('🔌');
         $('.Wif').append('📡');
         $('.Dri').append('☕️');
@@ -10832,35 +10972,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 open: 8,
                 close: 21
             }],
-            'LoitCafe': [{
-                day: 'Mon',
-                open: 7,
-                close: 19
-            }, {
-                day: 'Tue',
-                open: 7,
-                close: 19
-            }, {
-                day: 'Wed',
-                open: 7,
-                close: 19
-            }, {
-                day: 'Thu',
-                open: 7,
-                close: 19
-            }, {
-                day: 'Fri',
-                open: 7,
-                close: 19
-            }, {
-                day: 'Sat',
-                open: 7,
-                close: 19
-            }, {
-                day: 'Sun',
-                open: 8,
-                close: 19
-            }],
             'AlchemistCoffee': [{
                 day: 'Mon',
                 open: 7.5,
@@ -10947,6 +11058,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 day: 'Sun',
                 open: 9,
                 close: 17
+            }],
+            'BalconyCoffee': [{
+                day: 'Mon',
+                open: 9,
+                close: 23
+            }, {
+                day: 'Tue',
+                open: 9,
+                close: 23
+            }, {
+                day: 'Wed',
+                open: 9,
+                close: 23
+            }, {
+                day: 'Thu',
+                open: 9,
+                close: 23
+            }, {
+                day: 'Fri',
+                open: 9,
+                close: 23
+            }, {
+                day: 'Sat',
+                open: 9,
+                close: 23
+            }, {
+                day: 'Sun',
+                open: 9,
+                close: 20
             }],
             'YellowHouseCafe': [{
                 day: 'Mon',
@@ -11063,6 +11203,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 day: 'Sun',
                 open: 8,
                 close: 20
+            }],
+            'HighlyLikely': [{
+                day: 'Mon',
+                open: 7,
+                close: 20
+            }, {
+                day: 'Tue',
+                open: 7,
+                close: 20
+            }, {
+                day: 'Wed',
+                open: 7,
+                close: 20
+            }, {
+                day: 'Thu',
+                open: 7,
+                close: 20
+            }, {
+                day: 'Fri',
+                open: 7,
+                close: 20
+            }, {
+                day: 'Sat',
+                open: 7,
+                close: 20
+            }, {
+                day: 'Sun',
+                open: 7,
+                close: 20
             }]
         }];
 
@@ -11108,7 +11277,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 stc = stc + ":30";
             }
 
-            var tomorrowOpen = hours[0][name][d.getDay()].open;
+            var tomorrowOpen = sto;
             if (stc >= 1 && stc <= 3) {
                 stc = stc + ' AM';
             } else {
@@ -11138,13 +11307,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 });
 
-require.register("js/initialize.js", function(exports, require, module) {
+require.register("js/primary.js", function(exports, require, module) {
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
     var $ = require('jquery');
 
     $(document).ready(function () {
+        $('.dropdown').click(function () {
+            var query = $('.dropdown > .dropdown-content');
+            if (query.is(':visible') === true) {
+                $('.dropdown > .dropdown-content').hide();
+                $('.dropbtn').css('color', '#333');
+            } else {
+                $('.dropdown > .dropdown-content').show();
+                $('.dropbtn').css('color', '#F26C29');
+            }
+        });
+
+        $(document).mouseup(function (e) {
+            var container = $('.dropdown');
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                $('.dropdown > .dropdown-content').hide();
+                $('.dropbtn').css('color', '#333');
+            }
+        });
         setTimeout(function () {
             $('.toast').fadeTo(1000, 100);
         }, 1000);
@@ -11297,33 +11485,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.scroll-to-top').click(function () {
             $('html, body').animate({ scrollTop: 0 }, 800);
         });
-
-        $('.button-clicker').click(function () {
-            var psw = document.getElementById('password').value;
-            var api_url = 'https://' + psw + '.benstanfield.io';
-            $.ajax({
-                url: api_url,
-                success: function success(xhr) {
-                    $('#password').css('border-color', '#5cc624').css('background-color', '#e7f4df');
-                    location.href = 'https://' + psw + '.benstanfield.io';
-                },
-                error: function error(xhr) {
-                    $('#password').val('').attr('placeholder', 'Invalid secret code');
-                    $('#password').css('border-color', '#f2b7b1').css('background-color', '#f9ebea');
-                }
-            });
-        });
-
-        $(function () {
-            $(".input-container input").keypress(function (e) {
-                if (e.which && e.which == 13 || e.keyCode && e.keyCode == 13) {
-                    $('.button-clicker .orangebutton').click();
-                    return false;
-                } else {
-                    return true;
-                }
-            });
-        });
     });
 
     // FADE INS
@@ -11360,6 +11521,43 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.emoji').css('opacity', '1');
             $('#one').css('opacity', '1');
         }, 0);
+    });
+});
+});
+
+require.register("js/special-projects.js", function(exports, require, module) {
+'use strict';
+
+document.addEventListener('DOMContentLoaded', function () {
+    var $ = require('jquery');
+
+    $(document).ready(function () {
+        $('.button-clicker').click(function () {
+            var psw = document.getElementById('password').value;
+            var api_url = 'https://' + psw + '.benstanfield.io';
+            $.ajax({
+                url: api_url,
+                success: function success(xhr) {
+                    $('#password').css('border-color', '#5cc624').css('background-color', '#e7f4df');
+                    location.href = 'https://' + psw + '.benstanfield.io';
+                },
+                error: function error(xhr) {
+                    $('#password').val('').attr('placeholder', 'Invalid secret code');
+                    $('#password').css('border-color', '#f2b7b1').css('background-color', '#f9ebea');
+                }
+            });
+        });
+
+        $(function () {
+            $(".input-container input").keypress(function (e) {
+                if (e.which && e.which == 13 || e.keyCode && e.keyCode == 13) {
+                    $('.button-clicker .orangebutton').click();
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        });
     });
 });
 });
