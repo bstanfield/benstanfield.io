@@ -1,8 +1,40 @@
-br
-br
+mixin offsite(url, name)
+    a.os(target='_blank' href=url title="<p style='font-family: Arial; font-size: 12px; line-height: 25px;'>Opens new webpage </p>") !{name} <i class="fas fa-location-arrow offsite"></i>
 
-footer
-    .grid-bg.grid.long
+br
+br
+footer(style='position: relative; height: auto; background-color: #333;')
+    br
+    .container
+        .flex-grid.bi-directional
+            .footer-text.white
+                h2 Blog posts
+                a(href='deploy.html') Web Deployment Tutorial
+                a(href='coffee.html') Best Coffeeshops for Work in Los Angeles
+                a(href='foodforthought.html') Food for Thought Survey
+                a(href='#experiences') Experiences
+                hr
+                br
+                br
+                a(href='https://github.com/bstanfield/benstanfield.io/tree/master') <i class="fab fa-github"></i> View Github Repo 
+            .footer-text.white
+                h2 About Ben
+                a(href='images/resume-update-comp2.pdf') View Resumé 
+                +offsite('https://projectwren.com','Project Wren (S19)')
+                +offsite('https://www.linkedin.com/in/meetben/','LinkedIn')
+                +offsite('https://iovine-young.usc.edu/thepulse/Senior-Spotlight-Ben-Stanfield_184.html','Academy Spotlight') 
+                hr
+                br
+                br
+        br
+        br
+        br
+        br
+        .wave
+            a(style='font-size: 50px;' href='https://unicode.org/consortium/adopted-characters.html#b270C') ✌️
+    br
+    br
+
 
 <script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
 <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
@@ -24,6 +56,15 @@ script.
         allowHTML: true,
         distance: 30,
         trigger: 'click mouseenter',
+    })
+
+    tippy('.os', {
+        theme: 'os',
+        animation: 'fade',
+        animateFill: false,
+        delay: [1000, 0],
+        allowHTML: true,
+        placement: 'right'
     })
 
     tippy.browser.onUserInputChange = type => {

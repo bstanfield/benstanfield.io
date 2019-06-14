@@ -38,14 +38,7 @@ block content
         br
         br
 
-        // +img('../images/projects/dnd/chapter-headline-1.png', { shadow: false })
-        .full-container
-          .chapter-container
-            .chapter-emoji  
-              h1 📚
-            .chapter-text
-              h1.chapter-uppercase Chapter 1: 
-              h1 First deployment
+        +chapter('1', 'First Deployment')
     
         .toggle-advanced
           include toggles/deploy_toggle_terminal
@@ -55,23 +48,16 @@ block content
 
         :markdown-it
           That's it! Our sample project has been deployed to the outputted link (now in your clipboard). Anyone on the internet can view that link.
-          > Psst: Wondering why Zeit outputs that strange URL? [Tell me more...](https://www.benstanfield.io)
+          > Psst: Wondering why Zeit outputs that strange URL? [Tell me more...](https://zeit.co/docs/v2/deployments/concepts/immutability/)
 
         :markdown-it
           # What's next?
-          *Technically* we've accomplished a very quick and easy deployment to the web! But the `.sh` output URL of a Now deployment isn't ideal for your website. Ideally, you want to deploy to your custom domain. So this leaves a couple options...
+          We've accomplished a very quick and easy deployment to the web! But the `.sh` output URL of a Now deployment isn't ideal for your website. Ideally, you want to deploy to your custom domain. So this leaves a couple options...
         
         br
         br
 
-        //- +img('../images/projects/dnd/chapter-headline.png', { shadow: false })
-        .full-container
-          .chapter-container
-            .chapter-emoji  
-              h1 📚
-            .chapter-text
-              h1.chapter-uppercase Chapter 2: 
-              h1 Buying a domain
+        +chapter('2', 'Buying a Domain')
         :markdown-it
             # 1. Browse
             ## But why browse on Zeit?
@@ -95,6 +81,9 @@ block content
           include toggles/buy-domain_toggle_advanced
         .toggle-beginner
           include toggles/buy-domain_toggle_beginner
+
+        br
+        p - Ben
 
       +farewell
       

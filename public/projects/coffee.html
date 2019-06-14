@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<!-- TEST-->
+<!-- NAV LINKS-->
+<!-- PROJECT CARDS-->
 <!-- COFFEE SHOPS--><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="/app.css">
 <script src="/vendor.js"></script>
 <script src="/app.js"></script>
-<script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+<script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<link rel="stylesheet" href="markdown.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>require('initialize');</script>
+<script>require('js/primary.js');</script>
+<script>require('js/special-projects.js');</script>
+<script>require('js/coffee.js');</script>
+<script>require('js/api.js');</script>
 <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://benstanfield.io">
 <meta property="og:site_name" content="benstanfield.io">
+<title>Ben Stanfield - Co-founder @ Project Wren</title>
+<meta name="description" content="Ben Stanfield is a recent graduate from the Iovine & Young Academy and co-founder of Project Wren. Read his blog posts...">
 <meta name="twitter:domain" value="benstanfield.io" />
 <meta name="twitter:title" value="Ben Stanfield" /><meta property="twitter:image" content="https://i.imgur.com/rTOhocU.png">
-<meta property="og:image" content='https://i.imgur.com/rTOhocU.png'><meta name="twitter:description" value="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
-<meta property="og:description" content="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper."> <meta name="twitter:title" value="Ben Stanfield" />
+<meta property="og:image" content='https://i.imgur.com/rTOhocU.png'><meta name="twitter:description" value="Ben Stanfield is a recent graduate from the Iovine & Young Academy and co-founder of Project Wren.">
+<meta property="og:description" content="Ben Stanfield is a recent graduate from the Iovine & Young Academy and co-founder of Project Wren."> <meta name="twitter:title" value="Ben Stanfield" />
 <meta property="og:title" content="Ben Stanfield">
 </head>
 <title>Ben - Coffee ☕️</title>
@@ -36,8 +41,8 @@
   <div class="nav-content">
     <div class="nav-text">  
       <div class="left" id="root"><a href='/'><span id='homeRoot'>BEN</span></a> / <a href=''><span class='projectRoot'>Coffee ☕️</span></a></div>
-      <div class="right nav-links"><a class="mobile-hide" href="/">Home</a><a class="mobile-hide">• </a><div class="dropdown mobile-hide">
-<a class='dropbtn' aria-haspopup="true">Blog posts <span class='drpdwn'>▾</span></a>
+      <div class="right nav-links"><div class="dropdown">
+<a class='dropbtn' aria-haspopup="true">View posts <span class='drpdwn'>▾</span></a>
 <div class="dropdown-content">
 <div class="dropdown-link-container">
 <a class='dropdown-link' href="/projects/deploy.html">Web Deployment Tutorial</a>
@@ -52,7 +57,7 @@
 <a class='dropdown-link' href="/#experiences">Experiences</a>
 </div>
 </div>
-</div><a class="mobile-show" href="/coffee.html">Coffee Blog</a><a href="/#experiences">Experiences</a>
+</div><a class="mobile-hide" href="/projects/deploy.html"><strong>New:</strong> Deploy to the Web!</a>
       </div>
     </div>
   </div>
@@ -67,7 +72,7 @@
       <h1 class="big-emoji">☕️</h1>
       <h1 class="headline">Top Coffee Shops for Work in LA</h1>
       <h6>A simple, Yelp-like list of my favorite coffee spots in Los Angeles to work, read, and of course drink great coffee. This list is designed with the benefit of USC✌️ students in mind.</h6>
-      <p class="update-line">Wed Apr 24 2019</p><br>
+      <p class="update-line">Thu Jun 13 2019</p><br>
     </div>
   </div>
   <div class="big-photo">
@@ -81,20 +86,231 @@
        Just over two years ago to this day, during finals week of my second year at the University of Southern California, I was introduced to good coffee. At first, it was a purely practical affair: caffeine to keep pushing past the late hours of studying. But over the months since then I have developed an affinity for coffee of all kinds, its morning ritual, and most enjoyably the weekly treks to coffee shops from K Town to Larchmont. Enjoy the list!</h6>
     <h2><strong>Jump to:</strong></h2>
     <ol class="shop-list"> 
+      <li><a class="late-night" href="#BalconyCoffee">Balcony Coffee <span class='open-indicator'>🌝</span></a></li>
+      <li><a class="closes-early" href="#HighlyLikely">Highly Likely</a></li>
       <li><a class="closes-early" href="#PrismCoffee">Prism Coffee</a></li>
       <li><a class="closes-early" href="#DulceCoffee">Dulce Coffee</a></li>
-      <li><a class="closes-early" href="#LoitCafe">Loit Cafe</a></li>
       <li><a class="late-night" href="#AlchemistCoffee">Alchemist Coffee <span class='open-indicator'>🌝</span></a></li>
       <li><a class="closes-early" href="#IgnatiusCafe">Ignatius Cafe</a></li>
       <li><a class="closes-early" href="#WithLoveCafe">With Love Cafe</a></li>
       <li><a class="late-night" href="#YellowHouseCafe">Yellow House Cafe <span class='open-indicator'>🌝</span></a></li>
       <li><a class="late-night" href="#BourgeoisPig">Bourgeois Pig <span class='open-indicator'>🌝</span></a></li>
       <li><a class="late-night" href="#NothingButCoffee">Nothing But Coffee <span class='open-indicator'>🌝</span></a></li>
-      <li><a class="closes-early" href="#BricksAndScones">Bricks &amp; Scones</a></li>
+      <li><a class="closes-early" href="#BricksAndScones">Bricks & Scones</a></li>
     </ol>
     <p class="small-note"> <strong>🌝 = Open late</strong></p><br>
     <hr>
     <!-- Generates all reviews from mixin 'Review'-->
+    <div class="review">
+      <div class="review"><a class="anchor" name="BalconyCoffee" id="BalconyCoffee"></a>
+        <h4 class="shop-name">Balcony Coffee</h4><br>
+        <div class="foodEst">
+          <p><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$5.00</strong> <sup>?</sup></p>
+          <div class="explainer">
+            <p class="explainerText">↳&nbsp; Dutch Latte ($5.00) = $5.00</p>
+          </div>
+        </div>
+        <!-- References coffee.js JSON-->
+        <div class="shopStatus">
+          <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="BalconyCoffeeHours"></span></p>
+          <div class="explainer2">
+            <p>↳ &nbsp;</p>
+            <div class="hoursContainer"><span class="separate Mon">Mon: 9 <span class='light'>AM</span> - 11 <span class='light'>PM</span></span><span class="separate Tue">Tue: 9 <span class='light'>AM</span> - 11 <span class='light'>PM</span></span><span class="separate Wed">Wed: 9 <span class='light'>AM</span> - 11 <span class='light'>PM</span></span><span class="separate Thu">Thu: 9 <span class='light'>AM</span> - 11 <span class='light'>PM</span></span><span class="separate Fri">Fri: 9 <span class='light'>AM</span> - 11 <span class='light'>PM</span></span><span class="separate Sat">Sat: 9 <span class='light'>AM</span> - 11 <span class='light'>PM</span></span><span class="separate Sun">Sun: 9 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span>
+            </div>
+          </div>
+        </div>
+        <p><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>15 minute</strong> drive from campus at 10 AM.</p><br>
+        <div class="gallery-blackbox">
+          <div class="fill"><a data-fancybox="Balcony Coffee" href="../../images/projects/coffee/balcony-hero.jpg"><img src="../../images/projects/coffee/balcony-hero.jpg"></a></div>
+          <div class="gallery-indicator"><a data-fancybox="Balcony Coffee" href="../../images/projects/coffee/balcony-hero.jpg"><i class="far fa-image"></i> View gallery</a></div>
+          <div class="gallery-container flex-grid">
+            <div class="gallery-photo"><a data-fancybox="Balcony Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/YjFwBBQXx8lq77xJifcjuw/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/YjFwBBQXx8lq77xJifcjuw/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Balcony Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/jKyQztlCpv_JI21dooB6AQ/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/jKyQztlCpv_JI21dooB6AQ/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Balcony Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/3J1K0vsZTMlJpWHusCFd8A/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/3J1K0vsZTMlJpWHusCFd8A/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Balcony Coffee" href="https://s3-media3.fl.yelpcdn.com/bphoto/d2SlDvCteSrco74dm1GqEg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/d2SlDvCteSrco74dm1GqEg/o.jpg"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="scorecard">
+        <div class="flex-grid">
+          <div class="score-col">
+            <h2>Best for:</h2>
+            <div>
+              <div class="score-emoji"><span class="All"></span></div>
+              <div class="score-text">
+                <p><strong>All day grind</strong> </p>
+                <p class="small-note">The mystical and serene atmosphere is great for getting in the zone</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dri"></span></div>
+              <div class="score-text">
+                <p><strong>Drinks</strong> </p>
+                <p class="small-note">Good tea selection and specialty lattes</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Ser"></span></div>
+              <div class="score-text">
+                <p><strong>Service</strong> </p>
+                <p class="small-note">Baristas always greet you with a smile and are eager to help!</p>
+              </div>
+            </div>
+          </div>
+          <div class="score-col">
+            <h2>Not great for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Lar"></span></div>
+              <div class="score-text">
+                <p><strong>Large groups</strong></p>
+                <p class="small-note">This place is small... most tables sit two, with one larger table outside</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Foo"></span></div>
+              <div class="score-text">
+                <p><strong>Food</strong></p>
+                <p class="small-note">Mostly cake and other pastries</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dis"></span></div>
+              <div class="score-text">
+                <p><strong>Distance</strong></p>
+                <p class="small-note">Driving time is about 30 minutes if you leave midday, since you're taking city streets through K-town</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="writeup">
+        <h2>Notes on Balcony Coffee</h2>
+        <h6>Balcony Coffee is an absolutely serene experience—granted you sit outside under the tiny greenhouse netting. Although you're just a couple feet from the busy sidewalk and Koreatown street, with buses and trucks rolling by, the thick wall of trees and vines engulfs you in a sort of mystical space.</h6>
+        <h6>The owners are very eager to help and make you feel welcome staying for hours. The lattes are really interesting, especially the seasonal and specialty drinks like the Dutch Latte or "Brad Pitt." The food selection is limited, but there is food elsewhere in the plaza and around the area in K-town.</h6>
+        <h6>Balcony is perfect for some study time where you just need to get off campus and really focus. Turn off your computer and read a book out on the patio with some quality coffee—it doesn't get much better than that. 😎</h6>
+        <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/pm0DZjU.jpg)">
+          <h6><strong>From Mimi: </strong> I loved the service and ambiance at Balcony Coffee. When I got there I ordered their Thai Iced Tea (super, super good) from the very polite baristas. My friend and I spent a full day working in their outdoor area — it's a lovely greenhouse-esque patio that's overflowing with both plants and outlets. It's colorful, it's relaxing, and perfect if you like the idea of studying in a park but can't do without decent wifi and power. 
+
+        There's enough space for you to come with a friend or in a group of four or so, which is more than most L.A. spots can accommodate (I'm looking at you, Alchemist). Based on who was there, Balcony is a good spot for a relaxing study session or a first date 😉... or both!</h6>
+        </div>
+        <div class="recs"> 
+          <h2>Ben's Recommendations</h2>
+          <ol>
+            <li>
+              <div class="img-link">Dutch Latte</div>
+            </li>
+            <li>
+              <div class="img-link">Pumpkin &quot;Pop-tart&quot;</div>
+            </li>
+            <li>
+              <div class="img-link">Brad Pitt (Signature)</div>
+            </li>
+          </ol><br><br>
+        </div>
+      </div>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/balcony-coffee-and-tea-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Balcony Coffee on Yelp </a>
+        <hr><br><br>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review"><a class="anchor" name="HighlyLikely" id="HighlyLikely"></a>
+        <h4 class="shop-name">Highly Likely</h4><br>
+        <div class="foodEst">
+          <p><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$15.00</strong> <sup>?</sup></p>
+          <div class="explainer">
+            <p class="explainerText">↳&nbsp; Highly Burrito ($11.00) + Cortado ($4.00) = $15.00</p>
+          </div>
+        </div>
+        <!-- References coffee.js JSON-->
+        <div class="shopStatus">
+          <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="HighlyLikelyHours"></span></p>
+          <div class="explainer2">
+            <p>↳ &nbsp;</p>
+            <div class="hoursContainer"><span class="separate Mon">Mon: 7 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span><span class="separate Tue">Tue: 7 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span><span class="separate Wed">Wed: 7 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span><span class="separate Thu">Thu: 7 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span><span class="separate Fri">Fri: 7 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span><span class="separate Sat">Sat: 7 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span><span class="separate Sun">Sun: 7 <span class='light'>AM</span> - 8 <span class='light'>PM</span></span>
+            </div>
+          </div>
+        </div>
+        <p><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>28 minute</strong> drive from campus at 10 AM.</p><br>
+        <div class="gallery-blackbox">
+          <div class="fill"><a data-fancybox="Highly Likely" href="../../images/projects/coffee/hl-hero.jpg"><img src="../../images/projects/coffee/hl-hero.jpg"></a></div>
+          <div class="gallery-indicator"><a data-fancybox="Highly Likely" href="../../images/projects/coffee/hl-hero.jpg"><i class="far fa-image"></i> View gallery</a></div>
+          <div class="gallery-container flex-grid">
+            <div class="gallery-photo"><a data-fancybox="Highly Likely" href="https://s3-media3.fl.yelpcdn.com/bphoto/cQJDT6s4LYoJhqB9hq5nqg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/cQJDT6s4LYoJhqB9hq5nqg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Highly Likely" href="https://s3-media3.fl.yelpcdn.com/bphoto/VAtE-qjaN6ax0kSN-3F4lg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/VAtE-qjaN6ax0kSN-3F4lg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Highly Likely" href="https://s3-media3.fl.yelpcdn.com/bphoto/GQNk3U9FkTSDA4-j3OfKQg/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/GQNk3U9FkTSDA4-j3OfKQg/o.jpg"></a></div>
+            <div class="gallery-photo"><a data-fancybox="Highly Likely" href="https://s3-media3.fl.yelpcdn.com/bphoto/nw7sCU48LkPfh8LujuJMoQ/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/nw7sCU48LkPfh8LujuJMoQ/o.jpg"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="scorecard">
+        <div class="flex-grid">
+          <div class="score-col">
+            <h2>Best for:</h2>
+            <div>
+              <div class="score-emoji"><span class="All"></span></div>
+              <div class="score-text">
+                <p><strong>All day grind</strong> </p>
+                <p class="small-note">Comfy seating and plenty of outlets (along walls)</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Foo"></span></div>
+              <div class="score-text">
+                <p><strong>Food</strong> </p>
+                <p class="small-note">Better than most good restaurants, plus generous portions</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dis"></span></div>
+              <div class="score-text">
+                <p><strong>Distance</strong> </p>
+                <p class="small-note">Straightforward drive from USC + easy street parking</p>
+              </div>
+            </div>
+            <div>
+              <div class="score-emoji"><span class="Dri"></span></div>
+              <div class="score-text">
+                <p><strong>Drinks</strong> </p>
+                <p class="small-note">Try the seasonal specials, or stick to solid classics like a cortado</p>
+              </div>
+            </div>
+          </div>
+          <div class="score-col">
+            <h2>Not great for:</h2>
+            <div>
+              <div class="score-emoji"><span class="Wif"></span></div>
+              <div class="score-text">
+                <p><strong>Wifi</strong></p>
+                <p class="small-note">It's decent, but <strong>turned off</strong> all weekend!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="writeup">
+        <h2>Notes on Highly Likely</h2>
+        <h6>An unexpected hipster-hideaway on Jefferson Street ten minutes west of campus, Highly Likely is a beautiful spot to enjoy coffee, work, and conversation. With a large food menu of healthy breakfast and lunch option—plus a fine array of coffee and tea—this shop is great for all-day work sessions.</h6>
+        <h6>The warehouse-like façade of the building is opened wide on warm days, spilling in lots of natural light into the space. Large booth tables with comfortable leather couches make for good group hangouts. Plus, there are plenty of outlets underneath the couches!</h6>
+        <h6>There are few downsides to Highly Likely, but a notable one if you're interested in opening up your laptop is the wifi: HL turns off their wifi on the weekends! Hey, here's to more person-to-person conversation and book-reading... but if you're going with the intention of work, avoid the weekends.</h6>
+        <div class="recs"> 
+          <h2>Ben's Recommendations</h2>
+          <ol>
+            <li>
+              <div class="img-link">Cortado</div>
+            </li>
+            <li>
+              <div class="img-link">Highly Burrito</div>
+            </li>
+            <li>
+              <div class="img-link">Iced Palmette</div>
+            </li>
+          </ol><br><br>
+        </div>
+      </div>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/highly-likely-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Highly Likely on Yelp </a>
+        <hr><br><br>
+      </div>
+    </div>
     <div class="review">
       <div class="review"><a class="anchor" name="PrismCoffee" id="PrismCoffee"></a>
         <h4 class="shop-name">Prism Coffee</h4><br>
@@ -104,6 +320,7 @@
             <p class="explainerText">↳&nbsp; waffle ($5.00) + spanish latte ($6.00) = $11.00</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="PrismCoffeeHours"></span></p>
           <div class="explainer2">
@@ -207,7 +424,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/prism-coffee-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Prism Coffee on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/prism-coffee-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Prism Coffee on Yelp </a>
         <hr><br><br>
       </div>
     </div>
@@ -220,6 +437,7 @@
             <p class="explainerText">↳&nbsp; breakfast burrito ($8.00) + drip coffee ($3.50) = $11.50</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="DulceCoffeeHours"></span></p>
           <div class="explainer2">
@@ -309,7 +527,7 @@
       <div class="writeup">
         <h2>Notes on Dulce Coffee</h2>
         <h6>Located in the USC Village, Dulce’s combination of accessibility and quality coffee is hard to beat. Most people around campus will rave about Dulce’s Matcha drinks, but not being a big fan of Matcha, I’ve really enjoyed their plain-old drip coffees. Their lattes and teas are also very good and the service friendly.</h6>
-        <h6>In addition to good drinks, Dulce also makes a <i>killer</i> breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes.</h6>
+        <h6>In addition to good drinks, Dulce also makes a <i>phenomenal</i> breakfast burrito and a few really good sandwiches. Don’t sleep on their food… it’s a great spot for breakfast and lunch and comes out in less than 10 minutes.</h6>
         <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/DfjZKlH.jpg)">
           <h6><strong>From Abigail Africa: </strong> Dulce is overall a mixed bag. It produces great food and coffee, but you should never expect to settle there unless you're exceptionally prepared to deal with poor wifi and a tough selection of outlets. Lighting is great, but noise is high, so I go there to do remote work, but not for group projects. Outdoors is a lovely experience in the first months of fall or the bulk of spring. It’s quieter than inside, but there are variables like harsh sun and no power.</h6>
         </div>
@@ -328,108 +546,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/dulce-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Dulce Coffee on Yelp </a>
-        <hr><br><br>
-      </div>
-    </div>
-    <div class="review">
-      <div class="review"><a class="anchor" name="LoitCafe" id="LoitCafe"></a>
-        <h4 class="shop-name">Loit Cafe</h4><br>
-        <div class="foodEst">
-          <p><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$14.00</strong> <sup>?</sup></p>
-          <div class="explainer">
-            <p class="explainerText">↳&nbsp; avocado toast ($8.00) + charcoal latte ($6.00) = $14.00</p>
-          </div>
-        </div>
-        <div class="shopStatus">
-          <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="LoitCafeHours"></span></p>
-          <div class="explainer2">
-            <p>↳ &nbsp;</p>
-            <div class="hoursContainer"><span class="separate Mon">Mon: 7 <span class='light'>AM</span> - 7 <span class='light'>PM</span></span><span class="separate Tue">Tue: 7 <span class='light'>AM</span> - 7 <span class='light'>PM</span></span><span class="separate Wed">Wed: 7 <span class='light'>AM</span> - 7 <span class='light'>PM</span></span><span class="separate Thu">Thu: 7 <span class='light'>AM</span> - 7 <span class='light'>PM</span></span><span class="separate Fri">Fri: 7 <span class='light'>AM</span> - 7 <span class='light'>PM</span></span><span class="separate Sat">Sat: 7 <span class='light'>AM</span> - 7 <span class='light'>PM</span></span><span class="separate Sun">Sun: 8 <span class='light'>AM</span> - 7 <span class='light'>PM</span></span>
-            </div>
-          </div>
-        </div>
-        <p><span class='meta-emoji'>&nbsp;🚙 &nbsp;</span>It's typically a <strong>10 minute</strong> drive from campus at 10 AM.</p><br>
-        <div class="gallery-blackbox">
-          <div class="fill"><a data-fancybox="Loit Cafe" href="../../images/projects/coffee/loit-hero.jpg"><img src="../../images/projects/coffee/loit-hero.jpg"></a></div>
-          <div class="gallery-indicator"><a data-fancybox="Loit Cafe" href="../../images/projects/coffee/loit-hero.jpg"><i class="far fa-image"></i> View gallery</a></div>
-          <div class="gallery-container flex-grid">
-            <div class="gallery-photo"><a data-fancybox="Loit Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/JcEFlZjEeVOQqInd5WhDMQ/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/JcEFlZjEeVOQqInd5WhDMQ/o.jpg"></a></div>
-            <div class="gallery-photo"><a data-fancybox="Loit Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/CQuVeiUptc9ToEQEDvH-LQ/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/CQuVeiUptc9ToEQEDvH-LQ/o.jpg"></a></div>
-            <div class="gallery-photo"><a data-fancybox="Loit Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/hFaTr-zQyv5TTWu6MeHp1Q/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/hFaTr-zQyv5TTWu6MeHp1Q/o.jpg"></a></div>
-            <div class="gallery-photo"><a data-fancybox="Loit Cafe" href="https://s3-media3.fl.yelpcdn.com/bphoto/rIXXSGDlhXNQQtjJGziHzA/o.jpg"><img src="https://s3-media3.fl.yelpcdn.com/bphoto/rIXXSGDlhXNQQtjJGziHzA/o.jpg"></a></div>
-          </div>
-        </div>
-      </div>
-      <div class="scorecard">
-        <div class="flex-grid">
-          <div class="score-col">
-            <h2>Best for:</h2>
-            <div>
-              <div class="score-emoji"><span class="Dri"></span></div>
-              <div class="score-text">
-                <p><strong>Drinks</strong> </p>
-                <p class="small-note">Charcoal lattes, pour-over</p>
-              </div>
-            </div>
-            <div>
-              <div class="score-emoji"><span class="Foo"></span></div>
-              <div class="score-text">
-                <p><strong>Food</strong> </p>
-                <p class="small-note">Surpisingly good small dishes!</p>
-              </div>
-            </div>
-            <div>
-              <div class="score-emoji"><span class="All"></span></div>
-              <div class="score-text">
-                <p><strong>All day grind</strong> </p>
-                <p class="small-note">You should make a day out of Loit</p>
-              </div>
-            </div>
-            <div>
-              <div class="score-emoji"><span class="Lar"></span></div>
-              <div class="score-text">
-                <p><strong>Large groups</strong> </p>
-                <p class="small-note">Large, open space with tablespace</p>
-              </div>
-            </div>
-          </div>
-          <div class="score-col">
-            <h2>Not great for:</h2>
-            <div>
-              <div class="score-emoji"><span class="Wif"></span></div>
-              <div class="score-text">
-                <p><strong>Wifi</strong></p>
-                <p class="small-note">It is pretty spotty</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="writeup">
-        <h2>Notes on Loit Cafe</h2>
-        <h6>You can find Loit Cafe in the middle of Downtown Los Angeles, on the bustling corner of Olympic and Hill. The shop’s aesthetic matches the sleek, modern vibe that the rest of downtown embraces, but no function is sacrificed for form here. At Loit, you’ll find one large, open space with long marble tables in the center, beautiful couches along the windows, and smaller round tables sprinkled between.</h6>
-        <h6>Best known for their <a href='https://www.instagram.com/p/Bjqn2IdhLzP/'>Instagram-friendly charcoal lattes</a>, Loit also has really good pour over, cortados, and fruit drinks like the <i>Sunset.</i> For food, Loit offers the standard array of pastries, but also some delicious, larger items like avocado toast or quiche. </h6>
-        <h6>Overall, Loit is a great spot for group work with ample seating space, outlets, and consistent wifi, and can keep you going for hours on end with great food and coffee.</h6>
-        <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/iiRfBbk.jpg)">
-          <h6><strong>From Landon Brand: </strong> I’d say this is one of the best spots downtown for working—tons of space and outlets, and since it serves food you can keep going even if you get hungry. That said, it is pricy, especially if you factor in parking/transportation to downtown. Maybe not worth it as an everyday go-to, but it’s hard to beat their workspace or coffee quality.</h6>
-        </div>
-        <div class="recs"> 
-          <h2>Ben's Recommendations</h2>
-          <ol>
-            <li>
-              <div class="img-link">Charcoal latte</div>
-            </li>
-            <li>
-              <div class="img-link">Avocado toast</div>
-            </li>
-            <li>
-              <div class="img-link">Ethiopia pour-over</div>
-            </li>
-          </ol><br><br>
-        </div>
-      </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/loit-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Loit Cafe on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/dulce-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Dulce Coffee on Yelp </a>
         <hr><br><br>
       </div>
     </div>
@@ -442,6 +559,7 @@
             <p class="explainerText">↳&nbsp; egg bat sandwich ($12.00) + single origin (hario) ($5.50) = $17.50</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="AlchemistCoffeeHours"></span></p>
           <div class="explainer2">
@@ -531,7 +649,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/alchemist-coffee-project-los-angeles-2" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Alchemist Coffee on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/alchemist-coffee-project-los-angeles-2" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Alchemist Coffee on Yelp </a>
         <hr><br><br>
       </div>
     </div>
@@ -541,9 +659,10 @@
         <div class="foodEst">
           <p><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$3.50</strong> <sup>?</sup></p>
           <div class="explainer">
-            <p class="explainerText">↳&nbsp; none ($0.00) + lemon tea ($3.50) = $3.50</p>
+            <p class="explainerText">↳&nbsp; lemon tea ($3.50) = $3.50</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="IgnatiusCafeHours"></span></p>
           <div class="explainer2">
@@ -627,7 +746,7 @@
         <h2>Notes on Ignatius Cafe</h2>
         <h6>This might be the only Korean Church that serves coffee and tea out of a cottage. If not, it’s probably still the <i>best</i> coffee and tea served out of a Korean Church. Ignatius Cafe is a tiny shop with outdoor garden seating, the perfect serene escape from the hustle and bustle on campus. And it’s walking distance (right near Ralph’s, north of campus)!</h6>
         <h6>The wifi is spotty, so I’d recommend bringing a friend for a nice chat while you enjoy delicious lemon tea. Come here to unwind—the fresh air and peaceful garden is rare in Los Angeles. </h6>
-        <h6>Nothing is more than a few dollars here, and they only serve a few things in total: espresso; americano; café latte; and lemon tea.</h6>
+        <h6>Nothing is more than a few dollars here, and they only serve a few things in total: espresso, americano, café latte, and lemon tea.</h6>
         <h6><i>They only take cash, so make sure to bring a couple bucks with you. </i></h6>
         <div class="writeup-guest"><img style="background-image: url(https://i.imgur.com/sHINpaJ.jpg)">
           <h6><strong>From Jenny Zhang: </strong> There are two ideals at Ignatius. One: bring a friend you haven’t seen in a while to catch up and reflect on life. Sip iced tea across from each other at a small round table with an umbrella, especially at 3 in the afternoon when the sun is warm. Two: bring a novel about love and fate in a small town. Admire the warmth of the yellow interiors over a latte. Smile sporadically at the friendly korean owners at the counter. Write a poem.</h6>
@@ -641,7 +760,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/Ignatius-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Ignatius Cafe on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/Ignatius-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Ignatius Cafe on Yelp </a>
         <hr><br><br>
       </div>
     </div>
@@ -654,6 +773,7 @@
             <p class="explainerText">↳&nbsp; cubano ($8.50) + coffee ($2.50) = $11.00</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="WithLoveCafeHours"></span></p>
           <div class="explainer2">
@@ -735,7 +855,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/with-love-market-and-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View With Love Cafe on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/with-love-market-and-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; With Love Cafe on Yelp </a>
         <hr><br><br>
       </div>
     </div>
@@ -748,6 +868,7 @@
             <p class="explainerText">↳&nbsp; kimchi pasta ($14.95) + green tea ($4.50) = $19.45</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="YellowHouseCafeHours"></span></p>
           <div class="explainer2">
@@ -821,7 +942,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/Yellow-house-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Yellow House Cafe on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/Yellow-house-cafe-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Yellow House Cafe on Yelp </a>
         <hr><br><br>
       </div>
     </div>
@@ -834,6 +955,7 @@
             <p class="explainerText">↳&nbsp; panini ($10.00) + espresso ($3.21) = $13.21</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="BourgeoisPigHours"></span></p>
           <div class="explainer2">
@@ -905,7 +1027,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/bourgeois-pig-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Bourgeois Pig on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/bourgeois-pig-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Bourgeois Pig on Yelp </a>
         <hr><br><br>
       </div>
     </div>
@@ -918,6 +1040,7 @@
             <p class="explainerText">↳&nbsp; waffle ($5.00) + pour-over ($4.50) = $9.50</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="NothingButCoffeeHours"></span></p>
           <div class="explainer2">
@@ -989,19 +1112,20 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/nothing-but-coffee-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Nothing But Coffee on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/nothing-but-coffee-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Nothing But Coffee on Yelp </a>
         <hr><br><br>
       </div>
     </div>
     <div class="review">
       <div class="review"><a class="anchor" name="BricksAndScones" id="BricksAndScones"></a>
-        <h4 class="shop-name">Bricks &amp; Scones</h4><br>
+        <h4 class="shop-name">Bricks & Scones</h4><br>
         <div class="foodEst">
           <p><span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$13.21</strong> <sup>?</sup></p>
           <div class="explainer">
             <p class="explainerText">↳&nbsp; scone ($10.00) + arnold palmer ($3.21) = $13.21</p>
           </div>
         </div>
+        <!-- References coffee.js JSON-->
         <div class="shopStatus">
           <p><span class='meta-emoji'>&nbsp;🗓&nbsp;</span><span id="BricksAndSconesHours"></span></p>
           <div class="explainer2">
@@ -1068,7 +1192,7 @@
         </div>
       </div>
       <div class="writeup">
-        <h2>Notes on Bricks &amp; Scones</h2>
+        <h2>Notes on Bricks & Scones</h2>
         <h6>Bricks & Scones is situated in Larchmont, a beautiful neighborhood with plentiful shops and eating options for a nice lunch on a sunny day. The cafe itself is gigantic, taking up all of the first and second floors of what looks like an old home. Downstairs, there are long tables for groups and upstairs, collections of odd-shaped tables, desks, and couches.</h6>
         <h6>As the shop’s name suggests, the scones and other pastries at Bricks & Scones are quite good. There are plenty of food options here, but I’d recommend walking down the street to a <a target='_blank' href='https://www.yelp.com/biz/larchmont-village-wine-spirits-and-cheese-los-angeles'>small deli</a> with some of the freshest, most delicious sandwiches. Drink-wise, you can’t go wrong with their multitude of iced coffees or cappuccino. </h6>
         <h6>Traffic can really make Bricks & Scones feel far from campus, so plan your trip around avoiding rush hour.</h6>
@@ -1087,7 +1211,7 @@
           </ol><br><br>
         </div>
       </div>
-      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/bricks-and-scones-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; View Bricks &amp; Scones on Yelp </a>
+      <div class="proj-button-container"><a class="proj-button" href="https://www.yelp.com/biz/bricks-and-scones-los-angeles" target="_blank"><i class="fab fa-yelp"></i>&nbsp; Bricks & Scones on Yelp </a>
         <hr><br><br>
       </div>
     </div><br><br><a name="glossary"></a>
@@ -1102,9 +1226,7 @@
 <div class="container project"><br><br>
   <hr><br>
   <h1>Contact</h1>
-  <h6>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="https://www.linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
-  </h6>
-  <h6 class="italic">(Mail goes to bstanfie@usc.edu)</h6><br>
+  <h6 class="italic">(Mail goes to bstanfie@usc.edu)</h6>
   <form accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST">
     <div class="label-input-group">
       <label for="fname">NAME</label>
@@ -1121,8 +1243,20 @@
   </form>
 </div>
 <!-- footer--><br><br>
-<footer>
-  <div class="grid-bg grid long"></div>
+<footer style="position: relative; height: auto; background-color: #333;"><br>
+  <div class="container">
+    <div class="flex-grid bi-directional">
+      <div class="footer-text white">
+        <h2>Blog posts</h2><a href="deploy.html">Web Deployment Tutorial</a><a href="coffee.html">Best Coffeeshops for Work in Los Angeles</a><a href="foodforthought.html">Food for Thought Survey</a><a href="#experiences">Experiences</a>
+        <hr><br><br><a href="https://github.com/bstanfield/benstanfield.io/tree/master"><i class="fab fa-github"></i> View Github Repo </a>
+      </div>
+      <div class="footer-text white">
+        <h2>About Ben</h2><a href="images/resume-update-comp2.pdf">View Resumé </a><a class="os" target="_blank" href="https://projectwren.com" title="&lt;p style='font-family: Arial; font-size: 12px; line-height: 25px;'&gt;Opens new webpage &lt;/p&gt;">Project Wren (S19) <i class="fas fa-location-arrow offsite"></i></a><a class="os" target="_blank" href="https://www.linkedin.com/in/meetben/" title="&lt;p style='font-family: Arial; font-size: 12px; line-height: 25px;'&gt;Opens new webpage &lt;/p&gt;">LinkedIn <i class="fas fa-location-arrow offsite"></i></a><a class="os" target="_blank" href="https://iovine-young.usc.edu/thepulse/Senior-Spotlight-Ben-Stanfield_184.html" title="&lt;p style='font-family: Arial; font-size: 12px; line-height: 25px;'&gt;Opens new webpage &lt;/p&gt;">Academy Spotlight <i class="fas fa-location-arrow offsite"></i></a>
+        <hr><br><br>
+      </div>
+    </div><br><br><br><br>
+    <div class="wave"><a style="font-size: 50px;" href="https://unicode.org/consortium/adopted-characters.html#b270C">✌️</a></div>
+  </div><br><br>
 </footer><script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
 <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
 <script>
@@ -1142,6 +1276,15 @@
       allowHTML: true,
       distance: 30,
       trigger: 'click mouseenter',
+  })
+  
+  tippy('.os', {
+      theme: 'os',
+      animation: 'fade',
+      animateFill: false,
+      delay: [1000, 0],
+      allowHTML: true,
+      placement: 'right'
   })
   
   tippy.browser.onUserInputChange = type => {

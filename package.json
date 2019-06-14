@@ -7,7 +7,9 @@
   "repository": "",
   "scripts": {
     "start": "brunch watch --server",
-    "build": "brunch build --production"
+    "build": "brunch build --production",
+    "now-dev": "brunch watch --server",
+    "now-build": "brunch build"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2",
@@ -33,6 +35,7 @@
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-highlightjs": "^3.0.0",
     "moment": "^2.23.0",
+    "pug-runtime": "^2.0.4",
     "twilio": "^3.28.0"
   }
 }

@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<!-- TEST-->
+<!-- NAV LINKS-->
+<!-- PROJECT CARDS-->
 <!-- COFFEE SHOPS--><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="/app.css">
 <script src="/vendor.js"></script>
 <script src="/app.js"></script>
-<script   src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
+<script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<link rel="stylesheet" href="markdown.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>require('initialize');</script>
+<script>require('js/primary.js');</script>
+<script>require('js/special-projects.js');</script>
+<script>require('js/coffee.js');</script>
+<script>require('js/api.js');</script>
 <link rel="icon" type="image/png" href="../images/benmoji-small.png" />
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i|Source+Serif+Pro:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://benstanfield.io">
 <meta property="og:site_name" content="benstanfield.io">
+<title>Ben Stanfield - Co-founder @ Project Wren</title>
+<meta name="description" content="Ben Stanfield is a recent graduate from the Iovine & Young Academy and co-founder of Project Wren. Read his blog posts...">
 <meta name="twitter:domain" value="benstanfield.io" />
 <meta name="twitter:title" value="Ben Stanfield" /><meta name="twitter:image" content="https://i.imgur.com/adqY6pe.png" />
-<meta property="og:image" content="https://i.imgur.com/adqY6pe.png"><meta name="twitter:description" value="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper.">
-<meta property="og:description" content="Hi! I’m Ben Stanfield, a senior finishing up at the Iovine and Young Academy and working on a company called Skipper."> <meta name="twitter:title" value="Ben Stanfield" />
+<meta property="og:image" content="https://i.imgur.com/adqY6pe.png"><meta name="twitter:description" value="Ben Stanfield is a recent graduate from the Iovine & Young Academy and co-founder of Project Wren.">
+<meta property="og:description" content="Ben Stanfield is a recent graduate from the Iovine & Young Academy and co-founder of Project Wren."> <meta name="twitter:title" value="Ben Stanfield" />
 <meta property="og:title" content="Ben Stanfield">
 </head>
 <title>Ben Stanfield</title>
@@ -36,8 +41,8 @@
   <div class="nav-content">
     <div class="nav-text">  
       <div class="left" id="root"><a href='/'><span id='homeRoot'>BEN</span></a> / <a href=''><span class='projectRoot'></span></a></div>
-      <div class="right nav-links"><a class="mobile-hide" href="/">Home</a><a class="mobile-hide">• </a><div class="dropdown mobile-hide">
-<a class='dropbtn' aria-haspopup="true">Blog posts <span class='drpdwn'>▾</span></a>
+      <div class="right nav-links"><div class="dropdown">
+<a class='dropbtn' aria-haspopup="true">View posts <span class='drpdwn'>▾</span></a>
 <div class="dropdown-content">
 <div class="dropdown-link-container">
 <a class='dropdown-link' href="/projects/deploy.html">Web Deployment Tutorial</a>
@@ -52,7 +57,7 @@
 <a class='dropdown-link' href="/#experiences">Experiences</a>
 </div>
 </div>
-</div><a class="mobile-show" href="/coffee.html">Coffee Blog</a><a href="/#experiences">Experiences</a>
+</div><a class="mobile-hide" href="/projects/deploy.html"><strong>New:</strong> Deploy to the Web!</a>
       </div>
     </div>
   </div>
@@ -61,9 +66,7 @@
 <div class="container project"><br><br>
   <hr><br>
   <h1>Contact</h1>
-  <h6>If you'd like to work with me or learn more, please send me an email through the form below or find me on <a class="orange-link" target="_blank" href="https://www.linkedin.com/in/meetben" title="&quot;Join my professional network 🤓&quot;">LinkedIn</a>. Thanks for stopping by!
-  </h6>
-  <h6 class="italic">(Mail goes to bstanfie@usc.edu)</h6><br>
+  <h6 class="italic">(Mail goes to bstanfie@usc.edu)</h6>
   <form accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST">
     <div class="label-input-group">
       <label for="fname">NAME</label>
@@ -80,8 +83,20 @@
   </form>
 </div>
 <!-- footer--><br><br>
-<footer>
-  <div class="grid-bg grid long"></div>
+<footer style="position: relative; height: auto; background-color: #333;"><br>
+  <div class="container">
+    <div class="flex-grid bi-directional">
+      <div class="footer-text white">
+        <h2>Blog posts</h2><a href="deploy.html">Web Deployment Tutorial</a><a href="coffee.html">Best Coffeeshops for Work in Los Angeles</a><a href="foodforthought.html">Food for Thought Survey</a><a href="#experiences">Experiences</a>
+        <hr><br><br><a href="https://github.com/bstanfield/benstanfield.io/tree/master"><i class="fab fa-github"></i> View Github Repo </a>
+      </div>
+      <div class="footer-text white">
+        <h2>About Ben</h2><a href="images/resume-update-comp2.pdf">View Resumé </a><a class="os" target="_blank" href="https://projectwren.com" title="&lt;p style='font-family: Arial; font-size: 12px; line-height: 25px;'&gt;Opens new webpage &lt;/p&gt;">Project Wren (S19) <i class="fas fa-location-arrow offsite"></i></a><a class="os" target="_blank" href="https://www.linkedin.com/in/meetben/" title="&lt;p style='font-family: Arial; font-size: 12px; line-height: 25px;'&gt;Opens new webpage &lt;/p&gt;">LinkedIn <i class="fas fa-location-arrow offsite"></i></a><a class="os" target="_blank" href="https://iovine-young.usc.edu/thepulse/Senior-Spotlight-Ben-Stanfield_184.html" title="&lt;p style='font-family: Arial; font-size: 12px; line-height: 25px;'&gt;Opens new webpage &lt;/p&gt;">Academy Spotlight <i class="fas fa-location-arrow offsite"></i></a>
+        <hr><br><br>
+      </div>
+    </div><br><br><br><br>
+    <div class="wave"><a style="font-size: 50px;" href="https://unicode.org/consortium/adopted-characters.html#b270C">✌️</a></div>
+  </div><br><br>
 </footer><script async src="https://cdn.simpleanalytics.io/hello.js"></script> 
 <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
 <script>
@@ -101,6 +116,15 @@
       allowHTML: true,
       distance: 30,
       trigger: 'click mouseenter',
+  })
+  
+  tippy('.os', {
+      theme: 'os',
+      animation: 'fade',
+      animateFill: false,
+      delay: [1000, 0],
+      allowHTML: true,
+      placement: 'right'
   })
   
   tippy.browser.onUserInputChange = type => {

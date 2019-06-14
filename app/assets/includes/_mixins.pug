@@ -1,6 +1,17 @@
 //- INCLUDES > MIXINS
+mixin index_intro()
+  .intro 
+    +index_timer()
+    h1#one #[span(class='emoji')]
+    p#rebelReplace.
+      I’m Ben Stanfield, a recent graduate of the #[+link('http://iovine-young.usc.edu', 'Iovine & Young Academy', "Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen' 🎧")], now working full-time on a company called  #[+link('https://projectwren.com', 'Wren', 'Helps individuals calculate and offset their carbon footprint! 🌍')].
+  br
+  br
 
-//- simpletons
+mixin index_timer()
+  h1 #[span(id='time-leadup') WHAT I MIGHT BE UP TO AT #[span(id='time')]]
+    
+
 mixin img(path, params)
   .img-container
     if params
@@ -14,6 +25,9 @@ mixin img(path, params)
         img(class='primary-img no-boxshadow small-img left-align' src=path)
     else
       img(class='primary-img full-img' src=path)
+
+mixin i(contentToItalicize)
+  span(style='font-family: Lava Italic')!=contentToItalicize
 //-
 mixin project(color, title, description, img)
   .project-card.top(style="background-color:" + color + ";")
@@ -40,21 +54,10 @@ mixin more()
 mixin read()
   p.more Read article <span>&rarr;</span>
 
-mixin 3card(url, emoji, title, description, target)
-  a(target=target href=url).thirds-col.card
-    h2 <span class='emo'>#{emoji}</span> #{title}
-    p #{description}
-    +more()
-
 mixin contact()
   h1 Contact
-  h6
-    | If you'd like to work with me or learn more, please send me an email through the form below or find me on 
-    +link('https://www.linkedin.com/in/meetben', 'LinkedIn', '"Join my professional network 🤓"')
-    | . Thanks for stopping by!
   h6.italic (Mail goes to bstanfie@usc.edu)
 
-  br
   form(accept-charset="UTF-8" action="https://formkeep.com/f/caa230f30e8d" method="POST")
     .label-input-group
       label(for='fname') NAME
@@ -106,17 +109,24 @@ mixin reviewGallery(meta, hours, distance, arr)
 
   .review
     - let anchorName = meta.shopName.replace(/\s/g, '');
-    - anchorName = anchorName.replace(/&/g, 'And');
+    - anchorName = anchorName.replace(/&/g, 'And').replace('<istyle="color:red"class="fasfa-exclamation-circle"></i>', '');
     a.anchor(name=anchorName id=anchorName)
-    h4.shop-name #{meta.shopName}
+    h4.shop-name !{meta.shopName}
     br
-    if meta.food
+    if meta.food[1]
       - const total = (meta.food[1] + meta.drink[1]).toFixed(2);
       .foodEst
         p <span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$#{total}</strong> <sup>?</sup>
         .explainer
           p.explainerText ↳&nbsp; #{meta.food[0]} ($#{meta.food[1].toFixed(2)}) + #{meta.drink[0]} ($#{meta.drink[1].toFixed(2)}) = $#{total}
+    else
+      .foodEst
+        p <span class='meta-emoji'>&nbsp;💸&nbsp;</span> Expect to spend about <strong>$#{meta.drink[1].toFixed(2)}</strong> <sup>?</sup>
+        .explainer
+          p.explainerText ↳&nbsp; #{meta.drink[0]} ($#{meta.drink[1].toFixed(2)}) = $#{meta.drink[1].toFixed(2)}
 
+
+    // References coffee.js JSON
     if hours
       - const open = hours.open;
       - const closed = hours.close;
@@ -127,7 +137,9 @@ mixin reviewGallery(meta, hours, distance, arr)
           p ↳ &nbsp;
           .hoursContainer
             +fullHours(hours)
-
+    else
+      .shopStatus
+        p <span class='meta-emoji'>&nbsp;<i style="color: red" class="fas fa-exclamation-circle"></i>&nbsp;</span> This shop is #[span(style='color: red; font-weight: bold;') closed permanently.]
 
     
     if distance
@@ -161,8 +173,8 @@ mixin scorecard(goodObj, badObj)
             .score-emoji
               span(class=pair[0].slice(0,3))
             .score-text
-              p <strong>#{pair[0]}</strong> 
-              p.small-note #{pair[1]}
+              p <strong>!{pair[0]}</strong> 
+              p.small-note !{pair[1]}
       .score-col
         h2 Not great for:
         each pair in Object.entries(badObj)
@@ -170,8 +182,8 @@ mixin scorecard(goodObj, badObj)
             .score-emoji
               span(class=pair[0].slice(0,3))
             .score-text
-              p <strong>#{pair[0]}</strong>
-              p.small-note #{pair[1]}
+              p <strong>!{pair[0]}</strong>
+              p.small-note !{pair[1]}
 
 
 mixin recs(itemObjs)
@@ -186,16 +198,16 @@ mixin recs(itemObjs)
 mixin reviewNotes(meta, notes, guestNotes, recs)
   - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
   .writeup
-    h2 Notes on #{meta.shopName}
+    h2 Notes on !{meta.shopName}
     each par in notes
       h6!= par
     if guestNotes
       .writeup-guest
         img(style='background-image: url(' + guestNotes.img + ')')
-        h6 <strong>From #{guestNotes.name}</strong> #{guestNotes.notes}
+        h6 <strong>From !{guestNotes.name}</strong> !{guestNotes.notes}
     +recs(recs)
   .proj-button-container
-    a(href=shopUrl class='proj-button' target='_blank') <i class="fab fa-yelp"></i>&nbsp; View #{meta.shopName} on Yelp 
+    a(href=shopUrl class='proj-button' target='_blank') <i class="fab fa-yelp"></i>&nbsp; !{meta.shopName} on Yelp 
     hr
     br
     br
@@ -241,13 +253,13 @@ mixin overview(shops)
       - const today = getDate(day);
       - const closing = shop[0].hours[today].close;
       - let anchorName = shop[0].meta.shopName.replace(/\s/g, '');
-      - anchorName = anchorName.replace(/&/g, 'And');
+      - anchorName = anchorName.replace(/&/g, 'And').replace('<istyle="color:red"class="fasfa-exclamation-circle"></i>', '');
       if (closing > 21)
         li
-          a(href='#' + anchorName class='late-night') #{shop[0].meta.shopName} <span class='open-indicator'>🌝</span>
+          a(href='#' + anchorName class='late-night') !{shop[0].meta.shopName} <span class='open-indicator'>🌝</span>
       else
         li
-          a(href='#' + anchorName class='closes-early') #{shop[0].meta.shopName}
+          a(href='#' + anchorName class='closes-early') !{shop[0].meta.shopName}
   
   p.small-note 
     strong 🌝 = Open late
@@ -296,12 +308,6 @@ mixin fullHours(hours)
     else 
       span.separate(class=day.day) #{day.day}: #{sto} <span class='light'>AM</span> to #{stc} <span class='light'>AM</span>
 
-//- {
-//-   class: '',
-//-   link: './deploy.html',
-//-   text: '&larr; Back to step one'
-//- }
-
 mixin toggle(toggleObj)
   if toggleObj.checked
     <label class="switch">
@@ -327,15 +333,62 @@ mixin buttonGrid(btnArr)
     //- a(href='./transfer.html').btn.btn-inverted.
     //-   Transfer a domain to Zeit
 
+mixin letter(loc)
+  //- if (loc.indexOf('?secret=' !== -1))
+  h1!=loc
+
 mixin farewell()
   br
   br
   br
   br
   .center
-    .big-emoji.wave 👋
+    .big-emoji 👋
     h1 That's it!
     h6 Thanks for stopping by! If you'd like to leave your thoughts on this post, shoot me a message below! Always down to grab coffee if you're in LA 😁 ☕ ️
     h6 
       a.orange(href='/') &larr; Go home.
   br
+
+mixin toast()
+  .toast
+    .toast-x
+        i(class="fas fa-times") 
+    a(href='/projects/deploy.html')
+        .emoji-toast 📬
+        p Check out my new article, <strong>"Deploying to the web with Zeit Now!"</strong>
+
+mixin anchor(name)
+  a.anchor(name=name id=name)
+
+mixin index_blocks(projects)
+  .flex-grid.thirds
+      each project in projects
+        +index_card(project)
+
+mixin 3card(url, emoji, title, description, target)
+  a(target=target href=url).thirds-col.card
+    h2 <span class='emo'>#{emoji}</span> #{title}
+    p #{description}
+    +more()
+
+mixin index_card(project)
+  - const {target, url, emoji, title, description} = project;
+  a(target=target href=url).thirds-col.card
+    h2 <span class='emo'>#{emoji}</span> #{title}
+    p #{description}
+    +more()
+
+mixin resume(filePath)
+  a(target='_blank' href=filePath id='whisper')
+      p Psst, here's my resumé!
+
+mixin chapter(number, name)
+  .full-container
+    .chapter-container
+      .chapter-emoji  
+        h1 📚
+      .chapter-text
+        h1.chapter-uppercase Chapter #{number}: 
+        h1.chapter-name !{name}
+

@@ -1,0 +1,21 @@
+extends plain-layout
+
+block variables
+  - const metapic = "";
+
+block head
+    - var projectName = "ENVELOPE";
+    title Envelope (Sealed)
+
+block content
+    include includes/nav-projects
+    .container(style="margin-top: 120px;")
+        .envelope-container
+            h1 💌
+            h1 Open your envelope!
+            p Welcome! If you've found this page, you're a friend I really appreciate. Open your envelope with the #[+i("secret code")] I sent you.
+            .input-container
+                input(type="password" id="password" placeholder="Enter secret code")
+
+            .button-clicker
+                input(class="orangebutton" type="button" value="Login")
