@@ -250,6 +250,7 @@ mixin overview(shops)
           }
           return today;
         }
+
       - const today = getDate(day);
       - const closing = shop[0].hours[today].close;
       - let anchorName = shop[0].meta.shopName.replace(/\s/g, '');
@@ -391,4 +392,14 @@ mixin chapter(number, name)
       .chapter-text
         h1.chapter-uppercase Chapter #{number}: 
         h1.chapter-name !{name}
+
+mixin snowflakes(numberOfFlakes)
+  - let n = numberOfFlakes;
+  while n > 1
+    - let rand = Math.floor((Math.random()*5) + 1);
+    - let opacity = Math.floor((Math.random()*100) + 1);
+    - console.log('rand: ', opacity); 
+    .snowflake
+      img(src=`../images/projects/holidays/snowflake-${rand}.svg` style=`opacity: ${opacity}%;`)
+    - n--;
 
