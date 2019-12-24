@@ -1015,7 +1015,7 @@ img#footerla {
 }
 
 .snowflake img {
-  width: 20px;
+  width: 15px;
   height: auto;
   background-color: transparent;
 }
@@ -1029,7 +1029,7 @@ img#footerla {
 .snowflake:nth-of-type(1) {
   left: 10%;
   -webkit-animation-delay: 1s, 1s;
-  animation-delay: 1s, 1s
+  animation-delay: 3.5s, 1s
 }
 
 .snowflake:nth-of-type(2) {
@@ -1059,7 +1059,7 @@ img#footerla {
 .snowflake:nth-of-type(6) {
   left: 60%;
   -webkit-animation-delay: 6s, 2s;
-  animation-delay: 6s, 2s
+  animation-delay: 1.5s, 2s
 }
 
 .snowflake:nth-of-type(7) {
@@ -1087,7 +1087,7 @@ img#footerla {
 }
 
 .snowflake:nth-of-type(11) {
-  left: 65%;
+  left: 88%;
   -webkit-animation-delay: 4s, 2.5s;
   animation-delay: 3.6s, 0.5s
 }
@@ -1202,6 +1202,10 @@ img#footerla {
 
   #root {
     font-size: 16px;
+  }
+
+  .snowflake img {
+    width: 10px;
   }
 
 
