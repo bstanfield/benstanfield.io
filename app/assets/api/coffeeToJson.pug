@@ -178,7 +178,6 @@ script.
       let day = days[acc];
 
       if (input[0] == ' AM' || isNaN(input[0]) && input[1] == ' PM') {
-        console.log('Just returning acc...');
         return acc + 1;
       }
       const times = R.map(convertTime, input);
