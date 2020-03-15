@@ -9,7 +9,7 @@ node_modules: package.json
 	touch node_modules
 
 public/index.html: node_modules
-	brunch build
+	npx brunch build
 
 server:
-	brunch watch --server
+	npx brunch watch --server
