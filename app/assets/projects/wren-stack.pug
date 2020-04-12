@@ -1,0 +1,36 @@
+extends layout-projects
+block head
+    - var projectName = "Startup Stack 🐦";
+    title Ben - #{projectName}
+
+block content
+    .container.project
+        .intro 
+            +introsection('Startup Stack', "Over the past year, our small team has tried a lot of software while making Project Wren. I'm going to recap what we couldn't live without, and what didn't work at all.", 'April 12, 2020')
+
+    - const h4dHero = '../images/notion-home.png';
+    - const h4dHeroCaption = 'A screenshot of the Project Wren Notion.';
+    +bigphoto(h4dHero, h4dHeroCaption)
+    .container.project
+            
+        h6.leader 
+            | In May of 2019, I launched #[+link('https://projectwren.com', 'Project Wren')], a platform for crowdfunding solutions to climate change, with my two co-founders #[+link('https://twitter.com/landonsbrand', 'Landon Brand')] and #[+link('https://twitter.com/mims_tz', 'Mimi Tran Zambetti')]. In the past year we've tried dozens of software and services to make the work we do more joyful and organized. When we started Wren, we'd just graduated college and entered Y Combinator. I'm going to take you through a (mostly) exhaustive breakdown of what services we can't live without, how much we pay for them, and how it all adds up and impacts our runway.
+
+        h6
+            | Started by Steve Blank, the Silicon Valley entrepreneur most recognized for developing the Customer Development method that launched the 
+            +link('https://www.amazon.com/Four-Steps-Epiphany-Steve-Blank-ebook/dp/B00FLZKNUQ', 'Lean Startup')
+            |   movement, H4D is hands down the most intense and demanding class I have taken at USC. I recommend it for all undergraduate (it's a grad course but you can get clearance) and graduate students alike.
+
+        h6
+            | The name can be deceptive, however. Hacking for Defense is not a course that teaches you how to hack into mainframes, steal passwords, and sabotage nuclear centrifuges. Rather, H4D focuses on how to apply startup methodologies to a presumably bureaucratic and uninviting space: government.
+
+        h1 More things to read:
+        br
+        .flex-grid.thirds
+            +3card('sparksc.html', '✌️', 'Spark SC', 'Technology and entrepreneurship club at USC.' )
+            +3card('https://www.skipper.ai', '⛵', 'Skipper', 'Tech startup helping SMBs use their workforce data to make work better.', '_blank')
+            +3card('lsc.html', '🇮🇹', 'Laudato Si Challenge', 'Green tech accelerator inspired by Pope Francis, hosted in Rome.' )
+
+        
+            
+

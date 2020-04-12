@@ -83,7 +83,6 @@ mixin introsection(title, sub, date, emoji)
 
 mixin quote(quote, byline)
   .quote
-    h2 🎙
     h2 #{quote}
 
 mixin widequote(quote, byline)
@@ -346,10 +345,9 @@ mixin farewell()
   .center
     .big-emoji 👋
     h1 That's it!
-    h6 Thanks for stopping by! If you'd like to leave your thoughts on this post, shoot me a message below! Always down to grab coffee if you're in LA 😁 ☕ ️
+    h6 Thanks for stopping by. If you'd like to contact me, send me an email to bnstnfld + @ + gmail.com
     h6 
       a.orange(href='/') &larr; Go home.
-  br
 
 mixin toast()
   .toast
@@ -393,12 +391,12 @@ mixin chapter(number, name)
         h1.chapter-uppercase Chapter #{number}: 
         h1.chapter-name !{name}
 
-mixin snowflakes(numberOfFlakes)
-  - let n = numberOfFlakes;
-  while n > 1
-    - let rand = Math.floor((Math.random()*5) + 1);
-    - let opacity = Math.floor((Math.random()*100) + 1);
-    .snowflake
-      img(src=`../images/projects/holidays/snowflake-${rand}.svg` style=`opacity: ${opacity}%;`)
-    - n--;
+//- mixin snowflakes(numberOfFlakes)
+//-   - let n = numberOfFlakes;
+//-   while n > 1
+//-     - let rand = Math.floor((Math.random()*5) + 1);
+//-     - let opacity = Math.floor((Math.random()*100) + 1);
+//-     .snowflake
+//-       img(src=`../images/projects/holidays/snowflake-${rand}.svg` style=`opacity: ${opacity}%;`)
+//-     - n--;
 

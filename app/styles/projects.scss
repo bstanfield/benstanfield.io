@@ -253,35 +253,16 @@ iframe {
 }
 
 .quote {
-  width: 90%;
-  max-width: 500px;
-  height: fit-content;
-  padding: 0px 25px 25px 35px;
+  max-width: 750px;
   position: relative;
+  padding: 0 0 25px 25px;
 }
 
   .quote > h2 {
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
     color: #333333;
-    line-height: 40px;
-    margin-left: 35px;
-  }
-
-  .quote > h2:first-child {
-    font-size: 50px;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    left: 0;
-    top: 30%;
-  }
-
-  .quote > p {
-    font-size: 18px;
-    font-weight: 600;
-    color: grey;
-    font-family: $ss;
+    line-height: 35px;
   }
 
 .rootProject {
