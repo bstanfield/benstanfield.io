@@ -18,3 +18,9 @@ server: public/index.html
 clean:
 	rm -rf node_modules
 	@echo "now: make all"
+
+deploy:
+	now
+
+prod:
+	now --prod
