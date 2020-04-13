@@ -625,6 +625,23 @@ iframe {
   filter: grayscale(100%);
 }
 
+.tags {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.tag {
+  font-family: $ss;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;  
+  padding: 2px 5px;
+  background-color: rgb(232, 232, 232);
+  border-radius: 2px;
+  display: inline;
+  margin-right: 8px;
+}
+
   .comment-override > .hljs-string, .comment-override .hljs-keyword {
     color: $grey;
   }

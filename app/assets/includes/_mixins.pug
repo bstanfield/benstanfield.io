@@ -391,6 +391,15 @@ mixin chapter(number, name)
         h1.chapter-uppercase Chapter #{number}: 
         h1.chapter-name !{name}
 
+mixin tags(names)
+  - 
+    const tagColors = { 
+      internal: { bg: '#eeeeee', text: '#333333' }
+    }
+  .tags
+    each name in names
+      span.tag(id=name) #{name}
+
 //- mixin snowflakes(numberOfFlakes)
 //-   - let n = numberOfFlakes;
 //-   while n > 1
