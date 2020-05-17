@@ -1,1 +1,0 @@
-npx brunch build

@@ -27,15 +27,11 @@
   },
   "dependencies": {
     "dotenv": "^7.0.0",
-    "form-data": "^2.3.3",
     "github-markdown-css": "^3.0.1",
     "highlightjs-line-numbers.js": "^2.6.0",
     "jstransformer-markdown-it": "^2.1.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
-    "markdown-it-highlightjs": "^3.0.0",
-    "moment": "^2.23.0",
-    "pug-runtime": "^2.0.4",
-    "twilio": "^3.28.0"
+    "pug-runtime": "^2.0.4"
   }
 }
