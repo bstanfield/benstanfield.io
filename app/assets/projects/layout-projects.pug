@@ -1,13 +1,13 @@
 doctype html
-include ../includes/_mixins.pug
-include ../includes/_variables.pug 
-include ../includes/head
+include ../../includes/_mixins
+include ../../includes/_variables
+include ../../includes/_head
     block head
         title Ben Stanfield
 
 body
 // loads navigation bar for each page
-include ../includes/nav-projects
+include ../../includes/_nav-projects
 
 // this is where content will be loaded for subsequent pages
 block content
@@ -18,7 +18,7 @@ block content
     hr
     br
 // footer
-include ../includes/footer
+include ../../includes/_footer
 
 
 
