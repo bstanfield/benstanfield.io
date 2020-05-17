@@ -16,4 +16,4 @@ Ben Stanfield's personal website, built with Brunch.js and Jade (now called Pug.
 - Zeit (http://zeit.co/)
 
 
-* Useful commands are stored in a top-level Makefile.
+"*" Useful commands are stored in a top-level Makefile.
