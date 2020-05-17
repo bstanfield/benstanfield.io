@@ -20,7 +20,11 @@ clean:
 	@echo "now: make all"
 
 deploy:
+	@echo "*** deploying /public to dev URL"
 	now
 
 prod:
+	@echo "*** minifying css, js, and images... this may take a minute"
+	npx brunch build --production
+	@echo "*** all set! pushing live"
 	now --prod
