@@ -18,10 +18,10 @@
     "brunch": "^2.10.17",
     "clean-css-brunch": "^2",
     "imagemin-brunch": "^1.1.0",
-    "jquery": "^3.5.0",
+    "jquery": "^3.5.1",
     "move-js": "^0.5.0",
-    "pug": "^2.0.3",
-    "pugjs-brunch": "^2.10.2",
+    "pug": "^2.0.4",
+    "pugjs-brunch": "^2.11.3",
     "sass-brunch": "git+https://github.com/brunch/sass-brunch.git",
     "tippy.js": "^2.6.0",
     "uglify-js-brunch": "^2"
@@ -29,10 +29,10 @@
   "dependencies": {
     "dotenv": "^7.0.0",
     "github-markdown-css": "^3.0.1",
-    "highlightjs-line-numbers.js": "^2.6.0",
+    "highlightjs-line-numbers.js": "^2.7.0",
     "jstransformer-markdown-it": "^2.1.0",
     "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.0.2",
-    "pug-runtime": "^2.0.4"
+    "markdown-it-anchor": "^5.3.0",
+    "pug-runtime": "^2.0.5"
   }
 }
