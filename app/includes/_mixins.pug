@@ -221,7 +221,7 @@ mixin review(shops)
 mixin pulse(pulses, current)
   - const currentPulse = pulses[current];
   .container
-    a(href=currentPulse.link)
+    a(target="_blank" href=currentPulse.link)
       .flex-grid
         .thirds-col#col-bg(style="background-image: url('images/" + currentPulse.img + "');")
         
@@ -230,7 +230,7 @@ mixin pulse(pulses, current)
             h2 #{currentPulse.emoji} #{currentPulse.title}
             p 
               | #{currentPulse.sub}
-            +read()
+            p.more #{currentPulse.cta} <span>&rarr;</span>
 
 mixin overview(shops)
   h2
@@ -353,9 +353,9 @@ mixin toast()
   .toast
     .toast-x
         i(class="fas fa-times") 
-    a(href='/projects/deploy.html')
+    a(target="_blank" href="https://drinks.benstanfield.io")
         .emoji-toast 📬
-        p Check out my new article, <strong>"Deploying to the web with Zeit Now!"</strong>
+        p <strong>New:</strong> Click here to check out a bartending web app I'm working on!
 
 mixin anchor(name)
   a.anchor(name=name id=name)

@@ -176,7 +176,7 @@ i {
 }
 
 .nav-links > a:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 32px;
 }
 
 .nav-links > a:hover {
@@ -482,8 +482,8 @@ span.separate {
   right: 25px;
   bottom: 25px;
   z-index: 1000;
-  border: 2px solid $orange;
-  border-bottom: 10px solid $orange;
+  border: 2px solid $grey;
+  border-bottom: 10px solid $grey;
   opacity: 0;
   transition: 0.5s all ease-in-out;
 }
