@@ -32,6 +32,7 @@ body {
   font-family: $bodyreg, sans-serif;
   font-size: 18px;
   font-weight: 400;
+  font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -119,6 +120,7 @@ p {
   line-height: 38px;
   margin: 0 !important;
   transition: 0.3s ease all;
+  color: #333;
 }
 
 i {
@@ -762,6 +764,59 @@ button {
           margin-left:auto;
           margin-right:auto
         }
+
+// BOOKS
+.books {
+  position: relative;
+  width: 100%;
+}
+
+.book {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.book-iterator {
+  background-color: #333;
+  color: white;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 50px;
+  position: absolute;
+  right: -80px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.book-iterator:active {
+  background-color: black;
+}
+
+.book-iterator:click
+
+.book:hover {
+  .book-cover {
+    transform: rotate3d(1, 1, 1, 0.05rad) scale(1.05);
+    opacity: 1;
+  }
+}
+.book-case {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: -30px;
+}
+
+.book-cover {
+  transition: all 0.3s ease-in-out;
+  width: 90%;
+  background-color: transparent;
+  margin: auto;
+  opacity: 0.8;
+}
   
 // MISC
 .left {

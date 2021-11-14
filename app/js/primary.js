@@ -70,6 +70,93 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.toggle-advanced').show();
   }
 
+  // FOR BOOKS
+  const books = [
+    {
+      path: 'dune.png',
+      emoji: '🏜',
+      title: 'Dune',
+      tags: 'Sci-fi & Fantasy',
+      date: 'Nov. 2021'
+    },
+    {
+      path: 'hail-mary.png',
+      emoji: '👨‍🚀',
+      title: 'Hail Mary',
+      tags: 'Sci-fi',
+      date: 'Oct. 2021'
+    },
+    {
+      path: 'drawdown.png',
+      emoji: '⏬',
+      title: 'Drawdown',
+      tags: 'Climate science',
+      date: 'Mar. 2021'
+    },
+    {
+      path: 'drawdown.png',
+      emoji: '🌍',
+      title: 'The Story of More',
+      tags: 'Climate science',
+      date: 'Feb. 2021'
+    },
+    {
+      path: 'dune.png',
+      emoji: '🏜',
+      title: 'Dune2',
+      tags: 'Sci-fi & Fantasy',
+      date: 'Nov. 2021'
+    },
+    {
+      path: 'dune.png',
+      emoji: '🏜',
+      title: 'Dune2',
+      tags: 'Sci-fi & Fantasy',
+      date: 'Nov. 2021'
+    },
+  ]
+
+  $(document).ready(function () {
+    let count = 0;
+    while (count < 3) {
+      $(`#emoji-${count}`).append(books[count].emoji);
+      $(`#path-${count}`).attr('src', `./images/books/${books[count].path}`);
+      $(`#title-${count}`).append(` ${books[count].title}`);
+      count++;
+    }
+  })
+
+  $(document).ready(function () {
+    let offset = 0;
+    let count = 0;
+    $('#book-iterator').click(function () {
+      count = 0;
+      offset = offset + 3;
+
+      // First check if we're out of bounds of array
+      if (!books[count + offset]) {
+        offset = 0;
+      }
+
+      $('.book').css('opacity', '0');
+      setTimeout(
+        function () {
+          $('.book').css('opacity', '1');
+        }, 1000);
+      setTimeout(
+        function () {
+          while (count < 3) {
+            console.log('Title: ', books[count + offset].title);
+            $(`#emoji-${count}`).text(books[count + offset].emoji);
+            $(`#path-${count}`).attr('src', `./images/books/${books[count + offset].path}`);
+            $(`#title-${count}`).text(` ${books[count + offset].title}`);
+            count++;
+          }
+        }, 300);
+    })
+  })
+
+
   // EMOJI TIME
   $(document).ready(function () {
     const d = new Date();

@@ -121,6 +121,28 @@ h4 {
   margin-bottom: 10px;
 }
 
+.solution-image-flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.solution {
+  margin-left: 24px;
+}
+
+.solution > h2 {
+  font-family: $ss;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+.solution > p {
+  font-size: 20px;
+}
+
 ol {
   list-style-type: square;
 }
@@ -131,6 +153,10 @@ ol {
 
 a {
   cursor: pointer;
+}
+
+.sans {
+  font-family: $ss;
 }
 
 sup {
@@ -153,6 +179,12 @@ sup:hover {
   display: none !important; 
 }
 
+.small-photo {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
 .med-photo {
   margin-top: 50px;
   margin-bottom: 30px;
@@ -161,7 +193,7 @@ sup:hover {
   max-width: 1100px;
 }
 
-  .med-photo p {
+  .med-photo p, .small-photo p {
     font-size: 20px;
     color: rgb(172, 172, 172);
     margin-bottom: 20px;
@@ -195,6 +227,10 @@ sup:hover {
   .big-emoji {
     font-size: 60px;
     margin-bottom: 0px;
+  }
+
+  .small-photo .caption {
+    width: 100%;
   }
 
   .caption {

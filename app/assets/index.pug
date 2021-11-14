@@ -4,13 +4,23 @@ block content
     .container
         +toast()
         +index_intro()
+
+        +anchor('readings')
+        h1 What I've been reading
+        p After I finish a book, I leave a tweet-length review here.
+        br
+        
+        +books()
+
+        br
+        br
        
         +anchor('experiences')
         h1 Experiences
         br
             
-        +index_blocks(projectCards.slice(0, 3))
-        +index_blocks(projectCards.slice(3))
+        +experience_blocks(experiences.slice(0, 3))
+        +experience_blocks(experiences.slice(3))
 
         br 
         br
@@ -20,19 +30,6 @@ block content
 
     .grid-bg.grid.long
         +pulse(pulses, 2)
-
-    br
-    br
-    .container
-        h1 Interests
-        p.
-            I've worked in a few different positions, from designer and developer at #[+link('https://www.bons.ai', 'Bonsai AI', "AI startup in Berkeley recently acquired by Microsoft")] to associate at #[+link('https://www.fresco.vc', 'Fresco Capital', 'Seed and early stage VC 🌱')], and in leadership positions as president of #[+link('http://www.sparksc.org', 'Spark SC', 'Entrepreneurship and technology club at USC... also my best friends 😉')] and co-founder of Project Wren. I'm deeply interested in the future of capitalism, and how new-age companies will reference social impact alongside their financial bottomline when making decisions.
-        br
-        p.
-            I'm thinking a lot right now about #[+link('https://projectwren.com', 'reversing climate change')], Full-stack Javascript development, #[+link('https://ramdajs.com/', 'functional programming')], and basketball. Great design is something I always keep an eye out for.
-
-        //- br
-        //- +resume('images/resume-update-comp2.pdf')
 
     br 
     br

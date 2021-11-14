@@ -4,7 +4,7 @@ mixin index_intro()
     +index_timer()
     h1#one #[span(class='emoji')]
     p#rebelReplace.
-      I’m Ben Stanfield, a recent graduate of the #[+link('http://iovine-young.usc.edu', 'Iovine & Young Academy', "Undergrad program at USC. Took me a while to get this: pronounced 'I-owe-veen' 🎧")], now working full-time on a company called  #[+link('https://projectwren.com', 'Wren', 'Helps individuals calculate and offset their carbon footprint! 🌍')].
+      I’m Ben Stanfield, designer & co-founder of a company called  #[+link('https://projectwren.com', 'Wren', 'Helps individuals calculate and offset their carbon footprint! 🌍')]. I love basketball, sci-fi, board games, and typography. On the weekends, I enjoy tinkering on web apps and relaxing in a neighborhood coffee shop.
   br
   br
 
@@ -49,7 +49,10 @@ mixin imgLink(item)
       .img-link #{item.name}
 
 mixin more()
-  p.more Learn more <span>&rarr;</span>
+  p.more More <span>&rarr;</span>
+
+mixin tweet()
+  p.more Tweet-length review <span>&rarr;</span>
 
 mixin read()
   p.more Read article <span>&rarr;</span>
@@ -99,6 +102,25 @@ mixin article(url, iconpath, title, subtitle, sourcename, bgimage)
     
     p.more Read on #{sourcename} <span>&rarr;</span>
     .project-img(style=bgimage)
+
+mixin book(id)
+  a(target=target href=url id=id).thirds-col.card
+    .book
+      .book-case
+          img(id='path-' + id src='').book-cover
+      h2
+        span(id='emoji-' + id)
+        span(id='title-' + id)
+      //- p #{tags}
+      //- p <i>Read #{finished}</i>
+      +tweet()
+
+mixin books()
+  .flex-grid.thirds.books
+    +book(0)
+    +book(1)
+    +book(2)
+    button(text="next" value="Next" id='book-iterator' class="book-iterator") ►
 
 mixin reviewGallery(meta, hours, distance, arr)
   - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;
@@ -288,6 +310,11 @@ mixin mediumphoto(img, caption)
     .caption
       p= caption
 
+mixin smallphoto(img, caption)
+  .small-photo(style='border-radius: 6px; height: 150px !important; width: 220px; background-image: url(' + img + '); background-repeat: no-repeat; background-size: cover;')
+    .caption
+      p= caption
+
 mixin fullHours(hours)
   each day in hours
     - let sto = ((day.open + 11) % 12 + 1);
@@ -360,10 +387,10 @@ mixin toast()
 mixin anchor(name)
   a.anchor(name=name id=name)
 
-mixin index_blocks(projects)
+mixin experience_blocks(projects)
   .flex-grid.thirds
       each project in projects
-        +index_card(project)
+        +experience_card(project)
 
 mixin 3card(url, emoji, title, description, target)
   a(target=target href=url).thirds-col.card
@@ -371,7 +398,7 @@ mixin 3card(url, emoji, title, description, target)
     p #{description}
     +more()
 
-mixin index_card(project)
+mixin experience_card(project)
   - const {target, url, emoji, title, description} = project;
   a(target=target href=url).thirds-col.card
     h2 <span class='emo'>#{emoji}</span> #{title}

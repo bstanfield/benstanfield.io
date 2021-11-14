@@ -1,0 +1,55 @@
+extends layout-projects
+block head
+    - var projectName = "Drawdown ⏬";
+    title Ben - #{projectName}
+
+block content
+    .x-files
+        .container.project
+            .intro 
+                +introsection('Drawdown for Dummies', "My attempt to summarize the best solutions to climate change, as described in the book Drawdown.", 'September 21, 2018')
+                
+        - const sparkHero = 'https://images.unsplash.com/photo-1560279966-2d681f3d4dfc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80';
+        - const sparkHeroCaption = 'The Detroit Dam in Detroit, Oregon uses gravity to generate renewable, hydroelectric power.';
+        +bigphoto(sparkHero, sparkHeroCaption)
+        .container.project
+            h6.leader 
+                | It took me over a year and a half of working on #[+link('https://wren.co', 'Wren')] to finally sit down and read <i>Drawdown</i>, a seminal text on climate solutions. Despite all of the websites and companies that cite the book's solutions, most people chaffe at actually sitting down and reading the whole thing, front to back. And rightfully so, as the book is more akin to a textbook than a novel.
+
+            h6
+                | So, I decided to make the experience more fun for myself by boiling down some of the solutions into a few sentences. I hope this helps you get excited about a particular solution, so much so that you purchase <i>Drawdown</i> and give reading it a try! 
+
+            //- +article('medium.com/sparksc/state-of-spark-spring-2017-ddeeab535d33', '../images/medium-logo.png', 'State of Spark: Spring 2017', 'Spark SC is the student-run entrepreneurial hub at the University of Southern California. So, what have we been up to this semester?', 'Medium', 'background-image: url(https://cdn-images-1.medium.com/max/1200/1*m2NXtbpuEhumpWG72RDYpQ.jpeg);')
+
+            - const IdeasToImpactImg = 'https://www.plasticstoday.com/sites/plasticstoday.com/files/styles/article_featured_retina/public/biomass-flame-tchara-Adobe-1540X800.jpg?itok=yAiS4pCG';
+            .solution-image-flex
+                +smallphoto(IdeasToImpactImg)
+                .solution
+                    h2 Burn dead plants for energy <span style="opacity: 0.3">(Biomass)</span>
+                    p.sans Impact: 🌳🌳🌳<span style='opacity: 0.3;'>🌳🌳</span>
+                    p.sans Savings: 💵 <span style='opacity: 0.3;'>💵</span> <span style='opacity: 0.3;'>💵</span> <span style='opacity: 0.3;'>💵</span> <span style='opacity: 0.3;'>💵</span>
+        
+            p Biomass burns dead plants to produce energy. Carbon dioxide is released, but it's CO<sub>2</sub> that was recently in the atmosphere, compared to eons-old fossil fuels. It's not a perfect solution, but rather a <i>bridge</i><sup>1</sup> solution — better than coal and natural gas, but not as good as solar/wind/etc. and will be phased out eventually.
+            br
+            p.sans How excited Ben is: 😕 <span style='opacity: 0.5;'>(click to read why)</span>
+            //- p A well-regulated biomass project represents a solid climate solution. But biomass feels like a dangerous juggling act, circulating CO<sub>2</sub> out of and then back into the atmosphere.
+            br
+            br
+            br
+            hr
+            br
+            br
+
+            - const secondImg = 'https://www.plasticstoday.com/sites/plasticstoday.com/files/styles/article_featured_retina/public/biomass-flame-tchara-Adobe-1540X800.jpg?itok=yAiS4pCG';
+            .solution-image-flex
+                +smallphoto(secondImg)
+                .solution
+                    h2 Nuclear Power
+                    p.sans Impact: 🌳🌳🌳<span style='opacity: 0.3;'>🌳🌳</span>
+                    p.sans Savings: 💵 <span style='opacity: 0.3;'>💵</span> <span style='opacity: 0.3;'>💵</span> <span style='opacity: 0.3;'>💵</span> <span style='opacity: 0.3;'>💵</span>
+        
+            p Biomass burns dead plants to produce energy. Carbon dioxide is released, but it's CO<sub>2</sub> that was recently in the atmosphere, compared to eons-old fossil fuels. It's not a perfect solution, but rather a <i>bridge</i><sup>1</sup> solution — better than coal and natural gas, but not as good as solar/wind/etc. and will be phased out eventually.
+            br
+            p.sans How excited Ben is: 😕 <span style='opacity: 0.5;'>(click to read why)</span>
+
+            
