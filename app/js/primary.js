@@ -73,6 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // FOR BOOKS
   const books = [
     {
+      path: 'the-perfectionists.png',
+      emoji: '⚙️',
+      title: 'Perfectionists',
+      tags: 'Non-fiction',
+    },
+    {
+      path: 'weirdest-people.png',
+      emoji: '👶🏼',
+      title: 'WEIRDEST People',
+      tags: 'Psychology & Economics',
+    },
+    {
       path: 'dune.png',
       emoji: '🏜',
       title: 'Dune',
@@ -87,6 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
       date: 'Oct. 2021'
     },
     {
+      path: 'lifes-edge.png',
+      emoji: '🦠',
+      title: "Life's Edge",
+      tags: 'Philosophy & Science',
+      date: 'Aug. 2021',
+    },
+    {
+      path: 'intro-to-fire.png',
+      emoji: '🔥',
+      title: 'Intro to Fire',
+      tags: 'Ecology',
+      date: 'Aug. 2021',
+    },
+    {
       path: 'drawdown.png',
       emoji: '⏬',
       title: 'Drawdown',
@@ -94,34 +120,34 @@ document.addEventListener('DOMContentLoaded', () => {
       date: 'Mar. 2021'
     },
     {
-      path: 'drawdown.png',
+      path: 'story-of-more.png',
       emoji: '🌍',
       title: 'The Story of More',
       tags: 'Climate science',
       date: 'Feb. 2021'
     },
     {
-      path: 'dune.png',
-      emoji: '🏜',
-      title: 'Dune2',
-      tags: 'Sci-fi & Fantasy',
-      date: 'Nov. 2021'
-    },
-    {
-      path: 'dune.png',
-      emoji: '🏜',
-      title: 'Dune2',
-      tags: 'Sci-fi & Fantasy',
-      date: 'Nov. 2021'
+      path: 'seveneves.png',
+      emoji: '🌑',
+      title: 'Seveneves',
+      tags: 'Hard Sci-fi',
+      date: 'Feb. 2020'
     },
   ]
 
   $(document).ready(function () {
     let count = 0;
     while (count < 3) {
-      $(`#emoji-${count}`).append(books[count].emoji);
+      $(`#emoji-${count}`).text(books[count].emoji);
       $(`#path-${count}`).attr('src', `./images/books/${books[count].path}`);
-      $(`#title-${count}`).append(` ${books[count].title}`);
+      $(`#title-${count}`).text(` ${books[count].title}`);
+      $(`#tags-${count}`).text(`${books[count].tags}`);
+      $(`#finished-${count}`).text(books[count].date ? `Finished ${books[count].date}` : 'Reading now...');
+      if (books[count].date) {
+        $(`#finished-tag-${count}`).css('display', 'block');
+      } else {
+        $(`#finished-tag-${count}`).css('display', 'none');
+      }
       count++;
     }
   })
@@ -143,14 +169,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(
         function () {
-          $('.book').css('transform', 'translateX(-10%)');
+          $('.book').css('transform', 'translateX(-20%)');
         }, 200);
 
       setTimeout(
         function () {
           $('.book').css('opacity', '1');
           $('.book').css('transform', 'translateX(0%)');
-        }, 400);
+        }, 500);
 
       setTimeout(
         function () {
@@ -158,6 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
             $(`#emoji-${count}`).text(books[count + offset].emoji);
             $(`#path-${count}`).attr('src', `./images/books/${books[count + offset].path}`);
             $(`#title-${count}`).text(` ${books[count + offset].title}`);
+            $(`#tags-${count}`).text(`${books[count + offset].tags}`);
+            $(`#finished-${count}`).text(books[count + offset].date ? `Finished ${books[count + offset].date}` : 'Reading now...');
+            if (books[count + offset].date) {
+              $(`#finished-tag-${count}`).css('display', 'block');
+            } else {
+              $(`#finished-tag-${count}`).css('display', 'none');
+            }
             count++;
           }
         }, 300);

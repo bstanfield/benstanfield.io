@@ -4,7 +4,7 @@ mixin index_intro()
     +index_timer()
     h1#one #[span(class='emoji')]
     p#rebelReplace.
-      I’m Ben Stanfield, designer & co-founder of a company called  #[+link('https://projectwren.com', 'Wren', 'Helps individuals calculate and offset their carbon footprint! 🌍')]. I love basketball, sci-fi, board games, and typography. On the weekends, I enjoy tinkering on web apps and relaxing in a neighborhood coffee shop.
+      I&#8217;m Ben Stanfield, designer & co-founder of a company called  #[+link('https://projectwren.com', 'Wren', 'Helps individuals calculate and offset their carbon footprint! 🌍')]. I love basketball, sci-fi, board games, and typography. On the weekends, I enjoy tinkering on web apps and relaxing in a neighborhood coffee shop.
   br
   br
 
@@ -108,12 +108,13 @@ mixin book(id)
     .book
       .book-case
           img(id='path-' + id src='').book-cover
+          p(class='absolute-tag' id='finished-tag-' + id) Finished
       h2
         span(id='emoji-' + id)
         span(id='title-' + id)
-      //- p #{tags}
-      //- p <i>Read #{finished}</i>
-      +tweet()
+      p(id='tags-' + id)
+      p(id='finished-' + id)
+      //- +tweet()
 
 mixin books()
   .flex-grid.thirds.books
