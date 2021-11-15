@@ -138,15 +138,23 @@ document.addEventListener('DOMContentLoaded', () => {
         offset = 0;
       }
 
+      $('.book').css('transform', 'translateX(10%)');
       $('.book').css('opacity', '0');
+
+      setTimeout(
+        function () {
+          $('.book').css('transform', 'translateX(-10%)');
+        }, 200);
+
       setTimeout(
         function () {
           $('.book').css('opacity', '1');
-        }, 1000);
+          $('.book').css('transform', 'translateX(0%)');
+        }, 400);
+
       setTimeout(
         function () {
           while (count < 3) {
-            console.log('Title: ', books[count + offset].title);
             $(`#emoji-${count}`).text(books[count + offset].emoji);
             $(`#path-${count}`).attr('src', `./images/books/${books[count + offset].path}`);
             $(`#title-${count}`).text(` ${books[count + offset].title}`);

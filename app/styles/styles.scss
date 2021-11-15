@@ -772,7 +772,7 @@ button {
 }
 
 .book {
-  transition: opacity 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .book-iterator {
@@ -1263,6 +1263,10 @@ img#footerla {
   //   width: 10px;
   // }
 
+
+  .book-iterator {
+    display: none;
+  }
 
   .grid-bg {
     text-align: center;
