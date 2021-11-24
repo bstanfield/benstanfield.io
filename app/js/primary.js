@@ -73,16 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // FOR BOOKS
   const books = [
     {
-      path: 'the-perfectionists.png',
-      emoji: '⚙️',
-      title: 'Perfectionists',
-      tags: 'Non-fiction',
-    },
-    {
       path: 'weirdest-people.png',
       emoji: '👶🏼',
       title: 'WEIRDEST People',
       tags: 'Psychology & Economics',
+    },
+    {
+      path: 'the-map-that-changed-the-world.png',
+      emoji: '🗺',
+      title: 'The Map That Ch...',
+      tags: 'History & Geology',
+      date: 'Nov. 2021'
     },
     {
       path: 'dune.png',
