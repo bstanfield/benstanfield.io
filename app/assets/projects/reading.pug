@@ -1,0 +1,80 @@
+extends layout-projects
+block variables
+  - const metapic = "https://i.imgur.com/lhKYXiq.png";
+block head
+  - const projectName = "Reading 📚";
+  title Ben - #{projectName}
+
+block content
+  .scroll-to-top
+    button <i class="fas fa-arrow-alt-circle-up"></i> Return to Top
+  .x-files
+    .container.project.project-container
+      .intro 
+        +introsection("A brief overview of books I've read from the past year.", "In < 300 characters I'll summarize my thoughts on books I've read.", '', "📚")
+        
+    +bigphoto('../images/projects/dnd/deployment-article-hero.png', '')(class='background-contain')
+
+    .container.project.md-style
+      br
+      .markdown-body
+        :markdown-it
+          # Overview
+          To learn a simple, elegant deployment process for publishing web content that works for beginners *and* experienced developers 🤖.
+
+        
+        .flex-grid
+          +img('../images/books/the-map-that-changed-the-world.png', { shadow: false })
+        
+          .book-review
+            a.anchor(name='the-map-that-changed-the-world' id='the-map-that-changed-the-world')
+            :markdown-it
+              # The Map That Changed the World 
+              The Map that Changed the World is a 2001 book by Simon Winchester about English geologist William Smith and his great achievement, the first geological map of England, Wales and southern Scotland. Smith's was the first national-scale geological map, and by far the most accurate of its time.
+        
+        br
+        br
+        br
+        br
+
+        :markdown-it
+          That's it! Our sample project has been deployed to the outputted link (now in your clipboard). Anyone on the internet can view that link.
+          > Psst: Wondering why Zeit outputs that strange URL? [Tell me more...](https://zeit.co/docs/v2/deployments/concepts/immutability/)
+
+        :markdown-it
+          # What's next?
+          We've accomplished a very quick and easy deployment to the web! But the `.sh` output URL of a Now deployment isn't ideal for your website. Ideally, you want to deploy to your custom domain. So this leaves a couple options...
+        
+        br
+        br
+
+        +chapter('2', 'Buying a Domain')
+        :markdown-it
+            # 1. Browse
+            ## But why browse on Zeit?
+            There are a lot of companies that will sell you a domain—GoDaddy, Namecheap, FreeDNS, Google Domains, etc.—so what makes one better than the next? Here's one reason: Some domain registrars [leak your domain search history](https://news.ycombinator.com/item?id=2326790), which can result in your preferred domain being taken before you're ready to pay. 
+            > Note: If you already have your domain, check out [Zeit's guide](https://zeit.co/docs/v2/domains-and-aliases/adding-a-domain) for migrating an existing domain to Zeit, and then return to Step 3 of this chapter.
+            >
+            Zeit **guarantees** that no searches made on their site will be shared, so search away! Plus, buying a domain through Zeit makes *deploying* your site through Zeit (see part one) that much easier. Here are some other benefits of buying through Zeit:
+            >
+            - Free SSL certification
+            - Free WHOIS privacy
+            - Built-in **Zeit Now** integration
+            - Free DNS (Your site will work across the globe, among [other things](https://zeit.co/network))
+
+            > 
+            ## Find a domain
+            To start looking for your domain, visit [Zeit.co/domains](https://zeit.co/domains)
+
+        +img('../images/projects/dnd/zeit-domains.png', { screenshot: true })
+
+        .toggle-advanced
+          include toggles/buy-domain_toggle_advanced
+        .toggle-beginner
+          include toggles/buy-domain_toggle_beginner
+
+        br
+        p - Ben
+
+      +farewell
+      

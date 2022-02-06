@@ -106,7 +106,7 @@ mixin article(url, iconpath, title, subtitle, sourcename, bgimage)
     .project-img(style=bgimage)
 
 mixin book(id)
-  a(target=target href=url id=id).thirds-col.card
+  a(href=url id='anchor-' + id).thirds-col.card
     .book
       .book-case
           img(id='path-' + id src='').book-cover
