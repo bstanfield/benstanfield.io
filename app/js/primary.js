@@ -73,6 +73,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "no-importance.png",
+      emoji: "🕵️‍♀️",
+      title: "A Woman of No Importance",
+      tags: "History",
+      date: "Mar. 2022",
+    },
+    {
+      path: "achilles.png",
+      emoji: "⚔️",
+      title: "The Song of Achilles",
+      tags: "Mythology",
+      date: "Feb. 2022",
+    },
+    {
       path: "circe.png",
       emoji: "👩‍🦳",
       title: "Circe",
@@ -81,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       path: "15-commitments.png",
-      emoji: "⎯",
+      emoji: "🤝",
       title: "15 Commitments",
       tags: "Business Culture",
       date: "Jan. 2022",
