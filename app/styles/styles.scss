@@ -893,6 +893,11 @@ button {
   background-color: transparent;
   margin: auto;
   opacity: 0.8;
+  width: 100%;
+  height: 200px;
+  background-image: url('/images/spinner.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 // MISC

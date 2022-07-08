@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "_blank"
       );
       $(`#emoji-${count}`).text(books[count].emoji);
-      $(`#path-${count}`).attr("src", `./images/books/${books[count].path}`);
+      $(`#path-${count}`).css("background-image", `url(/images/books/${books[count].path})`);
       $(`#title-${count}`).text(` ${books[count].title}`);
       $(`#tags-${count}`).text(`${books[count].tags}`);
       $(`#finished-${count}`).text(
@@ -241,13 +241,13 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#book-iterator-right").click(function () {
       document
         .getElementById("books")
-        .scrollBy({ left: 260, behavior: "smooth" });
+        .scrollBy({ left: 278, behavior: "smooth" });
     });
 
     $("#book-iterator-left").click(function () {
       document
         .getElementById("books")
-        .scrollBy({ left: -260, behavior: "smooth" });
+        .scrollBy({ left: -278, behavior: "smooth" });
     });
   });
 

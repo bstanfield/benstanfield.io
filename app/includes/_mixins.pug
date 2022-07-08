@@ -109,7 +109,7 @@ mixin book(id)
   a(href=url id='anchor-' + id).card
     .book
       .book-case
-          img(id='path-' + id src='').book-cover
+          .book-cover(id=`path-${id}`)
           p(class='absolute-tag' id='finished-tag-' + id) Finished
       h2
         span(id='emoji-' + id)
