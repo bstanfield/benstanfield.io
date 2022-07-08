@@ -106,7 +106,7 @@ mixin article(url, iconpath, title, subtitle, sourcename, bgimage)
     .project-img(style=bgimage)
 
 mixin book(id)
-  a(href=url id='anchor-' + id).thirds-col.card
+  a(href=url id='anchor-' + id).card
     .book
       .book-case
           img(id='path-' + id src='').book-cover
@@ -118,12 +118,10 @@ mixin book(id)
       p(id='finished-' + id)
       //- +tweet()
 
-mixin books()
-  .flex-grid.thirds.books
-    +book(0)
-    +book(1)
-    +book(2)
-    button(text="next" value="Next" id='book-iterator' class="book-iterator") ►
+mixin books(totalBooks)
+  .flex-grid.books#books
+    each book, index in totalBooks
+      +book(index)
 
 mixin reviewGallery(meta, hours, distance, arr)
   - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;

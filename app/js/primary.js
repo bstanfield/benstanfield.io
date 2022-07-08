@@ -73,11 +73,31 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "invisible-child.png",
+      emoji: "🗽",
+      title: "Invisible Child",
+      tags: "Biography",
+      date: "Jul. 2022",
+      goodreads: "https://www.goodreads.com/book/show/57359691-invisible-child?from_search=true&from_srp=true&qid=og7JfMBz1T&rank=1",
+      review: 5,
+    },
+    {
+      path: "great-mistake.png",
+      emoji: "🔫",
+      title: "The Great Mistake",
+      tags: "Biography",
+      date: "Jun. 2022",
+      goodreads: "https://www.goodreads.com/book/show/55502632-the-great-mistake?from_search=true&from_srp=true&qid=QEmXYBN1td&rank=1",
+      review: 3,
+    },
+    {
       path: "no-importance.png",
       emoji: "🕵️‍♀️",
       title: "A Woman of No Importance",
       tags: "History",
       date: "Mar. 2022",
+      goodreads: "https://www.goodreads.com/book/show/40595446-a-woman-of-no-importance?ac=1&from_search=true&qid=kC3XP5I2p2&rank=1",
+      review: 5,
     },
     {
       path: "achilles.png",
@@ -85,6 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "The Song of Achilles",
       tags: "Mythology",
       date: "Feb. 2022",
+      goodreads: "https://www.goodreads.com/book/show/13623848-the-song-of-achilles?ac=1&from_search=true&qid=9dBXR4zyNp&rank=1",
+      review: 4,
     },
     {
       path: "circe.png",
@@ -92,12 +114,16 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Circe",
       tags: "Mythology",
       date: "Feb. 2022",
+      goodreads: "https://www.goodreads.com/book/show/35959740-circe?ac=1&from_search=true&qid=qZMrCNjcZq&rank=1",
+      review: 5,
     },
     {
       path: "15-commitments.png",
       emoji: "🤝",
       title: "15 Commitments",
       tags: "Business Culture",
+      review: 4,
+      goodreads: "https://www.goodreads.com/book/show/23275060-15-commitments-of-conscious-leadership?ac=1&from_search=true&qid=7OYtP2JtV4&rank=1",
       date: "Jan. 2022",
     },
     {
@@ -105,14 +131,17 @@ document.addEventListener("DOMContentLoaded", () => {
       emoji: "👶🏼",
       title: "WEIRDEST People",
       tags: "Psychology & Economics",
+      goodreads: "https://www.goodreads.com/book/show/51710349-the-weirdest-people-in-the-world?ac=1&from_search=true&qid=zjoN5bkmfo&rank=1",
     },
     {
       anchor: "the-map-that-changed-the-world",
       path: "the-map-that-changed-the-world.png",
       emoji: "🗺",
-      title: "The Map That Ch...",
+      title: "The Map That Changed the World",
       tags: "History & Geology",
       date: "Nov. 2021",
+      review: 5,
+      goodreads: "https://www.goodreads.com/book/show/25014.The_Map_That_Changed_the_World?ac=1&from_search=true&qid=5u49g1kS78&rank=1",
     },
     {
       path: "dune.png",
@@ -120,6 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Dune",
       tags: "Sci-fi & Fantasy",
       date: "Nov. 2021",
+      review: 5,
+      goodreads: "https://www.goodreads.com/book/show/44767458-dune?ac=1&from_search=true&qid=ISkEXvQjsr&rank=1",
     },
     {
       path: "hail-mary.png",
@@ -127,6 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Hail Mary",
       tags: "Sci-fi",
       date: "Oct. 2021",
+      review: 4,
+      goodreads: "https://www.goodreads.com/book/show/54493401-project-hail-mary?ac=1&from_search=true&qid=CuXil1yKSc&rank=1",
     },
     {
       path: "lifes-edge.png",
@@ -134,6 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Life's Edge",
       tags: "Philosophy & Science",
       date: "Aug. 2021",
+      review: 4,
+      goodreads: "https://www.goodreads.com/book/show/54227475-life-s-edge?ac=1&from_search=true&qid=E4MmowCtzZ&rank=1",
     },
     {
       path: "intro-to-fire.png",
@@ -141,6 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Intro to Fire",
       tags: "Ecology",
       date: "Aug. 2021",
+      goodreads: "https://www.goodreads.com/book/show/3789643-introduction-to-fire-in-california?ac=1&from_search=true&qid=oDiuRScYzF&rank=1",
+      review: 3,
     },
     {
       path: "drawdown.png",
@@ -148,6 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Drawdown",
       tags: "Climate science",
       date: "Mar. 2021",
+      review: 5,
+      goodreads: "https://www.goodreads.com/book/show/31624481-drawdown?ac=1&from_search=true&qid=eMYRTuTFEO&rank=1",
     },
     {
       path: "story-of-more.png",
@@ -155,6 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "The Story of More",
       tags: "Climate science",
       date: "Feb. 2021",
+      review: 5,
+      goodreads: "https://www.goodreads.com/book/show/49960370-the-story-of-more?ac=1&from_search=true&qid=G9L4KIInq1&rank=1",
     },
     {
       path: "seveneves.png",
@@ -162,15 +203,21 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Seveneves",
       tags: "Hard Sci-fi",
       date: "Feb. 2020",
+      review: 5,
+      goodreads: "https://www.goodreads.com/book/show/22816087-seveneves?ac=1&from_search=true&qid=aWBtSVVaXd&rank=1",
     },
   ];
 
   $(document).ready(function () {
     let count = 0;
-    while (count < 3) {
+    while (count < books.length) {
       $(`#anchor-${count}`).attr(
         "href",
-        "/projects/reading.html#" + books[count].anchor
+        books[count].goodreads,
+      );
+      $(`#anchor-${count}`).attr(
+        "target",
+        "_blank"
       );
       $(`#emoji-${count}`).text(books[count].emoji);
       $(`#path-${count}`).attr("src", `./images/books/${books[count].path}`);
@@ -191,49 +238,16 @@ document.addEventListener("DOMContentLoaded", () => {
   $(document).ready(function () {
     let offset = 0;
     let count = 0;
-    $("#book-iterator").click(function () {
-      count = 0;
-      offset = offset + 3;
+    $("#book-iterator-right").click(function () {
+      document
+        .getElementById("books")
+        .scrollBy({ left: 260, behavior: "smooth" });
+    });
 
-      // First check if we're out of bounds of array
-      if (!books[count + offset]) {
-        offset = 0;
-      }
-
-      $(".book").css("transform", "translateX(-10%)");
-      $(".book").css("opacity", "0");
-
-      setTimeout(function () {
-        $(".book").css("transform", "translateX(10%)");
-      }, 200);
-
-      setTimeout(function () {
-        $(".book").css("opacity", "1");
-        $(".book").css("transform", "translateX(0%)");
-      }, 500);
-
-      setTimeout(function () {
-        while (count < 3) {
-          $(`#emoji-${count}`).text(books[count + offset].emoji);
-          $(`#path-${count}`).attr(
-            "src",
-            `./images/books/${books[count + offset].path}`
-          );
-          $(`#title-${count}`).text(` ${books[count + offset].title}`);
-          $(`#tags-${count}`).text(`${books[count + offset].tags}`);
-          $(`#finished-${count}`).text(
-            books[count + offset].date
-              ? `Finished ${books[count + offset].date}`
-              : "Reading now..."
-          );
-          if (books[count + offset].date) {
-            $(`#finished-tag-${count}`).css("display", "block");
-          } else {
-            $(`#finished-tag-${count}`).css("display", "none");
-          }
-          count++;
-        }
-      }, 300);
+    $("#book-iterator-left").click(function () {
+      document
+        .getElementById("books")
+        .scrollBy({ left: -260, behavior: "smooth" });
     });
   });
 
