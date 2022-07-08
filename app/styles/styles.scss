@@ -829,6 +829,7 @@ button {
 }
 
 .books {
+  display: flex;
   position: relative;
   width: 100%;
 
@@ -1326,6 +1327,16 @@ img#footerla {
 }
 
 @media screen and (max-width: 650px) {
+
+  .book-iterator-left,
+  .book-iterator-right {
+    display: none;
+  }
+
+  .books {
+    flex-direction: row;
+  }
+
   h1 {
     font-size: 30px;
   }
