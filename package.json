@@ -20,7 +20,7 @@
     "imagemin-brunch": "^1.1.0",
     "jquery": "^3.5.1",
     "move-js": "^0.5.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pugjs-brunch": "^2.11.3",
     "sass-brunch": "git+https://github.com/brunch/sass-brunch.git",
     "tippy.js": "^2.6.0",
