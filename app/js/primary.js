@@ -73,6 +73,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "never-let-me-go.png",
+      emoji: "🫀",
+      title: "Never Let Me Go",
+      tags: "Speculative Fiction",
+      date: "Jul. 2022",
+      review: 4,
+      goodreads: "https://www.goodreads.com/book/show/6334.Never_Let_Me_Go",
+    },
+    {
       path: "invisible-child.png",
       emoji: "🗽",
       title: "Invisible Child",
@@ -183,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
       path: "drawdown.png",
       emoji: "⏬",
       title: "Drawdown",
-      tags: "Climate science",
+      tags: "Climate Science",
       date: "Mar. 2021",
       review: 5,
       goodreads: "https://www.goodreads.com/book/show/31624481-drawdown?ac=1&from_search=true&qid=eMYRTuTFEO&rank=1",
@@ -192,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
       path: "story-of-more.png",
       emoji: "🌍",
       title: "The Story of More",
-      tags: "Climate science",
+      tags: "Climate Science",
       date: "Feb. 2021",
       review: 5,
       goodreads: "https://www.goodreads.com/book/show/49960370-the-story-of-more?ac=1&from_search=true&qid=G9L4KIInq1&rank=1",
