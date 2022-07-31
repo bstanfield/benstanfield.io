@@ -73,6 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "upheaval.png",
+      emoji: "🌊",
+      title: "Upheaval: Turning Points for Nations in Crisis",
+      tags: "History",
+      goodreads: "https://www.goodreads.com/book/show/41716904-upheaval",
+    },
+    {
       path: "never-let-me-go.png",
       emoji: "🫀",
       title: "Never Let Me Go",
