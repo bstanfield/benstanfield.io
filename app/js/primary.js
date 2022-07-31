@@ -265,6 +265,28 @@ document.addEventListener("DOMContentLoaded", () => {
         .getElementById("books")
         .scrollBy({ left: -278, behavior: "smooth" });
     });
+
+    
+    let timeoutId = 0;
+    $('#book-iterator-right').on('mousedown', function () {
+      timeoutId = setInterval(() => {
+        document
+        .getElementById("books")
+        .scrollBy({ left: 1500, behavior: "smooth" });
+      }, 750);
+    }).on('mouseup mouseleave', function() {
+        clearInterval(timeoutId);
+    });
+
+    $('#book-iterator-left').on('mousedown', function () {
+      timeoutId = setInterval(() => {
+        document
+        .getElementById("books")
+        .scrollBy({ left: -1500, behavior: "smooth" });
+      }, 750);
+    }).on('mouseup mouseleave', function() {
+        clearInterval(timeoutId);
+    });
   });
 
   // EMOJI TIME
