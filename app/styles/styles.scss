@@ -829,6 +829,7 @@ button {
 }
 
 .books {
+  padding-bottom: 12px;
   display: flex;
   position: relative;
   width: 100%;
@@ -905,6 +906,21 @@ button {
 }
 
 // MISC
+.books::-webkit-scrollbar {
+  width: 0.5em;
+  height: 10px;
+}
+
+.books::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 50px;
+}
+
+.books::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+  border-radius: 50px;
+}
+
 .left {
   float: left;
 }
