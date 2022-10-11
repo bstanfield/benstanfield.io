@@ -73,11 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "your-mind-on-plants.png",
+      emoji: "🌹",
+      title: "This Is Your Mind On Plants",
+      tags: "Nonfiction, Science",
+      goodreads: "https://www.goodreads.com/en/book/show/56015023-this-is-your-mind-on-plants",
+    },
+    {
       path: "upheaval.png",
       emoji: "🌊",
-      title: "Upheaval: Turning Points for Nations in Crisis",
+      title: "Upheaval",
       tags: "History",
       goodreads: "https://www.goodreads.com/book/show/41716904-upheaval",
+      date: "Sept. 2022",
     },
     {
       path: "never-let-me-go.png",
