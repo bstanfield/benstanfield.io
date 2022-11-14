@@ -73,11 +73,35 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "stone-sky.png",
+      emoji: "🌚",
+      title: "The Stone Sky",
+      tags: "Science Fiction",
+      goodreads: "https://www.goodreads.com/book/show/31817749-the-stone-sky",
+    },
+    {
+      path: "obelisk-gate.png",
+      emoji: "💎",
+      title: "The Obelisk Gate",
+      tags: "Science Fiction",
+      goodreads: "https://www.goodreads.com/book/show/26228034-the-obelisk-gate",
+      date: "Nov. 2022",
+    },
+    {
+      path: "fifth-season.png",
+      emoji: "🌋",
+      title: "The Fifth Season",
+      tags: "Science Fiction",
+      goodreads: "https://www.goodreads.com/en/book/show/19161852-the-fifth-season",
+      date: "Nov. 2022",
+    },
+    {
       path: "your-mind-on-plants.png",
       emoji: "🌹",
       title: "This Is Your Mind On Plants",
       tags: "Nonfiction, Science",
       goodreads: "https://www.goodreads.com/en/book/show/56015023-this-is-your-mind-on-plants",
+      date: "Oct. 2022",
     },
     {
       path: "upheaval.png",
