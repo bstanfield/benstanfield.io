@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "The Stone Sky",
       tags: "Science Fiction",
       goodreads: "https://www.goodreads.com/book/show/31817749-the-stone-sky",
+      date: "Dec. 2022",
     },
     {
       path: "obelisk-gate.png",
