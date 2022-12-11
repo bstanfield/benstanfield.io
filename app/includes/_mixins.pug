@@ -119,9 +119,10 @@ mixin book(id)
       //- +tweet()
 
 mixin books(totalBooks)
+  - var current = 0
   .books#books
-    each book, index in totalBooks
-      +book(index)
+    while current < totalBooks
+      +book(current++)
 
 mixin reviewGallery(meta, hours, distance, arr)
   - const shopUrl = 'https://www.yelp.com/biz/' + meta.yelpUrl;

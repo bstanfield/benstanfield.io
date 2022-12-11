@@ -73,6 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "underground-railroad.png",
+      emoji: "🚂",
+      title: "The Underground Railroad",
+      tags: "Historical Fiction",
+      goodreads: "https://www.goodreads.com/book/show/30555488-the-underground-railroad",
+      date: "Dec. 2022",
+    },
+    {
       path: "stone-sky.png",
       emoji: "🌚",
       title: "The Stone Sky",
