@@ -73,11 +73,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "team-of-rivals.png",
+      emoji: "🇺🇸",
+      title: "Team of Rivals",
+      tags: "Biography",
+      goodreads:
+        "https://www.goodreads.com/book/show/2199.Team_of_Rivals?ref=nav_sb_ss_1_14",
+    },
+    {
+      path: "give-and-take.png",
+      emoji: "👏",
+      title: "Give and Take",
+      tags: "Business",
+      goodreads: "https://www.goodreads.com/book/show/16158498-give-and-take",
+      date: "Jan. 2022",
+    },
+    {
       path: "underground-railroad.png",
       emoji: "🚂",
       title: "The Underground Railroad",
       tags: "Historical Fiction",
-      goodreads: "https://www.goodreads.com/book/show/30555488-the-underground-railroad",
+      goodreads:
+        "https://www.goodreads.com/book/show/30555488-the-underground-railroad",
       date: "Dec. 2022",
     },
     {
@@ -93,7 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
       emoji: "💎",
       title: "The Obelisk Gate",
       tags: "Science Fiction",
-      goodreads: "https://www.goodreads.com/book/show/26228034-the-obelisk-gate",
+      goodreads:
+        "https://www.goodreads.com/book/show/26228034-the-obelisk-gate",
       date: "Nov. 2022",
     },
     {
@@ -101,7 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
       emoji: "🌋",
       title: "The Fifth Season",
       tags: "Science Fiction",
-      goodreads: "https://www.goodreads.com/en/book/show/19161852-the-fifth-season",
+      goodreads:
+        "https://www.goodreads.com/en/book/show/19161852-the-fifth-season",
       date: "Nov. 2022",
     },
     {
@@ -109,7 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
       emoji: "🌹",
       title: "This Is Your Mind On Plants",
       tags: "Nonfiction, Science",
-      goodreads: "https://www.goodreads.com/en/book/show/56015023-this-is-your-mind-on-plants",
+      goodreads:
+        "https://www.goodreads.com/en/book/show/56015023-this-is-your-mind-on-plants",
       date: "Oct. 2022",
     },
     {
@@ -135,7 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Invisible Child",
       tags: "Biography",
       date: "Jul. 2022",
-      goodreads: "https://www.goodreads.com/book/show/57359691-invisible-child?from_search=true&from_srp=true&qid=og7JfMBz1T&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/57359691-invisible-child?from_search=true&from_srp=true&qid=og7JfMBz1T&rank=1",
       review: 5,
     },
     {
@@ -144,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "The Great Mistake",
       tags: "Biography",
       date: "Jun. 2022",
-      goodreads: "https://www.goodreads.com/book/show/55502632-the-great-mistake?from_search=true&from_srp=true&qid=QEmXYBN1td&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/55502632-the-great-mistake?from_search=true&from_srp=true&qid=QEmXYBN1td&rank=1",
       review: 3,
     },
     {
@@ -153,7 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "A Woman of No Importance",
       tags: "History",
       date: "Mar. 2022",
-      goodreads: "https://www.goodreads.com/book/show/40595446-a-woman-of-no-importance?ac=1&from_search=true&qid=kC3XP5I2p2&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/40595446-a-woman-of-no-importance?ac=1&from_search=true&qid=kC3XP5I2p2&rank=1",
       review: 5,
     },
     {
@@ -162,7 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "The Song of Achilles",
       tags: "Mythology",
       date: "Feb. 2022",
-      goodreads: "https://www.goodreads.com/book/show/13623848-the-song-of-achilles?ac=1&from_search=true&qid=9dBXR4zyNp&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/13623848-the-song-of-achilles?ac=1&from_search=true&qid=9dBXR4zyNp&rank=1",
       review: 4,
     },
     {
@@ -171,7 +195,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Circe",
       tags: "Mythology",
       date: "Feb. 2022",
-      goodreads: "https://www.goodreads.com/book/show/35959740-circe?ac=1&from_search=true&qid=qZMrCNjcZq&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/35959740-circe?ac=1&from_search=true&qid=qZMrCNjcZq&rank=1",
       review: 5,
     },
     {
@@ -180,7 +205,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "15 Commitments",
       tags: "Business Culture",
       review: 4,
-      goodreads: "https://www.goodreads.com/book/show/23275060-15-commitments-of-conscious-leadership?ac=1&from_search=true&qid=7OYtP2JtV4&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/23275060-15-commitments-of-conscious-leadership?ac=1&from_search=true&qid=7OYtP2JtV4&rank=1",
       date: "Jan. 2022",
     },
     {
@@ -188,7 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
       emoji: "👶🏼",
       title: "WEIRDEST People",
       tags: "Psychology & Economics",
-      goodreads: "https://www.goodreads.com/book/show/51710349-the-weirdest-people-in-the-world?ac=1&from_search=true&qid=zjoN5bkmfo&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/51710349-the-weirdest-people-in-the-world?ac=1&from_search=true&qid=zjoN5bkmfo&rank=1",
     },
     {
       anchor: "the-map-that-changed-the-world",
@@ -198,7 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: "History & Geology",
       date: "Nov. 2021",
       review: 5,
-      goodreads: "https://www.goodreads.com/book/show/25014.The_Map_That_Changed_the_World?ac=1&from_search=true&qid=5u49g1kS78&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/25014.The_Map_That_Changed_the_World?ac=1&from_search=true&qid=5u49g1kS78&rank=1",
     },
     {
       path: "dune.png",
@@ -207,7 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: "Sci-fi & Fantasy",
       date: "Nov. 2021",
       review: 5,
-      goodreads: "https://www.goodreads.com/book/show/44767458-dune?ac=1&from_search=true&qid=ISkEXvQjsr&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/44767458-dune?ac=1&from_search=true&qid=ISkEXvQjsr&rank=1",
     },
     {
       path: "hail-mary.png",
@@ -216,7 +245,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: "Sci-fi",
       date: "Oct. 2021",
       review: 4,
-      goodreads: "https://www.goodreads.com/book/show/54493401-project-hail-mary?ac=1&from_search=true&qid=CuXil1yKSc&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/54493401-project-hail-mary?ac=1&from_search=true&qid=CuXil1yKSc&rank=1",
     },
     {
       path: "lifes-edge.png",
@@ -225,7 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: "Philosophy & Science",
       date: "Aug. 2021",
       review: 4,
-      goodreads: "https://www.goodreads.com/book/show/54227475-life-s-edge?ac=1&from_search=true&qid=E4MmowCtzZ&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/54227475-life-s-edge?ac=1&from_search=true&qid=E4MmowCtzZ&rank=1",
     },
     {
       path: "intro-to-fire.png",
@@ -233,7 +264,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Intro to Fire",
       tags: "Ecology",
       date: "Aug. 2021",
-      goodreads: "https://www.goodreads.com/book/show/3789643-introduction-to-fire-in-california?ac=1&from_search=true&qid=oDiuRScYzF&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/3789643-introduction-to-fire-in-california?ac=1&from_search=true&qid=oDiuRScYzF&rank=1",
       review: 3,
     },
     {
@@ -243,7 +275,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: "Climate Science",
       date: "Mar. 2021",
       review: 5,
-      goodreads: "https://www.goodreads.com/book/show/31624481-drawdown?ac=1&from_search=true&qid=eMYRTuTFEO&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/31624481-drawdown?ac=1&from_search=true&qid=eMYRTuTFEO&rank=1",
     },
     {
       path: "story-of-more.png",
@@ -252,7 +285,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: "Climate Science",
       date: "Feb. 2021",
       review: 5,
-      goodreads: "https://www.goodreads.com/book/show/49960370-the-story-of-more?ac=1&from_search=true&qid=G9L4KIInq1&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/49960370-the-story-of-more?ac=1&from_search=true&qid=G9L4KIInq1&rank=1",
     },
     {
       path: "seveneves.png",
@@ -261,23 +295,21 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: "Hard Sci-fi",
       date: "Feb. 2020",
       review: 5,
-      goodreads: "https://www.goodreads.com/book/show/22816087-seveneves?ac=1&from_search=true&qid=aWBtSVVaXd&rank=1",
+      goodreads:
+        "https://www.goodreads.com/book/show/22816087-seveneves?ac=1&from_search=true&qid=aWBtSVVaXd&rank=1",
     },
   ];
 
   $(document).ready(function () {
     let count = 0;
     while (count < books.length) {
-      $(`#anchor-${count}`).attr(
-        "href",
-        books[count].goodreads,
-      );
-      $(`#anchor-${count}`).attr(
-        "target",
-        "_blank"
-      );
+      $(`#anchor-${count}`).attr("href", books[count].goodreads);
+      $(`#anchor-${count}`).attr("target", "_blank");
       $(`#emoji-${count}`).text(books[count].emoji);
-      $(`#path-${count}`).css("background-image", `url(/images/books/${books[count].path})`);
+      $(`#path-${count}`).css(
+        "background-image",
+        `url(/images/books/${books[count].path})`
+      );
       $(`#title-${count}`).text(` ${books[count].title}`);
       $(`#tags-${count}`).text(`${books[count].tags}`);
       $(`#finished-${count}`).text(
@@ -307,27 +339,30 @@ document.addEventListener("DOMContentLoaded", () => {
         .scrollBy({ left: -278, behavior: "smooth" });
     });
 
-    
     let timeoutId = 0;
-    $('#book-iterator-right').on('mousedown', function () {
-      timeoutId = setInterval(() => {
-        document
-        .getElementById("books")
-        .scrollBy({ left: 1500, behavior: "smooth" });
-      }, 750);
-    }).on('mouseup mouseleave', function() {
+    $("#book-iterator-right")
+      .on("mousedown", function () {
+        timeoutId = setInterval(() => {
+          document
+            .getElementById("books")
+            .scrollBy({ left: 1500, behavior: "smooth" });
+        }, 750);
+      })
+      .on("mouseup mouseleave", function () {
         clearInterval(timeoutId);
-    });
+      });
 
-    $('#book-iterator-left').on('mousedown', function () {
-      timeoutId = setInterval(() => {
-        document
-        .getElementById("books")
-        .scrollBy({ left: -1500, behavior: "smooth" });
-      }, 750);
-    }).on('mouseup mouseleave', function() {
+    $("#book-iterator-left")
+      .on("mousedown", function () {
+        timeoutId = setInterval(() => {
+          document
+            .getElementById("books")
+            .scrollBy({ left: -1500, behavior: "smooth" });
+        }, 750);
+      })
+      .on("mouseup mouseleave", function () {
         clearInterval(timeoutId);
-    });
+      });
   });
 
   // EMOJI TIME
