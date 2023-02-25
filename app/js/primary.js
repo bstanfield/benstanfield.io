@@ -73,12 +73,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "thinking-in-systems.png",
+      emoji: "🌍",
+      title: "Thinking in Systems",
+      tags: "Business",
+      goodreads: "https://www.goodreads.com/en/book/show/3828902",
+      date: "Feb. 2023",
+    },
+    {
       path: "team-of-rivals.png",
       emoji: "🇺🇸",
       title: "Team of Rivals",
       tags: "Biography",
       goodreads:
         "https://www.goodreads.com/book/show/2199.Team_of_Rivals?ref=nav_sb_ss_1_14",
+      date: "Jan. 2023",
     },
     {
       path: "give-and-take.png",
