@@ -73,6 +73,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "invention-and-innovation.png",
+      emoji: "💡",
+      title: "Invention and Innovation",
+      tags: "History",
+      goodreads:
+        "https://www.goodreads.com/book/show/61102803-invention-and-innovation",
+    },
+    {
+      path: "liftoff.png",
+      emoji: "🚀",
+      title: "Liftoff",
+      tags: "Business",
+      goodreads: "https://www.goodreads.com/en/book/show/53402132",
+      date: "Apr. 2023",
+    },
+    {
       path: "thinking-in-systems.png",
       emoji: "🌍",
       title: "Thinking in Systems",
