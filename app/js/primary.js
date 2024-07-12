@@ -73,12 +73,62 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "exhalation.png",
+      emoji: "🫁",
+      title: "Exhalation",
+      tags: "Science Fiction",
+      goodreads: "https://www.goodreads.com/book/show/41160292-exhalation",
+      date: "Jul. 2024",
+    },
+    {
+      path: "good-evil.png",
+      emoji: "⚖️",
+      title: "Midnight in the Garden of Good and Evil",
+      tags: "True Crime",
+      goodreads:
+        "https://www.goodreads.com/book/show/386187.Midnight_in_the_Garden_of_Good_and_Evil",
+    },
+    {
+      path: "tranquility.png",
+      emoji: "🌊",
+      title: "Sea of Tranquility",
+      tags: "Time Travel",
+      goodreads:
+        "https://www.goodreads.com/book/show/58446227-sea-of-tranquility",
+    },
+    {
+      path: "artemis.png",
+      emoji: "🌝",
+      title: "Artemis",
+      tags: "Science Fiction",
+      goodreads: "https://www.goodreads.com/book/show/34928122-artemis",
+      date: "Apr. 2024",
+    },
+    {
+      path: "drunk.png",
+      emoji: "🍻",
+      title: "Drunk",
+      tags: "Anthropology",
+      goodreads:
+        "https://www.goodreads.com/book/show/55643282-drunk?from_search=true&from_srp=true&qid=HcsfTZl6AE&rank=1",
+      date: "Jan. 2024",
+    },
+    {
+      path: "trick-mirror.png",
+      emoji: "🪞",
+      title: "Trick Mirror",
+      tags: "Essays",
+      goodreads: "https://www.goodreads.com/book/show/43126457-trick-mirror",
+      date: "Dec. 2023",
+    },
+    {
       path: "invention-and-innovation.png",
       emoji: "💡",
       title: "Invention and Innovation",
       tags: "History",
       goodreads:
         "https://www.goodreads.com/book/show/61102803-invention-and-innovation",
+      date: "May 2023",
     },
     {
       path: "liftoff.png",
