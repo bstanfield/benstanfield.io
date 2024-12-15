@@ -11745,6 +11745,13 @@ document.addEventListener("DOMContentLoaded", function () {
     goodreads: "https://www.goodreads.com/book/show/2372.The_Path_Between_the_Seas",
     date: "Nov. 2024"
   }, {
+    path: "all-the-presidents-men.png",
+    emoji: "🏛️",
+    title: "All The Presidents Men",
+    tags: "Journalism",
+    goodreads: "https://www.goodreads.com/book/show/96123.All_the_President_s_Men",
+    date: "Nov. 2024"
+  }, {
     path: "exhalation.png",
     emoji: "🫁",
     title: "Exhalation",
