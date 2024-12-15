@@ -73,6 +73,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOR BOOKS
   const books = [
     {
+      path: "postwar.png",
+      emoji: "🪖",
+      title: "Postwar",
+      tags: "History",
+      goodreads: "https://www.goodreads.com/book/show/29658.Postwar",
+    },
+    {
+      path: "path-between-seas.png",
+      emoji: "🚢",
+      title: "The Path Between The Seas",
+      tags: "History",
+      goodreads:
+        "https://www.goodreads.com/book/show/2372.The_Path_Between_the_Seas",
+      date: "Nov. 2024",
+    },
+    {
       path: "exhalation.png",
       emoji: "🫁",
       title: "Exhalation",
@@ -83,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       path: "good-evil.png",
       emoji: "⚖️",
-      title: "Midnight in the Garden of Good and Evil",
+      title: "Midnight in the Garden of Good & Evil",
       tags: "True Crime",
       goodreads:
         "https://www.goodreads.com/book/show/386187.Midnight_in_the_Garden_of_Good_and_Evil",

@@ -1,0 +1,45 @@
+<h1>2. Buy</h1>
+<p>Once you've found your domain, return to the <code>command line</code>. It doesn't matter what directory (folder) you're in, as long as your <code>now</code> command works.</p>
+<blockquote>
+<p>Reminder: If you're unfamiliar with the command line, you can switch to the <strong>beginner</strong> version of this tutorial using the buttons at the top of the page.</p>
+</blockquote>
+
+<pre><code class="bash"><span class="hljs-built_in">now</span> domains buy <span class='hljs-string'>mydomain.com</span>
+</code></pre><p>If you don't have a payment method attached to your Zeit account, you'll be prompted to enter payment info on the command line.</p>
+<h2>Check that your domain has been registered to your account</h2>
+<p>Return to the command line and type <code>now domains ls</code>. You should see your domain name appear alongside some meta information like age and serviceType. <code>cf</code> stands for <a href="https://www.cloudflare.com/">Cloudflare</a>. You can toggle Cloudflare services for your Zeit domain from your dashboard.</p>
+
+<pre><code class="bash"><span class="hljs-built_in">now</span> domains ls
+
+> 1 domain found under <strong>benstanfield</strong> [231ms]
+
+    domain                   serviceType    verified    cf       age
+    yourdomain.com           zeit.world     true        true     1d
+</code></pre><h1>3. Publish your content!</h1>
+<p>The last step to having a fully-functioning website is to connect, or <strong>alias</strong>, the content from <strong>Chapter 1</strong> to your custom domain.</p>
+<blockquote></blockquote>
+<p>Return to the command line. Make sure you're in the correct folder (<code>ls</code>), and type <code>now alias</code> followed by the long deployment domain from part one, and your custom domain (don't worry about prefixes like &quot;https://&quot; or &quot;www&quot; ... just type &quot;yourdomain.com&quot;).</p>
+<blockquote></blockquote>
+
+<pre><code class="bash"><span class='comment-override'>// now alias [deployment domain] [custom domain]</span>
+
+<span class="hljs-built_in">now</span> alias <span class='hljs-string'>https://public-fi0dkn9ep.now.sh yourdomain.com</span>
+> Assigning alias <span class='hljs-string'>yourdomain.com</span> to deployment <span class='hljs-string'>public-fi0dkn9ep.now.sh</span>
+> ...
+> Success! <span class='hljs-string'>yourdomain.com</span> now points to <span class='hljs-string'>public-fi0dkn9ep.now.sh</span> [4s]
+</code></pre>
+<div class="img-container"><img class="full-img" src="../images/projects/dnd/zeit-comparison.png">
+</div><p>And that's it! Anytime you want to deploy your current codebase, just type <code>now</code> to get a new deployment URL.</p>
+<blockquote></blockquote>
+<h2>Bonus 🧠</h2>
+<p>For simpler aliasing, you can add your alias locations to the <strong>now.json</strong> file:</p>
+
+<pre><code class="bash">{
+    "version": 2,
+    "alias": [ "test.benstanfield.io", "www.test.benstanfield.io" ]
+}
+</code></pre><p>And to deploy <em>and</em> alias simultaneously, chain two commands.</p>
+
+<pre><code class="bash">now && now alias
+
+<span class='comment-override'>// Deploys once, then aliases that deployment URL to everything in the "alias" array.</span></code></pre>

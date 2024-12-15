@@ -1,0 +1,65 @@
+<h1>Objective (Advanced)</h1>
+<p>To learn a simple, elegant deployment process for publishing web content that works for beginners <em>and</em> experienced developers 🤖.</p>
+<h1>1. Setup</h1>
+<blockquote>
+<p>If you're not familiar with using the command line, this version of the tutorial might be confusing. If you'd rather learn the Desktop version of the tutorial, <strong>toggle the Beginner tutorial</strong> button above.</p>
+</blockquote>
+<h2>Open Terminal</h2>
+<p>All macs have the program <strong>Terminal</strong> installed by default. Open it, type <code>ls</code>, and press enter. You should see a list of files (kind of like a stripped down Finder) as the output.</p>
+
+<pre><code>ben@bs-tb13 ~ » <span class="hljs-built_in hljs-strong">ls</span>
+Applications/            
+Creative Cloud Files/   
+<strong>Desktop/</strong>                  
+Documents/             
+Downloads/           
+Dropbox/               
+Internships/
+Public/                       
+Library/                
+Movies/                  
+Music/                   
+Pictures/
+
+ben@bs-tb13 ~ »
+</code></pre><p>To get started with our new project, we'll need to <strong>change directory</strong> (folder) from our root to wherever you want your code to live.</p>
+<blockquote></blockquote>
+<p>Use the command <code>cd</code> to enter an existing directory.</p>
+
+<pre><code class="bash">cd Desktop                              <span class="comment">// Enters your Desktop folder</span>
+<span class="hljs-built_in">mkdir</span> sampleProject && cd sampleProject <span class="comment">// Chains two commands: creating and entering a directory</span>
+</code></pre><p>Adding files to a directory is easy from the command line. Use the following command to create two files: <strong>index.html</strong> and <strong>now.json</strong>. Now.json is your config file for Zeit Now.</p>
+
+<pre><code class="bash">echo "&lt;h1&gt;I can't wait to be deployed...&lt;/h1&gt;" > index.html
+echo '{ "version": 2 }' > now.json
+</code></pre><p>Open <strong>index.html</strong> in your browser to make sure it worked.</p>
+
+<pre><code class="bash"><span class="hljs-built_in">open</span> 'index.html'
+</code></pre>
+<div class="img-container"><img class="full-img" src="../images/projects/dnd/index-file.png">
+</div><h1>2. Create a <strong>Zeit</strong> account</h1>
+<p>The <strong>Zeit Now</strong> platform is extremely powerful, but for now we can think of Zeit as a <strong>simple hosting service for our static website.</strong> In the next few minutes we'll get deployment of our code to the web working with just one command in Terminal. 😲</p>
+<blockquote></blockquote>
+<p><strong>First, visit <a href="https://www.zeit.co/signup">zeit.co</a> and sign up</strong>
+(choosing &quot;continue with email&quot; is fastest).</p>
+
+<div class="img-container"><img class="full-img" src="../images/projects/dnd/zeit-signup.png">
+</div><p>When prompted, make sure to install the <strong>Now CLI (Command Line Interface).</strong> This allows us to write commands to deploy our website from the command line.</p>
+<blockquote></blockquote>
+<p>To confirm that you're logged in and have Now CLI installed, return to your project directory in Terminal and run this command:</p>
+
+<pre><code class="bash"><span class="hljs-built_in">now</span> --version
+<span class="comment">// ex: 14.0.3</span>
+</code></pre><h1>3. Deploy</h1>
+<p>🚨 We're one step from deployment! Just type the command <code>now</code> and your directory sampleProject will be deployed to a <strong>staging URL.</strong></p>
+<blockquote></blockquote>
+<p>You should see something like this:</p>
+
+<pre><code class="bash">ben@bs-tb13 zeitApp » <span class="hljs-built_in">now</span>
+> Deploying ~/Desktop/zeitApp under <strong>benstanfield</strong>
+> Using project <strong>zeitApp</strong>
+> Synced 1 file (40B) [1s]
+> <span class="hljs-string">https://zeitapp-d005ajovh.now.sh</span> [v2] [in clipboard] [826ms]
+┌ **        Ready               [404ms]
+└── index.html
+> <span class="hljs-keyword">Success!</span> Deployment ready [3s]</code></pre>
