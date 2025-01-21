@@ -11732,6 +11732,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // FOR BOOKS
   var books = [{
+    path: "boom.png",
+    emoji: "💥",
+    title: "Boom: Bubbles & the End of Stagnation",
+    tags: "Business",
+    goodreads: "https://www.goodreads.com/book/show/205307264-boom",
+    date: "Jan. 2025"
+  }, {
     path: "postwar.png",
     emoji: "🪖",
     title: "Postwar",
